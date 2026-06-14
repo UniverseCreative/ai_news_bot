@@ -1,0 +1,6 @@
+
+python-telegram-bot==22.7
+feedparser==6.0.12
+requests==2.34.2
+python-dotenv==1.1.0
+lxml==5.4.0
