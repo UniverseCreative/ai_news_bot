@@ -1,0 +1,7 @@
+
+KeyData
+.env
+__pycache__/
+*.pyc
+
+
