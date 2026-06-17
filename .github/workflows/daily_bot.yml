@@ -3,7 +3,7 @@ name: Daily AI News Bot
 
 on:
   schedule:
-    - cron: "0 7 * * *"   # ساعت 7 لندن (UTC+1 فعلاً)
+    - cron: "0 5 * * *"   # ساعت 5 لندن (UTC+1 فعلاً)
   workflow_dispatch:
 
 jobs:
