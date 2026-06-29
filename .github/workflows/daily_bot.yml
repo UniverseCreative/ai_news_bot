@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Download previous sent_news.txt
+      - name: Download previous sent_news.json
         uses: actions/download-artifact@v4
         with:
           name: sent-news-file
@@ -37,8 +37,8 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python main.py
 
-      - name: Upload new sent_news.txt
+      - name: Upload new sent_news.json
         uses: actions/upload-artifact@v4
         with:
           name: sent-news-file
-          path: sent_news.txt
+          path: sent_news.json

@@ -1,10 +1,9 @@
-
 import os
+import json
 import feedparser
 import requests
 import asyncio
-
-
+from datetime import datetime
 from dotenv import load_dotenv
 from telegram import Bot
 
@@ -19,149 +18,109 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 bot = Bot(token=BOT_TOKEN)
 
 # RSS خبرها
-
-
 RSS_FEEDS = [
-
-# فعلا 5 منبع خبری
-
-    # AI & Tech
-
+    # منابع قبلی
     "https://techcrunch.com/category/artificial-intelligence/feed/",
-
-    "https://deepmind.com/blog/rss.xml",
-
-    "https://marktechpost.com/feed/",
-
+    "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml",
+    "https://venturebeat.com/ai/feed/",
     "https://openai.com/blog/rss.xml",
-
     "https://huggingface.co/blog/feed.xml",
-
+    "https://deepmind.com/blog/rss.xml",
+    "https://marktechpost.com/feed/",
 ]
 
+# فایل خبرهای ارسال شده (JSON)
+SENT_FILE = "sent_news.json"
 
-
-
-
-# فایل خبرهای ارسال شده
-SENT_FILE = "sent_news.txt"
-
-
-# خواندن خبرهای قبلی
 def load_sent_news():
-
+    """بارگذاری دیکشنری خبرهای ارسال‌شده از فایل JSON"""
     try:
-        with open(SENT_FILE, "r", encoding="utf-8") as file:
-            return set(file.read().splitlines())
+        with open(SENT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            # پشتیبانی از فرمت قدیمی (set) برای یک بار انتقال
+            if isinstance(data, list):
+                return {item: datetime.now().isoformat() for item in data}
+            return data
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
 
-    except FileNotFoundError:
-        return set()
-
-
-# ذخیره خبر جدید
 def save_sent_news(link):
+    """ذخیره خبر جدید با زمان ارسال"""
+    data = load_sent_news()
+    data[link] = datetime.now().isoformat()
+    with open(SENT_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
-    with open(SENT_FILE, "a", encoding="utf-8") as file:
-        file.write(link + "\n")
-
-
-
-
-
-
-# گرفتن خبرها
 def get_news():
-
+    """گرفتن اخبار از RSS"""
     all_news = []
-
     for url in RSS_FEEDS:
-
-        feed = feedparser.parse(url)
-
-        for entry in feed.entries[:1]:
-
-            all_news.append({
-                "title": entry.title,
-                "summary": entry.get("summary", entry.get("title", "")),
-                "link": entry.link
-            })
-
+        try:
+            feed = feedparser.parse(url)
+            for entry in feed.entries[:1]:  # هر سایت فقط ۱ خبر
+                all_news.append({
+                    "title": entry.title,
+                    "summary": entry.get("summary", entry.get("title", "")),
+                    "link": entry.link
+                })
+        except Exception as e:
+            print(f"خطا در دریافت {url}: {e}")
     return all_news
 
-
-
-# خلاصه سازی
-
-
-
-
 def summarize(text):
-
+    """خلاصه‌سازی خبر با OpenRouter"""
     response = requests.post(
-
         url="https://openrouter.ai/api/v1/chat/completions",
-
         headers={
             "Authorization": f"Bearer {OPENROUTER_API_KEY}",
             "Content-Type": "application/json"
         },
-
         json={
             "model": "openai/gpt-3.5-turbo",
-
             "messages": [
                 {
                     "role": "user",
                     "content": f"""
+تو یک خبرنگار حرفه‌ای و دقیق حوزه تکنولوژی هستی که برای یک رسانه معتبر فارسی‌زبان می‌نویسی.
 
+**وظیفه:** خبر زیر را به فارسی روان، حرفه‌ای و مختصر (حداکثر ۵ خط) خلاصه کن.
 
-تو یک خبرنگار حرفه‌ای و باتجربه‌ی حوزه تکنولوژی و هوش مصنوعی هستی که برای یک رسانه‌ی معتبر فارسی‌زبان می‌نویسی. وظیفه‌ات این است که خبر زیر را به زبانی کاملاً روان، طبیعی و حرفه‌ای، دقیقاً如同 یک گزارش خبری استاندارد فارسی، خلاصه‌سازی و بازنویسی کنی.
+**قوانین سخت‌گیرانه ترجمه:**
 
-**قوانین طلایی و غیرقابل‌تغییر:**
+۱. **اسامی خاص و برندها را دست نخورده به انگلیسی نگه دار:**
+   - نام افراد: Elon Musk, Sam Altman, Demis Hassabis
+   - نام شرکت‌ها: OpenAI, Google DeepMind, NVIDIA, Tesla, xAI
+   - نام محصولات: ChatGPT, Gemini, Claude, GPT-4, DALL-E
+   - اصطلاحات فنی: Agent, API, SDK, Prompt, Token, Fine-tuning
 
-۱. **ترجمه‌ی اسامی خاص و اصطلاحات تخصصی:**
-   - نام شرکت‌ها، محصولات، پروژه‌ها و برندها (مانند OpenAI، ChatGPT، Gemini، DeepMind، Agent، API، SDK) را **دقیقاً به همان شکل انگلیسی** در متن بنویس.
-   - اصطلاحات فنی رایج که معادل فارسی دقیقی ندارند (مانند Prompt، Token، Fine-tuning) را نیز به انگلیسی نگه دار.
-   - **تنها** مفاهیم عمومی (مانند Intelligence، Learning، Model) را با معادل‌های رایج و پذیرفته‌شده‌ی فارسی (هوش، یادگیری، مدل) ترجمه کن.
+۲. **فقط مفاهیم عمومی را به فارسی برگردان:**
+   - Intelligence → هوش
+   - Learning → یادگیری
+   - Model → مدل
+   - Planning → برنامه‌ریزی
 
-۲. **سبک نگارش و خلاصه‌سازی:**
-   - متن نهایی باید کاملاً شبیه به یک خبر کوتاه در یک وب‌سایت خبری فارسی باشد (رسمی، اما روان و قابل‌فهم).
-   - از ترجمه‌ی تحت‌اللفظی، جمله‌سازی‌های خشک و دست‌وپاگیر، و کپی‌کردن مستقیم جملات انگلیسی **اکیداً پرهیز کن**.
-   - هدف، انتقال **مفهوم کلی و مهمترین پیام** خبر به زبان فارسی است، نه ترجمه‌ی کلمه‌به‌کلمه.
-   - حداکثر طول متن، **۵ خط** باشد. اگر خبر خیلی تخصصی است، آن را به ۳-۴ خط روان خلاصه کن.
+۳. **سبک نگارش:**
+   - مثل خبر فارسی روان باشد، نه ترجمه تحت‌اللفظی.
+   - از کلمات بیگانه غیرضروری پرهیز کن.
+   - اگر خبر تخصصی است، آن را به زبان ساده برای عموم توضیح بده.
 
-۳. **دستور نهایی:** متن خبر را برای یک مخاطب فارسی‌زبان که لزوماً متخصص فنی نیست، به‌صورت یک خبر کوتاه و مفید خلاصه‌کن.
+۴. **تصحیح خودکار:** در صورت مشاهده هر گونه ترجمه تحت‌اللفظی برای اسامی خاص، آن را به شکل انگلیسی اصلاح کن.
 
-
-
-
-متن خبر:
-
+**متن خبر:**
 {text}
 """
-
                 }
             ]
         }
     )
-
     result = response.json()
-
-    print(result)
-
-    # اگر خطا داشت
     if "choices" not in result:
+        print("خطا در OpenRouter:", result)
         return "خطا در خلاصه‌سازی خبر"
-
     return result["choices"][0]["message"]["content"]
 
-
-
-
-# ارسال تلگرام
-
 async def send_to_telegram(title, summary, link):
-
+    """ارسال خبر به تلگرام"""
     message = f"""
 🚀 خبر جدید دنیای AI
 
@@ -175,49 +134,29 @@ async def send_to_telegram(title, summary, link):
 
 #AI #Tech
 """
-
     await bot.send_message(
         chat_id=CHANNEL_ID,
         text=message
     )
 
-
-
-# اجرای اصلی
-
 async def main():
-
+    """اجرای اصلی ربات"""
     news = get_news()
-
     sent_news = load_sent_news()
 
     for item in news:
-
         if item["link"] in sent_news:
-
             print("خبر تکراری رد شد ⏭")
-
             continue
 
         print("در حال پردازش خبر...")
+        try:
+            summary = summarize(item["summary"])
+            await send_to_telegram(item["title"], summary, item["link"])
+            print("ارسال شد ✅")
+            save_sent_news(item["link"])
+        except Exception as e:
+            print(f"خطا در پردازش خبر: {e}")
 
-        summary = summarize(item["summary"])
-
-        await send_to_telegram(
-            item["title"],
-            summary,
-            item["link"]
-        )
-
-        print("ارسال شد ✅")
-
-        save_sent_news(item["link"])
-
-
-
-
-
-
-# شروع برنامه 
-
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
