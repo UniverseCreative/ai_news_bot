@@ -68,7 +68,7 @@ def get_news():
     return all_news
 
 def summarize(text):
-    """خلاصه‌سازی خبر با OpenRouter"""
+    """خلاصه‌سازی حرفه‌ای خبر با ساختار اجباری"""
     response = requests.post(
         url="https://openrouter.ai/api/v1/chat/completions",
         headers={
@@ -81,53 +81,80 @@ def summarize(text):
                 {
                     "role": "user",
                     "content": f"""
-تو یک خبرنگار حرفه‌ای و دقیق حوزه تکنولوژی هستی که برای یک رسانه معتبر فارسی‌زبان می‌نویسی.
+خبر زیر را دقیقاً در سه بخش زیر خلاصه کن. از به هم ریختن این ساختار جدا خودداری کن:
 
-**وظیفه:** خبر زیر را به فارسی روان، حرفه‌ای و مختصر (حداکثر ۵ خط) خلاصه کن.
+**بخش ۱ - عنوان خبر (حداکثر ۸ کلمه):**
+فقط عنوان اصلی خبر را به فارسی روان بنویس. اگر نام شرکت یا محصول مهم است، به انگلیسی حفظ کن.
 
-**قوانین سخت‌گیرانه ترجمه:**
+**بخش ۲ - خلاصه خبر (حداکثر ۳ خط):**
+مهم‌ترین اتفاق خبر را به فارسی کاملاً روان و ساده بنویس. مثل این است که برای یک دوست غیرمتخصص توضیح می‌دهی. از ترجمه تحت‌اللفظی اکیداً پرهیز کن.
 
-۱. **اسامی خاص و برندها را دست نخورده به انگلیسی نگه دار:**
-   - نام افراد: Elon Musk, Sam Altman, Demis Hassabis
-   - نام شرکت‌ها: OpenAI, Google DeepMind, NVIDIA, Tesla, xAI
-   - نام محصولات: ChatGPT, Gemini, Claude, GPT-4, DALL-E
-   - اصطلاحات فنی: Agent, API, SDK, Prompt, Token, Fine-tuning
+**بخش ۳ - نکته فنی (اختیاری، حداکثر ۱ خط):**
+اگر خبر شامل یک جزئیات فنی مهم است، آن را خیلی مختصر بنویس، در غیر این صورت این بخش را خالی بگذار.
 
-۲. **فقط مفاهیم عمومی را به فارسی برگردان:**
-   - Intelligence → هوش
-   - Learning → یادگیری
-   - Model → مدل
-   - Planning → برنامه‌ریزی
+**قوانین طلایی:**
+- تمام اسامی خاص (افراد، شرکت‌ها، محصولات) را **دقیقاً به انگلیسی** بنویس.
+- جملات باید کوتاه، ساده و مفهومی باشند.
+- هیچ‌گاه از کلمات پیچیده یا ترجمه‌های تحت‌اللفظی استفاده نکن.
 
-۳. **سبک نگارش:**
-   - مثل خبر فارسی روان باشد، نه ترجمه تحت‌اللفظی.
-   - از کلمات بیگانه غیرضروری پرهیز کن.
-   - اگر خبر تخصصی است، آن را به زبان ساده برای عموم توضیح بده.
-
-۴. **تصحیح خودکار:** در صورت مشاهده هر گونه ترجمه تحت‌اللفظی برای اسامی خاص، آن را به شکل انگلیسی اصلاح کن.
-
-**متن خبر:**
+متن خبر:
 {text}
 """
                 }
             ]
         }
     )
+    
     result = response.json()
     if "choices" not in result:
         print("خطا در OpenRouter:", result)
         return "خطا در خلاصه‌سازی خبر"
-    return result["choices"][0]["message"]["content"]
+
+    raw_summary = result["choices"][0]["message"]["content"].strip()
+
+    # پردازش خروجی برای استخراج بخش‌ها
+    parts = raw_summary.split("**بخش")
+    title = ""
+    summary = ""
+    tech_note = ""
+
+    for part in parts:
+        if "عنوان خبر" in part:
+            title = part.split(":")[-1].strip().split("\n")[0].strip()
+        elif "خلاصه خبر" in part:
+            summary_lines = part.split(":")[-1].strip().split("\n")
+            summary = " ".join([line.strip() for line in summary_lines if line.strip() and not line.startswith("**")])
+        elif "نکته فنی" in part:
+            tech_note = part.split(":")[-1].strip().split("\n")[0].strip()
+
+    # اگر ساختار به هم خورد، از کل متن به عنوان خلاصه استفاده کن
+    if not summary and not title:
+        return raw_summary
+
+    final_summary = f"{title}\n\n{summary}"
+    if tech_note and tech_note not in ["خالی", "-", "ندارد"]:
+        final_summary += f"\n\n💡 {tech_note}"
+
+    return final_summary
 
 async def send_to_telegram(title, summary, link):
     """ارسال خبر به تلگرام"""
+    # استخراج عنوان از خلاصه (اگر خلاصه ساختاریافته باشد)
+    lines = summary.split("\n\n")
+    if lines and len(lines) >= 2:
+        news_title = lines[0]
+        news_summary = "\n\n".join(lines[1:])
+    else:
+        news_title = title
+        news_summary = summary
+
     message = f"""
 🚀 خبر جدید دنیای AI
 
-📰 {title}
+📰 {news_title}
 
 🧠 خلاصه:
-{summary}
+{news_summary}
 
 🔗 لینک خبر:
 {link}
