@@ -3,19 +3,23 @@ import json
 import feedparser
 import requests
 import asyncio
+import base64
 from datetime import datetime
 from dotenv import load_dotenv
 from telegram import Bot
 
+# خواندن env
 load_dotenv()
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # توکن گیت‌هاب
 
+# اتصال تلگرام
 bot = Bot(token=BOT_TOKEN)
 
+# RSS خبرها
 RSS_FEEDS = [
     "https://techcrunch.com/category/artificial-intelligence/feed/",
     "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml",
@@ -30,7 +34,7 @@ RSS_FEEDS = [
 REPO_OWNER = "UniverseCreative"
 REPO_NAME = "ai_news_bot"
 FILE_PATH = "sent_news.json"
-BRANCH = "main"  # یا "memory" اگر شاخه جداگانه ساخته‌ای
+BRANCH = "main"
 API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
 
 def load_sent_news():
@@ -45,17 +49,12 @@ def load_sent_news():
         if response.status_code == 200:
             data = response.json()
             content = data["content"]
-            # دیکد کردن محتوای Base64
-            import base64
             decoded = base64.b64decode(content).decode('utf-8')
             loaded_data = json.loads(decoded)
             if isinstance(loaded_data, list):
                 return {item: datetime.now().isoformat() for item in loaded_data}
             return loaded_data
-        elif response.status_code == 404:
-            return {}
         else:
-            print(f"خطا در دریافت فایل: {response.status_code}")
             return {}
     except Exception as e:
         print(f"خطا در بارگذاری حافظه: {e}")
@@ -64,7 +63,7 @@ def load_sent_news():
 def save_sent_news(link):
     """ذخیره خبر جدید در مخزن با GitHub API"""
     try:
-        # ابتدا فایل فعلی را دریافت کن
+        # دریافت فایل فعلی
         headers = {
             "Authorization": f"Bearer {GITHUB_TOKEN}",
             "Accept": "application/vnd.github+json"
@@ -77,26 +76,18 @@ def save_sent_news(link):
         if get_response.status_code == 200:
             file_data = get_response.json()
             sha = file_data["sha"]
-            import base64
             content = base64.b64decode(file_data["content"]).decode('utf-8')
             data = json.loads(content)
-        elif get_response.status_code == 404:
-            pass
-        else:
-            print(f"خطا در دریافت فایل برای به‌روزرسانی: {get_response.status_code}")
-            return
         
-        # به‌روزرسانی دیکشنری
+        # به‌روزرسانی
         data[link] = datetime.now().isoformat()
         
         # آماده‌سازی برای آپلود
-        import base64
         new_content = json.dumps(data, indent=2, ensure_ascii=False)
         encoded_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
         
-        # آپلود فایل
         payload = {
-            "message": f"اضافه کردن خبر {link[:50]}...",
+            "message": f"اضافه کردن خبر {link[:30]}...",
             "content": encoded_content,
             "branch": BRANCH
         }
@@ -114,8 +105,8 @@ def save_sent_news(link):
     except Exception as e:
         print(f"خطا در ذخیره‌سازی حافظه: {e}")
 
-# بقیه توابع (get_news, summarize, send_to_telegram) مانند قبل
 def get_news():
+    """گرفتن اخبار از RSS"""
     all_news = []
     for url in RSS_FEEDS:
         try:
@@ -131,6 +122,7 @@ def get_news():
     return all_news
 
 def summarize(text):
+    """خلاصه‌سازی حرفه‌ای خبر با تضمین خروجی غیرخالی"""
     prompt = f"""
     خبر زیر را به زبان فارسی خیلی روان و ساده، در دو یا سه جمله خلاصه کن.
     فقط متن خلاصه را بنویس، بدون هیچ برچسب یا عنوان اضافی.
@@ -186,6 +178,7 @@ def summarize(text):
     return raw_summary
 
 async def send_to_telegram(title, summary, link):
+    """ارسال خبر به تلگرام"""
     if len(summary) < 20:
         summary = f"خلاصه‌ای برای این خبر موجود نیست. عنوان: {title}"
     
@@ -208,6 +201,7 @@ async def send_to_telegram(title, summary, link):
     )
 
 async def main():
+    """اجرای اصلی ربات"""
     news = get_news()
     sent_news = load_sent_news()
 
