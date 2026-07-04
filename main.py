@@ -36,6 +36,10 @@ API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE
 def load_sent_news():
     """بارگذاری فایل JSON از مخزن با GitHub API"""
     try:
+        if not GITHUB_TOKEN:
+            print("❌ توکن GitHub وجود ندارد!")
+            return {}
+            
         headers = {
             "Authorization": f"Bearer {GITHUB_TOKEN}",
             "Accept": "application/vnd.github+json"
@@ -46,21 +50,35 @@ def load_sent_news():
             data = response.json()
             content = data.get("content", "")
             if not content:
+                print("⚠️ فایل حافظه خالی است")
                 return {}
-            decoded = base64.b64decode(content).decode('utf-8')
-            loaded_data = json.loads(decoded)
-            if isinstance(loaded_data, list):
-                return {item: datetime.now().isoformat() for item in loaded_data}
-            return loaded_data
+            
+            try:
+                decoded = base64.b64decode(content).decode('utf-8')
+                if not decoded.strip():
+                    print("⚠️ محتوای فایل خالی است")
+                    return {}
+                loaded_data = json.loads(decoded)
+                print(f"✅ {len(loaded_data)} خبر از حافظه بارگذاری شد")
+                return loaded_data
+            except json.JSONDecodeError as e:
+                print(f"⚠️ خطا در تحلیل JSON: {e}")
+                return {}
         else:
+            print(f"⚠️ فایل حافظه پیدا نشد (کد {response.status_code})")
             return {}
+            
     except Exception as e:
-        print(f"خطا در بارگذاری حافظه: {e}")
+        print(f"❌ خطا در بارگذاری حافظه: {e}")
         return {}
 
 def save_sent_news(link):
     """ذخیره خبر جدید در مخزن با GitHub API"""
     try:
+        if not GITHUB_TOKEN:
+            print("❌ توکن GitHub وجود ندارد!")
+            return
+            
         headers = {
             "Authorization": f"Bearer {GITHUB_TOKEN}",
             "Accept": "application/vnd.github+json"
@@ -76,8 +94,13 @@ def save_sent_news(link):
             sha = file_data.get("sha")
             content = file_data.get("content", "")
             if content:
-                decoded = base64.b64decode(content).decode('utf-8')
-                data = json.loads(decoded)
+                try:
+                    decoded = base64.b64decode(content).decode('utf-8')
+                    if decoded.strip():
+                        data = json.loads(decoded)
+                except:
+                    print("⚠️ فایل موجود خراب است، بازنشانی...")
+                    data = {}
         
         # اضافه کردن خبر جدید
         data[link] = datetime.now().isoformat()
@@ -105,7 +128,6 @@ def save_sent_news(link):
     except Exception as e:
         print(f"❌ خطا در ذخیره‌سازی حافظه: {e}")
 
-# بقیه توابع (get_news, summarize, send_to_telegram, main) مانند قبل
 def get_news():
     all_news = []
     for url in RSS_FEEDS:
