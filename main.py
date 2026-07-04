@@ -1,4 +1,4 @@
-پimport os
+import os
 import json
 import feedparser
 import requests
@@ -56,18 +56,14 @@ def load_sent_news():
 def save_sent_news(link):
     """ذخیره در فایل JSON محلی"""
     try:
-        # بارگذاری داده‌های موجود
         data = load_sent_news()
-        # اضافه کردن خبر جدید
         data[link] = datetime.now().isoformat()
-        # ذخیره در فایل
         with open(SENT_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         print(f"✅ خبر ذخیره شد (تعداد کل: {len(data)})")
     except Exception as e:
         print(f"❌ خطا در ذخیره‌سازی حافظه: {e}")
 
-# بقیه توابع (get_news, summarize, send_to_telegram, main) مانند قبل
 def get_news():
     all_news = []
     for url in RSS_FEEDS:
