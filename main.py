@@ -3,24 +3,19 @@ import json
 import feedparser
 import requests
 import asyncio
-import subprocess
-import tempfile
 from datetime import datetime
 from dotenv import load_dotenv
 from telegram import Bot
 
-# خواندن env
 load_dotenv()
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # این مهم است
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-# اتصال تلگرام
 bot = Bot(token=BOT_TOKEN)
 
-# RSS خبرها
 RSS_FEEDS = [
     "https://techcrunch.com/category/artificial-intelligence/feed/",
     "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml",
@@ -31,65 +26,95 @@ RSS_FEEDS = [
     "https://marktechpost.com/feed/",
 ]
 
-REPO_URL = f"https://x-access-token:{GITHUB_TOKEN}@github.com/UniverseCreative/ai_news_bot.git"
-BRANCH = "memory"
-SENT_FILE = "sent_news.json"
+# تنظیمات GitHub API
+REPO_OWNER = "UniverseCreative"
+REPO_NAME = "ai_news_bot"
+FILE_PATH = "sent_news.json"
+BRANCH = "main"  # یا "memory" اگر شاخه جداگانه ساخته‌ای
+API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
 
 def load_sent_news():
-    """بارگذاری دیکشنری خبرهای ارسال‌شده از شاخه‌ی memory"""
+    """بارگذاری فایل JSON از مخزن با GitHub API"""
     try:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            # کلون کردن فقط شاخه‌ی memory
-            subprocess.run(
-                ["git", "clone", "--depth", "1", "--branch", BRANCH, REPO_URL, tmpdir],
-                check=True, capture_output=True, text=True
-            )
-            file_path = os.path.join(tmpdir, SENT_FILE)
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    if isinstance(data, list):
-                        return {item: datetime.now().isoformat() for item in data}
-                    return data
+        headers = {
+            "Authorization": f"Bearer {GITHUB_TOKEN}",
+            "Accept": "application/vnd.github+json"
+        }
+        response = requests.get(API_URL, headers=headers)
+        
+        if response.status_code == 200:
+            data = response.json()
+            content = data["content"]
+            # دیکد کردن محتوای Base64
+            import base64
+            decoded = base64.b64decode(content).decode('utf-8')
+            loaded_data = json.loads(decoded)
+            if isinstance(loaded_data, list):
+                return {item: datetime.now().isoformat() for item in loaded_data}
+            return loaded_data
+        elif response.status_code == 404:
+            return {}
+        else:
+            print(f"خطا در دریافت فایل: {response.status_code}")
             return {}
     except Exception as e:
         print(f"خطا در بارگذاری حافظه: {e}")
         return {}
 
 def save_sent_news(link):
-    """ذخیره خبر جدید در شاخه‌ی memory"""
+    """ذخیره خبر جدید در مخزن با GitHub API"""
     try:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            # کلون کردن شاخه‌ی memory
-            subprocess.run(
-                ["git", "clone", "--branch", BRANCH, REPO_URL, tmpdir],
-                check=True, capture_output=True, text=True
-            )
-            file_path = os.path.join(tmpdir, SENT_FILE)
+        # ابتدا فایل فعلی را دریافت کن
+        headers = {
+            "Authorization": f"Bearer {GITHUB_TOKEN}",
+            "Accept": "application/vnd.github+json"
+        }
+        get_response = requests.get(API_URL, headers=headers)
+        
+        data = {}
+        sha = None
+        
+        if get_response.status_code == 200:
+            file_data = get_response.json()
+            sha = file_data["sha"]
+            import base64
+            content = base64.b64decode(file_data["content"]).decode('utf-8')
+            data = json.loads(content)
+        elif get_response.status_code == 404:
+            pass
+        else:
+            print(f"خطا در دریافت فایل برای به‌روزرسانی: {get_response.status_code}")
+            return
+        
+        # به‌روزرسانی دیکشنری
+        data[link] = datetime.now().isoformat()
+        
+        # آماده‌سازی برای آپلود
+        import base64
+        new_content = json.dumps(data, indent=2, ensure_ascii=False)
+        encoded_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
+        
+        # آپلود فایل
+        payload = {
+            "message": f"اضافه کردن خبر {link[:50]}...",
+            "content": encoded_content,
+            "branch": BRANCH
+        }
+        if sha:
+            payload["sha"] = sha
             
-            # بارگذاری داده‌های موجود
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-            else:
-                data = {}
+        put_response = requests.put(API_URL, headers=headers, json=payload)
+        
+        if put_response.status_code in [200, 201]:
+            print("حافظه با موفقیت به‌روزرسانی شد ✅")
+        else:
+            print(f"خطا در به‌روزرسانی حافظه: {put_response.status_code}")
+            print(put_response.json())
             
-            # اضافه کردن خبر جدید
-            data[link] = datetime.now().isoformat()
-            
-            # ذخیره در فایل
-            with open(file_path, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
-            
-            # تنظیمات git و commit و push
-            subprocess.run(["git", "config", "user.email", "bot@example.com"], cwd=tmpdir, check=True)
-            subprocess.run(["git", "config", "user.name", "AI News Bot"], cwd=tmpdir, check=True)
-            subprocess.run(["git", "add", SENT_FILE], cwd=tmpdir, check=True)
-            subprocess.run(["git", "commit", "-m", f"اضافه کردن خبر {link[:50]}..."], cwd=tmpdir, check=True)
-            subprocess.run(["git", "push", "origin", BRANCH], cwd=tmpdir, check=True)
     except Exception as e:
         print(f"خطا در ذخیره‌سازی حافظه: {e}")
 
+# بقیه توابع (get_news, summarize, send_to_telegram) مانند قبل
 def get_news():
     all_news = []
     for url in RSS_FEEDS:
@@ -106,7 +131,6 @@ def get_news():
     return all_news
 
 def summarize(text):
-    """خلاصه‌سازی حرفه‌ای خبر با تضمین خروجی غیرخالی"""
     prompt = f"""
     خبر زیر را به زبان فارسی خیلی روان و ساده، در دو یا سه جمله خلاصه کن.
     فقط متن خلاصه را بنویس، بدون هیچ برچسب یا عنوان اضافی.
@@ -186,6 +210,8 @@ async def send_to_telegram(title, summary, link):
 async def main():
     news = get_news()
     sent_news = load_sent_news()
+
+    print(f"تعداد اخبار موجود در حافظه: {len(sent_news)}")
 
     for item in news:
         if item["link"] in sent_news:
