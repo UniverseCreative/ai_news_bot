@@ -41,4 +41,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sent-news-file
-          path: sent_news.json
+          path: ./sent_news.json
+          if-no-files-found: error
