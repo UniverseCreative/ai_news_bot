@@ -3,7 +3,6 @@ import json
 import feedparser
 import requests
 import asyncio
-import base64
 from datetime import datetime
 from dotenv import load_dotenv
 from telegram import Bot
@@ -14,7 +13,6 @@ load_dotenv()
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 # اتصال تلگرام
 bot = Bot(token=BOT_TOKEN)
@@ -30,190 +28,44 @@ RSS_FEEDS = [
     "https://marktechpost.com/feed/",
 ]
 
-# تنظیمات GitHub API
-REPO_OWNER = "UniverseCreative"
-REPO_NAME = "ai_news_bot"
-FILE_PATH = "sent_news.json"
-BRANCH = "main"
-API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
-
-def reset_file():
-    """بازنشانی فایل حافظه به یک دیکشنری خالی"""
-    try:
-        print("🔄 در حال بازنشانی فایل حافظه...")
-        headers = {
-            "Authorization": f"Bearer {GITHUB_TOKEN}",
-            "Accept": "application/vnd.github+json"
-        }
-        
-        # دریافت SHA فعلی
-        get_response = requests.get(API_URL, headers=headers)
-        sha = None
-        if get_response.status_code == 200:
-            sha = get_response.json().get("sha")
-            print(f"📂 SHA فعلی: {sha}")
-        
-        # محتوای خالی جدید
-        empty_content = json.dumps({}, indent=2, ensure_ascii=False)
-        encoded_content = base64.b64encode(empty_content.encode('utf-8')).decode('utf-8')
-        
-        payload = {
-            "message": "بازنشانی فایل حافظه به حالت خالی",
-            "content": encoded_content,
-            "branch": BRANCH
-        }
-        if sha:
-            payload["sha"] = sha
-        
-        response = requests.put(API_URL, headers=headers, json=payload)
-        if response.status_code in [200, 201]:
-            print("✅ فایل حافظه با موفقیت بازنشانی شد")
-            return True
-        else:
-            print(f"⚠️ خطا در بازنشانی فایل: {response.status_code}")
-            print(f"پاسخ: {response.text}")
-            return False
-    except Exception as e:
-        print(f"❌ خطا در بازنشانی فایل: {e}")
-        return False
+# فایل JSON محلی
+SENT_FILE = "sent_news.json"
 
 def load_sent_news():
-    """بارگذاری فایل JSON از مخزن با GitHub API"""
-    print("🔄 در حال بارگذاری حافظه از GitHub...")
-    
-    if not GITHUB_TOKEN:
-        print("❌ توکن GitHub وجود ندارد!")
-        return {}
-    
+    """بارگذاری از فایل JSON محلی"""
     try:
-        headers = {
-            "Authorization": f"Bearer {GITHUB_TOKEN}",
-            "Accept": "application/vnd.github+json"
-        }
-        response = requests.get(API_URL, headers=headers)
-        
-        print(f"📊 کد وضعیت API: {response.status_code}")
-        
-        if response.status_code == 200:
-            data = response.json()
-            content = data.get("content", "")
-            
+        with open(SENT_FILE, "r", encoding="utf-8") as f:
+            content = f.read().strip()
             if not content:
                 print("⚠️ فایل حافظه خالی است")
                 return {}
-            
-            try:
-                decoded = base64.b64decode(content).decode('utf-8')
-                if not decoded.strip():
-                    print("⚠️ محتوای فایل خالی است")
-                    return {}
-                
-                loaded_data = json.loads(decoded)
-                print(f"✅ {len(loaded_data)} خبر از حافظه بارگذاری شد")
-                if isinstance(loaded_data, list):
-                    return {item: datetime.now().isoformat() for item in loaded_data}
-                return loaded_data
-                
-            except json.JSONDecodeError as e:
-                print(f"⚠️ خطا در تحلیل JSON: {e}")
-                print("🔄 فایل خراب است، بازنشانی می‌شود...")
-                reset_file()
-                return {}
-        elif response.status_code == 404:
-            print("ℹ️ فایل حافظه وجود ندارد، یک فایل جدید ساخته می‌شود")
-            # ساخت فایل جدید
-            reset_file()
-            return {}
-        else:
-            print(f"⚠️ خطای غیرمنتظره در بارگذاری: {response.status_code}")
-            return {}
-            
+            data = json.loads(content)
+            if isinstance(data, list):
+                return {item: datetime.now().isoformat() for item in data}
+            return data
+    except FileNotFoundError:
+        print("ℹ️ فایل حافظه وجود ندارد، شروع با حافظه خالی")
+        return {}
+    except json.JSONDecodeError:
+        print("⚠️ فایل حافظه خراب است، شروع با حافظه خالی")
+        return {}
     except Exception as e:
         print(f"❌ خطا در بارگذاری حافظه: {e}")
         return {}
 
 def save_sent_news(link):
-    """ذخیره خبر جدید در مخزن با GitHub API"""
+    """ذخیره در فایل JSON محلی"""
     try:
-        print(f"💾 در حال ذخیره خبر: {link[:50]}...")
-        
-        if not GITHUB_TOKEN:
-            print("❌ توکن GitHub وجود ندارد!")
-            return
-        
-        headers = {
-            "Authorization": f"Bearer {GITHUB_TOKEN}",
-            "Accept": "application/vnd.github+json"
-        }
-        
-        # دریافت فایل فعلی و SHA آن
-        get_response = requests.get(API_URL, headers=headers)
-        
-        # بارگذاری داده‌های موجود (اگر فایل معتبر باشد)
-        data = {}
-        sha = None
-        
-        if get_response.status_code == 200:
-            try:
-                file_data = get_response.json()
-                sha = file_data.get("sha")
-                
-                # فقط اگر محتوا وجود دارد و خالی نیست
-                content = file_data.get("content", "")
-                if content:
-                    decoded = base64.b64decode(content).decode('utf-8')
-                    if decoded.strip():
-                        data = json.loads(decoded)
-                        print(f"📂 {len(data)} خبر موجود بارگذاری شد")
-            except Exception as e:
-                print(f"⚠️ خطا در خواندن فایل موجود، بازنشانی: {e}")
-                data = {}
-                sha = None  # بازنشانی SHA برای ایجاد فایل جدید
-        
-        # افزودن خبر جدید
+        data = load_sent_news()
         data[link] = datetime.now().isoformat()
-        print(f"➕ خبر جدید اضافه شد. تعداد کل: {len(data)}")
-        
-        # تبدیل به JSON و Base64
-        new_content = json.dumps(data, indent=2, ensure_ascii=False)
-        encoded_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
-        
-        # آماده‌سازی payload برای آپلود
-        payload = {
-            "message": f"اضافه کردن خبر {link[:30]}...",
-            "content": encoded_content,
-            "branch": BRANCH
-        }
-        if sha:
-            payload["sha"] = sha
-            print(f"🔑 SHA موجود برای آپلود: {sha}")
-        else:
-            print("🆕 ایجاد فایل جدید")
-        
-        # آپلود فایل
-        put_response = requests.put(API_URL, headers=headers, json=payload)
-        
-        if put_response.status_code in [200, 201]:
-            print("✅ حافظه با موفقیت به‌روزرسانی شد")
-            # تایید اینکه فایل ذخیره شده
-            verify_response = requests.get(API_URL, headers=headers)
-            if verify_response.status_code == 200:
-                verify_data = verify_response.json()
-                content = verify_data.get("content", "")
-                if content:
-                    decoded = base64.b64decode(content).decode('utf-8')
-                    if decoded.strip():
-                        saved_data = json.loads(decoded)
-                        print(f"✅ تایید: فایل شامل {len(saved_data)} خبر است")
-        else:
-            print(f"❌ خطا در آپلود: {put_response.status_code}")
-            print(f"پاسخ: {put_response.text}")
-            
+        with open(SENT_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        print(f"✅ خبر ذخیره شد (تعداد کل: {len(data)})")
     except Exception as e:
-        print(f"❌ خطای غیرمنتظره در ذخیره‌سازی: {e}")
+        print(f"❌ خطا در ذخیره‌سازی حافظه: {e}")
 
+# بقیه توابع (get_news, summarize, send_to_telegram, main)
 def get_news():
-    """گرفتن اخبار از RSS"""
     all_news = []
     for url in RSS_FEEDS:
         try:
@@ -229,7 +81,6 @@ def get_news():
     return all_news
 
 def summarize(text):
-    """خلاصه‌سازی حرفه‌ای خبر"""
     prompt = f"""
     خبر زیر را به زبان فارسی خیلی روان و ساده، در دو یا سه جمله خلاصه کن.
     فقط متن خلاصه را بنویس، بدون هیچ برچسب یا عنوان اضافی.
@@ -285,7 +136,6 @@ def summarize(text):
     return raw_summary
 
 async def send_to_telegram(title, summary, link):
-    """ارسال خبر به تلگرام"""
     if len(summary) < 20:
         summary = f"خلاصه‌ای برای این خبر موجود نیست. عنوان: {title}"
     
@@ -308,7 +158,6 @@ async def send_to_telegram(title, summary, link):
     )
 
 async def main():
-    """اجرای اصلی ربات"""
     news = get_news()
     sent_news = load_sent_news()
     print(f"📊 تعداد اخبار موجود در حافظه: {len(sent_news)}")
