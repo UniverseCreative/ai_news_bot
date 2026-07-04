@@ -31,3 +31,16 @@ jobs:
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python main.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add sent_news.json
+          if git diff --staged --quiet; then
+            echo "✅ تغییری در فایل حافظه وجود ندارد"
+          else
+            git commit -m "به‌روزرسانی خودکار sent_news.json"
+            git push origin main
+            echo "✅ فایل حافظه به مخزن ارسال شد"
+          fi
