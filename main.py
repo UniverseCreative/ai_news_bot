@@ -3,21 +3,20 @@ import json
 import feedparser
 import requests
 import asyncio
+import base64
 from datetime import datetime
 from dotenv import load_dotenv
 from telegram import Bot
 
-# خواندن env
 load_dotenv()
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-# اتصال تلگرام
 bot = Bot(token=BOT_TOKEN)
 
-# RSS خبرها
 RSS_FEEDS = [
     "https://techcrunch.com/category/artificial-intelligence/feed/",
     "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml",
@@ -28,45 +27,85 @@ RSS_FEEDS = [
     "https://marktechpost.com/feed/",
 ]
 
-# فایل JSON محلی
-SENT_FILE = "sent_news.json"
+REPO_OWNER = "UniverseCreative"
+REPO_NAME = "ai_news_bot"
+FILE_PATH = "sent_news.json"
+BRANCH = "main"
+API_URL = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{FILE_PATH}"
 
 def load_sent_news():
-    """بارگذاری از فایل JSON محلی"""
+    """بارگذاری فایل JSON از مخزن با GitHub API"""
     try:
-        with open(SENT_FILE, "r", encoding="utf-8") as f:
-            content = f.read().strip()
+        headers = {
+            "Authorization": f"Bearer {GITHUB_TOKEN}",
+            "Accept": "application/vnd.github+json"
+        }
+        response = requests.get(API_URL, headers=headers)
+        
+        if response.status_code == 200:
+            data = response.json()
+            content = data.get("content", "")
             if not content:
-                print("⚠️ فایل حافظه خالی است")
                 return {}
-            data = json.loads(content)
-            if isinstance(data, list):
-                return {item: datetime.now().isoformat() for item in data}
-            return data
-    except FileNotFoundError:
-        print("ℹ️ فایل حافظه وجود ندارد، شروع با حافظه خالی")
-        return {}
-    except json.JSONDecodeError:
-        print("⚠️ فایل حافظه خراب است، شروع با حافظه خالی")
-        return {}
+            decoded = base64.b64decode(content).decode('utf-8')
+            loaded_data = json.loads(decoded)
+            if isinstance(loaded_data, list):
+                return {item: datetime.now().isoformat() for item in loaded_data}
+            return loaded_data
+        else:
+            return {}
     except Exception as e:
-        print(f"❌ خطا در بارگذاری حافظه: {e}")
+        print(f"خطا در بارگذاری حافظه: {e}")
         return {}
 
 def save_sent_news(link):
-    """ذخیره در فایل JSON محلی"""
+    """ذخیره خبر جدید در مخزن با GitHub API"""
     try:
-        # بارگذاری داده‌های موجود
-        data = load_sent_news()
+        headers = {
+            "Authorization": f"Bearer {GITHUB_TOKEN}",
+            "Accept": "application/vnd.github+json"
+        }
+        
+        # دریافت فایل فعلی
+        get_response = requests.get(API_URL, headers=headers)
+        data = {}
+        sha = None
+        
+        if get_response.status_code == 200:
+            file_data = get_response.json()
+            sha = file_data.get("sha")
+            content = file_data.get("content", "")
+            if content:
+                decoded = base64.b64decode(content).decode('utf-8')
+                data = json.loads(decoded)
+        
         # اضافه کردن خبر جدید
         data[link] = datetime.now().isoformat()
-        # ذخیره در فایل
-        with open(SENT_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-        print(f"✅ خبر ذخیره شد (تعداد کل: {len(data)})")
+        
+        # آماده‌سازی برای آپلود
+        new_content = json.dumps(data, indent=2, ensure_ascii=False)
+        encoded_content = base64.b64encode(new_content.encode('utf-8')).decode('utf-8')
+        
+        payload = {
+            "message": f"اضافه کردن خبر {link[:30]}...",
+            "content": encoded_content,
+            "branch": BRANCH
+        }
+        if sha:
+            payload["sha"] = sha
+        
+        put_response = requests.put(API_URL, headers=headers, json=payload)
+        
+        if put_response.status_code in [200, 201]:
+            print(f"✅ حافظه به‌روزرسانی شد (تعداد اخبار: {len(data)})")
+        else:
+            print(f"❌ خطا در ذخیره‌سازی: {put_response.status_code}")
+            print(put_response.text)
+            
     except Exception as e:
         print(f"❌ خطا در ذخیره‌سازی حافظه: {e}")
 
+# بقیه توابع (get_news, summarize, send_to_telegram, main) مانند قبل
 def get_news():
     all_news = []
     for url in RSS_FEEDS:
