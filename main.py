@@ -28,11 +28,11 @@ RSS_FEEDS = [
     "https://marktechpost.com/feed/",
 ]
 
-# فایل JSON در مخزن
+# فایل JSON محلی
 SENT_FILE = "sent_news.json"
 
 def load_sent_news():
-    """بارگذاری از فایل JSON موجود در مخزن"""
+    """بارگذاری از فایل JSON محلی"""
     try:
         with open(SENT_FILE, "r", encoding="utf-8") as f:
             content = f.read().strip()
@@ -54,17 +54,19 @@ def load_sent_news():
         return {}
 
 def save_sent_news(link):
-    """ذخیره در فایل JSON محلی (تغییرات بعداً commit می‌شوند)"""
+    """ذخیره در فایل JSON محلی"""
     try:
+        # بارگذاری داده‌های موجود
         data = load_sent_news()
+        # اضافه کردن خبر جدید
         data[link] = datetime.now().isoformat()
+        # ذخیره در فایل
         with open(SENT_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         print(f"✅ خبر ذخیره شد (تعداد کل: {len(data)})")
     except Exception as e:
         print(f"❌ خطا در ذخیره‌سازی حافظه: {e}")
 
-# بقیه توابع (get_news, summarize, send_to_telegram, main) مانند قبل
 def get_news():
     all_news = []
     for url in RSS_FEEDS:
