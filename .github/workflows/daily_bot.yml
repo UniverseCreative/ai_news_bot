@@ -30,7 +30,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITTI_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITTI_TOKEN }}  # ← اصلاح شد
         run: python main.py
 
       - name: Commit and push changes

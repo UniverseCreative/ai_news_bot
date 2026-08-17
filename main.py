@@ -14,7 +14,9 @@ load_dotenv()
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-GITHUB_TOKEN = os.getenv("GITTI_TOKEN")  # ← این خط اصلاح شده است
+GITHUB_TOKEN = os.getenv("GITTI_TOKEN")  # ← اصلاح شد
+
+# ... بقیه کدها مانند قبل
 
 bot = Bot(token=BOT_TOKEN)
 
