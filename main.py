@@ -14,7 +14,7 @@ load_dotenv()
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_TOKEN = os.getenv("GITTI_TOKEN")  # ← این خط اصلاح شده است
 
 bot = Bot(token=BOT_TOKEN)
 
@@ -260,6 +260,7 @@ def create_html_page(translated_text, title, original_link):
 
 def save_html_page(html_content, news_id):
     try:
+        print(f"💾 در حال ذخیره صفحه HTML برای خبر {news_id}...")
         if not GITHUB_TOKEN:
             print("❌ توکن GitHub وجود ندارد!")
             return None
@@ -271,10 +272,14 @@ def save_html_page(html_content, news_id):
         
         file_path = f"{PAGES_DIR}news_{news_id}.html"
         check_url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{file_path}"
+        
         get_response = requests.get(check_url, headers=headers)
         sha = None
         if get_response.status_code == 200:
             sha = get_response.json().get("sha")
+            print(f"📄 فایل قبلی وجود دارد")
+        else:
+            print("🆕 فایل جدید ایجاد میشود")
         
         encoded_content = base64.b64encode(html_content.encode('utf-8')).decode('utf-8')
         payload = {
@@ -288,7 +293,9 @@ def save_html_page(html_content, news_id):
         put_response = requests.put(check_url, headers=headers, json=payload)
         if put_response.status_code in [200, 201]:
             print(f"✅ صفحه HTML ذخیره شد: news_{news_id}.html")
-            return f"https://{REPO_OWNER}.github.io/{REPO_NAME}/pages/news_{news_id}.html"
+            page_url = f"https://{REPO_OWNER}.github.io/{REPO_NAME}/pages/news_{news_id}.html"
+            print(f"🔗 لینک صفحه: {page_url}")
+            return page_url
         else:
             print(f"❌ خطا در ذخیره صفحه: {put_response.status_code}")
             return None
@@ -298,6 +305,7 @@ def save_html_page(html_content, news_id):
 
 def get_full_text_from_link(url):
     try:
+        print(f"🌐 در حال دریافت متن کامل از: {url[:50]}...")
         headers = {'User-Agent': 'Mozilla/5.0'}
         response = requests.get(url, headers=headers, timeout=15)
         response.raise_for_status()
@@ -310,14 +318,17 @@ def get_full_text_from_link(url):
             if article:
                 paragraphs = article.find_all('p')
                 full_text = " ".join([p.get_text(strip=True) for p in paragraphs[:15]])
+                print(f"✅ متن کامل دریافت شد: {len(full_text)} کاراکتر")
+                return full_text if len(full_text) > 100 else None
             else:
                 full_text = soup.get_text(strip=True)[:3000]
-            return full_text if len(full_text) > 100 else None
+                print(f"✅ متن کامل (بدون مقاله) دریافت شد: {len(full_text)} کاراکتر")
+                return full_text if len(full_text) > 100 else None
         except ImportError:
             print("⚠️ BeautifulSoup نصب نیست")
             return None
     except Exception as e:
-        print(f"خطا در دریافت متن کامل: {e}")
+        print(f"❌ خطا در دریافت متن کامل: {e}")
         return None
 
 def generate_news_id(link):

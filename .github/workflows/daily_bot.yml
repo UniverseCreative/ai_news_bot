@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITTI_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,17 +30,18 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITTI_TOKEN }}
         run: python main.py
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add sent_news.json
+          git add sent_news.json docs/pages/
           if git diff --staged --quiet; then
-            echo "✅ تغییری در فایل حافظه وجود ندارد"
+            echo "✅ تغییری در فایل‌ها وجود ندارد"
           else
-            git commit -m "به‌روزرسانی خودکار sent_news.json"
+            git commit -m "به‌روزرسانی خودکار sent_news.json و صفحات HTML"
             git push origin main
-            echo "✅ فایل حافظه به مخزن ارسال شد"
+            echo "✅ فایل‌ها به مخزن ارسال شدند"
           fi
