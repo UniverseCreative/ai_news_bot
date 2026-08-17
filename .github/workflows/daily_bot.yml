@@ -2,15 +2,19 @@ name: Daily AI News Bot
 
 on:
   schedule:
-    - cron: "0 8 * * *"
-  workflow_dispatch:
+    # هر روز ساعت 7 صبح UTC (معادل 8 صبح لندن در تابستان)
+    - cron: '0 7 * * *'
+  workflow_dispatch:  # امکان اجرای دستی
+
+# ✅ دسترسی لازم برای commit کردن
+permissions:
+  contents: write
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITTI_TOKEN }}
@@ -18,30 +22,29 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.11'
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run the bot
+      - name: Run bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITTI_TOKEN }}  # ← اصلاح شد
         run: python main.py
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add sent_news.json docs/pages/
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sent_news.json docs/
           if git diff --staged --quiet; then
-            echo "✅ تغییری در فایل‌ها وجود ندارد"
+            echo "No changes to commit"
           else
-            git commit -m "به‌روزرسانی خودکار sent_news.json و صفحات HTML"
-            git push origin main
-            echo "✅ فایل‌ها به مخزن ارسال شدند"
+            git commit -m "🤖 Auto: Update news and HTML pages [skip ci]"
+            git push
           fi
