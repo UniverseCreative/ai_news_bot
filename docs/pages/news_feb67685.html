@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous Research Ships Bot Mode for Hermes Agent, Turning Agent Profiles Into a Roster of Named Bots</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Nous Research Ships Bot Mode for Hermes Agent, Turning Agent Profiles Into a Roster of Named Bots</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-18 08:18</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>شرکت Nous Research، حالت Bot Mode برای Hermes Agent، عامل متن باز و دارای مجوز MIT خود را ارسال کرده است. حالت Bot Mode فهرست نشست‌های یک عامل را با فهرستی از ربات‌های نام‌گذاری شده جایگزین می‌کند. هر ربات یک پروفایل واقعی Hermes است، با چت، حافظه، مهارت‌ها و مدل پین‌شده مختص به خود. ربات‌ها از طریق یک صندوق دریافت Agent دائمی با یکدیگر پیام ارسال می‌کنند و کار را با @mention به یکدیگر واگذار می‌کنند. این ویژگی به عنوان یک پلاگین بتای عمومی یک روزه از تأسیس‌کننده آن، Teknium، راه‌اندازی شده است. اکنون این قابلیت به صورت پیش‌فرض و به صورت جعبه‌ای در Hermes Desktop، در نسخه Hermes Agent v0.20.3 عرضه می‌شود.</p><p>بله - امروز، روی یک دسکتاپ، بدون هزینه مجوز. حالت Bot ابتدا به عنوان یک پلاگین بتای عمومی یک روزه عرضه شد. اکنون به صورت بسته‌بندی شده و به صورت پیش‌فرض فعال در Hermes Desktop، زیر تنظیمات → پلاگین‌ها موجود است. هر دو Hermes Agent و پلاگین دارای مجوز MIT هستند.</p><p>کدام شرکت‌ها: سازندگان انفرادی، استارتاپ‌ها و تیم‌های مهندسی کوچک تا متوسط می‌توانند فوراً آن را پذیرش کنند. شرکت‌های بزرگ باید آن را به عنوان ابزاری در محل کار در نظر بگیرند، نه زیرساخت مدیریت‌شده. هیچ کنسول مدیریتی، هیچ SSO، هیچ گزارش بازرسی مرکزی و هیچ لایه سیاست وجود ندارد. خریداران مورد تنظیم باید کنترل‌های خود را در اطراف آن داشته باشند.</p><p>صنایع: مهندسی نرم‌افزار، آزمایشگاه‌های تحقیقات AI، رسانه‌های فنی و عملیات محتوایی، روابط توسعه‌دهنده، تحقیقات کمی و عملیات IT.</p><p>کاربردها: یک ربات تحقیقاتی که به مدلی از استدلال پین‌شده و یک ربات نوشتاری در مدلی ارزان‌تر متصل است. خلاصه‌های صندوق ورودی زمان‌بندی‌شده و گزارش‌های شبانه. عوامل پروژه‌ای که هرگز متن را به یکدیگر نخواهند داد. زنجیره‌های واگذاری، جایی که یک جستجوگر، یک مرورگر و یک ناشر از طریق @mention کار را به یکدیگر منتقل می‌کنند.</p><p>نکتۀ جالب این است که هر ربات یک پروفایل Hermes است. هر کدام در ~/.hermes/profiles/<name>/ با پیکربندی، حافظه، مهارت‌ها، اعتبارنامه‌ها و تاریخچه چت ایزوله زندگی می‌کنند. پلاگین، یک رابط کاربری است بر روی یک Hermes اولیه که قبلاً ارسال شده است.</p><p>این انتخاب سطح مقطع را کوچک نگه می‌دارد. ایجاد و ویرایش از طریق RPC‌های gateways پروفایل‌ها انجام می‌شود: لیست، ایجاد، توصیف، پیکربندی. تولید آواتار از RPC image.generate بر روی دروازه‌های محلی و از راه دور استفاده می‌کند. روال‌ها کارهای عادی کرون Hermes هستند، با نام‌فضا [bot:<name>] <routine>. آن‌ها هنوز در لیست کرون Hermes ظاهر می‌شوند.</p><p>پیام‌رسانی بین ربات‌ها همان داستان را دارد. هر ربات یک مکالمه دائمی در صندوق ورودی Agent دارد. پیام‌ها بین ربات‌ها واقعی هستند و از روش‌های CLI مانند hermes -p <bot> chat -c "Agent Inbox" -q "..." استفاده می‌کنند. آن‌ها با نسبت‌دهی ارسال می‌شوند و SOUL.md هر ربات پروتکل پاسخ را آموزش می‌دهد. نوشتن @researcher have a look at this، ربات فعال را واگذار کرده و از آن گزارش می‌گیرد.</p><p>دیالوگ Agent جدید نام، عنوان و توضیحاتی را درخواست می‌کند. یک افشای پیشرفته پیکربندی کامل پروفایل را باز می‌کند. شما می‌توانید یک پروفایل موجود را کلون کنید، یک ارائه‌دهنده و مدل را پین کنید، یک SOUL.md سفارشی بنویسید یا مهارت‌ها را نادیده بگیرید. کلیک راست بر روی یک ربات گزینه ویرایش پروفایل را نمایش می‌دهد که پروفایل زنده را ویرایش می‌کند. این شامل فعال‌سازی برای هر مهارت و هر مجموعه ابزار، مدل پین و SOUL.md است. کلون‌های تکراری شامل پیکربندی، مهارت‌ها، SOUL.md، حافظه و ظاهر هستند.</p><p>آواتارها در هفت شکل و ده رنگ به صورت چهره‌های هندسی هستند. شما همچنین می‌توانید یک تصویر آپلود کنید، یک پرتره تولید کنید یا یک پت پیکسلی متصل کنید. چشم‌ها در حین کار ربات اسکن می‌شوند.</p><p>روند عرضه سریع بود. Teknium یک بتای عمومی یک روزه را از طریق پلاگین مستقل برگزار کرد و درخواست گزارش اشکال داشت. او متعهد شد که آن را به برنامه اصلی دسکتاپ اضافه کند. اکنون این اتفاق افتاده است. طبق PR #87886 hermes-agent، حالت Bot به صورت بسته‌بندی و به‌طور پیش‌فرض فعال شده است و مخزن مستقل آرشیو شده است. توسعه در درخت به طور مداوم در apps/desktop/src/plugins/hermes-bots/ ادامه دارد. پلاگین بسته‌بندی شده و پروتکل همکار مرکزی آن در نسخه Hermes Agent v0.20.3 قرار گرفته است.</p><p>نسخه درختی قابلیت‌های جدیدی</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/08/17/nous-research-hermes-bot-mode/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

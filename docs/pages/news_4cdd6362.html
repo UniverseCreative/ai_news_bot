@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing Gemini 3.7 Flash</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Introducing Gemini 3.7 Flash</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-18 08:18</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>مدل کارآمدترین و هوشمندترین ما تا به امروز برای کد نویسی و عوامل.</p><p>مدیر ارشد، مدیریت محصول، به نمایندگی از تیم Gemini</p><p>مرورگر شما از عنصر صوتی پشتیبانی نمی‌کند.</p><p>امروز، ما بر پیشرفت‌های سری Flash که به‌طور گسترده استفاده می‌شود، بنا می‌گذاریم و Gemini 3.7 Flash را معرفی می‌کنیم، هوشمندترین مدل کارآمد ما برای کد نویسی و عوامل.</p><p>این نسخه تنها سه هفته پس از Gemini 3.6 Flash منتشر شده و نتیجه‌ی مستقیم بازخورد توسعه‌دهندگان و نوآوری‌های الگوریتمی است که مشتاقانه به ارائه‌ی آن‌ها در مدل‌های آینده هستیم. 3.7 Flash بهبودهای قابل توجهی در مهندسی نرم‌افزار، کارهای دانش‌محور و گردش کار توسعه وب ارائه می‌دهد — با قیمت introductory معادل نصف هزینه‌ی اصلی 3.6 Flash به ازای هر میلیون توکن.</p><p>3.7 Flash در کارهای کد نویسی مانند اشکال زدایی و حل مسائل نسبت به 3.6 Flash پیشرفت‌های قابل توجهی نشان می‌دهد. همچنین دقت کد در اولین بار را بهبود بخشیده و عملکرد بهتری در تولید کد آماده برای تولید دارد، همان‌طور که در FrontierCode 1.1 Main (43.6% در مقابل 34.4%) و DeepSWE v1.1 (65.3% در مقابل 49.0%) مشاهده می‌شود.</p><p>در توسعه وب، 3.7 Flash لایه‌های بیشتر و اپلیکیشن‌های کامل‌تری را با درخواست‌های کمتر تولید می‌کند. برای تولید رابط کاربری، این مدل نشان‌دهنده‌ی تطابق بالای طراحی و برابری بر مبنای ورودی مرجع است، چه تصویری از اسکرین‌شات باشد، چه از یک تصویر یا یک سیستم طراحی کامل. در Arena.ai’s WebDev Arena با امتیاز Elo برابر با 1588 در مقابل 1538 از 3.6 Flash پیشی می‌گیرد.</p><p>برای حوزه‌های اطلاعاتی متراکم مانند مالی، حقوق و بیوساینس، 3.7 Flash تفکر و دقت بهبودیافته‌ای ارائه می‌دهد. این مدل به‌طور قابل توجهی نسبت به 3.6 Flash در معیار GDP.pdf (34.0% در مقابل 22.0%) عملکرد بهتری دارد، معیاری برای آزمایش توانایی یک مدل در پردازش اسناد پیچیده. همچنین در AutomationBench از 3.6 Flash پیشی می‌گیرد و نشان می‌دهد که می‌تواند گردش کارهای واقعی تجاری را به طور مؤثرتری تکمیل کند (30.4% در مقابل 17.0%).</p><p>از یک درخواست متنی ساده تا یک بازی 3D کاملاً قابل بازی. ما از Gemini 3.7 Flash در ترکیب با Nano Banana استفاده کردیم تا در زمان واقعی شخصیت‌ها، اشیاء و بافت‌ها را به‌طور دینامیک تولید کنیم.</p><p>صفحات فرود چشمگیر و تعاملی که در یک بار ایجاد شده‌اند. ما از Gemini 3.7 Flash برای ساماندهی زیرعوامل استفاده کردیم و با استفاده از Gemini Omni اجزای پارالاکس تعاملی و روان ایجاد کردیم.</p><p>مدل رباتیک که با استفاده از Gemini 3.7 Flash برای آموزش با درک چندرسانه‌ای در یک حلقه گراف 3 عاملی آموزش می‌بیند، که به ربات کمک می‌کند سریع‌تر یاد بگیرد.</p><p>از یک PDF ایستا تا یک داستان داده‌ای تعاملی. شاهد باشید که چگونه گزارش‌های سالانه پیچیده به تجارب وب جذاب با نمودارهای زنده و بینش‌های جمع‌آوری‌شده تبدیل می‌شوند.</p><p>Gemini 3.7 Flash تجربه توسعه‌دهنده به‌طور قابل توجهی بهبودیافته‌تری نسبت به 3.6 Flash ارائه می‌دهد. این نسخه بهتر با موانع سازگار می‌شود، در زمان نیاز نیت را روشن‌تر می‌سازد و با دقت بیشتری دستورات را دنبال می‌کند. این مدل با دقت بیشتری فکر می‌کند و تلاش بیشتری را برای برنامه‌ریزی چند مرحله‌ای و فراخوانی ابزارها به‌کار می‌گیرد. اجرای منظم‌تر به معنای نظارت دستی کمتر و تلاش‌های تکراری کمتری در گردش کارهای مهندسی است.</p><p>3.7 Flash تا پایان سال با قیمت introductory معادل 0.75 دلار به ازای هر میلیون توکن ورودی و 3.75 دلار به ازای هر میلیون توکن خروجی در دسترس است. این قیمت به همراه عملکرد بهبود یافته مدل، به توسعه‌دهندگان و مشتریان این امکان را می‌دهد که عوامل آماده‌ی تولید را به‌صورت مقرون به صرفه‌ای مقیاس‌گذاری کنند.</p><p>بازخورد اولیه کاربران بر عملکرد و دقت 3.7 Flash تأکید می‌کند که به‌resultat‌هایی به‌طور قابل توجهی بهتر از 3.6 Flash با هزینه‌ای پایین دست می‌یابند.</p><p>Gemini Spark، که در دسترس مشترکین Google AI Pro و Ultra در بیش از 160 کشور است، از امروز از Gemini 3.7 Flash استفاده خواهد کرد. ما Spark را در I/O به‌عنوان عامل هوش مصنوعی شخصی شما که 24 ساعته و 7 روز هفته فعالیت می‌کند، راه‌اندازی کردیم.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://deepmind.google/blog/introducing-gemini-3-7-flash/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
