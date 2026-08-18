@@ -94,7 +94,7 @@ def summarize(text):
                 "Authorization": f"Bearer {OPENROUTER_API_KEY}",
                 "Content-Type": "application/json",
                 "HTTP-Referer": "https://github.com/UniverseCreative/ai_news_bot",
-                "X-Title": "AI News Bot"
+                "X-Title": "Kafa Tech News Bot"
             },
             json={
                 "model": "openai/gpt-4o-mini",
@@ -123,7 +123,6 @@ def summarize(text):
 
 def get_full_text_from_link(url):
     try:
-        # هدرهای قوی‌تر برای دور زدن مسدودسازی 403
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
@@ -182,7 +181,9 @@ def translate_full_text(text):
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
                 "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "HTTP-Referer": "https://github.com/UniverseCreative/ai_news_bot",
+                "X-Title": "Kafa Tech News Bot"
             },
             json={
                 "model": "openai/gpt-4o-mini",
@@ -206,61 +207,312 @@ def translate_full_text(text):
         return None
 
 def create_html_page(translated_text, title, original_link, date_str):
-    """ساخت صفحه HTML با طراحی مدرن و مدیریت خطای content_html"""
+    """ساخت صفحه HTML با طراحی Ultra-Professional و مدرن"""
     
-    # ✅ رفع باگ: همیشه content_html مقداردهی می‌شود
     if not translated_text or len(str(translated_text).strip()) < 10:
-        content_html = "<p style='color: #64748b; font-style: italic;'>متاسفانه متن کامل این خبر در دسترس نیست یا سایت منبع دسترسی را مسدود کرده است. می‌توانید از لینک پایین خبر اصلی را مطالعه کنید.</p>"
+        content_html = """
+        <div class="empty-state">
+            <div class="empty-icon">📭</div>
+            <p>متاسفانه متن کامل این خبر در دسترس نیست.</p>
+            <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 10px;">
+                سایت منبع ممکن است دسترسی را مسدود کرده باشد.
+            </p>
+        </div>
+        """
     else:
         paragraphs = str(translated_text).split('\n\n')
         content_html = "".join([f"<p>{p}</p>" for p in paragraphs if p.strip()])
 
     css_style = """
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap');
+        
         :root {
-            --primary: #2563eb; --primary-dark: #1d4ed8; --bg: #f8fafc;
-            --surface: #ffffff; --text-main: #0f172a; --text-muted: #64748b; --border: #e2e8f0;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --bg-color: #0f172a;
+            --surface-color: rgba(255, 255, 255, 0.98);
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --accent-color: #667eea;
+            --border-color: rgba(148, 163, 184, 0.2);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg); color: var(--text-main); line-height: 1.8;
-            direction: rtl; -webkit-font-smoothing: antialiased;
+            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(102, 126, 234, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(118, 75, 162, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.8;
+            direction: rtl;
+            min-height: 100vh;
+            padding: 20px;
         }
-        .wrapper {
-            max-width: 720px; margin: 40px auto; background: var(--surface);
-            border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            overflow: hidden; border: 1px solid var(--border);
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 0.6s ease-out;
         }
-        .header { padding: 40px 40px 20px 40px; border-bottom: 1px solid var(--border); }
-        .badge {
-            display: inline-block; background: #eff6ff; color: var(--primary);
-            font-size: 0.8rem; font-weight: 700; padding: 4px 12px;
-            border-radius: 9999px; margin-bottom: 16px;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .header h1 { font-size: 1.75rem; font-weight: 900; line-height: 1.4; margin-bottom: 16px; }
-        .meta { display: flex; align-items: center; gap: 16px; font-size: 0.875rem; color: var(--text-muted); }
-        .content { padding: 40px; font-size: 1.125rem; color: #334155; }
-        .content p { margin-bottom: 1.5rem; text-align: justify; }
-        .footer {
-            background: #f8fafc; padding: 24px 40px; border-top: 1px solid var(--border);
-            display: flex; flex-direction: column; align-items: center; gap: 16px;
+
+        .header-card {
+            background: var(--surface-color);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
         }
+
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-card h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .meta-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.6;
+        }
+
+        .content-card {
+            background: var(--surface-color);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+        }
+
+        .content-card p {
+            font-size: 1.125rem;
+            line-height: 2;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            text-align: justify;
+            font-weight: 400;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-card p:first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: right;
+            margin-left: 8px;
+            line-height: 1;
+            color: var(--accent-color);
+        }
+
+        .actions-card {
+            background: var(--surface-color);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
         .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            background: var(--primary); color: white; text-decoration: none;
-            padding: 12px 24px; border-radius: 8px; font-weight: 600;
-            transition: all 0.2s ease; width: 100%; max-width: 300px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
-        .btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
-        .btn-outline { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
-        .btn-outline:hover { background: #f1f5f9; color: var(--text-main); }
-        .watermark { font-size: 0.8rem; color: var(--text-muted); text-align: center; }
-        @media (max-width: 640px) {
-            .wrapper { margin: 0; border-radius: 0; border: none; }
-            .header, .content, .footer { padding: 24px; }
-            .header h1 { font-size: 1.4rem; }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: rgba(148, 163, 184, 0.1);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(148, 163, 184, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 32px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            .header-card,
+            .content-card,
+            .actions-card {
+                padding: 24px;
+                border-radius: 20px;
+            }
+
+            .header-card h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-card p {
+                font-size: 1rem;
+            }
+
+            .content-card p:first-letter {
+                font-size: 2.5rem;
+            }
+
+            .meta-info {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(148, 163, 184, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         }
     </style>
     """
@@ -271,24 +523,58 @@ def create_html_page(translated_text, title, original_link, date_str):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
+    <meta name="description" content="{title[:150]}">
     {css_style}
 </head>
 <body>
-    <div class="wrapper">
-        <div class="header">
-            <span class="badge">هوش مصنوعی و تکنولوژی</span>
+    <div class="container">
+        <div class="header-card">
+            <div class="category-badge">
+                <span></span>
+                <span>هوش مصنوعی و تکنولوژی</span>
+            </div>
             <h1>{title}</h1>
-            <div class="meta">
-                <span>📅 {date_str}</span>
-                <span>⏱️ زمان مطالعه: ~۲ دقیقه</span>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>{date_str}</span>
+                </div>
+                <div class="meta-item">
+                    <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>زمان مطالعه: ~۲ دقیقه</span>
+                </div>
             </div>
         </div>
-        <div class="content">
+
+        <div class="content-card">
             {content_html}
         </div>
+
+        <div class="actions-card">
+            <a href="{original_link}" target="_blank" class="btn btn-primary">
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                مشاهده منبع اصلی خبر
+            </a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">
+                <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                بازگشت به کانال تلگرام
+            </a>
+        </div>
+
         <div class="footer">
-            <a href="{original_link}" target="_blank" class="btn">🔗 مشاهده منبع اصلی خبر</a>
-            <div class="watermark">تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی</div>
+            <div class="footer-brand">
+                <span>🤖</span>
+                <span>Kafa Tech News Agent</span>
+            </div>
+            <p style="margin-top: 8px; opacity: 0.7;">تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی</p>
         </div>
     </div>
 </body>
@@ -321,7 +607,7 @@ async def send_to_telegram(title, summary, link, html_url=None):
     message = f"""
 🚀 *خبر جدید هوش مصنوعی*
 
-📰 *{title}*
+ *{title}*
 
 🧠 *خلاصه:*
 {summary}
