@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Much Memory Does Your Agent Actually Need?</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>How Much Memory Does Your Agent Actually Need?</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-19 07:39</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>در پست قبلی، ما ALTK-Evolve را با ACE مقایسه کردیم و نشان دادیم که نحوه ارائه دستورالعمل‌های خوداستخراج شده یک عامل — به‌دست آوردن چند دستورالعمل برای هر وظیفه در مقابل تزریق کل مجموعه — تأثیر مستقیم بر دقت و هزینه دارد. این پست به سوالی که پیش از آن مطرح است، می‌پردازد: شما باید چقدر به آن بدهید؟</p><p>مجهز کردن یک عامل با حافظه عاملی به نظر ساده می‌آید: استخراج درس‌هایی از کارهای گذشته‌اش، قرار دادن آن‌ها در زمینه، و به معنای بیشتر تجربه، باید به عملکرد بهتری منجر شود. اما همیشه این‌طور نیست. زمانی که ارزیابی را به هشت مدل — از یک مدل چگال 30B تا سیستم‌های پیشرفته خصوصی — گسترش دادیم، یک یافته به وضوح قابل توجه بود:</p><p>حافظه عاملی یک ویژگی نیست که بتوان آن را فعال کرد. این یک دوز است که باید برای مدل کالیبره شود.</p><p>ALTK-Evolve اجازه می‌دهد یک عامل از مسیرهای قبلی خود بیاموزد: استخراج دستورالعمل‌های قابل استفاده مجدد و تزریق آن‌ها در زمان استنتاج، بدون به‌روزرسانی وزن‌ها و بدون نیاز به نشانه‌گذاری انسانی.</p><p>دوز مناسب بسته به رده مدل متفاوت است: مدل‌های قوی با فضای سر می‌خواهند مجموعه کامل دستورالعمل‌ها را داشته باشند، مدل‌های ضعیف‌تر با یک هسته فشرده به علاوه‌ی بازیابی به ازای هر وظیفه بهترین عملکرد را دارند، و مدل‌های اشباع‌شده هیچ بهره‌برداری قابل‌توجهی نشان نمی‌دهند.</p><p>بازیابی مرتب می‌تواند هم دقیق‌ترین و هم ارزان‌ترین گزینه باشد: gpt-oss-120b با تنها +5% توکن، +16.1 درصد به درصد تکمیل وظیفه افزوده است — و کش ذخیره‌سازی حتی مجموعه کامل دستورالعمل‌ها را در تولید مقرون به صرفه نگه می‌دارد.</p><p>هر مدل از همان مقدار حافظه بهره‌مند نمی‌شود. در میان هشت مدل با نوسانات قابلیت، ما سه الگوی تکراری را مشاهده کردیم:</p><p>مدل‌های قوی با فضای سر می‌خواهند مجموعه کامل دستورالعمل‌ها را داشته باشند — هر دستورالعملی، از جمله درس‌های نادر در موارد خاص. آن‌ها ظرفیت جذب و به‌کارگیری همه آن‌ها را دارند. DeepSeek-V3.2 (671B MoE) زمانی که مجموعه کامل دستورالعمل‌های خود را دریافت کرد، +9.5 درصد به تکمیل وظیفه افزایش پیدا کرد.</p><p>مدل‌های کوچک‌تر یا ضعیف‌تر توسط یک مجموعه بزرگ دستورالعمل غرق می‌شوند. برای این مدل‌ها، یک هسته محکم و با اعتماد بالا به علاوه تعدادی دستورالعمل مرتبط با وظیفه که برای هر وظیفه بازیابی می‌شود، بهترین عملکرد را دارد. gpt-oss-120b (117B MoE) با این رویکرد انتخابی +16.1 درصد پیشرفت کرد — در حالی که مجموعه کامل دستورالعمل‌ها کمتر پیشرفت کرد و تقریباً 50% توکن بیشتری هزینه داشت.</p><p>مدل‌های اشباع‌شده هیچ بهره‌برداری قابل‌توجهی نشان نمی‌دهند. ما این را الگوی اشباع می‌نامیم — این برچسب توصیف می‌کند که ما مشاهده کردیم، نه یک علت اثبات‌شده. ممکن است مدل قبلاً نزدیک به سقف خود در این وظایف بوده باشد، دستورالعمل‌ها ممکن است به شکست‌های باقی‌مانده‌اش پرداخته‌نشده باشد، یا ممکن است نتوانسته باشد راهنمایی را به‌طور مؤثر اعمال کند. GLM-5 (745B MoE) در این زمینه در آزمایش‌های ما قرار داشت.</p><p>آنچه یک مدل را در یک الگو قرار می‌دهد و نه الگوی دیگر، صرفاً تعداد پارامترها نیست. فضای سر معیار، اندازه پنجره‌ی متنی، معماری، کیفیت دستورالعمل و توزیع وظیفه همه به نظر می‌رسد که شکل‌دهنده جایی باشد که یک مدل قرار می‌گیرد و جداسازی این عوامل ادامه دارد. نتیجه عملی به هر حال این است که: دوز مناسب حافظه بستگی به مدل دارد و ما می‌توانیم آن را کالیبره کنیم.</p><p>در اینجا "حافظه" به معنای پخش یک نسخه‌ی گذشته نیست. بلکه به معنای یک مجموعه دستورالعمل است — استراتژی‌هایی که مؤثر بوده، اشتباهاتی که باید از آن‌ها پرهیز کرد، و موارد خاص — که از مسیرهای قبلی خود عامل استخراج شده است. چرخه توضیحی است:</p><p>عامل وظایف را امتحان می‌کند و مسیرهایی تولید می‌کند.</p><p>ALTK-Evolve دستورالعمل‌های رفتاری را از هر دو اجرای موفق و ناموفق خود استخراج می‌کند.</p><p>این دستورالعمل‌ها را در یک مجموعه قابل استفاده مجدد ادغام می‌کند.</p><p>در زمان استنتاج، عامل یا مجموعه کامل دستورالعمل‌ها را دریافت می‌کند یا یک انتخاب مرتبط با وظیفه از آن.</p><p>هیچ وزنی از مدل به‌روزرسانی نمی‌شود. چرخه یادگیری، راهنمایی‌های در دسترس عامل را تغییر می‌دهد، نه مدل بنیادی — که دقیقاً به همین دلیل است که پذیرش آن ارزان و قابل‌حمل است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/ibm-research/altk-evolve-hmm" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
