@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Up to 3.2x Faster Inference with LFM2.5-DSpark</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Up to 3.2x Faster Inference with LFM2.5-DSpark</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-21 07:43</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>امروز، نقاط میانی مدل پیش‌نویس DSpark را برای سه مدل از خانواده LFM2.5 منتشر می‌کنیم: LFM2.5-1.2B-Instruct، LFM2.5-2.6B و LFM2.5-8B-A1B. این مدل‌ها یک مسیر رمزگشایی حدسی اضافه می‌کنند که با افزایش ناچیز حافظه، سرعت رمزگشایی را به طور قابل توجهی افزایش می‌دهد بدون اینکه کیفیت خروجی تغییر کند:</p><p>مرحله رمزگشایی در استنتاج LLM به طور سنتی بر اساس حافظه محدود است. بیشتر تاخیر ناشی از جریان وزن‌ها از DRAM به SRAM است و نه از محاسبات فشرده. رمزگشایی حدسی به این مشکل پاسخ می‌دهد با استفاده از یک مدل پیش‌نویس سبک برای تولید توکن‌های کاندید، و سپس مدل هدف همه آن‌ها را در یک مرحله جلو به جلو تأیید می‌کند و هزینه بارگذاری وزن‌ها را بین تمام توکن‌هایی که تأیید می‌کنیم تقسیم می‌کند.</p><p>در طول سال‌ها، روش‌های مختلفی برای حدس‌زنی پیشنهاد شده است که برجسته‌ترین آن‌ها EAGLE-3، DFlash و به تازگی DSpark است که سه مؤلفه را ترکیب می‌کند:</p><p>ما از فرمول DSpark تبعیت می‌کنیم و یک ترکیب داده بزرگتر و متنوع‌تر شامل داده‌های SFT، چت، کد و داده‌های تماس تابع را پوشش می‌دهیم. بر اساس آزمایش‌های ما، نسخه‌های اولیه مدل‌های پیش‌نویس مدل‌های پیش‌نویس ساده شده فقط بر پایه توجه هستند، با ۵ لایه و بلوکی از ۹. برای هر مدل پیش‌نویس، ما ۱۵ دوره را بر روی کل مجموعه داده اجرا کردیم و دوره‌ای را که بالاترین نرخ پذیرش را داشت به جای کمترین زیان انتخاب کردیم.</p><p>مدل‌های پیش‌نویس حاصل نسبتاً کوچک هستند و هر یک تقریباً ۳۰۰ میلیون پارامتر دارند.</p><p>در رمزگشایی حریص، یک توکن پیش‌نویس تنها در صورتی پذیرفته می‌شود که با توزیع مدل هدف مطابقت داشته باشد. در صورت رد، توکن خود مدل هدف جای آن را می‌گیرد. بنابراین توالی ایجاد شده به طرز ساختاری با حریص پایه یکسان است و بنابراین دقت معیار (pass@1 یا تطابق دقیق) تغییر نمی‌کند.</p><p>مدل‌های پیش‌نویس DSpark ما برای LFM2.5 از روز اول پشتیبانی از llama.cpp (پیاده‌سازی‌ای که روی پایگاه کد رسمی بنا شده و ما آن را با کرنل‌های فلزی آزمایشی اجرا می‌کنیم) و **SGLang (**پیاده‌سازی‌اش روی پیاده‌سازی رسمی SGLang از DSpark بنا شده است) را ارائه می‌دهند.</p><p>ما از طریق‌ درون‌دستگاهی با llama.cpp و Metal بر روی یک MacBook Pro M4 Max با استفاده از وزن‌های FP16 GGUF و تا ۲۵۶ توکن خروجی اندازه‌گیری می‌کنیم. ما از طریق GPU با SGLang بر روی یک H100 با ۸۰ گیگابایت در BF16 اندازه‌گیری می‌کنیم. هر دو پیکربندی از اندازه بلوک DSpark به اندازه ۹، اندازه دسته ۱ و دما ۰ استفاده می‌کنند. ما آن‌ها را بر روی پنج مجموعه داده معیار ارزیابی می‌کنیم.</p><p>تمامی سه مدل پیش‌نویس افزایش قابل توجهی در توان خروجی بر روی هر دو شتاب‌دهنده مقیاس بزرگ (H100) و پیاده‌سازی لبه (M4 Max MacBook) ارائه می‌دهند.</p><p>برای LFM2.5-2.6B، سرعت در MacBook به ویژه مشهود است، زیرا سطح تعامل‌پذیری که کاربر می‌تواند از آن لذت ببرد را فراتر از توان خروجی اکثر مدل‌های ابری مالکیتی (حدود ~۱۴۰ توکن/ثانیه، بسته به مجموعه داده) می‌برد.</p><p>در سناریوهای چندابزاری مختلف، DSpark به طور متوسط تاخیر را برای LFM2.5-2.6B به میزان ۵۷٪ کاهش می‌دهد.</p><p>برای LFM2.5-1.2B-Instruct، ما شاهد تنوع بیشتری در نرخ‌های پذیرش مجموعه داده هستیم، بنابراین سرعت تا ۵۲٪ بسته به توزیع متن پایه متفاوت است.</p><p>برای LFM2.5-8B-A1B، نرخ پذیرش نسبت به دو مدل متراکم افزایش می‌یابد، اما در دستگاه به طور متوسط تنها ۱۸٪ بهبود می‌یابیم. این اختلاف به دلیل پیاده‌سازی فعلی MoE در پشتیبانی فلزی llama.cpp و نیز به این دلیل است که تأیید k توکن‌ها، کارشناسان بیشتری را فعال می‌کند و بنابراین ترافیک وزن بیشتری نسبت به یک مرحله رمزگشایی منفرد ایجاد می‌کند.</p><p>اجرای مدل‌های پیش‌نویس DSpark با SGLang نیاز به نسخه‌ای از SGLang با پشتیبانی از DSpark برای اهداف LFM2 دارد (PR #31041). هدف را با پیش‌نویس متصل شده راه‌اندازی کنید:</p><p>سپس نقطه پایانی سازگار با OpenAI را در http://localhost:30000/v1 درخواست کنید. اندازه بلوک از آنجا خوانده می‌شود.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/LiquidAI/lfm25-dspark" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
