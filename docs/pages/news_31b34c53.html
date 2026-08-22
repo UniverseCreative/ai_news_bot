@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measuring benchmark optimization in speech recognition</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Measuring benchmark optimization in speech recognition</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-22 07:32</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>معیارهای هوش مصنوعی صوتی عمومی به طور فزاینده‌ای نشان می‌دهند که مدل‌ها در سطح انسانی عمل می‌کنند. با این حال، این امتیازات همیشه نشان‌دهنده نحوه کار مدل‌ها در دنیای واقعی نیستند. از آنجا که معیارهای عمومی باز و مورد استفاده گسترده قرار دارند، مدل‌ها ممکن است برای خود آزمون‌ها بهینه‌سازی شوند. ممکن است امتیازات آنها بهبود یابد زیرا الگوهای خاص معیار را یاد گرفته‌اند و نه به این دلیل که در انجام وظیفه اصلی بهتر شده‌اند.</p><p>یکی از دلایل این امر این است که معیارهای سنتی بسیاری از شرایط و ویژگی‌هایی را که سیستم‌های صوتی را قابل اعتماد، طبیعی، متناسب با زمینه و مؤثر در عمل می‌سازند، نادیده می‌گیرند. به همین دلیل ما به تازگی مجموعه‌های نگه‌دارشده را در Real World VoiceEQ، Open-ASR Leaderboard و Far-field ASR Leaderboard معرفی کردیم: برای اندازه‌گیری آنچه در استفاده واقعی اهمیت دارد.</p><p>با این حال، اندازه‌گیری وسیع‌تر به تنهایی مشکل را حل نمی‌کند. این پدیده که گاهی به آن بهینه‌سازی معیار یا "benchmaxxing" گفته می‌شود، معمولاً در مورد یادگیری ماشین بحث می‌شود، اما اندازه‌گیری آن در شناسایی سخن دشوار بوده است.</p><p>تحقیق اخیر ما سه آزمون را برای کمک به کمّی‌سازی این پدیده معرفی می‌کند. ما ۱۱ مدل ASR متن باز که به طور گسترده استفاده می‌شوند را ارزیابی کرده و متوجه شدیم که چند مورد از سیستم‌های با بالاترین امتیاز، متون معیار را از مجموعه داده‌های VoxPopuli English و LibriSpeech (خالص، دیگر) بازتولید کردند – حتی زمانی که صدا با آنها تناقض داشت، واژه‌های مرتبط حذف شده بودند، یا صدا به یک شکل نوشتاری متفاوت نیز پشتیبانی می‌کرد.</p><p>در برخی موارد، مدل‌ها به نظر می‌رسید که نه تنها به آنچه گفته شده، بلکه به نشانه‌های صوتی دقیق که نشان می‌داد کدام معیار را آزمایش می‌کنند نیز وابسته هستند. در نتیجه، امتیازات آنها به نحوی اغراق‌آمیز از توانایی آنها در نوشتن گفتار به طور کلی بیشتر بود.</p><p>VoxPopuli به خاطر داشتن تعداد بالایی از خطاهای نوشتاری شناخته شده است (به همین دلیل تحلیل مصنوعی نسخه‌ای پاک شده از آن را منتشر کرده است). آزمایش‌های بررسی اختلاف نظر ما آنچه را که در هنگام مواجهه مدل‌های پیشرو ASR با این خطاها اتفاق می‌افتد، آزمایش می‌کند: آیا آنها به دقت آنچه را که صدا می‌گوید، ترنسکریپت می‌کنند یا متن مرجع نادرست معیار را بازتولید می‌کنند؟</p><p>برای آزمایش این موضوع در مقیاس بزرگ، از یک دسته از مدل‌های مستقل استفاده می‌کنیم که برای نرخ خطای فونم پایین (PER) انتخاب شده‌اند. PER اندازه‌گیری می‌کند که چگونه یک ترنسکریپت نوشتاری با صداها در صوت نزدیکی دارد و به عنوان Proxy مفیدی برای اندازه‌گیری وفاداری یک مدل در نوشتن آنچه می‌شنود عمل می‌کند. نتایج جمعی می‌تواند برای شناسایی مواردی که مدل‌ها به طور یکسان با ترنسکریپت مرجع معیار اختلاف نظر دارند، مورد استفاده قرار گیرد. سپس نمونه‌ای از این موارد پرچم‌گذاری شده را با حاشیه‌نویسی انسانی مقایسه می‌کنیم تا ترنسکریپت‌های تصحیح شده را تأیید کنیم.</p><p>به عنوان مثال، یکی از کلیپ‌های VoxPopuli به وضوح عبارت "Thank you, Mr. President" را شامل می‌شود، اما ترنسکریپت مرجع عبارت "Thank you" را حذف می‌کند. شش مورد از ۱۱ مدلی که آزمایش کردیم، ترنسکریپت نادرست معیار را بازتولید کردند و پاسخ "مورد انتظار" را ارائه کردند، حتی اگر این پاسخ با صدا تناقض داشت. در کلیپ واقعی، فرمت‌گذاری همان الگو را دنبال می‌کند: مدل‌هایی که "Thank you" را حذف می‌کنند نیز سبک نشانه‌گذاری معیار را بازتولید می‌کنند و "Mr" را بدون نقطه می‌نویسند، در حالی که مدل‌هایی که عبارت قابل شنیدن را شامل می‌کنند تمایل دارند "Mr." را با نقطه بنویسند.</p><p>زمانی که همان محتوا را در صداهای تازه جمع‌آوری شده از ضبط‌های پارلمانی اتحادیه اروپا یا صداهای عمومی ارائه می‌دهیم، این رفتار غالباً تضعیف یا ناپدید می‌شود. در نمونه‌های زیر، به جز یک مدل، همه به ترنسکریپت وفادار به صدا برای یک کپی از ضبط جدید پارلمانی بازمی‌گردند. این نشان می‌دهد که مدل‌ها به نشانه‌های صوتی پاسخ می‌دهند که به آنها کمک می‌کند تعلق به معیار را شناسایی کرده و بنابراین تولید کنند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/asr-benchmark-optimization" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
