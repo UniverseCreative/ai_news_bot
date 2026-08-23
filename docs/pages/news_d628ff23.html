@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Developer’s Guide to NeMo Guardrails for Enterprise AI Safety</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>The Developer’s Guide to NeMo Guardrails for Enterprise AI Safety</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-23 07:33</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>در این آموزش، ما یک پایپ‌لاین عمیق NeMo Guardrails ایجاد می‌کنیم که نشان می‌دهد چگونه گاردریل‌های لایه‌ای می‌توانند یک دستیار مالی مبتنی بر LLM را در تمام مراحل درخواست کنترل کنند. ما تشخیص و حذف اطلاعات شناسایی شخصی (PII) تعیین‌شده، بررسی‌های خودکار ورودی و خروجی مبتنی بر LLM، فیلترینگ بازیابی، پوشاندن شماره‌های حساب، محدودیت‌های موضوعی و گیت‌کردن ابزار مبتنی بر سیاست را ترکیب می‌کنیم. همچنین تعاملات چنددور دارای حالت، ردیابی فعال‌سازی گاردریل‌ها، حسابداری توکن و گزارشی به سبک تیم قرمز اجرا می‌کنیم تا بتوانیم ارزیابی کنیم که آیا دستیار به طور ایمن پاسخ می‌دهد، چه کنترل‌هایی هر درخواست را مدیریت می‌کند و چه هزینه محاسباتی آن حفاظت اضافه می‌شود.</p><p>ما NeMo Guardrails را نصب کرده و مدل OpenAI، نقطه پایانی API و احراز هویت لازم برای اجرای آن را پیکربندی می‌کنیم. ما پیکربندی YAML را با دستورالعمل‌های عمومی دستیار و گاردریل‌های ورودی، بازیابی و خروجی لایه‌ای تعریف می‌کنیم. همچنین فراخوانی‌های خودچک را مشخص می‌کنیم که jailbreakها، محتوای نامناسب، دسترسی غیرمجاز به حساب و پاسخ‌های مالی ناایمن را شناسایی می‌کنند.</p><p>ما جریان‌های Colang را تعریف می‌کنیم که پردازش PII تعیین‌شده، فیلترینگ بازیابی و بازنویسی خروجی را پیاده‌سازی می‌کنند. ما گاردریل‌های گفتگوی موضوعی برای درخواست‌های سیاسی و سرمایه‌گذاری اضافه می‌کنیم در حالی که اجازه تعاملات کنترل‌شده موجودی حساب و انتقال پول را می‌دهیم. همچنین یک جریان انتقال مبتنی بر سیاست معرفی می‌کنیم که تراکنش‌های مجاز را از درخواست‌هایی که از حد روزانه تعیین‌شده فراتر می‌روند تفکیک می‌کند.</p><p>ما اقدام‌های تعیین‌شده Python را برای تشخیص PII، حذف، فیلترینگ بازیابی، پوشاندن حساب، بازیابی موجودی و ارزیابی سیاست انتقال پیاده‌سازی می‌کنیم. ما از به‌روزرسانی‌های زمینه ActionResult برای انتقال اطلاعات سیاستی فشرده و بخش‌های بازیابی‌شده بدون تزریق نتایج حجیم اقدام به طور غیرضروری به درون درخواست استفاده می‌کنیم. همچنین یک بازیاب اطلاعات سبک بر مبنای کلیدواژه ایجاد می‌کنیم که نشان می‌دهد چگونه می‌توان مدارک داخلی را قبل از رسیدن به مدل فیلتر کرد.</p><p>ما اشیاء RailsConfig و LLMRails را ایجاد کرده و هر اقدام سفارشی را با زمان اجرای گاردریل ثبت می‌کنیم. ما جریان‌ها و گاردریل‌های پیکربندی‌شده را بررسی می‌کنیم تا از بارگذاری کنترل‌های سفارشی ما در کنار کتابخانه جریان داخلی NeMo Guardrails مطمئن شویم. سپس نمایش‌های نماینده را اجرا کرده و گاردریل‌های فعال‌شده، زمان‌های اجرا، استفاده از توکن و تماس‌های LLM را برای هر درخواست ردیابی می‌کنیم.</p><p>ما رفتار چنددور را با حفظ تاریخچه گفت‌وگو در درخواست‌ها آزمایش می‌کنیم در حالی که اجازه می‌دهیم گاردریل‌ها در هر بار دوباره اجرا شوند. سپس یک مجموعه پوشش را شامل آزمایش‌های jailbreak، PII، انتقال، موضوعی، سرمایه‌گذاری و بازیابی اجرا می‌کنیم و گاردریل‌های فعال‌شده را با هندلرهای مورد انتظار مقایسه می‌کنیم. ما نتایج را با نرخ‌های پذیرش، توقف‌های سخت و مصرف توکن خلاصه می‌کنیم که به ما یک معیار فشرده از پوشش گاردریل و هزینه عملیاتی می‌دهد.</p><p>در نتیجه، ما نشان دادیم که چگونه NeMo Guardrails به ما اجازه می‌دهد تا فراتر از فیلتر کردن ساده درخواست‌ها به سوی یک معماری ایمنی لایه‌ای و قابل حسابرسی پیش برویم. ما کنترل‌های اقتصادی تعیین‌شده را از بررسی‌های مبتنی بر LLM تفکیک کردیم، محتوای حساس بازیابی‌شده را قبل از رسیدن به مدل فیلتر کردیم، خروجی‌های ناایمن را بازنویسی کردیم و سیاست‌های مشخصی را قبل از اجازه به عملیات نوشتن اعمال کردیم. ما طراحی را از طریق اجراهای چنددور، ردیابی گاردریل، اندازه‌گیری توکن و آزمایش‌های پوشش بیشتر تأیید کردیم که به ما یک چارچوب برای درک هر دو جنبه‌ی مؤثریت و هزینه عملیاتی گاردریل‌ها در برنامه‌های LLM متمرکز بر تولید می‌دهد.</p><p>کدهای کامل را در اینجا بررسی کنید. همچنین، از دنبال کردن ما در Twitter دریغ نکنید و فراموش نکنید که به SubReddit ML با بیش از 150 هزار عضو بپیوندید.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/08/22/the-developers-guide-to-nemo-guardrails-for-enterprise-ai-safety/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
