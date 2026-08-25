@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wire It, Run It, Deploy It: AI Workflows in Gradio</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Wire It, Run It, Deploy It: AI Workflows in Gradio</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-25 07:44</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>بسیاری از اپلیکیشن‌های جالب AI به صورت خط تولید هستند. شما یک تصویر ایجاد می‌کنید، سپس در صورت تمایل، پس‌زمینه آن را حذف می‌کنید یا آن را به چیزی جدید ویرایش می‌کنید. شما یک اسکریپت می‌نویسید، سپس برای آن یک صدا تولید می‌کنید یا در حالی که اسکریپت یکسان باقی می‌ماند، صدا را تغییر می‌دهید. معمولاً این مراحل را در Python با هم تلفیق می‌کنیم و در لحظه‌ای که چیزی وضعیت غیرعادی به نظر می‌رسد، به چاپ اشکال‌زنی برمی‌گردیم تا ببینیم کدام مرحله ارزش عجیب را تولید کرده است.</p><p>gr.Workflow، که به‌طور مستقیم در Gradio ساخته شده، رابط خط تولید را فراهم می‌آورد. شما مراحل خود را به‌صورت یک گراف از گره‌های تایپ شده توصیف می‌کنید و Gradio یک بوم کشیدن و رها کردن ارائه می‌دهد که در آن هر گره قابل اجرا است و هر نتیجه میانی قابل مشاهده است. همین گراف همچنین یک API REST و یک فرمان اجرای واحد به Hugging Face Spaces است.</p><p>بهترین راه برای درک این مفهوم مشاهده چندین خط تولید در عمل است. هر اپلیکیشن زیر یک Hugging Face Space زنده است که می‌توانید آن را باز کنید، اجرا نمایید و کپی کنید.</p><p>یک تصویر را بارگذاری کنید، یک ویرایش را تایپ کنید ("آن را به یک صحنه زمستانی برفی تبدیل کن"، "عینک آفتابی اضافه کن"، "ماشین را قرمز کن") و عکس ویرایش شده را بازگردانید. کل اپلیکیشن یک گره منفرد است که Qwen-Image-Edit را در Hugging Face Inference Providers فراخوانی می‌کند.</p><p>یک گراف، سه خط تولید. با یک درخواست شروع کنید و با FLUX یک تصویر تولید کنید، سپس آن را به یک Gradio Space برای حذف پس‌زمینه منتقل کنید تا آن را به یک برچسب تبدیل کنید. یک موضوع از طریق یک Gradio Space به صوت تبدیل می‌شود، در حالی که همان موضوع به یک عنوان جذاب اپیزود از طریق یک تماس LLM تبدیل می‌شود.</p><p>این یک بوم است، دو تماس مدل از طریق Hugging Face Inference Providers و دو تماس به Gradio Spaces.</p><p>از آنجا که این یک خط تولید است، هر یک از سه خروجی نیز یک نقطه پایانی REST مخصوص به خود را دارد: /sticker، /voiceover و /episode_title. شما می‌توانید هر یک از آن‌ها را به‌طور مستقیم از کد فراخوانی کنید بدون اینکه نیازی به باز کردن رابط کاربری باشد. برای یک مثال قابل اجرا، به بخش "آن را از کد فراخوانی کنید" مراجعه کنید.</p><p>یک ایده را تایپ کنید و آن به مجموعه‌ای از آثار هنری تولید شده به‌صورت همزمان تبدیل می‌شود: یک تصویر پایه از FLUX، دو بازتخیل AI از آن تصویر (یک نسخه آبرنگی ملایم و یک نسخه نئون سایبرپانک) و یک عنوان گالری نوشته شده توسط یک LLM.</p><p>هر تصویر به‌طور مستقیم از روی درخواست توسط یک نود مدل با استفاده از Inference Providers تولید می‌شود، در حالی که عنوان از یک نود fn که یک LLM را فراخوانی می‌کند، به‌دست می‌آید. این الگوی انتشار در عمل است: یک ایده می‌تواند به‌طور همزمان چندین اپراتور را تغذیه کند که همگی به‌طور موازی تولید می‌شوند.</p><p>یک شناسه مجموعه داده Hugging Face، مانند stanfordnlp/imdb یا mteb/tweet_sentiment_extraction را تایپ کنید و یک ورودی واحد به چهار نود اپراتور که مجموعه داده را به‌صورت زنده با استفاده از API Datasets Server تحلیل می‌کنند، منتشر می‌شود.</p><p>شما یک کارت نمای overview، پیش‌نمایشی از اولین چند ردیف، آمار به ازای هر ستون و یک نمودار توزیع دریافت می‌کنید، همه به‌صورت مستقل و به‌طور موازی محاسبه شده‌اند. این قدرت خط تولیدهاست!</p><p>هر نود تا کنون به Hugging Face دسترسی دارد. اما یک نود fn فقط Python است، به این معنی که می‌تواند یک مدل را درون Space بر روی یک GPU نیز اجرا کند.</p><p>تابع محدود شده را با @spaces.GPU تزئین کنید و هنگامی که نود اجرا می‌شود، ZeroGPU یک GPU برای آن تماس استفاده می‌کند، مدل را اجرا می‌کند و سپس آن را آزاد می‌سازد. ما همیشه نیاز نداریم که به Inference Providers یا Gradio Spaces موجود وابسته باشیم.</p><p>این دمو را مشاهده کنید که یک تصویر ثابت را با استفاده از Lightricks/LTX-Video بارگذاری شده از طریق Diffusers متحرک می‌کند، که به‌طور کامل از یک نود اجرا می‌شود. gr.Workflow نیازی به دانستن هیچ‌چیز درباره تنظیمات GPU شما ندارد. این تنها تابع محدود شده را فراخوانی می‌کند.</p><p>هر خط تولید یک گراف با سه نوع نود دارد: ارجاعات (ورودی‌های شما)، اپراتورها (مراحلی که کار انجام می‌دهند) و خروجی‌ها (نتایج شما). یک اپراتور می‌تواند تابع Python شما، یک مدل در Hugging Face Inference Providers، یک Gradio Space دیگر یا یک ردیف از یک مجموعه داده Hub باشد. شما آن‌ها را به هم متصل می‌کنید.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/gradio-workflow-guide" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastino Releases GLiNER2.5: A Boundary-Prediction Architecture That Removes Span Enumeration From Information Extraction</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Fastino Releases GLiNER2.5: A Boundary-Prediction Architecture That Removes Span Enumeration From Information Extraction</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-25 07:44</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>تیم‌های استخراج اطلاعات با یک انتخاب مکرر مواجه هستند. مدل‌های کدگذار کوچک ارزان ولی سخت‌گیر هستند و مدل‌های زبان بزرگ انعطاف‌پذیر ولی هزینه‌بر به ازای هر سند هستند. Fastino نسخه GLiNER2.5 را منتشر کرده است تا این شکاف را تنگ‌تر کند. در این نسخه، شمارش بازه‌ها با پیش‌بینی مرزها جایگزین شده است: مدل امتیازات را برای شروع و پایان یک موجودیت به جای امتیازدهی به هر بازه کاندیدا در برابر یک شبکه عرض، محاسبه می‌کند. این تغییر واحد حداکثر عرض موجودیت را حذف کرده و امکان استفاده از زمینه‌ای به طول ۴۰۹۶ کلمه را فراهم می‌کند و محاسبات را در طول توالی برای یک الگوی ثابت خطی نگه می‌دارد. همچنین، رمزگشایی همزمان موجودیت-رابطه، محدودیت‌های برچسب‌گذاری میان‌کاری و ویژگی‌های مربوط به هر بازه را باز می‌کند. در میان ۱۶ معیار بدون نمونه‌گیری، این نقطه پایانی چندزبانه به کل امتیاز ۵۶.۱۷ در برابر ۵۶.۰۹ برای GLiNER2 رسیده است و در آزمون XNLI، ۲۴.۷۵ امتیاز بیشتر کسب کرده است. سه نقطه انتهایی تحت Apache 2.0 بر روی Hugging Face با ۷۴ میلیون، ۱۹۴ میلیون و ۲۸۷ میلیون پارامتر منتشر شده‌اند.</p><p>بله، Fastino سه نقطه انتهایی GLiNER2.5 را تحت Apache 2.0 بر روی Hugging Face منتشر کرد و امکان استنباط محلی بر روی CPU، CUDA یا MPS را از طریق pip install "gliner2[local]" (Python 3.10+) فراهم کرده است. هیچ ارائه‌دهنده استنباطی در حال حاضر این نقاط را میزبانی نمی‌کند، بنابراین میزبانی خود مسیر استقرار است.</p><p>مدل‌های قبلی GLiNER برای شناسایی موجودیت‌ها به‌وسیله شمارش بازه‌های کاندیدا عمل می‌کردند: هر موقعیت شروع با هر عرض مجاز جفت شده و هر یک در برابر الگو امتیازدهی می‌شد. این طراحی محاسبات را به یک محور عرض متصل کرده و حداکثر طول موجودیت را تحمیل می‌کرد.</p><p>GLiNER2.5 شمارش را حذف می‌کند. کدگذار مشترک هنوز متن و جستجوهای الگو را در یک عبور پردازش می‌کند. به‌جای امتیازدهی به بازه‌ها، مدل امتیازهای شروع و پایان را بر روی مرزهای توکن و همچنین امتیازهای درون توکن‌ها پیش‌بینی می‌کند. یک مرحله پیشنهاد پراکنده، شروع‌ها و پایان‌های امیدوارکننده‌ترین را به ازای هر جستجو انتخاب کرده و آن‌ها را جفت می‌کند، بدون هیچ‌گونه محدودیتی در فاصله. سپس یک سر مرتب‌سازی مجدد، هر کاندید را با استفاده از شواهد مرزی و محتوای بازه امتیازدهی می‌کند. نامزدهای رابطه از همان مجموعه انتخاب می‌شوند و نه از یک مسیر جداگانه.</p><p>تیم Fastino گزارش می‌دهد که محاسبات در طول توالی برای یک الگوی ثابت و بودجه کاندید خطی باقی می‌ماند.</p><p>تمام سه نقطه انتهایی دارای یک API عمومی مشترک هستند. با AutoExtractor بارگذاری کنید، نه بارگذار بازه‌های GLiNER2 قدیمی.</p><p>تیم Fastino آزمایش بدون نمونه‌گیری را بر روی ۱۶ مجموعه داده عمومی ارزیابی می‌کند و امتیاز macro F1 را در مقایسه با GLiNER2 در اندازه‌های مطابقت یافته گزارش می‌کند.</p><p>میانگین کلی: GLiNER2.5 Multi به ۵۶.۱۷ در مقابل ۵۶.۰۹ برای GLiNER2 می‌رسد. GLiNER2.5 Base به ۵۴.۸۷ در مقابل ۵۳.۳۴ می‌رسد. افزایش عمده‌ای که حاصل شده XNLI است، جایی که Multi از ۳۷.۵۵ به ۶۲.۳۰ جهش می‌کند، که ۲۴.۷۵ امتیاز افزایش را نشان می‌دهد. Few-NERD برای Base به ۵۵.۱۴ از ۴۷.۲۲ بهبود می‌یابد. زبان غیرمدرب رومانیایی RONEC نیز برای هر دو نسخه بهبود یافته است.</p><p>به وبلاگ فنی Fastino، مخزن GitHub و مستندات معماری مرز مراجعه کنید. همچنین می‌توانید صفحه GitHub ما را برای آموزش‌ها، کدها و دفاتر کاری بررسی کنید.</p><p>همچنین، خوشحال می‌شویم اگر ما را در Twitter دنبال کنید و فراموش نکنید که به SubReddit ML با بیش از ۱۵۰ هزار عضو ما بپیوندید و به خبرنامه ما مشترک شوید. صبر کنید! آیا شما در تلگرام هستید؟ حالا می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>میخالی سوتتر یک متخصص علم داده است که دارای مدرک کارشناسی ارشد در علم داده از دانشگاه پادووا می‌باشد. با پایه‌ای قوی در تحلیل آماری، یادگیری ماشین و مهندسی داده، میخالی در تبدیل مجموعه داده‌های پیچیده به بینش‌های قابل اقدام مهارت دارد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/08/24/fastino-releases-gliner2-5-a-boundary-prediction-architecture-that-removes-span-enumeration-from-information-extraction/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
