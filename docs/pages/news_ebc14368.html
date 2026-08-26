@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Releases Granite 4.2: Bringing Native Reasoning and Agentic RL to Open Enterprise Models</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>IBM Releases Granite 4.2: Bringing Native Reasoning and Agentic RL to Open Enterprise Models</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-26 07:48</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>شرکت IBM نسخه 4.2 Granite را منتشر کرده است، که شامل خانواده‌ای از مدل‌های زبان استدلال باز با اندازه‌های پارامتر 3B، 8B و 30B می‌باشد. بر خلاف نسخه‌های قبلی Granite که به عنوان دستیاران پیرو دستور عمل می‌کردند، Granite 4.2 بر مبنای استدلال صریح بنا شده است. هر مدل می‌تواند قبل از پاسخ‌دادن یک زنجیره تفکر منتشر کند و هر مدل یک کلید سوئیچ تفکر / عدم تفکر را به همراه یک حالت کم‌تلاش ارائه می‌دهد که در پرسش‌های آسان، بودجه استدلال کوتاهی را صرف می‌کند. این مدل‌ها از نوع ترنسفورمرهای دنز و فقط دیکودر هستند که از ابتدا بر روی حدود 15 تریلیون توکن پیش‌آموزش داده شده‌اند و سپس از طریق یک زنجیره یادگیری تقویتی چندمرحله‌ای آموزش دیده‌اند. برای مدل‌های 8B و 30B، این زنجیره شامل یک بلوک RL عاملی است که در آن مدل یاد می‌گیرد کد را ویرایش کند، یک ترمینال را کنترل کند و جستجوهای وب را درون محیط‌های واقعی و ایزوله اجرا کند. هر سه مدل تحت مجوز Apache 2.0 عرضه می‌شوند. IBM همچنین دو مدل Granite Speech 5.0 Turbo CTC با پارامتر 470 میلیون را به‌طور همزمان با LLM‌ها منتشر کرده است.</p><p>بله، هر سه مدل زبان Granite 4.2 تحت مجوز Apache 2.0 منتشر می‌شوند، بنابراین دانلود، تنظیم دقیق و استفاده تجاری از آن‌ها هیچ هزینه‌ای برای مجوز ندارد.</p><p>Granite 4.2 یک ترنسفورمر فقط دیکودر است و طراحی ترکیبی یا MoE ندارد. اجزای اصلی شامل توجه به پرسش‌های گروه‌بندی‌شده با 8 سر KV، RoPE با θ = 10,000,000، MLP های SwiGLU، RMSNorm (ε = 1e-5)، جاسازی‌های ورودی/خروجی غیرمتصل و دقت bfloat16 هستند.</p><p>مدل 3B از 40 لایه با اندازه جاسازی 2560 استفاده می‌کند. مدل 8B از 40 لایه با اندازه 4096 استفاده می‌کند. مدل 30B به 64 لایه با اندازه مخفی MLP 32,768 می‌رسد. جدول معماری منتشر شده طول توالی 131,072 توکن (128K) را فهرست می‌کند، در حالی که مرحله پیش‌آموزش پنج‌مرحله‌ای شامل یک مرحله زمینه طولانی است که تا 512K توکن گسترش می‌یابد. پیش‌آموزش به طور تقریبی 15 تریلیون توکن را از ابتدا پوشش می‌دهد.</p><p>تنظیم دقیق تحت نظارت از حدود 7.2 میلیون نمونه استفاده می‌کند که تقریباً 100B توکن با ~65B قابل آموزش است. ترکیب آن 31.6% عاملی و 68.4% غیرعاملی است و مهندسی نرم‌افزار 69% از بخش عاملی را شامل می‌شود. مسیرها در بین تکیه‌گاه‌هایی از جمله OpenHands، SWE-agent، Terminus-2، MiniSWE، Codex و Goose تولید شده‌اند. کنترل کیفیت از GPT-OSS-120B و Gemma 4 به عنوان داوران استفاده کرد، به علاوه Deduplication با SHA-256 بر روی فیلدهای tools و messages.</p><p>پس‌آموزش یک زنجیره RL چندمرحله‌ای و چندمحیطی است، نه یک گذر واحد. هر مرحله یک اجرای GRPO غیرهمزمان جداگانه است که از نقطه چک قبلی شروع می‌شود، با یک پایه "یک‌خارجی" به جای یک شبکه ارزشی و نمونه‌برداری اهمیت محدود شده برای محدود کردن انحراف غیرسیاستی. ترتیب به این صورت است: RLVR، سپس تقویت‌کننده‌های مهارت، سپس SWE، ترمینال، جستجو و در نهایت RLHF.</p><p>بلوک RL عاملی فقط بر روی مدل‌های 8B و 30B اجرا می‌شود. مدل 3B فقط از RL بنیادی و تنظیم هم‌راستایی استفاده می‌کند. این انتخاب طراحی واحد، عمده تفاوت‌های قابلیت را در بین اندازه‌ها توضیح می‌دهد. آموزش بر روی خوشه NVIDIA GB200 NVL72 که توسط CoreWeave میزبانی می‌شود، انجام شد.</p><p>دو عنصر حمایتی حائز اهمیت است: 1 تریلیون توکن از کد مصنوعی از پایپ‌لاین CodeAlchemy شرکت IBM و یک لایه دیکدینگ فرضی برای سرویس‌دهی سریع‌تر.</p><p>آمار IBM، بر حسب اندازه (3B / 8B / 30B):</p><p>مدل‌های Turbo CTC با 470 میلیون پارامتر مشخص می‌شوند و به‌طور کامل پایه‌گذار LLM را حذف می‌کنند و از طبقه‌بندی زمانی کانکشنالی برای تبدیل صوت به متن استفاده می‌کنند. IBM گزارش می‌دهد که از لحاظ عملکرد RTFx در یک H200 نزدیک به 12,600 است، در مقابل تقریباً 6,000 برای رهبران سرعت فعلی در جدول رده‌بندی Open ASR. همچنین یک نمایش زنده از WebGPU وجود دارد.</p><p>به وبلاگ تحقیقاتی IBM، نوشتار فنی و مخزن GitHub ما مراجعه کنید. همچنین می‌توانید ما را در توییتر دنبال کنید و فراموش نکنید که به زیرمجموعه ML با</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/08/25/ibm-releases-granite-4-2-bringing-native-reasoning-and-agentic-rl-to-open-enterprise-models/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

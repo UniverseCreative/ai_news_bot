@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granite 4.2 LLMs: How They're Built</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Granite 4.2 LLMs: How They're Built</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-26 07:47</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>یک راهنمای فنی درباره چگونگی ساخت خانواده مدل‌های استدلال Granite 4.2.</p><p>خلاصه: Granite 4.2 اولین خانواده مدل‌های استدلالی با تنها دی کد تجمعی ما است که در سه اندازه: 3B، 8B و 30B منتشر شده است. هر مدل از ابتدا بر روی تقریبا 15 تریلیون توکن با استراتژی پنج مرحله‌ای که پنجره زمینه را به 512K توکن گسترش می‌دهد، پیش‌آموزش داده شده و سپس به طور نظارتی بر روی داده‌های زنجیره تفکر، استدلال و مسیر عمل‌گرانه به صورت دقیق‌شده است و در نهایت با یک خط لوله یادگیری تقویتی چند مرحله‌ای پس‌آموزش می‌یابد. این خط لوله شامل یادگیری تقویتی عمل‌گرانه است، جایی که مدل‌های 8B و 30B یاد می‌گیرند که در محیط‌های واقعی با ابزارها عمل کنند. هر مدل دارای یک سوئیچ فکر کردن / غیر فکر کردن است که یک حالت فکر کردن با تلاش کم را ارائه می‌دهد که بودجه کوتاهی را برای استدلال در سوالات آسان مصرف می‌کند و تماس با ابزارهای بومی را نیز شامل می‌شود. تمامی مدل‌های Granite 4.2 تحت مجوز Apache 2.0 منتشر شده‌اند.</p><p>Granite 4.2 نسخه‌ای متمرکز بر استدلال از خانواده مدل‌های زبانی Granite است. نسخه‌های قبلی Granite به عنوان دستیاران قوی در پیروی از دستورالعمل‌ها شناخته شده بودند؛ Granite 4.2 به دقت استدلال را اضافه می‌کند. هر مدل می‌تواند یک زنجیره تفکر قبل از پاسخ خود تولید کند و می‌تواند در حالت فکر کردن یا غیر فکر کردن عمل کند بسته به اینکه یک وظیفه به چه مقدار بررسی نیاز دارد. حالت کم‌تلاش بین این دو حالت قرار می‌گیرد و بودجه کمی را برای سوالات آسان مصرف می‌کند.</p><p>این سه اندازه (3B، 8B و 30B) طراحی معماری یکسانی دارند و از همان خط لوله آموزشی (پیش‌آموزش از ابتدا، SFT، سپس RL چند مرحله‌ای) پیروی می‌کنند، هر یک در مقیاس خود. هر سه مدل، استدلال‌کننده و پیرو دستورالعمل‌های قوی هستند. تقسیم به وضوح قابلیت‌ها در پس‌آموزش مشخص می‌شود. مدل‌های 8B و 30B علاوه بر این از یک بلوک RL عمل‌گرانه عبور می‌کنند که به آن‌ها یاد می‌دهد به عنوان عامل عمل کنند: تماس با ابزارها، ویرایش و اجرای کد، هدایت یک ترمینال و جستجوی وب در محیط‌های واقعی. هر مدل از تماس با ابزارهای بومی پشتیبانی می‌کند. این مدل‌ها از طریق یک نقطه پایانی سازگار با OpenAI (به عنوان مثال، با vLLM) ارائه می‌شوند و تماس‌های ابزار را در قالب تماس‌های عملکرد OpenAI تولید می‌کنند و بدون نیاز به چسب اضافی به تندیس‌های عمل‌گرانه متصل می‌شوند. Granite 4.2 همچنین در SGLang پشتیبانی می‌شود، برای دریافت دستور تهیه آماده، به کتابچه راهنمای SGLang مراجعه کنید.</p><p>بقیه این پست به بررسی جزئیات ساخت، معماری، پیش‌آموزش، تنظیم دقیق نظارتی، خط لوله RL چند مرحله‌ای و نتایج می‌پردازد.</p><p>مدل‌های Granite 4.2 بر روی یک معماری ترنسفورمر تجمعی با تنها دی کد ساخته شده‌اند که شامل اجزای اصلی زیر است:</p><p>Granite 4.2 از ابتدا بر روی حدود 15 تریلیون توکن با استفاده از یک استراتژی آموزشی پنج مرحله‌ای آموزش داده شده است. مراحل 1 تا 2 بر روی پیش‌آموزش بنیادین متمرکز هستند، مراحل 3 تا 4 آموزش میانی را با داده‌های پیشرفته و با کیفیت به تدریج بالا می‌برند، و مرحله 5 آموزش با متن طولانی را معرفی می‌کند و پنجره زمینه را به 512K توکن گسترش می‌دهد. هر مرحله از مخلوط داده‌های متفاوت و برنامه یادگیری جداگانه‌ای استفاده می‌کند که به تدریج از داده‌های وسیع وب به سمت منابع با کیفیت بالا و مناسب‌تر تغییر می‌کند.</p><p>دستور پخت پیش‌آموزش به طور نزدیک به نسل قبلی پیروی می‌کند؛ برای بررسی دقیق مخلوط داده‌ها، برنامه مراحل و گسترش متن طولانی، به بلاگ Granite 4.1 مراجعه کنید.</p><p>تنظیم دقیق نظارتی (SFT) مدل پایه را به یک دستیار قابل اعتماد در پیروی از دستورالعمل‌ها، استدلال و استفاده از ابزار تبدیل می‌کند. مخلوط داده SFT شامل داده‌های عمل‌گرانه (31.6%) و غیر عمل‌گرانه (68.4%) است، که مجموعا تقریبا 7.2 میلیون نمونه یا حدود 100B توکن می‌باشد که از این تعداد حدود 65B قابل آموزش است.</p><p>مجموعه داده عمل‌گرانه دامنه‌های گسترده‌ای را پوشش می‌دهد، از جمله مهندسی نرم‌افزار (SWE، 69%)، تماس با ابزار (12.1%)، استفاده از ترمینال (8.0%)، ریاضیات (3.5%)، جستجو (0.8%) و عمل (0.2%).</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/ibm-granite/granite-4-2" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
