@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-27 18:08</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Sentence Transformers یک کتابخانه پایتون برای استفاده و آموزش مدل‌های جاسازی و دوباره‌رتبه‌بندی برای دامنه وسیعی از کاربردها است، مانند تولید تقویت‌شده با جستجو، جستجوی معنایی، شباهت متنی معنایی و بیشتر. به‌روزرسانی نسخه 6.0 این کتابخانه نوع چهارمی از مدل‌ها به نام MultiVectorEncoder را معرفی می‌کند که برای جستجوی تعامل دیرهنگام به سبک ColBERT طراحی شده و به همراه آن یک رویکرد آموزشی کامل ارائه شده است. در این پست وبلاگ، به شما نشان می‌دهم که چگونه از این مدل برای تنظیم دقیق یک مدل چندبرداری استفاده کنید که در داده‌های شما از رقبای عمومی پیشی می‌گیرد. این روش همچنین می‌تواند مدل‌های جدید چندبرداری قدرتمند را از ابتدا آموزش دهد. همه موارد زیر را می‌توانید با دستور pip install -U "sentence-transformers[train]" اجرا کنید.</p><p>تنظیم دقیق مدل‌های چندبرداری شامل چندین مؤلفه است: خود مدل، مجموعه داده‌ها، توابع ضرر، آرگومان‌های آموزشی، ارزیاب‌ها و کلاس آموزشی. من به هر یک از این مؤلفه‌ها نگاهی می‌اندازم و مثال‌های عملی از چگونگی استفاده از آن‌ها برای تنظیم دقیق مدل‌های چندبرداری قوی ارائه می‌دهم.</p><p>در نهایت، در بخش ارزیابی، نشان می‌دهم که مدل multi-vector-encoder/mLateOn-medical من که در 14.5 ساعت بر روی یک RTX 3090 آموزش داده شده است و در کنار این پست وبلاگ قرار دارد، به راحتی از هر مدل جستجوی عمومی که توانستم در ارزیابی جستجوی پزشکی خود پیدا کنم، پیشی می‌گیرد: چه مدل‌های متراکم، چه نازک، چه لفظی، و چه چندبرداری.</p><p>اگر به تنظیم دقیق مدل‌های جاسازی متراکم، مدل‌های جاسازی نازک یا دوباره‌رتبه‌بندها علاقمند هستید، پیشنهاد می‌کنم مطالب قبلی من درباره آموزش و تنظیم دقیق مدل‌های جاسازی، آموزش و تنظیم دقیق مدل‌های جاسازی نازک و آموزش و تنظیم دقیق مدل‌های دوباره‌رتبه‌بند را مطالعه کنید.</p><p>این پست وبلاگ در مورد آموزش مدل‌های چندبرداری است. اگر می‌خواهید بیاموزید چگونه از آن‌ها استفاده کنید، از بارگذاری و رمزگذاری تا ایندکس‌گذاری در پایگاه‌های داده برداری، پست وبلاگ همراه Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers را ببینید.</p><p>یک مدل جاسازی متراکم تمام متن را به یک بردار واحد فشرده می‌کند و شباهت نیز یک حاصل ضرب دات بین دو چنین خلاصه‌ای است. یک مدل چندبرداری (که به عنوان مدل تعامل دیرهنگام یا مدل به سبک ColBERT نیز شناخته می‌شود) این فشردگی را نادیده می‌گیرد. این مدل یک بردار کوچک برای هر توکن حفظ می‌کند و یک پرس‌وجو را در برابر یک سند با اپراتور MaxSim نمره‌گذاری می‌کند، جایی که هر توکن پرسش بهترین توکن سند متناسب با خود را پیدا می‌کند و نمرات جمع می‌شوند. مطابقت در سطح توکن دقیقاً سیگنال‌های ریز را حفظ می‌کند که یک بردار واحد باید میانگین‌گیری کند، که معمولاً به معنای جستجوهای قوی‌تر است، هرچند که هزینه آن یک ایندکس بزرگ‌تر است.</p><p>پست وبلاگ همراه Multi-Vector Embedding Models معماری، رمزگذاری، نمره‌گذاری و ایندکس‌گذاری را به تفصیل پوشش می‌دهد، بنابراین این بخش را کوتاه می‌کنم و به آموزش می‌پردازم.</p><p>تنظیم دقیق مدل‌های چندبرداری به طور قابل توجهی عملکرد جستجوی آن‌ها را در دامنه خاص شما بهبود می‌بخشد: واژگان، سبک پرسش و مفهوم مرتبط بودن در جستجوی وب، کشف حقوقی، جستجوی کد و مرور ادبیات علمی تفاوت دارند. از آنجا که پرسش‌ها و اسناد به صورت توکن به توکن مطابقت می‌یابند، مدل‌های چندبرداری سیگنال‌های ریز دامنه را که مدل‌های تک‌برداری تمایل به میانگین‌گیری از آن‌ها دارند، جذب می‌کنند و به خوبی به حتی حجم‌های متوسطی از داده‌های تنظیم دقیق در دامنه پاسخ می‌دهند.</p><p>علاوه بر این، اکثر مدل‌های جستجو که منتشر شده‌اند، برای بخش‌های کوتاه پیکربندی شده‌اند. نقاط چک کلاسیک ColBERT اسناد را در 180 یا 300 توکن قطع می‌کنند و بسیاری از مدل‌های متراکم محبوب در 256 یا 512، زیرا داده‌های آموزشی آن‌ها به سبک MS MARCO به ندرت فراتر از آن می‌رود. اگر اسناد شما طولانی است، این مدل‌ها به آرامی اکثر هر سند را قبل از نمره‌گذاری رها می‌کنند. در ارزیابی پزشکی من</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/train-multi-vector-encoder" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
