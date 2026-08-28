@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-28 19:17</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>دو مدل مرزی با وزن باز، در طی یک روز از یکدیگر در این هفته عرضه شدند. Z.ai مدل GLM-5.3-Flash را منتشر کرد که یک مدل چندمدالی MoE با ۳۲۰ میلیارد پارامتر و ۱۸ میلیارد پارامتر فعال است. تیم Qwen شرکت Alibaba مدل Qwen3.8-Flash-Next را ارائه کرد که یک مدل ۱۲۵ میلیاردی با ۶ میلیارد پارامتر فعال است و معماری Qwen4 را پیش‌نمایش می‌کند.</p><p>این دو تیم این سیستم‌ها را به صورت مستقل طراحی کردند. با این حال، تنظیمات آن‌ها تقریباً شبیه به یکدیگر است. هر دو از ترکیب هیبریدی ۳:۱ توجه خطی و توجه کامل استفاده می‌کنند. هر دو انتخاب زمینه را با استفاده از یک ایندکس‌کننده فشرده که در ۲۰۴۸ توکن محدود شده، انجام می‌دهند. هر دو جریان باقی‌مانده را به ۴ شاخه گیت‌دار گسترش می‌دهند. هر دو با استفاده از بهینه‌ساز Muon آموزش می‌بینند، با ماتریس‌های پارامتری ترکیبی که پیش از عمودسازی تقسیم می‌شوند. این مقاله به بررسی دستور مشترک، تنها نقطه عدم توافق و یک آزمایشگاه مخالف می‌پردازد.</p><p>مدل GLM-5.3-Flash اولین مدل چندمدالی بومی در سری GLM-5 است که تحت مجوز MIT در Hugging Face منتشر شده است. Z.ai آن را به صورت ناشناس به عنوان Ox Alpha بر روی OpenRouter آزمایش کرد، جایی که تبدیل به محبوب‌ترین مدل هفته شد. این مدل بر روی یک مجموعه داده چندمدالی ۳۰ تریلیونی آموزش دیده و یک پنجره زمینه ۱ میلیون توکنی را ارائه می‌دهد. Z.ai ادعا می‌کند که این مدل در مقایسه با GLM-5.2 در تمامی معیارهای ارزیابی بهتر عمل کرده و به یک‌دهم قیمت آن، در معیارهای کدنویسی و عامل‌محور به Claude Opus 4.8 نزدیک می‌شود. قیمت فهرستی آن ۰.۱۵ دلار به ازای هر میلیون توکن ورودی و ۰.۵۰ دلار به ازای هر میلیون توکن خروجی است.</p><p>مدل Qwen3.8-Flash-Next نقشی مشابه نقشی که Qwen3-Next برای Qwen3.5 ایفا کرد، بر عهده دارد: پیش‌نمایش عمومی اولیه از نسل بعدی معماری. کارت مدل، شامل یک مدل اصلی ۱۲۵ میلیاردی و یک جدول جاسازی n-gram اضافی ۵۱ میلیاردی است که ۶ میلیارد پارامتر به ازای هر توکن فعال دارد. زمینه بومی ۲۶۲,۱۴۴ توکن است که با YaRN به ۱ میلیون توکن قابل گسترش است. تیم Qwen گزارش می‌دهد که آموزش تنها به حدود یک نهم ظرفیت محاسباتی Qwen3.7-Plus نیاز داشت. گزارش فنی همراه با عنوان "در طراحی معماری Qwen3.8-Next: ارزیابی، کارایی و ثبات آموزش" منتشر شده است.</p><p>مدل GLM-5.3-Flash شامل ۴۵ لایه است: ۳۴ لایه توجه خطی و ۱۱ لایه توجه کامل، طبق تنظیمات ارائه شده. مدل Qwen3.8-Flash-Next شامل ۴۸ لایه در یک بلوک تکراری از ۳ لایه Gated DeltaNet و ۱ لایه Qwen Sparse Attention است، طبق دستور vLLM. هر دو مدل نسبت ۳:۱ را حفظ می‌کنند.</p><p>لایه‌های خطی ارزان‌ترین لایه‌ها هستند. به جای یک کش KV که با متن بزرگ می‌شود، آن‌ها تمام تاریخ را به یک وضعیت تکراری با اندازه ثابت فشرده می‌کنند. محاسبات به ازای هر توکن مستقل از طول زمینه ثابت باقی می‌ماند. GLM از توجه Kimi Delta Attention (KDA) استفاده می‌کند که طراحی توجه خطی است که توسط Kimi Linear شرکت Moonshot AI معرفی شده و یک گیت کاهش در سطح کانال را اعمال می‌کند. Qwen از Gated DeltaNet (GDN) خود استفاده می‌کند که در سطح سر میانی گیت‌بندی می‌کند. گرانی‌گاه‌های مختلف گیت‌بندی، اما خانواده قانون دلتا یکسان، همان کار را انجام می‌دهند.</p><p>یک چهارم باقی‌مانده لایه‌ها به جستجوی دقیق در دامنه‌های دور می‌پردازند. GLM از توجه چندسر NoPE (MLA) به سبک DeepSeek استفاده می‌کند. Qwen از توجه گروهی داخل QSA استفاده می‌کند. اینجا است که کش KV واقعاً قرار دارد و جایی است که حقه دوم مشترک نیز مطرح می‌شود.</p><p>هیچ یک از مدل‌ها اجازه نمی‌دهند که لایه‌های توجه کامل بر روی تمام زمینه تمرکز کنند. هر دو یک ایندکس‌کننده کوچک یادگرفته شده را متصل می‌کنند که تکه‌هایی از تاریخ را ارزیابی کرده و فقط برندگان را نگه می‌دارند. پارامترها تقریباً به طور دقیق برابرند.</p><p>لایه‌های خنک GLM از یک ایندکس‌کننده ۳۲ سر الکتریکی با انتخاب top-2048 استفاده می‌کنند که از DSA عمیق DeepSeek نشأت گرفته است. برای کاهش هزینه ایندکس‌کننده در زمینه‌های ۱ میلیون توکنی، Z.ai ایندکس‌کننده IndexPool را معرفی می‌کند که چهار کلید وکتور ایندکس‌کننده را با فشرده‌سازی</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
