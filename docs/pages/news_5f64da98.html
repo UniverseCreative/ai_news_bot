@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Open ASR Leaderboard Adds Its First Global South Language</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>The Open ASR Leaderboard Adds Its First Global South Language</h1>
+            <div class="meta-info">
+                <span>📅 2026-08-29 12:59</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Voice Arena و Hugging Face همکاری خود را برای راه‌اندازی ارزیابی متن به گفتار (ASR) باز برای زبان‌های هندی و انگلیسی هندی آغاز کردند.</p><p>معیارها تعیین می‌کنند که چه چیزی ساخته می‌شود. مدلی که در جدول رده‌بندی Open ASR نمره بالایی کسب کند، به کار گرفته شده و مورد آزمایش مجدد قرار می‌گیرد، در حالی که قابلیت‌هایی که در این جدول اندازه‌گیری نمی‌شوند معمولاً بهبود نمی‌یابند. بخش عمده‌ای از کارهای اخیر روی این جدول به اعتبارسنجی مقیاس‌های ارزیابی معطوف شده است:</p><p>تمامی این موارد باعث می‌شود که یک عدد (WER) بازی‌کردن را سخت‌تر کند. آن هنوز یک عدد است. تحقیقات طولانی نشان داده‌اند که میزان خطاهای ASR به‌طور یکنواخت در بین کاربران تقسیم نشده است. نابرابری‌های نژادی در شناسایی گفتار خودکار، سیستم‌های تجاری را برای گویندگان سیاه‌پوست به‌طور تقریبی دو برابر بدتر از گویندگان سفیدپوست نشان داده است و مطالعه Quantifying Bias in Automatic Speech Recognition تفاوت‌های بیشتری بر اساس جنس، سن و لهجه یافته است. هیچ‌یک از این موارد در یک جدول رده‌بندی قابل مشاهده نیست و نه به‌خاطر اینکه جدول آن را پنهان می‌کند. مجموعه‌های آزمایشی که بر روی آن‌ها اجرا می‌شود، فقط آنچه گفته شده را ثبت می‌کنند و تقریباً هیچ چیزی از اینکه چه کسی آن را گفت ثبت نمی‌شود.</p><p>برای پر کردن این شکاف، دو مجموعه ارزیابی به جدول رده‌بندی Open ASR معرفی می‌کنیم: Monsoon en-IN و Monsoon hi-IN. زبان هندی، که توسط بیش از نیم میلیارد نفر سخن گفته می‌شود، نخستین زبان هندیک است که در برگه چندزبانه‌ای که در حال حاضر تنها زبان‌های اروپایی را پوشش می‌دهد، قرار دارد. هر مجموعه به‌صورت عمومی منتشر شده و برای نمره‌گذاری خودکار در دسترس است و یک تقسیم خصوصی نیز withheld شده است تا بهینه‌سازی خاص benchmark محدود شود. چهار تقسیم به‌صورت غیرهمپوشانی بین گویندگان است که شامل 4,888 گوینده است و برای هر یک 12 ویژگی گوینده ثبت شده است.</p><p>یک مجموعه آزمایشی تنها می‌تواند یک حالت شکست را نشان دهد که در آن متفاوت است. بیشتر معیارها از هر گونه صدای موجود ساخته شده‌اند. Monsoon برای تنوع در نه محور طراحی شده است: جغرافیا، سن، جنس، واژگان، دستگاه‌ها، محیط‌های صوتی، نوع گفتار، سرعت گفتار، و وجود چندین رونویس معتبر برای یک صدای خاص. هر یک از این موارد یک راه است که یک WER تجمعی می‌تواند به‌طور میانگین درست باشد و برای یک جمعیت خاص نادرست باشد.</p><p>روش جمع‌آوری از همین جا ناشی می‌شود.</p><p>چهار تقسیم، دو زبان، که از طریق یک پایپ‌لاین جمع‌آوری شده‌اند.</p><p>داده‌ها از مکالمات خودجوش دوکاناله غیرمتنی تامین می‌شوند، با کلیپ‌های segmented از یک کانال به طوری که هر کلیپ فقط دارای یک گوینده باشد. به همراه زمینه‌های گزارش‌شده در جدول، هر کلیپ همچنین شغل، تحصیلات، وضعیت تاهل، محدوده درآمد، برند گوشی، شهر فعلی و سال‌های اقامت در منطقه فعلی را ثبت می‌کند.</p><p>پنج کلیپ از تقسیم عمومی انگلیسی هندی، با متاداده‌ای که هر یک از آن‌ها دارد:</p><p>زن 29 ساله، West Tripura، Tripura. دانشجو، samsung SM-G781B.</p><p>زن 32 ساله، Satna، Madhya Pradesh. بیکار، samsung SM-E146B.</p><p>مرد 22 ساله، Rohtas، Bihar. دانشجو، motorola moto g54 5G.</p><p>زن 27 ساله، Warangal، Telangana. بیکار، vivo V2247.</p><p>مرد 57 ساله، Puducherry. شغل خصوصی، Xiaomi M2006C3LI.</p><p>مجموعة انگلیسی از ارجاعات رشته‌ای استاندارد استفاده می‌کند، جایی که نرمال کننده جدول رده‌بندی بیشتر تغییرات املایی را مختصر می‌کند. در زبان هندی این تغییرات بسیار بیشتر است و هیچ نرمال کننده‌ای نمی‌تواند آن را حل کند، زیرا این واریانت‌ها یک نقشه ثابت بین دو قاعده نیستند. بنابراین، مجموعه‌های هندی یک مشبک ارسال می‌کنند: برای هر بازه از رونویس، یک فهرست از املای‌هایی که به‌عنوان درست پذیرفته می‌شوند.</p><p>Monsoon از نظر ساعت کوچک و از نظر گوینده بزرگ است. این طراحی است و جایی که بیشتر ارزش آن وجود دارد.</p><p>تمرکز و تنوع گوینده فراتر از زمینه‌های ذکر شده در بالا.</p><p>سه ویژگی در ادامه وجود دارد و هر یک ادعایی درباره واریانس به‌جای حجم است.</p><p>هیچ صدایی نمره را نمی‌برد: ده مشارکت‌کننده بزرگ‌ترین contributors.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/open-asr-leaderboard-global-south" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
