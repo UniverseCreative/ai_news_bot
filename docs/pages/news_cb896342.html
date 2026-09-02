@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing agentic video understanding with Gemini</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Introducing agentic video understanding with Gemini</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-02 11:59</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>ویژگی جدید و عامل‌محور ما برای تحلیل ویدئو مصرف توکن را تا 88% کاهش می‌دهد، هزینه‌ها را تا 66% کم کرده و کیفیت را تا 7% افزایش می‌دهد. </p><p>مدیر محصول ارشد، Google DeepMind</p><p>مدیر تحقیق، Google DeepMind</p><p>مرورگر شما از عنصر صوتی پشتیبانی نمی‌کند.</p><p>Google به‌تازگی قابلیت درک ویدئویی عامل‌محور را برای Gemini 3.7 Flash، 3.6 Flash و 3.5 Flash-Lite راه‌اندازی کرده است. این ویژگی به مدل اجازه می‌دهد تا به‌طور دینامیک بخش‌های ویدئویی را اسکن کند که باعث افزایش دقت و کاهش مصرف توکن تا 88% و هزینه‌ها تا 66% می‌شود. شما می‌توانید امروز با تنظیم پیکربندی API خود به "عامل‌محور" در Google AI Studio یا Gemini Enterprise Agent Platform از این قابلیت استفاده کنید.</p><p> امروز، ما درک ویدئویی عامل‌محور را در مدل‌های جدید خود از جمله Gemini 3.7 Flash، 3.6 Flash و 3.5 Flash-Lite رونمایی می‌کنیم. این قابلیت جدید دقت را افزایش داده و به‌طور چشمگیری مصرف توکن و هزینه‌ها را برای تحلیل ویدئو کاهش می‌دهد. مشابه درک بصری عامل‌محور که اجرای کد را با درک بومی تصویر مدل‌های Gemini ترکیب می‌کند، درک ویدئویی عامل‌محور از ابزارهای ویدیویی بومی Gemini برای بهبود عملکرد و آزادسازی قابلیت‌های جدید در پردازش ویدئو مانند بازیابی لحظات زیر یک ثانیه، تشخیص دقیق انحراف، شمارش دقیق و موارد دیگر استفاده می‌کند.</p><p>این ویژگی هم‌اکنون برای بارگذاری ویدئوها و ویدئوهای YouTube از طریق Gemini API در Google AI Studio و Gemini Enterprise Agent Platform در دسترس است. </p><p>برخلاف پردازش‌های 'ایستا' موجود که مدل ویدئو را با نرخ ثابت فریم در ثانیه (پیش‌فرض 1 FPS، قابل تنظیم از طریق API) جذب می‌کند، درک ویدئویی عامل‌محور هسته استدلال مدل را با ابزارهای ویدیویی بومی ترکیب می‌کند تا به‌طور دینامیک ویدئوهای هدف را در فریم‌های بصری، صدا و متون جستجو، اسکن و بررسی کند. در مرزهای استاندارد تحلیل ویدئو، مدل‌های Gemini با درک ویدئویی عامل‌محور هزینه‌های تحلیل را تا 66% کاهش و مصرف توکن را تا 88% کم کرده و در عین حال دقت را تا 7% افزایش می‌دهند.</p><p>این افزایش بهره‌وری به‌ویژه در ویدئوهای طولانی (از راهنمایی‌های 10 دقیقه‌ای تا محاضرات 90 دقیقه‌ای و ضبط‌های چندساعته) مشهود است، جایی که پردازش ایستا توسعه‌دهندگان را مجبور می‌سازد بین هزینه‌های بالای توکن یا تکنیک‌هایی که جزئیات حیاتی را از دست می‌دهند، یکی را انتخاب کنند.</p><p>فعال‌سازی درک ویدئویی عامل‌محور مصرف توکن را تا 88% کاهش و دقت را با Gemini 3.7 Flash تا 7% افزایش می‌دهد.</p><p>در حالی که این دستاوردها شامل هر سه مدل پشتیبانی شده است، Gemini 3.7 Flash با درک عامل‌محور بهترین کیفیت کلی و بهترین ترکیب کیفیت و کارایی هزینه را ارائه می‌دهد و آن را در مرز پارتو نسبت دقت به هزینه در میان مدل‌های تست شده برای درک ویدئو قرار می‌دهد.</p><p>استفاده از درک ویدئویی عامل‌محور، Gemini 3.7 Flash را در مرز پارتو نسبت دقت به هزینه برای تحلیل ویدئو قرار می‌دهد.</p><p>به‌جای پردازش ایستا که در آن مدل جریان‌های رسانه‌ای را در نرخ فریم ثابت جذب می‌کند، درک ویدئویی عامل‌محور به Gemini اجازه می‌دهد تا نقشی فعال و هدف‌محور در تعیین اینکه چه چیزی را تماشا کند، با چه سرعتی و از طریق کدام حالت (فریم‌ها، صدا یا متن) ایفا کند و تنها لحظات و سیگنال‌های مورد نیاز را به‌دست آورد. در حالی که قبلاً توسعه‌دهندگان می‌توانستند این کار را به‌صورت دستی انجام دهند، با درک ویدئویی عامل‌محور، Gemini می‌تواند این کار را از طریق یک حلقه عامل‌محور، فراخوانی یک ابزار داخلی برای بارگذاری بخش مربوط به فایل ویدئویی، انجام دهد و هزینه‌های توسعه را به‌طور قابل‌توجهی کاهش دهد.</p><p>درک ویدئویی عامل‌محور نحوه پردازش محتوای ویدیویی طولانی‌مدت را در میان مجموعه‌ای از برنامه‌های کاربردی پرچالش تغییر می‌دهد.</p><p>تحلیل ویدئو طولانی‌مدت با صرفه‌جویی در توکن</p><p>ببینید چگونه Gemini 3.7 Flash عمل می‌کند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://deepmind.google/blog/introducing-agentic-video-in-gemini/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
