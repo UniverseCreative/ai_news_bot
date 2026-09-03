@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perplexity Open Sources Lily: A Rust + Metal Inference Engine for Qwen3.6-35B-A3B on Apple Silicon</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Perplexity Open Sources Lily: A Rust + Metal Inference Engine for Qwen3.6-35B-A3B on Apple Silicon</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-03 11:59</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Perplexity کدهای Lily، موتور استنتاج محلی پشت Hybrid Compute در Perplexity Computer را به صورت متن باز منتشر کرده است. این یک زمان اجرای تک‌فرایند است: یک لایه Rust نقاط ذخیره‌سازی (checkpoint) را بارگیری کرده و حلقه تولید را هدایت می‌کند، یک API تکمیل محاوره‌ای سازگار با OpenAI توکن‌ها را جریان می‌دهد و هسته‌های Metal نوشته‌شده به‌دست، مدل را اجرا می‌کنند. نه PyTorch و نه MLX در مسیر اجرای کار قرار دارند. Lily عمدتاً با یک مدل، Qwen3.6-35B-A3B، بر روی یک خانواده سخت‌افزاری محدود شده است و همین محدودیت استدلال عملکرد را تشکیل می‌دهد.</p><p>آیا قابل استقرار است؟ بله. یک دموی مستقل در مخزن pplx-garden عمومی است. یک سرور استنتاج Rust و Metal که تولید متن طمعی را از طریق یک API HTTP حداقلی سازگار با OpenAI ارائه می‌دهد. نقطه ذخیره‌سازی 4 بیتی 19.4 گیگابایت حجم دارد، بنابراین یک مک با سیلیکون اپل و 32 گیگابایت یا بیشتر حافظه یکپارچه، حداقل قابل قبول است؛ محصول Hybrid Compute در حال حمل Perplexity به macOS 15+، حداقل 24 گیگابایت و 32 گیگابایت برای بهترین نتایج اشاره دارد.</p><p>پشته پیش‌فرض مک MLX و MLX-LM است که در حال حاضر پیاده‌سازی Qwen را با کارهای گروهی متخصص، یک هسته Metal تکراری ترکیب‌شده و توجه آگاه به GQA ارائه می‌دهد. اما عملیات آن باید در سراسر معماری‌ها قابل استفاده مجدد باشد. Lily این را فدای می‌کند و ساختار مدل، برنامه‌های اجرایی و انتخاب هسته را در یک زمان اجرا قرار می‌دهد.</p><p>Qwen3.6-35B-A3B حاوی 35 میلیارد پارامتر است و تقریباً 3 میلیارد را به ازای هر توکن فعال می‌کند. یک روتر 256 متخصص را ارزیابی کرده و هشت نفر را انتخاب می‌کند، به همراه یک متخصص مشترک که هر توکن را می‌بیند. همچنین 10 لایه توجه کامل را با استفاده از توجه پرسش گروهی (16 سر پرسش، دو سر KV) و 30 لایه Gated DeltaNet ترکیب می‌کند. این سه الگو را تولید می‌کند: گروه‌های ناهمگن از متخصصان، توجه بر روی یک کش KV در حال رشد و تکرار با اندازه ثابت.</p><p>نقطه ذخیره‌سازی از کمی‌سازی افلاین 4 بیتی گروهی استفاده می‌کند، به طوری که هر گروه از 64 وزن، مقیاس و انحراف bfloat16 مشترک دارد و حدود 70 گیگابایت از وزن‌های bfloat16 فشرده به 19.4 گیگابایت. عملیات تنسور Metal 4 از bfloat16 استفاده می‌کند، بنابراین وزن‌ها ابتدا باید بازسازی شوند. Lily این کار را یک سرامیک در یک زمان در داخل GEMM گروهی انجام می‌دهد و نتایج را در حافظه گروه‌های نخ نگه می‌دارد و در FP32 تجمع می‌کند؛ بنابراین آرایه گسترش‌یافته هرگز به حافظه یکپارچه نمی‌رسد. در آزمایش Perplexity، این هم‌افزایی 77.4٪ را در پیش‌پرکردن از ابتدا به انتها در یک درخواست 512 توکن افزایش داد.</p><p>نگهداری هیستوگرام مسیر‌یابی، اسکن پیشوند، پخش و نگاشت بلوک در داخل یک بافر دستوری GPU واحد 89٪ را در 512 توکن با حذف همزمان‌سازی CPU در هر لایه MoE اضافه کرد. حرکت از کاشی‌های 16 ردیفی به کاشی‌های 32 ردیفی با چهار گروه simd13.2٪ در 2K اضافه کرد؛ یک اسکن Gated DeltaNet مقیم در رجیستر 5.6٪ اضافه کرد. GEMM‌های متخصص تقریباً 90٪ زمان پیش‌پرکردن را تشکیل می‌دهند. درخواست‌های طولانی به قطعات محدودی پردازش می‌شوند تا فعالیت‌های موقت با وزن‌ها و کش برای حافظه رقابت نکنند.</p><p>تفسیر Batch-1 تقریباً هیچ بازاستفاده وزنی ندارد، بنابراین پهنای باند سقف را تعیین می‌کند. یک گام ثبت‌شده 795 هسته را راه‌اندازی کرد که 555 مرحله متوالی را شکل می‌دهد؛ Lily وابستگی‌های واقعی را در یک عبور همزمان Metal ثبت می‌کند تا هسته‌های مستقل همپوشانی داشته باشند. توکن انتخاب‌شده به‌طور مستقیم در محفظه ورودی مقیم GPU مرحله بعدی نوشته می‌شود و یک سفر رفت و برگشت CPU به ازای هر توکن حذف می‌شود و چهار زنجیره هسته برای حفظ میانجی‌ها در رجیسترها تلفیق می‌شوند.</p><p>خواندن کش همگرا، پهنای باند کلید را از 33.8 به 47.9 گیگابیت در ثانیه و پهنای باند ارزش را از 42.0 به 61.8 گیگابیت در ثانیه افزایش داد. بسته‌بندی GQA، چهار سر پرسش که یک گروه نخ را به اشتراک می‌گذارند به طوری که هر ردیف KV یک‌بار بارگذاری می‌شود، رمزگشایی را در 32K تا 23.8٪ بهبود داد. طراحی</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/02/perplexity-open-sources-lily-a-rust-metal-inference-engine-for-qwen3-6-35b-a3b-on-apple-silicon/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

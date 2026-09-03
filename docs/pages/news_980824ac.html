@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-03 11:58</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>این راهنما یک دستور العمل عمومی و کم‌هزینه برای بهبود قابل توجه یک مدل کوچک در انطباق با خروجی‌های ساختارمند است. ما مدل LFM2.5-350M را با استفاده از بهینه‌سازی سیاست نسبی گروهی (GRPO) و با استفاده از کتابخانه TRL تنظیم مجدد می‌کنیم و آن را بر روی معیار IFStruct ارزیابی می‌نماییم. اجرای کامل این فرایند حدود 500 نمونه و 100 مرحله آموزش به‌طول می‌انجامد که به اندازه‌ای کوچک است که می‌توان از GPU رایگان Colab یا Kaggle استفاده کرد و در GitHub در دسترس است. نتایج نشان می‌دهد که حتی یک فرایند تنظیم مجدد سبک عملکرد را از 22.6% به 29.7% در معیار IFStruct بهبود می‌بخشد.</p><p>خروجی ساختارمند یکی از متداول‌ترین وظایف واقعی برای مدل‌های زبان بزرگ (LLMs) است، اما بیشتر معیارها آن را درون امتیازهای استدلالی یا استخراج کلی قرار می‌دهند و به‌جای سنجش آن به‌طور مستقل. این‌که آیا یک مدل می‌تواند خروجی معتبر و قابل تجزیه و تحلیل را در فرمت و شکل درخواست‌شده بازگرداند — انطباق با طرح‌واره — غالباً تعیین می‌کند که آیا می‌توان آن را به یک سیستم پایین‌دستی متصل کرد یا خیر.</p><p>توجه داشته باشید که خط لوله آموزشی که در اینجا توصیف شده است، همان‌طور که در وبلاگ IFStruct به آن اشاره شده، برای آموزش مدل RL استفاده نمی‌شود. این دفترچه هدفش بازتولید امتیاز معیار IFStruct نیست، بلکه نشان دادن این است که چگونه تنظیم مجدد مخصوص وظایف مدل‌های کوچک می‌تواند عملکرد را بهبود بخشد و با عملکرد مدل‌های بسیار بزرگ‌تر هماهنگ شود.</p><p>این راهنما شامل دو بخش است که در مکان‌های مختلف اجرا می‌شود:</p><p>ما به uv برای ابزارهای Python و llama.cpp برای سرویس‌دهی نیاز داریم. با پیروی از مستندات استقرار llama.cpp Liquid AI، llama.cpp را با Homebrew نصب کرده و تأیید می‌کنیم که llama-server در دسترس است:</p><p>قبل از شروع، بیایید LFM2.5-350M را در معیار IFStruct ارزیابی کنیم و ببینیم آیا می‌توانیم امتیاز گزارش‌شده 21.1% را بازتولید کنیم یا خیر.</p><p>IFStruct یک معیار برای آزمایش اعتبار خرو‌جی‌های LLM و انطباق با طرح‌واره است. این معیار به‌صورت متن‌باز در Liquid4All/ifstruct موجود است و داده‌های عمومی معیار در Hugging Face در LiquidAI/ifstruct-v1.0 در دسترس می‌باشد.</p><p>برای مقایسه ارزیابی، مدل را به‌صورت محلی بر روی MacBook با llama.cpp ارائه می‌دهیم. ما از BF16GGUF (LiquidAI/LFM2.5-350M-GGUF) استفاده خواهیم کرد.</p><p>سپس سرور مدل پایه را با فرمان زیر راه‌اندازی می‌کنیم:</p><p>پس از راه‌اندازی سرور، می‌توانیم معیار کامل را با 2000 نمونه اجرا کنیم:</p><p>وبلاگ انتشار IFStruct امتیاز 21.1% را برای LFM2.5-350M گزارش می‌کند. تنظیم محلی ما با llama.cpp/BF16 امتیاز 22.6% را ثبت می‌کند که نزدیک به 21.1% گزارش‌شده در وبلاگ IFStruct است. ما از این نتیجه محلی به‌عنوان پایه‌ای برای مقایسه پشته سرویس‌دهی مشابه استفاده می‌کنیم.</p><p>خط لوله کامل و قابل اجرا در دفترچه همراه موجود است. ما تنها بخش‌های مرتبط را در این قسمت پوشش خواهیم داد.</p><p>ما از nvidia/Nemotron-RL-instruction_following-structured_outputs استفاده می‌کنیم که هر درخواست را با یک JSON Schema هدف و یک تعداد فیلد مورد انتظار تنظیم می‌کند. ما از حدود 500 نمونه برای آموزش استفاده می‌کنیم.</p><p>از آن‌جا که توزیع داده‌های Nemotron با ارزیابی IFStruct متفاوت است، ما درخواست‌ها را برای پر کردن دو شکاف بین آن‌ها افزایش می‌دهیم:</p><p>ما مدل LiquidAI/LFM2.5-350M را بارگذاری کرده و یک آداپتور LoRA را متصل می‌کنیم. زیرا LFM2.5 از یک معماری توجه/پیچش ترکیبی استفاده می‌کند، ما نام‌های ماژول خاص LFM را هدف قرار می‌دهیم:</p><p>این تنظیم حدود 6 میلیون پارامتر را آموزش می‌دهد که تقریباً 1.66% از مدل را شامل می‌شود.</p><p>سپس ما سه تابع پاداش تعریف می‌کنیم که هر کدام در مقیاس [0، 1] هستند و هر تکمیل را از نظر درست بودن ساختار استخراج‌شده نمره‌گذاری می‌کنند:</p><p>ما این سه را به‌صورت مجموع وزنی با reward_weights=[1.0، 0.5، 2.0] ترکیب می‌کنیم.</p><p>ما برای 100 مرحله با 8 نسل در هر گروه درخواست آموزش می‌دهیم که برای یک GPU 16 گیگابایتی رایگان تنظیم شده است:</p><p>همان‌طور که در دفترچه می‌بینید، در طول اجرا، همه سه مؤلفه پاداش افزایش می‌یابند، KL از مدل مرجع پس از گرم کردن از صفر آغاز می‌شود و نسبت تکمیل‌های کوتاه‌شده نزدیک به صفر باقی می‌ماند.</p><p>در نهایت، ما LoRA را ادغام می‌کنیم.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/grpo-with-trl-ifstruct" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
