@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing WeatherNext 3, our most advanced and accurate global weather AI model</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Introducing WeatherNext 3, our most advanced and accurate global weather AI model</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-04 12:00</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>مدل پیشرفته پیش‌بینی وضع آب و هوای ما اکنون شامل داده‌های ماهواره‌ای به‌روز، بروزرسانی‌های ساعتی، وضوح بالاتر، پیش‌بینی دقیق‌تر بارش و متغیرهای انرژی پاک است. این مدل هم‌اکنون در سرویس‌های جستجو، Gemini، Maps، Google Maps Platform و Cloud یکپارچه شده است.</p><p>مرورگر شما از عنصر صوتی پشتیبانی نمی‌کند.</p><p>گوگل WeatherNext 3 را راه‌اندازی کرده است، مدلی پیشرفته از هوش مصنوعی که با استفاده از داده‌های ماهواره‌ای به‌روز، پیش‌بینی‌های آب و هوایی با دقت و وضوح بالا را ارائه می‌دهد و به‌جای شبیه‌سازی‌های فیزیکی سنتی، عمل می‌کند. این به‌روزرسانی پیش‌بینی‌های ساعتی محلی را ارائه می‌دهد که پنج برابر تیزتر از نسخه‌های قبلی هستند و به‌طور قابل توجهی برای کشاورزی، انرژی‌های تجدیدپذیر و برنامه‌ریزی روزانه بهبود یافته‌اند. اکنون می‌توانید به این پیش‌بینی‌های بهبود یافته مستقیماً از طریق Google Search، Maps و Gemini دسترسی پیدا کنید یا داده‌ها را از طریق Google Cloud در پروژه‌های خود ادغام کنید.</p><p>گوگل به تازگی WeatherNext 3 را منتشر کرده است، مدلی از هوش مصنوعی که پیش‌بینی‌های آب و هوایی را بسیار سریع‌تر و دقیق‌تر می‌سازد. این مدل از داده‌های ماهواره‌ای زنده استفاده می‌کند تا هر ساعت به‌روز رسانی شود و تصویری بسیار واضح‌تر از آنچه در بیرون در حال وقوع است، ارائه دهد. این به مردم کمک می‌کند تا برای مواردی مانند طوفان‌ها یا روزهای آفتابی بهتر برنامه‌ریزی کنند. این مدل اکنون اطلاعات آب و هوایی را که در Google Search و Maps مشاهده می‌کنید، تغذیه می‌کند.</p><p>هر روز، وضعیت آب و هوا بر میلیاردها تصمیم تأثیر می‌گذارد. برخی از این تصمیمات به سادگی گرفتن چتر قبل از خروج از خانه است، اما برخی دیگر عواقب بسیار بیشتری دارند. باد، باران و رویدادهای شدید آب و هوایی مانند گرما و خشکسالی تأثیرات زنجیره‌ای بر روی کشاورزی، زنجیره‌های تأمین جهانی، تولید انرژی پاک و اقتصادهای ملی دارند.</p><p>در سال‌های اخیر، هوش مصنوعی انقلابی در پیش‌بینی وضعیت آب و هوا ایجاد کرده است و با استفاده از سوابق تاریخی، پیش‌بینی‌های سریع‌تر و دقیق‌تری را نسبت به روش‌های سنتی انجام می‌دهد. با این حال، پیش‌بینی آب و هوای محلی و به‌سرعت در حال تغییر همچنان چالشی باقی مانده است. مدل‌های قبلی اغلب از وضوح مکانی کافی برخوردار نبودند و در ادغام داده‌های آب و هوایی به‌روز از منابعی مانند ماهواره‌ها مشکل داشتند.</p><p>امروز، Google DeepMind و Google Research WeatherNext 3 را معرفی می‌کنند، پیشرفته‌ترین و دقیق‌ترین مدل آب و هوایی جهانی تا به امروز، طبق ارزیابی‌های زنده مستقل Brightband. مدل ما به‌طور مستقیم از مشاهدات به‌روز یاد می‌گیرد و به همین دلیل می‌تواند پیش‌بینی‌های به‌موقع و محلی‌تری برای رویدادهای آب و هوایی که بیشترین تأثیر را بر زندگی مردم دارند، ارائه دهد. با استفاده از داده‌های خام ماهواره‌ای برای تولید یک پیش‌بینی هر ساعت با وضوح بالا، مدل ما پیش‌بینی‌های قابل اعتمادی را در محصولات گوگل در سراسر جهان در دسترس قرار می‌دهد.</p><p>کاربرد یک پیش‌بینی معمولاً به جزئیات و دقت آن در زمان و فضا بستگی دارد. WeatherNext 3 پیش‌بینی‌های ساعتی را در چندین وضوح مکانی تولید می‌کند و ثبات فیزیکی را از الگوهای وسیع باد جهانی تا توپوگرافی محلی حفظ می‌کند.</p><p>با WeatherNext 3 می‌توانیم متغیرهای کلیدی سطحی — مانند دما و رطوبت — را با دقت ۵ کیلومتر، سایر متغیرهای سطحی را در ۱۰ کیلومتر و متغیرهای جوی، مانند سرعت باد، را در ۲۵ کیلومتر تجزیه و تحلیل کنیم. به‌طور کلی، این اقدام تصویری جهانی از وضعیت آب و هوا را ارائه می‌دهد که تقریباً پنج برابر تیزتر از مدل قبلی ما، WeatherNext 2 است که پیش‌بینی‌ها را در شبکه‌ای ۲۵ کیلومتری با فواصل ۶ ساعته تولید می‌کرد.</p><p>شکل ۱: معماری سیستم end-to-end WeatherNext 3. این مدل از موزاییک‌های ماهواره‌ای ژئوستیشنری زنده به همراه تحلیل‌های تاریخی سنتی برای تغذیه یک شبکه مولد قابلیت انعطاف‌پذیر (Functional Generative Network - FGN) استفاده می‌کند. این شبکه، میدان‌های متراکم، مسیرهای چرخه‌ای گسسته را خروجی داده و پیش‌بینی‌هایی در سطح ایستگاه با داده‌های پراکنده را ارائه می‌دهد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

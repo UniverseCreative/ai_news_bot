@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google DeepMind’s WeatherNext 3 Trains on Weather Station Observations to Deliver 5 km Global Forecasts, Refreshed Every Hour</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Google DeepMind’s WeatherNext 3 Trains on Weather Station Observations to Deliver 5 km Global Forecasts, Refreshed Every Hour</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-04 12:00</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>مدل‌های پیش‌بینی آب‌وهوا با استفاده از هوش مصنوعی، سه سال است که در حال نزدیک شدن به پیش‌بینی‌های مبتنی بر فیزیک هستند، اما دو مشکل همچنان باقی مانده است: دقت نامناسب برای زمین‌نماهای محلی و راه‌اندازی که به تجزیه و تحلیل پیش‌بینی عددی آب‌و‌هوا (NWP) وابسته است و حدود شش ساعت تأخیر دارد. WeatherNext 3، که توسط Google DeepMind و Google Research منتشر شده، به هر دو مشکل رسیدگی می‌کند. این مدل به‌عنوان ورودی مستقیم، یک موزاییک زنده ماهواره‌ای جغرافیایی ثابت جهانی را می‌پذیرد، هر ساعت دوباره راه‌اندازی می‌شود و پیش‌بینی‌هایی تا دقت 0.05° (~5 کیلومتر) ارائه می‌دهد، در حالی که به‌جای شبکه‌های بازتحلیل، با اندازه‌گیری‌های خام ایستگاه‌های آب‌و‌هوا آموزش می‌بیند. براساس اطلاعات Google AI، ارزیابی‌های مستقل زنده از Brightband این مدل را به‌عنوان دقیق‌ترین مدل پیش‌بینی آب‌و‌هوا در سطح جهانی تاکنون معرفی کرده است.</p><p>آیا این مدل قابل اجرا است؟ به‌طور جزئی. داده‌های پیش‌بینی هم‌اکنون از طریق BigQuery، Earth Engine و Cloud Storage پس از درخواست لیست مجاز در دسترس است، اما وزن‌های WeatherNext 3 متن باز نیستند و استنتاج سفارشی درخواستی هنوز بر روی WeatherNext 2 اجرا می‌شود.</p><p>WeatherNext 3 یک شبکه مولد کاربردی (FGN) از نوع ترانسفورمر است که از همان خانواده احتمالی معرفی شده با WeatherNext 2 تشکیل شده است و به خروجی‌های چندرزولوشنی مقیاس‌پذیر است. ورودی‌ها شامل یک موزاییک زنده ماهواره‌ای جغرافیایی ثابت به‌علاوه تجزیه و تحلیل HRES از ECMWF است. آموزش بر اساس ERA5/HRES-fc0، IMERG ناسا، مشاهدات ایستگاهی و موزاییک‌های ماهواره‌ای انجام می‌شود.</p><p>اکثر پیش‌بینی‌کنندگان هوش مصنوعی از بازتحلیل NWP یاد می‌گیرند که اختلافات محلی ناشی از خطوط ساحلی، دره‌ها و کوه‌ها را مسطح می‌کند. WeatherNext 3 سرهای مشاهداتی متعهد را مستقیماً بر اساس اندازه‌گیری‌های خام ایستگاه‌ها آموزش می‌دهد، بنابراین خروجی‌های دما و نقطه شبنم 0.05° آن به آنچه که ابزارها ثبت می‌کنند کالیبره شده است و نه به نمایشی از مدل از جو.</p><p>یک پردازش جلو تنها سه لایه تولید می‌کند: دمای 2 متری و نقطه شبنم آموزش دیده در ایستگاه با دقت 0.05° (~5 کیلومتر)؛ باد سطحی مشبک با دقت 0.1° (~10 کیلومتر) در ارتفاع‌های 10 متری و 100 متری به‌علاوه فشار، دمای سطح دریا، لایه‌های ابر، تابش خورشیدی و بارش یک ساعته؛ و میدان‌های جوی با دقت 0.25° (~25 کیلومتر) در 13 سطح فشار. WeatherNext 2 میدان‌های 0.25° را در فواصل شش‌ساعته تولید می‌کرد که دلیل ادعای تقریبی پنج برابر دقت بیشتر است.</p><p>تغییر دوم مربوط به تنوع زمانی است. این مدل 24 بار در روز راه‌اندازی می‌شود. سیکل‌های سیناپتیک در ساعت‌های 00، 06، 12 و 18 UTC تا 15 روز (360 ساعت) با 64 عضو ترکیبی اجرا می‌شوند؛ اجراهای ساعتی موقتی 48 ساعت را پوشش می‌دهند. برای همرفت‌های سریع، به‌روزرسانی ساعتی که بر اساس مشاهدات فعلی ماهواره‌ای قرار دارد، به‌طور معناداری با یک دوره شش‌ساعته که به تحلیل‌های تأخیری وابسته است، متفاوت است.</p><p>بارش جایی است که مدل‌های جهانی به‌طور تاریخی ناکام بوده‌اند و میدان‌های مبهمی تولید می‌کنند که مرزهای طوفان را از قلم می‌اندازند. WeatherNext 3 بر اساس سه منبع بارش آموزش می‌بیند: بازتحلیل ECMWF، بازیابی‌های ماهواره‌ای IMERG ناسا، و بازتحلیل بارش ماهواره‌ای-راداری خود Google. Google گزارش می‌دهد که بهبودهای CRPS در مقابل سطوح پایه تا 60% در برابر IMERG، 30% در برابر MRMS و 10% در برابر سنجش‌های بارانی در زمان‌های پیش‌بینی اولیه مشاهده شده است؛ تحقیقات همچنین کاهش تا 50% در امتیاز Brier و CRPS در مقابل سطوح پایه NWP در ارزیابی‌های انجام شده با IMERG را گزارش می‌کند.</p><p>برای انرژی‌های تجدیدپذیر، این مدل سرعت باد 100 متری را در ارتفاع تقریباً جایگاه توربین، توزیع کامل ابرهای کم/متوسط/زیاد و هر دو مؤلفه تابش خورشیدی (SSRD و FDIR) را ارائه می‌دهد. این ترکیب نیاز اپراتورهای شبکه را برای پیش‌بینی خروجی باد و خورشید در برابر تقاضا تأمین می‌کند و واضح‌ترین نشانه است که این نسخه برای خریداران عملیاتی طراحی شده و نه صرفاً برای جدول‌های</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/03/google-deepminds-weathernext-3-trains-on-weather-station-observations-to-deliver-5-km-global-forecasts-refreshed-every-hour/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

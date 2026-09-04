@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The sameness problem behind those unappetizing AI-generated menus</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>The sameness problem behind those unappetizing AI-generated menus</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-04 11:59</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>زمانی که این تجربه برای نخستین بار برای شما رخ می‌دهد، فکر می‌کنید که دیوانه‌اید. به یک کافه می‌روید و به منویی با انواع ساندویچ‌های بیگل نگاه می‌کنید، اما هر تصویر به طرز عجیبی بی‌نقص، دقیقا متقارن و به طرز عجیبی نرم است و احساس غریبی به شما می‌دهد که چیزی درست نیست. ممکن است فکر کنید که پارانوئید هستید، اما در واقع ذهن خود را از دست نمی‌دهید. منوهای تولیدشده توسط هوش مصنوعی به لطف مدل‌هایی که بر اساس یک زیبایی‌شناسی باریک و «دلپسند» آموزش دیده‌اند، به صنعت رستوران‌ها رسیده‌اند؛ زیبایی‌شناسی‌ای که حتی وقتی نمی‌توانید توضیح دهید چرا، احساس می‌کنید نادرست است.</p><p>گاهی اوقات، این تصاویر به طرز زشتی جعلی هستند، مانند یک بوریتوی با پنیر که آن‌قدر حباب‌دار و آبکی است که بیشتر شبیه هنر آوانگارد است تا ناهار. بیشتر اوقات، آن‌ها به قدری معمولی به نظر می‌رسند که فقط وقتی کمی بیشتر دقت می‌کنید متوجه می‌شوید که چیزی نادرست است.</p><p>«این تقریباً شبیه به یک موجود بیگانه است که سعی می‌کند یک پیتزا درست کند بدون اینکه اصول اساسی آن را درک کند»، الکس لیسل، CTO شرکت Reality Defender به TechCrunch گفت. (خود Reality Defender بخشی از یک دسته رو به رشد از استارتاپ‌ها است که ابزارهای تشخیص هوش مصنوعی و تأیید محتوا را فروخته و این کسب‌وکار به دلیل مسائلی از این دست وجود دارد.)</p><p>اگر در NYC سنگی پرتاب کنید، به احتمال زیاد به تبلیغ غذای هوش مصنوعی برخواهید خورد. </p><p>لیسل می‌گوید که نحوه ساخت این مدل‌ها می‌تواند توضیح دهد چرا تصاویر به چنین زیبایی‌شناسی خاصی گرایش دارند — جایی که هر اسکوپ بستنی کاملاً گرد است و میگوها به نظر می‌رسد که به‌طور ژنتیکی به طوری تغییر یافته‌اند که بتوانند دم‌های خود را بخورند و «وحشت‌های غذایی لاوکرافتی» جدیدی را ایجاد کنند.</p><p>مدل‌های زبان بزرگ (LLMs) و مدل‌های انتشار — نوعی از مدل‌های هوش مصنوعی که امکان ایجاد چت‌بات‌های به‌ظاهر دانای همه چیز و تولیدکنندگان تصویر مانند ChatGPT و Midjourney را فراهم می‌کنند — بر روی مقادیر زیادی از داده‌ها آموزش دیده‌اند. این مدل‌ها سپس الگوهایی را در مجموعه داده‌ها شناسایی کرده تا پیش‌بینی کنند کاربری که سؤالی مانند «منو برای یک رستوران همبرگر بساز» می‌پرسد، چه چیزی در جستجوی آن است.</p><p>«بسیاری از این چیزها شبیه منوی Chili’s از سال ۲۰۱۵ به نظر می‌رسند و دلیل خوبی برای آن وجود دارد»، لیسل گفت. «این منبع کار بود که [مدل‌ها] عملکرد خود را از آن استخراج کردند.»</p><p>داده‌های آموزشی جدید برای شرکت‌های سازنده مدل‌های هوش مصنوعی ارزشمند هستند — حتی مشخص شده که آمازون برای اسکن کتاب‌های نادر و افزودن آن‌ها به داده‌های آموزشی‌اش، آن‌ها را تأمین می‌کند و فقط پس از آپلود آن‌ها، آن کتاب‌ها را نابود می‌کند. اجتناب‌ناپذیر است که برخی محتوای تولیدی توسط هوش مصنوعی به این مجموعه داده‌های غیرقابل درک نفوذ کند. اما زمانی که مدل‌های هوش مصنوعی بر روی مقدار زیادی از محتوای تولیدی خود آموزش می‌بینند، با خطر «خرابی مدل» مواجه می‌شوند.</p><p>«خرابی مدل تقریباً شبیه به بیماری جنون گاوی است... وقتی خروجی‌های یک مدل را دوباره به خود آن تغذیه می‌کنید، در نهایت همخونی بیش از حد می‌شود و کل چیز فرو می‌پاشد»، لیسل توضیح داد. «آنچه که ما در اینجا می‌بینیم همگرایی است، که لزوماً به معنای خرابی مدل نیست.»</p><p>همگرایی کمی کمتر شدید است و کیفیت خروجی‌های یک هوش مصنوعی را کاهش می‌دهد بدون اینکه آن را به‌طور کامل بی‌فایده کند.</p><p>اگر از یک مدل هوش مصنوعی بخواهید منویی برای یک رستوران فست فود تولید کند، مدل احتمالاً به منوهای Wendy’s، Burger King، McDonald’s یا زنجیره محبوب دیگری ارجاع خواهد داد. این منوها قبلاً سبک مشابهی دارند که به این معناست که خروجی‌های تولیدی هوش مصنوعی همان سبک را تقلید خواهند کرد و اگر منوی تولیدشده توسط هوش مصنوعی دوباره به داده‌های آموزشی بازگردد، این سبک را بیشتر تقویت خواهد کرد.</p><p>اما منوها و تبلیغات غذایی همیشه بهتر از واقعیت به نظر می‌رسند، مانند یک بیگ مک در تبلیغ مک‌دونالد که در آن هر لایه ساندویچ توسط یک طراح دکور به گونه‌ای چیده شده است که حداکثر جذابیت را داشته باشد. این اثر می‌تواند</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://techcrunch.com/2026/09/03/the-sameness-problem-behind-those-unappetizing-ai-generated-menus/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
