@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reducto Releases r-1: A Single Pass Document Parsing Model That Cuts Errors 20% at 1 Cent Per Page</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Reducto Releases r-1: A Single Pass Document Parsing Model That Cuts Errors 20% at 1 Cent Per Page</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-08 12:00</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>هفته گذشته، Reducto از r-1 رونمایی کرد. این مدل اولین نمونه از یک خانواده جدید پردازش است که بر پایه معماری بازنوسیسی طراحی شده است و جایگزین OCR چند مرحله‌ای چند عاملی شرکت می‌شود و به‌صورت یک بار پردازش صفحه کامل عمل می‌کند. Reducto اعلام کرده که r-1 از دقیق‌ترین مدل‌های چند عاملی قدیمی خود دقیق‌تر، سریع‌تر و تا ۶ برابر ارزان‌تر است.</p><p>آیا امروز قابل استقرار است؟ بله، در حالت پیش‌نمایش. r-1 از طریق Parse API میزبان Reducto بر روی V3 اجرا می‌شود و با یک نشانه پیکربندی فعال می‌شود. وزن‌های باز و هیچ نقطه بازی محلی برای میزبانی وجود ندارد. پلتفرم Reducto به‌طور جداگانه از چند مستاجری ابری، VPC مشتری، نصب‌های محلی و هوایی پشتیبانی می‌کند و تأییدیه‌های SOC 2 Type II و پردازش HIPAA در رده‌های بالاتر طبق سیاست‌های امنیتی خود ارائه می‌دهد.</p><p>Parse قدیمی OCR، تشخیص الگو و پردازش پس از آن را به‌عنوان مراحل جداگانه انجام می‌دهد و شامل مراحل اختیاری زبان بصری چندعاملی است که بر روی آن قرار داده می‌شود. هر درخواست مدل اضافه، تأخیری به همراه دارد. r-1 متن، جداول، اشکال، الگو، ترتیب خواندن، فرمت‌بندی، و ارتباط را در یک بار پردازش صفحه کامل درهم می‌آورد. هر بلاک با جعبه‌های محدود کننده نسبی صفحه که محتوا را به موقعیت آن در صفحه مرتبط می‌کند، بازمی‌گردد.</p><p>ادغام واقعی ادعای محصول است. تیم‌هایی که بر روی صورت‌های مالی، ادعای بیمه یا قراردادها کار می‌کنند، اغلب فایل‌ها را میان چندین ارائه‌دهنده جا‌به‌جا می‌کنند و پردازش پس از آن را به‌منظور دستیابی به دقت قابل استفاده اضافه می‌کنند. r-1 به‌سمت هزینه ارکستراسیون آن هدف‌گذاری شده است، نه فقط دقت کاراکتر خام.</p><p>Reducto گزارش داده که نرخ خطا در پیش‌نمایش اولیه r-1 نسبت به خط‌های لوله قدیمی خود ۲۰ درصد کاهش یافته است. همچنین عنوان کرده است که r-1 در ارزیابی‌های داخلی از محصولات هایپر اسکیلر و LLM های رایج در اسناد پیچیده بهتر عمل کرده است. Amazon Textract و Azure Document Intelligence در بیانیه به‌عنوان دسته‌بندی پایه موجود نام برده شده‌اند.</p><p>در رابطه با قیمت، مدل‌های چندعاملی قدیمی بین ۳ تا ۶ سنت به ازای هر صفحه بسته به بار کاری هزینه داشتند. r-1 به‌صورت کامل ۱ سنت به ازای هر صفحه هزینه دارد و هیچ هزینه‌ای برای ویژگی‌های اضافی یا اعتبار برای رسیدن به دقت بالا اضافه نمی‌شود. Reducto این موضوع را به‌عنوان بخشی از حرکت گسترده‌تری به سمت جزوه‌های نرخ ثابت محصولات می‌داند.</p><p>لطفاً توجه داشته باشید که کاهش ۲۰ درصدی خطا نسبت به خط‌های لوله قبلی Reducto اندازه‌گیری شده است، نه نسبت به مبنای شخص ثالث. و مقایسه رو در رو با هایپر اسکیلرها و LLM ها تحت مدیریت فروشنده صورت گرفته و هیچ مجموعه ارزیابی عمومی یا مجموعه داده‌ای همراه با اعلامیه منتشر نشده است.</p><p>بر اساس مستندات، r-1 موارد زیر را به‌صورت بومی در بار پردازش کامل مدیریت می‌کند: متن دیجیتال، اسکن‌های دستی و نوشته؛ ساختار جدول خوانده‌شده با زمینه صفحه اطراف، شامل سلول‌های ادغام‌شده و سرصفحه‌های تو در تو؛ ستون‌ها، سرصفحه‌ها، پاورقی‌ها، نوارهای کناری و ترتیب خواندن به‌صورت هم‌زمان حل شده‌اند؛ تشخیص اشکال با توضیح مختصر تولیدشده؛ فرمت‌بندی که معنی‌دار است، شامل سرعنوان‌ها، لیست‌ها، کلمات درشت، زیرخط‌ها و خط‌خورده‌ها؛ و ارتباط از طریق جعبه‌های محدودکننده نسبت به صفحه.</p><p>موارد خاصی که Reducto به آن‌ها اشاره کرده شامل جداول متراکم، الگوهای غیرمعمول، اسکن‌های با کیفیت پایین، محتوای دارای علامت آبی و اسنادی است که از هیچ الگوی قابل پیش‌بینی پیروی نمی‌کنند. یک خط خورده از دست رفته می‌تواند یک بند قرارداد را معکوس کند و یک جدول نادرست می‌تواند یک رقم نادرست را به عامل تحویل بدهد، به همین دلیل این موارد خاص در خطوط لوله تحت مقررات اهمیت دارند.</p><p>r-1 به API V3 نیاز دارد. یک درخواستی که تنظیمات .model را نادیده می‌گیرد، هنوز بر روی Parse قدیمی اجرا می‌شود، بنابراین هیچ چیز به‌صورت ساکت خراب نمی‌شود. خطوط لوله جدیدی که در Studio ایجاد می‌شوند به‌طور پیش‌فرض به r-1 تنظیم می‌شوند.</p><p>پردازش چندعاملی به‌طور کامل از بین نرفته است. گردش‌کارهایی که به نشانه‌های سفارشی یا استخراج چارت‌های پیشرفته نیاز دارند همچنان صفحات خود را از طریق خط لوله چندعاملی روت می‌کنند که Reducto آن را به نتیجه r-1 اضافه می‌کند و که تأخیر ایجاد می‌کند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/07/reducto-releases-r-1-a-single-pass-document-parsing-model-that-cuts-errors-20-at-1-cent-per-page/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

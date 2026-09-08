@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opaque recurrence, and other AI terms that you should probably know</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Opaque recurrence, and other AI terms that you should probably know</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-08 12:00</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>هوش مصنوعی در حال بازنویسی جهان است و همزمان، زبان کاملاً جدیدی برای توصیف نحوه انجام این کار اختراع می‌کند. اگر به هر جلسه محصول، ارائه یا پنل در این روزها بنشینید، خواهید شنید که افراد از واژه‌هایی مانند LLMs، RAG، RLHF و از هفته گذشته، اصطلاحاتی مانند "تکرار کدر" صحبت می‌کنند؛ تکنیک استدلال در مدل جدید Astra شرکت OpenAI که محققان ایمنی هوش مصنوعی را نگران کرده است. واژگان به قدری سریع تغییر می‌کنند که حتی افراد بسیار هوشمند در دنیای فناوری نیز ممکن است کمی احساس ناامنی کنند.</p><p>این واژه‌نامه تلاش ما برای رفع این مشکل است: تعاریف به زبان ساده از اصطلاحات هوش مصنوعی که احتمالاً بیشتر با آنها مواجه خواهید شد، خواه در حال کار با این ابزارها باشید، سرمایه‌گذاری در آنها کنید یا فقط سعی کنید با مطالعه TechCrunch یا گوش دادن به پادکست‌های مرتبط به‌روز بمانید. ما این واژه‌نامه را به‌طور منظم به‌روزرسانی می‌کنیم تا با تحول این حوزه هماهنگ بماند، پس آن را یک سند زنده در نظر بگیرید، مشابه سیستم‌های هوش مصنوعی که توصیف می‌کند.</p><p>هوش عمومی مصنوعی، یا AGI، یک اصطلاح مبهم است. اما به‌طور کلی به هوش مصنوعی اشاره دارد که در بسیاری از وظایف، اگر نه بیشتر، از انسان متوسط توانایی بیشتری دارد. سام آلتمن، مدیرعامل OpenAI، AGI را به‌عنوان "معادل یک انسان میانه که می‌توانید به‌عنوان همکار استخدام کنید" توصیف کرده است. در همین حال، منشور OpenAI AGI را به‌عنوان "سیستم‌های کاملاً خودمختار که در بیشتر کارهای اقتصادی ارزشمند از انسان‌ها بهتر عمل می‌کنند" تعریف می‌کند. درک Google DeepMind کمی با این دو تعریف متفاوت است؛ این آزمایشگاه AGI را به‌عنوان "هوش مصنوعی که حداقل به اندازه انسان‌ها در بیشتر وظایف شناختی توانمند است" در نظر می‌گیرد. گیج شدید؟ نگران نباشید - کارشناسان در خط مقدم تحقیقات هوش مصنوعی نیز همین‌طور هستند.</p><p>یک عامل هوش مصنوعی به ابزاری اشاره دارد که از فناوری‌های هوش مصنوعی برای انجام مجموعه‌ای از وظایف به‌ نمایندگی از شما استفاده می‌کند - فراتر از آنچه که یک چت‌بات هوش مصنوعی ابتدایی می‌تواند انجام دهد - مانند ثبت هزینه‌ها، رزرو بلیط یا میز در رستوران، یا حتی نوشتن و نگهداری کد. با این حال، همانطور که قبلاً توضیح داده‌ایم، در این فضای نوظهور قطعات متحرک زیادی وجود دارد، بنابراین "عامل هوش مصنوعی" ممکن است برای افراد مختلف معانی متفاوتی داشته باشد. زیرساخت‌ها همچنین هنوز در حال ساخت هستند تا قابلیت‌های مدنظر خود را ارائه دهند. اما مفهوم اولیه به یک سیستم خودمختار اشاره دارد که ممکن است از چندین سیستم هوش مصنوعی برای انجام وظایف چند مرحله‌ای استفاده کند.</p><p>به نقاط پایانی API به‌عنوان "دکمه‌هایی" در پشت یک نرم‌افزار فکر کنید که برنامه‌های دیگر می‌توانند آنها را فشار دهند تا اعمالی انجام دهند. توسعه‌دهندگان از این رابط‌ها برای ایجاد ادغام‌ها استفاده می‌کنند - به‌عنوان مثال، اجازه می‌دهند یک برنامه داده‌ها را از برنامه‌ای دیگر استخراج کند، یا به یک عامل هوش مصنوعی اجازه می‌دهد خدمات شخص ثالث را به‌طور مستقیم کنترل کند بدون اینکه انسانی هر رابط را به‌صورت دستی اداره کند. بیشتر دستگاه‌های هوشمند خانگی و پلتفرم‌های متصل این دکمه‌های پنهان را در اختیار دارند، حتی اگر کاربران عادی هرگز آنها را نبینند یا با آنها تعامل نداشته باشند. با افزایش توانایی‌های عامل‌های هوش مصنوعی، آنها به‌طور فزاینده‌ای قادر به یافتن و استفاده از این نقاط پایانی به‌تنهایی هستند و امکانات قدرتمند - و گاهی غیرمنتظره - را برای اتوماسیون به‌وجود می‌آورند.</p><p>با توجه به یک سؤال ساده، مغز انسان می‌تواند بدون اینکه به آن زیاد فکر کند، پاسخ دهد - چیزهایی مانند "کدام حیوان بلندتر است، زرافه یا گربه؟" اما در بسیاری از موارد، شما اغلب به کاغذ و قلم نیاز دارید تا به پاسخ درست برسید زیرا مراحل میانی وجود دارد. به‌عنوان مثال، اگر یک کشاورز مرغ و گاو داشته باشد و مجموعاً آنها 40 سر و 120 پا داشته باشند، ممکن است نیاز باشد یک معادله ساده بنویسید تا پاسخ را پیدا کنید (20 مرغ و 20 گاو).</p><p>در یک زمینه هوش مصنوعی، استدلال زنجیره‌ای برای مدل‌های زبان بزرگ به معنای تقسیم یک مشکل به مراحل کوچک‌تر و میانی برای بهبود کیفیت نتیجه نهایی است. معمولاً برای دریافت پاسخ زمان بیشتری طول می‌کشد، اما پاسخ دقیق‌تری به‌دست می‌آید.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://techcrunch.com/2026/09/07/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
