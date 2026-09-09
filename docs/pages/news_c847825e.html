@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-09 12:11</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>بیشتر کارهای هم‌راستایی ایمنی، آسیب را به عنوان ویژگی یک موضوع در نظر می‌گیرند. یک درخواست ناایمن است زیرا در یک دسته‌ی عمومی مانند سلاح‌ها، کلاهبرداری یا خودآزاری قرار می‌گیرد و مدل‌های محافظتی مانند LlamaGuard-3 دقیقاً این نوع طبقه‌بندی در سطح موضوع را کدگذاری می‌کنند. معیارهایی نظیر XSTest و OR-Bench سپس حالت‌های ناکامی را که این وضعیت ایجاد می‌کند، بررسی می‌کنند: مدل‌هایی که درخواست‌های ایمن را به دلیل وجود یک کلمه خطرناک رد می‌کنند؛ و کار بر روی کالیبراسیون رد درخواست سعی دارد این عدد را به پایین برساند.</p><p>به‌کارگیری‌های واقعی به ندرت متناسب با تصویر در سطح موضوع هستند. یک مدل پایه ممکن است برای یک دستیار عمومی، یک محصول آموزشی، یک سیستم شرکتی یا یک خدمت عمومی تطبیق یابد و هر یک از این زمینه‌ها به مرزهای متفاوتی در همان موضوع نیاز دارد. یک معلم حقوق مدنی و یک دستیار در بخش عمومی می‌توانند از یک مدل مشترک استفاده کنند، اما رفتارهای متضادی در زمینه سیاست را می‌طلبند: هر دو باید به سوالات واقعی درباره انتخابات پاسخ دهند، اما فقط یکی ممکن است نیاز داشته باشد که از درخواست نوشتن دستکاری سیاسی هدفمند رد کند. یک محافظ در سطح موضوع نمی‌تواند این جدایی را بیان کند. به عنوان مثال، LlamaGuard-3 انتخابات را تنها به عنوان "اطلاعات نادرست واقعی درباره سیستم‌ها و فرایندهای انتخاباتی" پوشش می‌دهد، که متقاعدسازی و دستکاری را مستثنی کرده و در عین حال، شامل درخواست‌های واقعی می‌شود که یک استقرار باید همچنان به آن‌ها پاسخ دهد.</p><p>آخرین مقاله ما، Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal، این مشکل باریک‌تر را به‌طور مستقیم بررسی می‌کند. سوال این نیست که آیا یک موضوع کامل باید رد شود، بلکه کدام زیرمجموعه از آن موضوع با سیاست استقرار معین سازگار نیست و چگونه می‌توان یک مدل را بر اساس آن مرز آموزش داد و اندازه‌گیری کرد.</p><p>ما تنظیم را به عنوان یک کیهان موضوعی رسمیت می‌بخشیم که شامل تمام درخواست‌های سیاسی در آزمایش‌های ماست و زیرمجموعه‌ی هدف‌مندی مضر را که استقرار می‌خواهد از آن رد کند، در بر می‌گیرد. سیاست مورد نظر رد کردن تمام سیاست نیست، بلکه رد کردن زیرمجموعه مضر و در عین حال ادامه پاسخگویی به مکمل‌های بی‌خطر است. رفتار ایده‌آل یک مرحله‌ی تند است: رد درون زیرمجموعه و پاسخ به هر جا دیگر در موضوع.</p><p>تنظیم مرز باریک. یک استقرار ممکن است نیاز به رد فقط درخواست‌های سیاسی داشته باشد که خواستار دستکاری یا متقاعدسازی هدفمند هستند، در حالی که هنوز به سایر درخواست‌های سیاسی پاسخ می‌دهد؛ به جای اینکه تمام سیاست را رد کند. رد یک مدل آموزش دیده نرم‌تر از جدایی ایده‌آل است و می‌تواند به قلمرو بی‌خطر نزدیک مرز سرریز کند. منبع: شکل 1 مقاله.</p><p>یک مدل آموزش دیده هرگز این مرحله تند را یاد نمی‌گیرد. آن یک احتمال رد را یاد می‌گیرد که تنها به هدف نزدیک می‌شود و آموزش متقاطع انتروپی که رد را درون زیرمجموعه مضر بالا می‌برد، می‌تواند رد را به سمت مکمل بی‌خطر نیز براند. بنابراین مشکل واقعی تنها بالا بردن رد در درخواست‌های مضر نیست، بلکه شکل‌دهی به رفتار نزدیک به مرز خود است. ما آن مرز را به عنوان جفت‌هایی از درخواست‌ها که یک لنگر موضوع را به اشتراک می‌گذارند و تنها در قصد متفاوت هستند، عملیاتی می‌سازیم: یکی که باید رد شود و دیگری که باید پاسخ داده شود.</p><p>ما از متقاعدسازی سیاسی به عنوان یک بستر آزمایشی استفاده می‌کنیم، زیرا متقاعدسازی دستکاری می‌تواند آسیب واقعی ایجاد کند در حالی که اطلاعات واقعی سیاسی مشروع باقی می‌ماند که دقیقاً موردی است که در آن رد درخواست در سطح موضوع بیش از حد کند است.</p><p>روش طبیعی برای ایجاد داده‌های آموزشی در این جا خودتولید است: مدل هدف را بگیرید، آن را به سمت رد در هر درخواست مضر هدایت کنید و ردپایی را نگه دارید که یک مدل محافظ آن را به عنوان رد واقعی تأیید می‌کند. این دستورالعمل پشت روش‌هایی مانند ThinkSafe است و ما آن را به عنوان مرجع خود با درخواست‌های سیاسی و اندازه‌گیری مؤلفه به مؤلفه به کار می‌گیریم.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
