@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cohere Releases North Small Translate: A 218B MoE Translation Model That Scores 83.6 on WMT26 Across 50 Languages</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Cohere Releases North Small Translate: A 218B MoE Translation Model That Scores 83.6 on WMT26 Across 50 Languages</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-11 12:04</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Cohere مدل ترجمه ماشینی با وزن آزاد به نام North Small Translate را به بازار عرضه کرده است. این مدل از نوع Mixture-of-Experts (MoE) نازک است و دارای ۲۱۸ میلیارد پارامتر کل و ۲۵ میلیارد پارامتر فعال می‌باشد. این مدل ۵۰ زبان را پوشش می‌دهد، از زبان آلبانیایی تا ویتنامی. در ارزیابی WMT26 Cohere، نمره آن به طور میانگین ۸۳.۶ در میان تمام زبان‌ها می‌باشد. Cohere اعلام کرده است که این مدل بیشتر از DeepL و Google Translate عملکرد بهتری داشته و همچنین گزینه‌های آزاد مانند GLM 5.2 و Mistral Large 3 را نیز پشت سر گذاشته است.</p><p>آیا این مدل قابل استقرار است؟ بله. می‌توانید تا رسیدن به محدودیت‌های نرخ در API Cohere به طور رایگان از آن استفاده کنید، یا آن را به صورت غیر تجاری میزبانی کنید یا به صورت تجاری مجوز آن را تهیه کنید.</p><p>محققان Google مدل Transformer را در سال ۲۰۱۷ با مقاله‌ای تحت عنوان Attention Is All You Need معرفی کردند. نتایج اصلی این مطالعه نتیجه‌گیری از ترجمه انگلیسی به آلمانی و انگلیسی به فرانسوی در WMT 2014 بود. ۹ سال بعد، Cohere به این مشکل اصلی با یک مدل اختصاصی باز می‌گردد. پست راه‌اندازی Cohere در X به مسأله ترجمه به عنوان موضوعی از حاکمیت اشاره دارد. سازمان‌هایی که نمی‌توانند به طور جهانی ارتباط برقرار کنند، نمی‌توانند حاکمیت خود را حفظ کنند.</p><p>North Small Translate نخستین مدل ترجمه در خانواده North Cohere است. این مدل پس از Tiny Aya و Command A Translate در نسل چند زبانی Cohere معرفی شده است. Cohere این مدل را با همکاری RWS ساخته است، که دانشمندان و کارشناسان زبان Language Weaver نقش بسزایی در کیفیت واقعی آن داشته‌اند.</p><p>ساختار مدل یک Transformer MoE نازک تنها با دیکودر را توصیف می‌کند. جزئیات کلیدی به شرح زیر است: </p><p>حدود ۱۱.۵٪ از وزنه‌ها به ازای هر توکن فعال هستند. محاسبات به ازای هر توکن ۲۵ میلیارد پارامتر فعال را پیگیری می‌کند. حافظه باید همچنان همه ۲۱۸ میلیارد را نگهداری کند.</p><p>تیم Cohere این نمرات WMT26 در تمام زبان‌ها را در وبلاگ راه‌اندازی خود گزارش کرده است:</p><p>نوع Agentic یک کارکرد چندمرحله‌ای را اجرا می‌کند که خطاهای خود را شناسایی و اصلاح می‌کند. نمره‌بندی Cohere نمرات ۸۰ تا ۱۰۰ را به عنوان نادرست یا خطاهای کم اهمیت در نظر می‌گیرد. یک نکته در اینجا مهم است. این برنامه‌های Cohere با GPT-5.6-Sol به عنوان قاضی انجام شده‌اند. تا زمان ظهور نتایج مستقل WMT26، آن‌ها را به عنوان نتایج گزارش شده توسط فروشنده در نظر بگیرید.</p><p>از نظر منطقه‌ای، هر دو نسخه در سراسر اروپا از Gemma 4 31B پیشی می‌گیرند. در زبان‌های اتحادیه اروپا، مدل استاندارد نمره ۸۲.۱۷ را در مقابل ۷۲.۷۳ Gemma رقم می‌زند. در جنوب آسیا، نمره North به ۸۶.۱۶ و Gemma به ۸۸.۰۴ نزدیک است.</p><p>در آزمایشات Cohere، مدل به طور میانگین ۱۱۲ توکن خروجی در ثانیه تولید کرد، در حالی که Gemma 4 31B این رقم ۸۱ توکن خروجی بود. این در شرایط بار کم و روی سخت‌افزار یکسان بود. در شرایط بار بالا، ارقام ۳۹ در برابر ۳۰ بودند. Cohere این مقدار را تا میزان ۱.۴ برابر بیشتر از توان عملیاتی می‌نامد.</p><p>مدل در ترجمه متون طولانی عملکرد قوی‌تری دارد. نمره آن ۴۸.۹ است وقتی که ۲ فصل کتاب را در یک بار ترجمه می‌کند. Google Translate نمره ۲۱.۳ و Gemma 4 31B نمره ۱۹.۴ را دارد. کیفیت بر اساس هر پاراگراف با xCOMET-XL اندازه‌گیری می‌شود.</p><p>در جدول هزینه‌های Cohere، مدل نمره ۸۰.۱ را با هزینه ۰.۰۰۰۶۷۶ دلار به ازای هر کار به دست می‌آورد، که به طور میانگین شامل ۶۶۱ توکن است. Gemini 3.1 Pro Preview (بالا) هزینه ۰.۰۳۸۹۲۸ دلار به ازای هر کار دارد، که حدوداً ۵۸ برابر بیشتر است. Qwen 3.5 397B A17B هزینه ۰.۰۰۴۵۲۵ و Command A+ هزینه ۰.۰۰۵۱۵۸ دارد.</p><p>کوتاه‌ترین مسیر API Chat V2 Cohere است. مدل تا رسیدن به محدودیت‌های نرخ در آنجا رایگان است:</p><p>برای میزبانی شخصی، Cohere ۳ نقطه چک منتشر کرده که همان‌هایی است که در تولید استفاده می‌کند:</p><p>مدل را اینجا مشاهده کنید. همچنین، از شما دعوت می‌شود ما را در Twitter دنبال کنید و فراموش نکنید به ۱۵۰ هزار نفر در ML SubReddit ما بپیوندید و به خبرنامه ما اشتراک بگذارید. صبر کنید! آیا شما در تل</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/10/cohere-releases-north-small-translate-a-218b-moe-translation-model-that-scores-83-6-on-wmt26-across-50-languages/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

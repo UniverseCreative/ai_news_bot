@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-11 12:04</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>سزار د لا فنت و آزمایشگاه او ژنوم‌های موجودات زنده و منقرض شده را برای یافتن مولکول‌هایی که می‌توانند در مبارزه با عفونت‌های مقاوم به دارو کمک کنند، بررسی می‌کند.</p><p>میکروب‌های مقاوم به دارو شامل باکتری‌ها، قارچ‌ها، انگل‌ها و ویروس‌ها یک تهدید جهانی در حال رشد هستند. در سال ۲۰۲۱ حدود پنج میلیون مرگ با مقاومت ضد میکروبی باکتریایی مرتبط بوده است—نمی‌توان پیش‌بینی کرد که این تعداد تا سال ۲۰۵۰ تقریباً دو برابر شود. پیدا کردن مولکول‌هایی با پتانسیل تبدیل به ضد میکروبی می‌تواند سال‌ها طول بکشد. محققان در حال استفاده از هوش مصنوعی برای تسریع این مرحله اولیه کشف هستند.</p><p>سزار د لا فنت، یک مهندس زیستی که آزمایشگاه بین‌رشته‌ای او به دنبال نامزدهای ضد میکروبی است، گفت: "مقاومت ضد میکروبی یکی از بزرگ‌ترین تهدیدات وجودی برای بشریت است." او همچنین افزود: "با این حال، ما در ۵۰ سال گذشته کلاس جدیدی از آنتی بیوتیک‌ها نداشته‌ایم."</p><p>بخش بزرگی از توسعه مدرن ضد میکروبی بر روی تغییر داروهای موجود یا جستجوی کلاس‌های شناخته شده‌ای از مواد شیمیایی متمرکز است. اما این رویکرد بازدهی کاهنده‌ای را ارائه می‌دهد.</p><p>آزمایشگاه د لا فنت از مکانی بسیار کمتر کاوش شده شروع می‌کند: کد زندگی. ایده مرکزی پشت این کار این است که زیست‌شناسی یک سیستم اطلاعاتی است. د لا فنت گفت: "نوکلئوتیدهای تشکیل‌دهنده DNA و آمینواسیدهای تشکیل‌دهنده پروتئین‌ها و پپتیدها شبیه الفبا هستند." او اضافه کرد: "تفکر در مورد زیست‌شناسی به عنوان اطلاعات به ما اجازه داد روش‌هایی را توسعه دهیم که می‌توانند اصول سازمان‌دهی زندگی را که منجر به مولکول‌های عملکردی می‌شود، رمزگشایی کنند."</p><p>مدل‌های یادگیری عمیق آزمایشگاه برای شناسایی الگوها در توالی‌های زیستی آموزش دیده‌اند و به آن‌ها اجازه می‌دهند تا پایگاه‌های داده عظیم ژنوم و پروتئین را برای یافتن ضد میکروبی‌های بالقوه جستجو کنند. این رویکرد می‌تواند جستجوی اولیه برای مولکول‌های نامزد را از سال‌ها به ساعت‌ها کاهش دهد.</p><p>به همراه مدل‌های هوش مصنوعی خود، آزمایشگاه از ChatGPT و Codex برای طوفان فکری فرضیات، نوشتن و اصلاح کد، پردازش پایگاه‌های داده، تجزیه و تحلیل نتایج و ارتباط ایده‌ها در میان رشته‌های علمی استفاده می‌کند.</p><p>فقط بخش کوچکی از یک ژنوم دارای کارکردی به وضوح درک شده است و تعداد کمتری از آن‌ها مولکول‌هایی را رمزگذاری می‌کنند که می‌توانند با میکرو ارگانیسم‌های عفونی مبارزه کنند. چالش این است که الگوهایی را شناسایی کنیم که یک مولکول را عملکردی یا فعال بیولوژیکی می‌سازد و سپس تعیین کنیم کدام یک پتانسیل مقابله با میکرو ارگانیسم‌های عفونی را دارد.</p><p>دانشمندان برای مدت‌ها به دنبال ضد میکروبی‌ها در گیاهان، حیوانات، میکروب‌ها، حشرات، آب و خاک بوده‌اند. آن‌ها نمونه‌ها را جمع‌آوری، مولکول‌های نامزد را ایزوله یا پیش‌بینی کرده و در یک فرآیند تکراری که می‌تواند سال‌ها طول بکشد، آن‌ها را آزمایش می‌کنند.</p><p>پایگاه‌های داده دیجیتال ژنوم و پروتئین اکنون به دانشمندان این امکان را می‌دهند که در سراسر درخت زندگی به دنبال ترکیبات جدید بگردند و به طرز چشم‌گیری دامنه پایگاه‌های داده موجود برای کشف را گسترش دهند. اما این فراوانی اطلاعات چالش‌های خاص خود را دارد: یافتن سیگنال‌های امیدوارکننده در میان تعداد زیادی از امکانات.</p><p>هوش مصنوعی به ویژه برای این کار که شبیه جستجوی سوزن در کاه است، بسیار مناسب است. این فناوری می‌تواند داده‌های عظیم را اسکن کرده، الگوهایی را شناسایی کند که ممکن است برای محققان دشوار باشد و یک مجموعه قابل مدیریت از نامزدها را برای آزمایش‌های تجربی اولویت‌بندی کند.</p><p>اما شناسایی یک نامزد امیدوارکننده لزوماً به این معنا نیست که آن مولکول به داروی مؤثری تبدیل خواهد شد.</p><p>دانشمندان ابتدا باید تأیید کنند که یک مولکول نامزد میکروب هدف را از بین می‌برد، مقدار مورد نیاز برای اثربخشی را تعیین کرده و آزمایش کنند که این مولکول چه تأثیری بر سلول‌های انسانی دارد. سپس شیمیدان‌ها ممکن است آن را بهینه‌سازی کنند تا اثربخشی، ایمنی یا پایداری آن را بهبود بخشند.</p><p>آزمایش‌های بیشتری دوزی را که نامزد به سم تبدیل می‌شود، مشخص کرده و نحوه‌ای که میکروب‌ها به راحتی مقاومت پیدا می‌کنند را ارزیابی می‌کند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
