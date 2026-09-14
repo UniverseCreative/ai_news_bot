@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-14 13:43</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>پشتیبانی از LoRA به‌تازگی در AsyncGRPOTrainer شرکت TRL با PR #7017 معرفی شد و در نسخه ۱.۱۴ TRL ارائه می‌شود. این مربی غیرهمزمان اکنون می‌تواند یک آداپتر را به‌جای مدل کامل آموزش دهد و فقط آداپتر LoRA را با vLLM همگام‌سازی کند. این نوشتار به پروژه‌ای واقعی که بر پایه آن ساخته شده است، می‌پردازد؛ جایی که آموزش و استنتاج دیگر در یک دستگاه مشترک انجام نمی‌شوند.</p><p>آموزش LoRA به‌ویژه برای RL مناسب است، همان‌طور که در وبلاگ Thinking Machines با عنوان "LoRA Without Regret" نشان داده شده است. آن‌ها نشان می‌دهند که LoRA می‌تواند در آموزش کامل برای RL با گرادیانت سیاست مشابه باشد، حتی با رتبه‌ی ۱. این از این واقعیت ناشی می‌شود که تابع مزیت تنها ~O(1) بیت اطلاعات در هر قسمت ارائه می‌دهد، بنابراین از دیدگاه کل بیت‌های اطلاعات، چیز زیادی برای یادگیری از هر مرحله وجود ندارد. یک آداپتر رتبه ۱ ظرفیت کافی برای جذب این اطلاعات را دارد.</p><p>علاوه بر این، آموزش LoRA یک پیامد سیستمی نیز دارد. یک آداپتر رتبه ۱ برای یک مدل ۱.۵ بیلیون تنها چند مگابایت است، در حالی که مدل کامل حدود ۳ گیگابایت فضای ذخیره‌سازی نیاز دارد. به‌جای ارسال سیاست کامل به کارگران استنتاج پس از هر به‌روزرسانی، می‌توانیم فقط آداپتر را ارسال کنیم. vLLM همچنین می‌تواند چندین آداپتر را به طور همزمان بارگذاری کند. rolloutهای قدیمی با سیاستی که با آن شروع کرده‌اند به پایان می‌رسند، در حالی که rolloutهای جدید از جدیدترین سیاست استفاده می‌کنند.</p><p>AsyncGRPOTrainer شرکت TRL همچنین آموزش و تولید را جدا کرده است. مربی و vLLM می‌توانند بر روی دستگاه‌های مختلف و با سرعت خودشان اجرا شوند. این کار در یک تنظیم‌گاه تک‌گام یا خوشه‌ای که هر دو فرآیند به یک سیستم فایل مشترک دسترسی دارند یا می‌توانند یک گروه NCCL تشکیل دهند، آسان است.</p><p>آنچه ما می‌خواهیم، اجرای همان تنظیم‌گاه با Hugging Face Jobs است. اساساً، یک HF Job یک کانتینر است که بر روی یک VM اجرا می‌شود. این بدان معنی است که یک Job نمی‌تواند چندین گره را (حداقل در حال حاضر) برای نگه‌داشتن یک مربی و یک ناوگان سرورهای vLLM راه‌اندازی کند (ما در بهترین حالت محدود به ۸×H200 در هر گره هستیم). AsyncGRPOTrainer دقیقاً برای همین نوع مقیاس طراحی شده است، بنابراین سؤال این شد: اگر الزام به اشتراک‌گذاری یک گره بین مربی و سرورهای استنتاج را حذف کنیم، چه اندازه‌ای می‌توانیم پیش برویم؟</p><p>با همگام‌سازی کامل وزن، پاسخ «به‌دور» خواهد بود. هر به‌روزرسانی باید گیگابایت‌ها اطلاعات را بین دستگاه‌ها جابجا کند، که این همان دلیلی است که NCCL در یک خوشه متراکم وجود دارد، اما Jobs نمی‌توانند بین گره‌ها ارتباط برقرار کنند. هیچ دیسک محلی مشترکی وجود ندارد و البته هیچ localhost مشترکی نیز وجود ندارد. با LoRA، همگام‌سازی تنها چند مگابایت نیاز دارد. در بخش سیستم فایل، HF Jobs حجم‌هایی را ارائه می‌دهند که توسط Storage Buckets پشتیبانی می‌شوند! این سطل‌ها سپس می‌توانند به‌عنوان یک سیستم فایل FUSE در هر Job مونت شوند و به‌قدری کافی هستند که به‌عنوان یک FS مشترک بین گره‌ها عمل کنند. هیچ مسیر شبکه‌ای بین Jobs به‌هیچ‌وجه نیاز ندارد.</p><p>تنظیم به‌نظر کوچک و مختصر رسید:</p><p>مسیر همگام‌سازی جدید تنها برای آداپتر در AsyncGRPOTrainer به این شکل عمل می‌کند. مربی تنسورهایی را به vLLM ارسال نمی‌کند. هر چند مرحله بهینه‌سازی، آداپتر را با نام <output_dir>/.vllm_lora/trl-policy-v{N} ذخیره می‌کند، دایرکتوری را با یک تغییر نام اتمی منتشر و سپس مسیر آن را به نقطه انتهای /v1/load_lora_adapter در vLLM ارسال می‌کند. vLLM فایل‌ها را از دیسک بارگذاری می‌کند، بنابراین کارگر rollout می‌تواند سپس درخواست کند model="trl-policy-v{N}".</p><p>این‌گونه بارگذاری آداپتر در زمان اجرا در vLLM کار می‌کند. این نقطه انتها یک مسیر می‌گیرد، نه تنسورها، بنابراین انتظار می‌رود که مربی و سرور یک سیستم فایل مشترک داشته باشند. در یک خوشه Slurm، این همان سیستم فایل شبکه‌ای است. در Jobs، ما همان نتیجه را با مونت کردن یک Storage Bucket به‌عنوان یک حجم در همان مسیر در هر Job به‌دست می‌آوریم، همان‌طور که قبلاً ذکر شد. در پس‌زمینه، این فرآیند از hf-mount استفاده می‌کند که سطل را به‌عنوان یک سیستم فایل POSIX درون کانتینر به نمایش می‌گذارد:</p><p>هیچ‌چیز در TRL یا vLLM نیاز به تغییر نداشت. مربی به مسیر /lora/<run>/.vllm_l</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/asyncgrpo-lora-hfjobs" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
