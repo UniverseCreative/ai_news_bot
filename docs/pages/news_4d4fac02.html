@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Introduces ZGateway: A Stateless Proxy Tier That Unifies ZippyDB Traffic and Handles Over 1 Billion Operations Per Second</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Meta Introduces ZGateway: A Stateless Proxy Tier That Unifies ZippyDB Traffic and Handles Over 1 Billion Operations Per Second</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-15 12:30</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>تیم مهندسی Meta از ZGateway، یک لایه پروکسی که اکنون بین برنامه‌های کلاینت و ZippyDB، محبوب‌ترین فروشگاه کلید-مقدار Meta قرار دارد، رونمایی کرد. ZippyDB از متادیتای محصول، شمارنده‌ها و پیکربندی‌ها در میلیاردها عملیات در ثانیه پشتیبانی می‌کند. ZGateway ابتدا به عنوان راه حلی برای مشکل اتصالات قدیمی در بیش از یک میلیون میزبان کلاینت آغاز شد و به مکانی برای گروه‌بندی، کنترل ورود، کشینگ و تغییر مسیر تبدیل شد.</p><p>در دسترسی مستقیم، هر کلاینت ZippyDB به هر میزبان دیتابیس مورد نیاز خود متصل بود. یک کلاینت واحد می‌توانست به ده‌ها هزار shard در صدها هزار میزبان دسترسی پیدا کند، بنابراین هر کلاینت معمولی و هر میزبان دیتابیس معمولی ده‌ها هزار اتصال TLS را بارگیری می‌کردند. هر اتصال بیکار، حافظه، CPU و یک توصیفگر فایل را در هر دو سمت مصرف می‌کرد و شمارش اتصالات ورودی با هر گروه کلاینت افزایش می‌یافت. طوفان‌های دوباره اتصال منجر به خرابی‌هایی به دلیل خستگی توصیفگر فایل و OOMs می‌شدند؛ در یکی از موارد، یک اشکال مسیریابی باعث شد که هر کلاینت یک اتصال به ازای هر shard برقرار کند و ناوگان به حلقه راه‌اندازی مجدد افتاد. اصلاحات در سمت کلاینت غیرعملی بود زیرا صدها تیم مالک ناوگان کلاینت بودند.</p><p>ZGateway یک لایه پروکسی بدون حالت بین کلاینت‌های ZippyDB و ناوگان دیتابیس ZServer است. طبق گفته Meta، این لایه بیش از 1 میلیارد عملیات در ثانیه را مدیریت می‌کند و حدود 40٪ از ترافیک ZippyDB را جابجا می‌کند که پیش‌بینی می‌شود از 60٪ فراتر رود و تقریباً 6٪ بار محاسباتی برای یک مورد استفاده متوسط دارد.</p><p>این لایه به عنوان لایه‌های منطقه‌ای از طریق ServiceRouter، مش سرویس Meta، با دو نوع مختلف اجرا می‌شود: یک پروکسی خالص و یک کش خواندنی. موتور آن، کلاینت ضخیم C++ ZippyDB Meta است، بنابراین ZGateway به طور مؤثر یک کلاینت ZippyDB است که به عنوان یک سرویس مدیریت شده اجرا می‌شود.</p><p>یک کلاینت درخواست‌ها را از طریق یک اتصال ثابت به یک میزبان منطقه‌ای ZGateway ارسال می‌کند که TLS را خاتمه می‌دهد، مجوزهای لازم را بر اساس ACLهای مورد استفاده تأیید می‌کند، کنترل ورود و شکل‌دهی مخصوص هر مستأجر را اعمال می‌کند، shard را حل می‌کند، کش محلی را در لایه‌های کش بررسی می‌کند، درخواست را با سایر کارهای در حال انجام برای آن shard گروه‌بندی می‌کند و به Replica‌های صحیح ارسال می‌کند. پاسخ‌ها با استفاده از معیارهای مربوط به هر مورد استفاده، ردیابی‌ها و میزان استفاده از کوتا ثبت و دوباره توزیع می‌شوند. TLS در stack Thrift/ServiceRouter باقی می‌ماند و انتخاب Replica در کلاینت تعبیه شده حفظ می‌شود.</p><p>Meta ناوگان را به عنوان توپ‌های پرتاب شده به داخل سطل‌ها مدل‌سازی می‌کند: با B shard و H میزبان، احتمال برخورد یک میزبان با توپ به صورت E(H,B)=H(1−e−B/h)E(H,B)=H(1 – e^{-B/h}) است. با اعداد فرضی از 20 منطقه، 500,000 میزبان دیتابیس، 30,000 میزبان پروکسی، 1,000,000 کلاینت و 50,000 shard به ازای هر کلاینت، شمارش اتصالات به ازای هر میزبان به طور تقریبی 97 تا 98٪ کاهش یافته و مجموع اتصالات دائمی حدود 19 برابر کاهش می‌یابد. پیروزی عمیق‌تر در مقیاس‌بندی است: ورودی مستقیم به طور خطی با کلاینت‌ها رشد می‌کند، در حالی که ورودی ZGateway به طور تقریبی به تعداد مناطق در تراکم shard به ازای هر میزبان کاهش می‌یابد، که مستقل از هر دو ناوگان است.</p><p>مقاله وبلاگ مهندسی Meta و اعلامیه X را مشاهده کنید. تمام اعتبار به محقق این پروژه تعلق دارد. همچنین، در صورت تمایل می‌توانید ما را در Twitter دنبال کنید و فراموش نکنید به SubReddit ML با بیش از 150k عضو بپیوندید و به خبرنامه ما مشترک شوید. صبر کنید! آیا شما در تلگرام هستید؟ حالا می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا به همکاری با ما برای تبلیغ مخزن GitHub خود یا صفحه Hugging Face یا انتشار محصول یا وبینار و غیره نیاز دارید؟ با ما ارتباط برقرار کنید.</p><p>Michal Sutter یک حرفه‌ای در علم داده با مدرک کارشناسی ارشد در علم داده از دانشگاه پادوا است. با پایه‌ای محکم در تحلیل آماری، یادگیری ماشین و مهندسی داده، میچل در تبدیل داده‌های پیچیده به بینش‌های قابل اجرا مهارت دارد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/14/meta-introduces-zgateway-a-stateless-proxy-tier-that-unifies-zippydb-traffic-and-handles-over-1-billion-operations-per-second/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

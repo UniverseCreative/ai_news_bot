@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Fyxer built an AI executive assistant people trust</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>How Fyxer built an AI executive assistant people trust</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-15 12:29</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Fyxer مدل‌های OpenAI را با بیش از ۵۰۰,۰۰۰ ساعت از جریان‌های کاری EA و بازخورد واقعی کاربران ترکیب می‌کند تا پاسخ‌ها را به سبک هر فردی تنظیم کند.</p><p>از پیش‌نویس‌های تولید شده توسط هوش مصنوعی که به عنوان نوشته شده توسط کاربر پذیرفته شده است.</p><p>برای بسیاری از حرفه‌ای‌ها، کار به معنای پیگیری مکالمات و تعهدات در میان صندوق‌های ورودی، جلسات، پیام‌ها و اپلیکیشن‌ها است. بدون سیاق محکم و روشن، این تعهدات ممکن است فراموش شوند و به پروژه‌ها و روابط آسیب بزنند.</p><p>Fyxer یک دستیار اجرایی هوش مصنوعی ساخته است که در طول کار بین ابزارها، الگوها را دنبال می‌کند. این سیستم، جدیدترین مدل‌های OpenAI را با بیش از ۵۰۰,۰۰۰ ساعت از جریان‌های کاری دستیار اجرایی ترکیب می‌کند و کار را بین ده‌ها مدل تخصصی تقسیم می‌کند که با بازخورد واقعی کاربران بهبود می‌یابند.</p><p>ایمیل یکی از واضح‌ترین مکان‌ها برای مشاهده عملکرد آن است. دو نفر می‌توانند همان ایمیل را دریافت کنند و بسته به رابطه، آنچه قبلاً اتفاق افتاده و آنچه هر فرد سعی دارد انجام دهد، نیاز به پاسخ‌های کاملاً متفاوتی داشته باشند. این موضوع یک وظیفه به ظاهر ساده را برای هوش مصنوعی به طرز فریبنده‌ای دشوار می‌کند.</p><p>“به چیزی به نام پارادکس موراوک اشاره شده است,” آرچی هالینگس‌ورث، هم‌بنیان‌گذار Fyxer، توضیح می‌دهد. “چیزهایی که برای انسان‌ها آسان هستند، برای کامپیوترها دشوارند و چیزهایی که کامپیوترها آسان می‌یابند، برای انسان‌ها دشوارند.” Fyxer این پیچیدگی را با یادگیری نحوه کارکرد هر کاربر مدیریت می‌کند تا بتواند مانند یک دستیار پاسخ دهد که از قبل می‌داند چه چیزی مهم است.</p><p>مدل‌های OpenAI در بخش‌های کلیدی این تجربه، از درک ایمیل و پیدا کردن سیاق مناسب تا تولید پیش‌نویس، حمایت می‌کنند. Fyxer OpenAI را انتخاب کرد زیرا مدل‌های آن در معیارهای داخلی Fyxer بهترین عملکرد را داشتند، قابلیت‌های قوی برای تنظیم دقیق وظایف سوبژکتیو مانند لحن و قصد را ارائه دادند و حمایت‌های فنی عملی را از طریق جلسات سفیدبورد و همکاری فنی فراهم کردند.</p><p>رویکرد Fyxer سه درس برای بنیان‌گذاران ارائه می‌دهد که در حال ساخت محصولات هوش مصنوعی با سیاق بالا هستند:</p><p>Fyxer سیستم خود را حول ۳۰ تا ۵۰ مدل تخصصی ساخته است که هر کدام مسئول بخشی خاص از جریان کاری ایمیل هستند. به جای اینکه ایمیل را به عنوان یک وظیفه تولید متن واحد در نظر بگیرند، Fyxer مشکل را به یک سیستم پیش‌بینی‌ها تقسیم می‌کند، مانند اینکه آیا یک پیام نیاز به پاسخ دارد یا پیش‌نویس‌هایی را تهیه کند که با لحن و سیاق کاربر هماهنگ باشند.</p><p>“تقسیم مشکل به مدل‌های کوچک‌تر بسیار بهتر از این است که از یک مدل بخواهیم یک ایمیل خوب بنویسد,” هالینگس‌ورث توضیح می‌دهد.</p><p>زمانی که یک ایمیل جدید می‌رسد، مدل تصمیم‌گیری درباره پاسخ، پیام را طبقه‌بندی می‌کند: آیا این چیزی است که نیاز به پاسخ دارد، اقدامی برای زمان‌بندی می‌طلبد، یا صرفاً اطلاعاتی است که کاربر باید ببیند؟</p><p>اگر پاسخ لازم باشد، مدل‌های اضافی قصد ایمیل را تحلیل کرده و نتیجه احتمالی تعامل را پیش‌بینی می‌کنند. این مدل‌ها الگوهایی را تعیین می‌کنند که نشان می‌دهد آیا مکالمه به سمت زمان‌بندی یک جلسه، حل درخواست یا ادامه یک رشته رابطه طولانی‌تر پیش می‌رود.</p><p>حافظه یکی از مهم‌ترین بخش‌های سیستم است. Fyxer باید تصمیم بگیرد که کدام جزئیات باید در تعاملات حفظ شوند و کدام یک پس از یک تبادل ساده باید ناپدید شوند. زمانی که یک ایمیل جدید می‌رسد، مدل‌های بازیابی آن را با تعاملات ذخیره‌شده مقایسه کرده و خاطراتی را که برای آن شخص و رشته مربوطه بیشترین ارتباط را دارند، به سطح می‌آورند.</p><p>مدل‌های OpenAI مراحل مختلف سیستم Fyxer را توانمند می‌سازند. “ما از مدل‌های OpenAI برای هر چیزی از هضم ایمیل، تا درک آنچه واقعاً درباره‌اش است، تا جذب و بازچینی سیاقی که می‌خواهیم شامل کنیم، تا تولید واقعی ایمیل استفاده می‌کنیم,” شانتسیلا می‌گوید.</p><p>قبل از راه‌اندازی محصول هوش مصنوعی خود، Fyxer سال‌ها به ارائه خدمات دستیار اجرایی به صورت انسانی مشغول بود. با گذر زمان</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/fyxer" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
