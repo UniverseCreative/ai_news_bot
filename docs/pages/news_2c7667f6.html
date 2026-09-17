@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping older adults use AI in everyday life</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Helping older adults use AI in everyday life</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-17 12:27</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>در همکاری با OATS، برگزاری کارگاه‌های رایگان و عملی ChatGPT برای ۱۰۰۰ بزرگسال در ۱۰ شهر ایالات متحده</p><p>هوش مصنوعی باید برای همه مفید و در دسترس باشد. این به معنای اطمینان از این است که افراد در هر سنی از حمایت لازم برای استفاده از این ابزارها به منظور تسهیل زندگی روزمره بهره‌مند شوند. برای بزرگسالان، این می‌تواند به معنای دریافت کمک در برنامه‌ریزی سفر، درک یک نامه یا قبض گیج‌کننده، شناسایی یک کلاهبرداری ممکن، پیگیری یک سرگرمی جدید یا حفظ ارتباط با خانواده و عزیزان باشد.</p><p>امروز، OpenAI Academy، در همکاری با خدمات فناوری بزرگسالان (OATS) از AARP، کارگاه مهارت‌های هوش مصنوعی بزرگسالان را برگزار می‌کند: یک تجربه یادگیری رایگان و حضوری که به منظور کمک به بزرگسالان برای استفاده مطمئن و ایمن از ChatGPT طراحی شده است. این کارگاه بخشی از تلاش چندساله‌ای است که OpenAI به همراه OATS آغاز کرده است تا به بزرگسالان کمک کند مهارت‌های عملی هوش مصنوعی را توسعه دهند و در فضای آنلاین ایمن بمانند از طریق برنامه پیشرو خود، Senior Planet.</p><p>داده‌ها نشان می‌دهد که بزرگسالان به طور فزاینده‌ای از ChatGPT برای راهنمایی‌های عملی، یافتن اطلاعات و نوشتن استفاده می‌کنند. در ایالات متحده، سهم پیام‌های مرتبط با افراد ۵۵ سال و بیشتر از ۶٪ به نزدیک ۱۰٪ در یک سال افزایش یافته است.</p><p>ایمنی آنلاین بخشی اساسی از این برنامه است. بخشی از کارگاه به کمک به بزرگسالان در شناسایی کلاهبرداری‌ها اختصاص دارد و استفاده از ChatGPT به عنوان یک لایه اضافی از بررسی و پیشگیری را تشویق می‌کند. این کارگاه علائم هشداردهنده معمولی از قبیل زبان فوری، پنهان‌کاری و لینک‌های مشکوک را بررسی کرده و یک قاعده ساده را معرفی می‌کند: توقف، فکر کردن و پرسیدن. ده‌ها میلیون بار در هفته، افراد از ChatGPT درخواست کمک برای ارزیابی پیام‌ها، ایمیل‌ها و وبسایت‌های مشکوک می‌کنند. این آموزش، مکمل کار وسیع‌تر OpenAI برای جلوگیری، شناسایی و مختل کردن کلاهبرداری‌ها و تقلب‌ها است.</p><p>کارگاه مهارت‌های هوش مصنوعی بزرگسالان در ۱۰ جامعه در سراسر کشور و با همکاری سازمان‌های محلی که از بزرگسالان حمایت می‌کنند، برگزار خواهد شد. ما مفتخریم که با این سازمان‌ها همکاری می‌کنیم و از جوامع‌شان حمایت می‌کنیم:</p><p>Senior Planet در دنور، کلرادو</p><p>Senior Planet در میامی، فلوریدا</p><p>Senior Planet در سن آنتونیو، تگزاس</p><p>Senior Planet در شهرستان مانتگمری، مریلند</p><p>Senior Planet در کویینز، نیویورک</p><p>مرکز Mirowitz در سنت لوئیس، میسوری</p><p>خدمات جامعه بزرگسالان در شهرهای دوقلو، مینه‌سوتا</p><p>کتابخانه عمومی نشویل و FiftyForward در نشویل، تنسی</p><p>Fresno EOC در فرزنو، کالیفرنیا</p><p>کارگاه مهارت‌های هوش مصنوعی بخشی از کار وسیع‌تر OpenAI Academy برای فراهم کردن سواد هوش مصنوعی به صورت عملی و در دسترس برای همه است. این کارگاه بر اساس رویدادهای قبلی که با سازمان‌های غیرانتفاعی، کسب‌وکارهای کوچک و معلمان K–12 برگزار کرده‌ایم بنا شده است.</p><p>ما به OATS، شرکای محلی‌مان و شرکت‌کنندگانی که در سراسر کشور با ما همراه هستند، سپاسگزاریم. سوالات، ایده‌ها و تجربیات آنها به شکل دادن به منابع یادگیری آینده برای بزرگسالان کمک خواهد کرد تا اطمینان حاصل شود که منافع این فناوری به همه می‌رسد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/helping-older-adults-use-ai-in-everyday-life" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
