@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkup Research Releases SPARSEUP: A 149M-Parameter Open-Source Sparse Embedding Model</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Linkup Research Releases SPARSEUP: A 149M-Parameter Open-Source Sparse Embedding Model</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-19 11:49</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>تیم تحقیقاتی Linkup از مدل نمایه‌سازی کم‌سود SPARSEUP، یک مدل یادگیری منبع باز رونمایی کرد. این مدل بر پایه 149 میلیون پارامتر ModernBERT اجرا می‌شود و تحت مجوز Apache 2.0 ارائه می‌گردد. تیم Linkup گزارش می‌دهد که این مدل به طور متوسط nDCG@10 برابر 56.4 در BEIR-13 دارد. این تیم این مدل را قوی‌ترین انکودر کم‌سود مبتنی بر واژگان می‌داند که تا کنون تحت 150 میلیون پارامتر شناخته شده است.</p><p>آیا این مدل قابل پیاده‌سازی است؟ بله. وزن‌ها در Hugging Face تحت مجوز Apache 2.0 موجود است. این مدل از طریق Transformers یا Sentence Transformers با trust_remote_code=True بارگذاری می‌شود.</p><p>اکثر مدل‌های جستجوی باز، متراکم هستند: هر متن یک وکتور دارد. مدل‌های کم‌سود به جای آن، وزن‌ها را بر اساس یک واژگان خروجی می‌دهند. هر بعد به یک توکن واقعی نگاشت می‌شود، بنابراین وکتورها مناسب ایندکس‌های معکوس هستند و انسان‌ها می‌توانند آن‌ها را بخوانند. این مدل‌ها همچنین معمولاً با کلمات نادر هم به خوبی تطابق دارند.</p><p>نقطه شروع این پروژه، انتشار DenseOn و LateOn توسط LightOn بود. LightOn داده‌های باز، یک دستورالعمل آموزشی، یک مدل متراکم و یک مدل تعامل دیرهنگام را منتشر کرد. SPARSEUP، خلأ موجود در مدل‌های کم‌سود را پر می‌کند. این مدل از همان خانواده پایه و داده‌های تنظیم دقیق استفاده می‌کند، بنابراین می‌توان سه سبک جستجو را به صورت همزمان مقایسه کرد.</p><p>آموزش از LateOn-بدون نظارت آغاز می‌شود. این نقطه عطف هیچ هدل MLM نداشت، بنابراین تیم هدل اصلی ModernBERT را به آن افزود. تنظیم دقیق تنها با مخلوط تنظیم دقیق LightOn و یادگیری متضاد انجام شد. هر پرسش دارای 7 منفی سخت انتخاب شده از یک مجموعه 50 تایی و منفی‌های درون گروهی است. هیچ تقطیع کد متقابل در این روند وجود ندارد و آموزش بر روی یک H100 انجام شد.</p><p>یک SPLADE ساده بر روی این پایه، کیسه‌های بزرگی پر از کلمات توقف تولید کرد. تیم Linkup این مشکل را با 3 تغییر حل کرد:</p><p>پرسش‌ها و مستندات از پیشوندهای [Q] و [D] استفاده می‌کنند و امتیازدهی با ضرب داخلی انجام می‌شود. حداکثر طول‌های ارزیابی برای پرسش‌ها 128 توکن و برای مستندات 512 توکن است.</p><p>در مقایسه با دیگر انکودرهای کم‌سود در BEIR-13 (nDCG@10، بدون MS MARCO)، طبق کارت مدل:</p><p>مقایسه کنترل شده چندان مطلوب نیست. با ثابت نگه داشتن پایه و داده‌ها، LateOn امتیاز 58.9، DenseOn امتیاز 57.9 و SPARSEUP امتیاز 56.4 را کسب کرد. SPARSEUP از جستجوی تقریبی Seismic استفاده می‌کند، در حالی که LightOn جستجوی دقیق را گزارش می‌کند. SPARSEUP در ArguAna و Touché پیروز است و از DenseOn در HotpotQA پیشی می‌گیرد. این مدل در مجموعه‌های معنایی بیشتر عقب است، به‌طوری که FiQA بزرگ‌ترین فاصله را نشان می‌دهد. DBPedia نیز نقطه ضعف دیگری است.</p><p>در BEIR بدون آلاینده، فاصله به DenseOn به 0.17 امتیاز کاهش می‌یابد. Linkup هشدار می‌دهد که NQ و MS MARCO بدون آلاینده تنها به ترتیب 21 و 46 پرسش دارند، بنابراین این نتایج پر سر و صدا هستند.</p><p>در MS MARCO، SPARSEUP به طور متوسط 47 واژه غیر صفر در هر پرسش و 190 در هر مستند دارد. SPLADE-v3 به ترتیب 25 و 170 دارد. با ایندکس معکوس Seismic، این مدل به بیش از 97 درصد یادآوری در برابر جستجوی دقیق در حدود 380 میکروثانیه در هر پرسش، به صورت تک‌موضوعی می‌رسد. Linkup می‌گوید که افزایش اندازه وکتور ممکن است 1 تا 2 امتیاز به BEIR اضافه کند، اما تصمیم گرفت که همچنان کم‌سود باقی بماند.</p><p>جزئیات وزن‌های مدل و جزئیات فنی را مشاهده کنید. تمام اعتبار به محقق این پروژه می‌رسد. همچنین، احساس آزادی کنید که ما را در توییتر دنبال کنید و فراموش نکنید که به زیرمجموعه ML ما با بیش از 150 هزار عضو بپیوندید و به خبرنامه ما اشتراک‌گذاری کنید. صبر کنید! آیا شما در تلگرام هستید؟ اکنون می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا نیاز دارید با ما برای ترویج گیت‌هاب خود، یا صفحه Hugging Face، یا انتشار محصول، یا وبینار و غیره همکاری کنید؟ با ما ارتباط بگیرید.</p><p>Asif Razzaq مدیر عامل شرکت Marktechpost AI Media Inc. است. به عنوان یک کارآفرین و مهندس آینده‌نگر، Asif متعهد است که از پتانسیل هوش مصنوعی برای بهبود اجتماعی بهره‌برداری کند. آخرین تلاش او راه‌اندازی یک</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/19/linkup-research-releases-sparseup/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
