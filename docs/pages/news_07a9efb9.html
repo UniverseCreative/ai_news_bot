@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How V7 gives AI agents institutional memory</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>How V7 gives AI agents institutional memory</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-21 13:41</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>V7 فایل‌های شرکتی را به متن مورد نیاز برای عاملان تبدیل می‌کند و GPT‑6 Astra در دشوارترین آزمایش‌های گراف-پرسش خود به دقت 89% دست یافته است.</p><p>دقت GPT-6 Astra در سخت‌ترین پرسش‌ها</p><p>هزینه کمتر به ازای هر سند با GPT-5.6 Luna</p><p>دقت بالاتر با GPT-5.6 Luna</p><p>مدل‌های امروزی می‌توانند در انجام وظایف پیچیده استدلال کنند، اما به طور خودکار زمینه تجاری مربوط به آن وظایف را نمی‌فهمند. کدام گزارش صندوق به‌روز است؟ یک موجودیت چگونه در سه سیستم مختلف نامگذاری شده است؟</p><p>این زمینه در مدارک، اتاق‌های داده، صفحه‌گسترده‌ها، ایمیل‌ها و ابزارهای داخلی وجود دارد: پراکنده، حل‌نشده و برای عاملان نامرئی. برای تیم‌های فعال در حوزه‌های مالی، بیمه و املاک، دقت بازیابی در جریان کارهای روزمره غیرقابل مذاکره است.</p><p>پس از ایجاد یک اپلیکیشن دسترسی بصری که به طور گسترده استفاده می‌شود، Rizzoli و Edwardsson V7 را در سال 2018 تأسیس کردند تا به شرکت‌ها کمک کنند به سیستم‌های هوش مصنوعی آموزش دهند که کسب‌وکارهایشان چگونه کار می‌کند. V7 Go یک پلتفرم فعال برای ایجاد جریانات کلیدی کاری است و زمینه‌های دفن‌شده را به حافظه‌ای قابل جستجو و عمل تبدیل می‌کند.</p><p>V7 Go از GPT‑5.6 Luna برای استخراج اطلاعات از میلیون‌ها فایل استفاده می‌کند و آن را در Context Graph سازماندهی می‌کند. این گراف موجودیت‌ها، روابط و شواهد استنادشده را به هم متصل می‌کند و جستجوی MCP و جریانات تکرارپذیر کاری که می‌تواند شامل صدها مرحله باشد را تقویت می‌کند. V7 Go برای جریانات کاری از GPT‑5.6 Terra و Sol برای استدلال و استفاده از ابزارها در دستورالعمل‌های پیچیده و چندگام استفاده می‌کند که تکمیل آن‌ها برای انسان‌ها ده‌ها ساعت طول می‌کشد. V7 همچنین شروع به استفاده از GPT‑6 Astra در دشوارترین پرسش‌های Context Graph کرده است، از جمله تحلیل‌های مالی برای هزاران سند.</p><p>با همکاری مدل‌ها، زمینه‌ها و ابزارها، V7 اعلام می‌کند که عاملان می‌توانند جریانات کاری 50-100 مرحله‌ای را در چند دقیقه تکمیل کنند و به دقت 99.9% دست یابند، در حالی که یک مسیر قابل ردیابی از هر تصمیم گرفته‌شده را حفظ می‌کنند.</p><p>Context Graph یک مشکل خاص را حل می‌کند. عاملان باید در هر درخواست زمینه را دوباره کشف کنند که منجر به ده‌ها جستجو می‌شود که زمان و اعتبار (توکن) صرف می‌کند و اغلب اطلاعات کلیدی دفن‌شده در روابط را از دست می‌دهد.</p><p>وقتی داده‌ها وارد می‌شوند، V7 Go به مخازنی مانند SharePoint و Google Drive متصل می‌شود، آن‌ها را برای موجودیت‌ها، روابط، حقایق، ویژگی‌ها و معیارها اسکن کرده و یک گراف ایجاد می‌کند که به مراتب ارزان‌تر و سریع‌تر از رویکردهای طولانی-زمینه قابل پیمایش است.</p><p>Context Graph به عاملان یک رکورد ساختاری و به‌روز می‌دهد که می‌توانند مستقیماً آن را جستجو کنند. وقتی یک فایل جدید وارد می‌شود، V7 Go شرکت‌ها، صندوق‌ها، افراد یا هر موجودیتی در یک آنتولوژی را شناسایی می‌کند، سپس هر حقیقت را به یک رکورد جدید یا موجود متصل کرده و شواهد استنادشده به منبع اصلی را حفظ می‌کند. اگر گراف اطلاعات کافی نداشته باشد، V7 Go می‌تواند همچنان به جستجوی مدارک زیرین با RAG ادامه دهد.</p><p>V7 همچنین آزمایش‌هایی انجام داده است تا ببیند ساختار آن زمینه تا چه اندازه مهم است. در HERB، یک معیار برای پیدا کردن و متصل کردن اطلاعات پراکنده در سیستم‌های شرکتی، سیستم تنها بازیابی V7 عملکردی بهتر از خط پایه رسمی با 69% بهبود داشته و توهمات در پرسش‌های غیرقابل پاسخ را 38% کاهش داده است. V7 Go از آن زمینه مرتبط با منبع برای نگه‌داشتن جریانات کاری پیچیده در اطلاعات خود هر شرکت استفاده می‌کند.</p><p>V7 Go از آن زمینه سازماندهی‌شده در جریانات کاری مانند غربالگری معاملات سرمایه‌گذاری خصوصی و صدور بیمه استفاده می‌کند. در دمو زیر، یک جریان کاری اطلاعاتی از سند معاملاتی که به نام Confidential Information Memorandum (CIM) شناخته می‌شود استخراج کرده و جزئیات مالی کلیدی، شرایط معامله، جزئیات مدیریت را ارائه می‌دهد و زمینه‌های ریسک را پیش از آنکه V7 Go یادداشت غربالگری را تولید کند، استناد می‌کند.</p><p>Context Graph این امکان را می‌دهد که یک مدل با اطلاعات شرکت‌ها کار کند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/v7" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
