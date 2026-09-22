@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformers now runs llama.cpp quants</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Transformers now runs llama.cpp quants</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-22 12:25</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>ما در حال اضافه کردن پشتیبانی برای اجرای مدل‌های GGUF به‌طور کارآمد در transformers هستیم، به‌طوری که شما بتوانید از چک‌پوینت‌های مناسب حافظه لپ‌تاپ خود با استفاده از APIهای آشنا در transformers استفاده کنید. یکی از مدل‌های GGUF را از Hub انتخاب کنید، آن را باfrom_pretrained بارگذاری کنید و شروع به تولید روی ماشین خود کنید.</p><p>اجرای مدل‌های هوش مصنوعی روی لپ‌تاپ شما بسیار آسان‌تر شده است و llama.cpp بخش بزرگی از این تحولات بوده است. موتور استنباط آن ابزارهای هوش مصنوعی محلی مانند Ollama، LM Studio و Jan را تقویت می‌کند. در کنار پروژه‌هایی مانند MLX، این امر کمک کرده تا استنباط محلی گزینه‌ای عملی برای استفاده روزمره باشد.</p><p>مثال اخیر از اینکه هوش مصنوعی محلی چه حسی دارد:</p><p>این جایی است که ما در حال حاضر قرار داریم. و نمی‌خواهم دروغ بگویم، این احساس بسیار جادویی دارد 🧙‍♀️Qwen3.6 27B در حال اجرا درون عامل کدنویسی Pi از طریق Llama.cpp روی MacBook Pro. برای وظایف غیر کم‌اهمیت در @huggingface کدها، این احساس بسیار نزدیک به دستیابی به آخرین Opus در Claude است… pic.twitter.com/lsIxLoUneU</p><p>GGUF، که توسط تیم llama.cpp توسعه یافته، فرمت پرتوجهی برای استنباط محلی است. این تیم همچنین چک‌پوینت‌های کمی‌شده را تحت ggml-org در Hub به اشتراک می‌گذارد. ناشرانی مانند Unsloth، LM Studio Community و bartowski نیز چک‌پوینت‌های GGUF آماده برای استفاده در دامنه‌های کمی‌شده مختلفی را ارائه می‌دهند، بنابراین کاربران می‌توانند نسخه‌ای را که برای ماشین خود مناسب است انتخاب کنند. مدل‌های GGUF میلیون‌ها بار دانلود شده‌اند.</p><p>ما می‌خواهیم اجرای این مدل‌ها به‌طور محلی با transformers را نیز آسان‌تر کنیم. سازگاری تنها زمانی مفید است که مدل راحت باشد. برای نزدیک کردن عملکرد به llama.cpp، ما از هسته‌های ggml زیرین آن از طریق کتابخانه kernels استفاده می‌کنیم و سربار در generate را کاهش می‌دهیم. تمرکز اولیه ما روی استنباط محلی در Apple Silicon است، که با معماری Qwen3.5 آغاز می‌شود.</p><p>بسته‌های GGUF وزن‌های مدل و فراداده‌ها، از جمله اطلاعات توکنایزر و یک الگوی گفت‌وگو انتخابی، را در یک فایل بسته‌بندی می‌کنند. این فرمت از سطوح کمی‌شدن مختلف پشتیبانی می‌کند و به شما این امکان را می‌دهد که مقداری دقت را در ازای حجم حافظه کمتر فدای کنید. نسخه‌هایی مانند Q4_K_Mmix دقت تنسور، که عمدتاً از وزن‌های 4 بیتی استفاده می‌کنند در حالی که تنسورهای حساس را با دقت بالاتر حفظ می‌کنند.</p><p>این‌گونه است که کمی‌شدن اندازه فایل Qwen3.5-4B Unsloth را تغییر می‌دهد:</p><p>ما پیشنهاد می‌کنیم با Q4_K_M شروع کنید، سپس در صورت در دسترس بودن حافظه بیشتر به Q5_K_M یا Q6_K بروید. کمی‌شدن تهاجمی می‌تواند به مدل‌های بزرگ‌تر فضای کافی دهد، اما کیفیت وابسته به مدل و وظیفه است. آن را بر اساس کارهایی که واقعاً می‌خواهید مدل انجام دهد، ارزیابی کنید. مستندات GGUF در Hub انواع کمی‌شدن‌های موجود را توضیح می‌دهد.</p><p>برای بارگذاری یک مدل GGUF، شناسه مدل Hub و نام فایل را به عنوان gguf_file به from_pretrained منتقل کنید.</p><p>پیکربندی اضافی نیاز نیست: وقتی وزن‌ها به‌صورت فشرده روی Metal باقی می‌مانند، transformers به صورت خودکار هسته‌های لایه ggml/Metal سازگار را بارگذاری کرده و از ggml-org/ggml-attn به‌عنوان پیاده‌سازی توجه استفاده می‌کند. اگر آن هسته قابل دریافت نباشد، مدل به "sdpa" با یک هشدار باز می‌گردد و شما همیشه می‌توانید با ارسال attn_implementation="sdpa" به‌طور صریح "sdpa" را انتخاب کنید. مستندات GGUF گزینه‌های بارگذاری بیشتری را توضیح می‌دهد.</p><p>این تنها مرحله خاص GGUF است. همه چیز پس از آن از API استاندارد transformers است:</p><p>بدون یک هسته کمی‌شدن سازگار، بارگذار به کم‌دقت‌سازی مدل باز می‌گردد و از حافظه بیشتری استفاده می‌کند.</p><p>شما همچنین می‌توانید از همان چک‌پوینت با transformers serve استفاده کنید که یک API سازگار با OpenAI را ارائه می‌دهد:</p><p>آرگومان مدل از <model_id>:<filename>.gguf استفاده می‌کند: قبل از دو نقطه، مخزن Hub (unsloth/Qwen3.5-4B-GGUF) و بعد از آن، فایلی که باید بارگذاری شود (Qwen3.5-4B-Q4_K_M.gguf) است. این یک کمی‌شدن خاص را از مخزنی که ممکن است چندین گزینه داشته باشد انتخاب می‌کند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/transformers-llama-cpp-quants" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

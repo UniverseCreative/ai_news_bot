@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA Introduces SoL-Pi: Auto-Research Loops That Cut Coding Agent Token Traffic by Up to 49%</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>NVIDIA Introduces SoL-Pi: Auto-Research Loops That Cut Coding Agent Token Traffic by Up to 49%</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-22 12:25</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>کدگذاری‌ agentes اکنون به جای چند دقیقه، به مدت چند ساعت اجرا می‌شود. هر ویرایش، آزمایش و خواندن لاگ به بافت مدل بازمی‌گردد. تیمی از محققان از NVIDIA، NTU و MIT مجموعه‌ای به نام SoL-Pi را منتشر کرده‌اند که شامل چهار مکانیزم کارایی برای عامل کدگذاری متن‌باز Pi است. یک هوش مصنوعی این مکانیزم‌ها را با اجرای حلقه‌های خودکار تحقیق در لایه هارنس پیدا کرده است. در ارزیابی EdgeBench با ۵۱ کار، SoL-Pi ترافیک ثبت شده توکن را نسبت به Pi به میزان ۴۴.۷٪ تا ۴۹.۰٪ کاهش می‌دهد و هزینه API را به طور تقریبی ۳۳٪ کاهش می‌دهد. امتیازات آن در هر دو حالت GPT-5.6 Sol و Opus 5 نزدیک به Pi باقی می‌ماند.</p><p>آیا این قابل استقرار است؟ بله. SoL-Pi بر روی GitHub تحت NVlabs به عنوان یک افزونه مجوز MIT منتشر می‌شود که بر روی نسخه تغییر یافته Pi اجرا می‌گردد. این افزونه با Pi 0.85.1 و Node.js 22.19 یا جدیدتر آزمایش شده است.</p><p>بیشتر کارهای مربوط به کارایی هزینه هر توکن را از طریق هسته‌های سریع‌تر، کم‌نگاری یا مدل‌های ارزان‌تر کاهش می‌دهند. برعکس، SoL-Pi تعداد توکن‌هایی که یک کار مصرف می‌کند را کاهش می‌دهد. هارنس لایه‌ای است که تماس‌های ابزاری، بافت، مشاهدات و واگذاری‌ها را مدیریت می‌کند.</p><p>تنظیم هارنس به صورت دستی کند است و اجزای آن به یکدیگر متصل هستند: یک اصلاح در یک مکان می‌تواند هزینه را به مراحل بعدی منتقل کند. Meta-Harness و سیستم‌های مشابه این کار را به صورت خودکار انجام می‌دهند. با این حال، یک مطالعه اخیر نشان داده است که هارنس‌های تکامل یافته می‌توانند به وظایف جستجوی خود بسیار وابسته شوند و تنها سودهای ناچیزی روی وظایف دیده نشده ارائه دهند.</p><p>یک هوش مصنوعی تحقیقاتی ردیابی‌های اجرایی را از یک عامل جداگانه که Pi پایه را اجرا می‌کند مشاهده می‌کند. سپس تغییرات هارنس را پیشنهاد کرده و آن‌ها را آزمایش می‌کند. جستجو شامل موارد زیر است:</p><p>هر جستجو یک حلقه موقتی و جداگانه است. این حلقه به چرخه خودکار تحقیق پیروی می‌کند که با یک مرحله پیاده‌سازی Ralph Loop و داور مستقل گسترش یافته است.</p><p>قوانین پذیرش قبل از شروع جستجو ثابت هستند و بهینه‌ساز نمی‌تواند آن‌ها را تغییر دهد. هر معیار قابلیت باید در محدوده از پیش اعلام شده باقی بماند. همچنین نامزد باید حداقل یک معیار کارایی را بهبود بخشد. EdgeBench همچنان حفظ شده است. از ۵۱ کار عمومی آن، ۱۱ مورد برای پذیرش یکطرفه نامزدهای ثابت و ۴۰ مورد برای ارزیابی نهایی استفاده می‌شود. نتایج حفظ شده هرگز به جستجو بازخورد نمی‌دهند.</p><p>کامل‌ترین مجموعه بر روی GPT-5.6 Sol ساخته شده و بدون جستجوی بیشتر به Opus 5 منتقل شده است. بر روی Opus 5، این مجموعه ۹۴.۳٪ از نمره Pi را حفظ می‌کند و در عین حال ترافیک توکن را به میزان ۴۴.۷٪ و هزینه API را به میزان ۳۳.۵٪ کاهش می‌دهد. بر روی GPT-5.6 Sol، نمره Pi به میزان ۹۳.۷٪ حفظ شده است با ۴۹.۰٪ توکن کمتر و هزینه ۳۳.۲٪ پایین‌تر.</p><p>نقطه عملکرد از بهترین مکانیزم واحد برای هر بک‌اند استفاده می‌کند: ObservationPack بر روی GPT-5.6 Sol و Action Fusion بر روی Opus 5. این امتیازها را به ترتیب ۵.۳٪ و ۱۲.۸٪ بالاتر از Pi می‌برد.</p><p>بر روی GPT-5.6 Sol، کل مجموعه ترافیک نوشتن کش را از ۰.۰۱۴۱ B به ۰.۰۳۱۶ B توکن افزایش می‌دهد. هزینه کل هنوز کاهش می‌یابد، از ۱,۳۳۹ دلار به ۸۹۴ دلار. مقاله تخمین می‌زند که صرفه‌جویی ساعتی بین ۸.۷۵ تا ۱۳.۵۰ دلار در مقایسه با هارنس‌های Codex و Claude Code بومی و همچنین ۴.۳۶ تا ۵.۷۱ دلار در مقایسه با Pi وجود دارد.</p><p>تیم تحقیقاتی انتقال بین‌مدلی را مقدماتی می‌نامد. مکانیزم‌ها در Opus 5 کمتر فعال می‌شوند، احتمالاً به این دلیل که جستجو تنها از مسیرهای GPT-5.6 Sol استفاده کرده است.</p><p>مقاله، مخزن GitHub و وبلاگ فنی را بررسی کنید. تمام اعتبار به محققان این پروژه تعلق دارد. همچنین احساس رایگان کنید ما را در توییتر دنبال کنید و فراموش نکنید که به زیرمجموعه ML ما با بیش از ۱۵۰ هزار عضو بپیوندید و به خبرنامه ما اشتراک دهید. صبر کنید! آیا شما در تلگرام هستید؟ اکنون می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا نیاز به همکاری با ما برای تبلی</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/21/nvidia-researchers-have-released-sol-pi/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

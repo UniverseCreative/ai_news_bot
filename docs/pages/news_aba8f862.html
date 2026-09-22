@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisory Group on Mathematics and Artificial Intelligence</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Advisory Group on Mathematics and Artificial Intelligence</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-22 12:24</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>در تاریخ ۲۸ اوت، ما آموزش یک مدل داخلی جدید را آغاز کردیم. علاوه بر حل مسئله جایزه میلنیوم ناویر-استوکس، این مدل اکنون بیش از ۱۰۰ مشکل حل‌نشده طولانی‌مدت در اکثر زمینه‌های ریاضیات را حل کرده است. سرعت پیشرفت آن در ریاضیات، ریاضیدانان در OpenAI را شگفت‌زده کرده است. این امر به بحث‌های داخلی درباره بهترین راه اطلاع‌رسانی به جامعه در مورد پیشرفت سریع برای آماده‌سازی و سازگاری با این حوزه منجر شده است.</p><p>ریاضیات یک علم بنیادی است و کشفیات نوین ممکن است منجر به یک دامنه وسیع از کاربردها شود. این موضوع قول این قابلیت‌ها را به طور قابل توجهی مهم می‌کند و توسعه و به کارگیری مسئولانه آنها فراتر از خود ریاضیات اهمیت دارد. ما به این موضوع آگاهیم و در حال بررسی این هستیم که چگونه می‌توان به طور مسئولانه قابلیت‌های هوش‌مصنوعی مرتبط با ریاضیات را به کار گرفت.</p><p>در یک نامه عمومی اخیر با عنوان "عدم هماهنگی شدید هوش‌مصنوعی در ریاضیات"، ریاضیدانان نگرانی‌هایی را در مورد پیامدهای منفی حل مشکلات حل‌نشده به عنوان معیاری برای سیستم‌های جدید هوش‌مصنوعی مطرح کرده‌اند.</p><p>انتقادات آنها بر لزوم ارتباط اندیشمندانه شرکت‌های هوش‌مصنوعی با جامعه ریاضی تأکید می‌کند. به این هدف، ما با ریاضیدانانی همکاری می‌کنیم که یک گروه مشاور مستقل ریاضی تشکیل داده‌اند. این گروه به عنوان پلی بین جامعه ریاضی و عموم مردم عمل خواهد کرد و به ریاضیدانان صدایی در مورد چگونگی پیشرفت ما خواهد داد.</p><p>این گروه در مورد بررسی و ارتباط نتایج نوظهور مشاوره خواهد داد: آنها به OpenAI در ارزیابی اهمیت این نتایج کمک خواهند کرد، در مورد چگونگی هماهنگی انتشار آنها مشاوره خواهند داد و در مورد استانداردهای آکادمیک و حرفه‌ای تحقیق در ریاضیات مشاوره خواهند داد. همچنین به ما مشاوره خواهند داد که چگونه ابزارهای ما می‌توانند از تحقیقات و یادگیری ریاضی حمایت کنند. ما می‌خواهیم ابزارهای توانمندی را در اختیار ریاضیدانان قرار دهیم تا آنها بتوانند به پیگیری سوالاتی که بهترین شناخت را از آنها دارند و توسعه ایده‌های جدید بپردازند.</p><p>این گروه به صورت مستقل از OpenAI فعالیت خواهد کرد. این گروه آزادی ارائه مشاوره‌هایی که ما درخواست نکرده‌ایم، اظهار نظر در مورد تأثیر OpenAI بر ریاضیات و عمومی‌سازی مشاوره‌های خود را خواهد داشت. ارزش این گروه به توانایی اعضای آن در به کارگیری قضاوت خود و به چالش کشیدن قضاوت‌های ما بستگی دارد. اعضای آن توسط OpenAI پرداخت نخواهند شد و این گروه می‌تواند اعضای خود را به دلخواه تغییر دهد. به طور مهمی، این گروه مسئول مشاوره در مورد نحوه سرعت پیشرفت داخلی ما در ریاضیات نخواهد بود.</p><p>کار کردن با این گروه یک گام اولیه است. سوالات دشواری درباره اینکه چگونه هوش‌مصنوعی می‌تواند از درک ریاضی حمایت کند و چگونه منافع این قابلیت‌ها می‌تواند به جامعه وسیع‌تر برسد، وجود دارد. ما می‌خواهیم ریاضیدانان در مرکز شکل‌دهی به پاسخ‌ها قرار داشته باشند.</p><p>اعضای اولیه گروه مشاور در زمینه ریاضیات و هوش‌مصنوعی، که در مؤسسه مطالعات پیشرفته میزبانی می‌شود:</p><p>Timothy Gowers (Collège de France, Cambridge)</p><p>Martin Hairer (EPFL, Imperial College London)</p><p>Nikhil Srivastava (Berkeley, Simons Institute)</p><p>Melanie Matchett Wood (Harvard)</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/advisory-group-on-mathematics-and-ai" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
