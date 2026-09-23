@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How UK AISI and EvalEval Are Making Benchmark Results Reproducible</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>How UK AISI and EvalEval Are Making Benchmark Results Reproducible</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-23 12:36</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>اتحادیه EvalEval با خوشحالی اعلام می‌کند که موسسه امنیت هوش مصنوعی بریتانیا (AISI) از زیرساخت EvalEval برای به اشتراک‌گذاری عمومی نتایج ارزیابی استفاده می‌کند و بدین ترتیب به پشتیانی از علم ارزیابی قابل تکثیر و قابل تأیید می‌پردازد.</p><p>AISI و EvalEval پیش‌ از این در تحقیقی که در یک کارگاه مشترک در حاشیه کنفرانس NeurIPS 2025 آغاز شد، همکاری کردند و بازخوردهای موسسه به شکل‌گیری طرح "هر ارزیابی، همیشه" (EEE) کمک کرده است. این مرحله جدید از همکاری، آن زیرساخت مشترک را در عمل به کار می‌گیرد.</p><p>با تسریع در پیاده‌سازی هوش مصنوعی، ارزیابی‌ها به منابعی روزافزون و مهم برای کسب شواهدی درباره عملکرد مدل و سیستم تبدیل می‌شوند. با این حال، نتایج در قالب‌ها، پلتفرم‌ها و رسانه‌های مختلف گزارش می‌شوند و غالباً اطلاعات کافی برای تکثیر آن‌ها در دسترس نیست. اجرای مجدد ارزیابی‌ها ممکن است خود بسیار پرهزینه باشد.</p><p>هدف EvalEval بهبود این اکوسیستم از طریق یک طرح گزارش‌دهی مشترک، "هر ارزیابی، همیشه" (EEE) و یک پلتفرم باز به نام "کارت‌های ارزیابی" است که نتایج ارزیابی و اطلاعات لازم برای تفسیر آن‌ها را در یک ساختار مشترک ارائه می‌دهد.</p><p>این امر به‌طور طبیعی بر کار AISI برای کارآمدتر کردن ارزیابی از طریق OptStop، دقیق‌تر کردن آن از طریق HiBayES، و استانداردسازی در زمینه‌هایی شامل تحلیل متن و استخراج توانایی‌ها بنا می‌شود. AISI و EvalEval با همکاری یکدیگر در حال شناسایی شکاف‌ها در گزارش‌دهی ارزیابی و ساخت زیرساخت مشترک برای پر کردن آن‌ها هستند.</p><p>شفافیت در سطح ترنسکریپت نه تنها برای تکثیر مهم است، بلکه برای تحلیل و تشخیص نیز حائز اهمیت است. در این مرحله جدید از همکاری، AISI روش‌ها و یافته‌های ارزیابی گزارش شده به صورت عمومی را از طریق کارت‌های ارزیابی در صورت مناسب بودن در دسترس قرار می‌دهد. این انتشار شامل نتایج تأیید شده، زمینه و اطلاعات پیکربندی برای پنج بنچمارک در آزمایش اصلی مقاله می‌باشد:</p><p>این نتایج شامل شش مدل پیشرفته است: Claude Opus 4، Claude Opus 4.5، Claude Opus 4.6، GPT-5، GPT-5.2 و GPT-5.4. این انتشار همچنین شامل نتایج دو ارزیابی سایبری مرتبط - Cyber CTFs و The Last Ones - است که از مجموعه‌ای متفاوت و به‌طور جزئی همپوشانی با مدل‌ها استفاده می‌کند. داده‌ها به همراه مقاله AISI با عنوان "چگونه محاسبه استنباط عملکرد ارزیابی LLM پیشرفته را شکل می‌دهد" منتشر شده است و بررسی می‌کند که چگونه عملکرد بنچمارک به زمان محاسبه استنباط و پروتکل ارزیابی بستگی دارد.</p><p>عملکرد در آخرین امتحان بشر با پروتکل ارزیابی و محاسبه استنباط تغییر می‌کند. هر منحنی سهم تجمعی وظایف تلاش شده‌ای را که در یک تعداد توکن خاص حل شده‌اند، نشان می‌دهد و از موفقیت‌های مشاهده شده اولیه در هر وظیفه استفاده می‌کند. وقتی مدل‌ها پس از هر تلاش از یک اوراکل بازخورد درستی دریافت کردند، آن‌ها به حل وظایف اضافی ادامه دادند و به افزایش استفاده از توکن‌ها پرداختند.</p><p>زمانی که نتایج به‌طور علنی با اطلاعات راه‌اندازی منتشر می‌شوند، محققان و دست‌اندرکاران می‌توانند مطالعات فردی را با دقت بیشتری بررسی کرده و نتایج را در سراسر اکوسیستم وسیع‌تر مقایسه کنند. در حالی که گزارش‌های دیگر از این جزئیات بی‌بهره‌اند، انتشارهایی همچون AISI نقاط مرجع تأیید شده‌ای برای تفسیر ارزیابی‌ها در زمینه ارائه می‌دهند، به‌عنوان مثال، با کمک به محققان در درک اینکه انتخاب‌های راه‌اندازی چگونه می‌تواند بر عملکرد گزارش شده تأثیر بگذارد. با پذیرش بیشتر EEE توسط ارزیابان، مقایسه‌های باز مانند این می‌تواند از تحقیقات متا وسیع‌تر و قابل اطمینان‌تری حمایت کند.</p><p>نتایج Terminal-Bench 2.0 از AISI در کنار دیگر ارزیابی‌های گزارش شده برای همان مدل‌ها تحت تنظیمات ارزیابی متفاوت.</p><p>ما از این پذیرش هیجان‌زده هستیم و به دنبال استانداردسازی و به اشتراک‌گذاری بیشتر ارزیابی‌ها با AISI و دیگر سازمان‌های ارزیابی هوش مصنوعی هستیم.</p><p>اتحادیه EvalEval یک جامعه پژوهشی است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/evaleval-aisi" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
