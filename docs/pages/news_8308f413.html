@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-24 12:35</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Classic MuJoCo شبیه‌سازی سریع مبتنی بر CPU را برای توسعه، آزمایش و کنترل روبات‌ها فراهم می‌کند و می‌تواند نمونه‌برداری را در سراسر هسته‌های CPU موازی کند. اما با افزایش بارهای یادگیری، سوال از اینکه یک جهان چقدر سریع می‌تواند اجرا شود به این سوال تغییر می‌یابد که چند جهان می‌توانند به صورت همزمان اجرا شوند. شتاب‌دهی GPU این امکان را فراهم می‌کند که این جهان‌ها در گروه‌های بزرگ پیش بروند در حالی که داده‌های شبیه‌سازی و یادگیری نزدیک به دستگاه باقی می‌مانند.</p><p>MuJoCo Warp (MJWarp) که بر اساس NVIDIA Warp ساخته شده، مدل‌های سازگار MuJoCo را به آن رژیم مقیاس GPU می‌برد. در این مقاله، یک بازوی دنبال‌کننده SO-101 را از یک جریان کار آشنا در MuJoCo به حداکثر ۲,۰۴۸ محیط موازی MJWarp منتقل خواهیم کرد و فناوری و مراحل اعتبارسنجی که انتقال را ممکن می‌سازد، مورد بررسی قرار خواهیم داد.</p><p>شکل ۱. نحوه اتصال MJWarp به شبیه‌سازی GPU. MuJoCo مدل MJCF را بارگذاری و کامپایل می‌کند؛ MJWarp فیزیک را در NVIDIA Warp پیاده‌سازی می‌کند که هسته‌های CUDA را برای پیشبرد وضعیت‌های شبیه‌سازی بر روی GPUهای NVIDIA کامپایل می‌کند.</p><p>این دومین مقاله در سری "وضعیت شبیه‌سازی برای AI فیزیکی" ما است. مقاله اول چشم‌انداز شبیه‌سازی روبات‌ها را ترسیم کرد. در اینجا، ما محیط شبیه‌سازی را آماده و مقیاس‌بندی می‌کنیم؛ ما یک سیاست را آموزش نمی‌دهیم. قسمت‌های بعدی Newton و Isaac Lab به مراحل ادغام بعدی پرداخته‌اند.</p><p>NVIDIA Warp یک چارچوب Python برای نوشتن هسته‌های با عملکرد بالا و شتاب‌دهی شده با GPU است. Warp به توسعه‌دهندگان اجازه می‌دهد که هسته‌های با نوع ثابت را در Python نویسند و آنها را برای اجرای CPU یا CUDA کامپایل کنند. اولین بار راه‌اندازی ماژول بومی را می‌سازد و ذخیره می‌کند؛ راه‌اندازی‌های بعدی از آن استفاده مجدد می‌کنند. زبان هسته یک زیرمجموعه مبتنی بر عملکرد Python است، در حالی که Python عادی مسئول پیکربندی، تخصیص و ارکستراسیون راه‌اندازی باقی می‌ماند.</p><p>این هسته کوچک مرتبط با روباتیک موقعیت‌های نقطه‌ای را تحت گرانش پیش می‌برد. یک رشته منطقی یک نقطه را مدیریت می‌کند، بنابراین همان کد از دو نقطه تا میلیون‌ها نقطه بدون وارد کردن اصطلاحات GPU در جریان کنترل مقیاس می‌گیرد.</p><p>سه پیشنهاد ارزش‌های Warp عبارتند از:</p><p>دو قابلیت دیگر Warp که ارزش دانستن دارند، گرچه هیچ‌یک در جریان کار SO-101 در این مقاله استفاده نشده است. هسته‌های Warp قابلیت تفکیک‌پذیری دارند: یک wp.Tape راه‌اندازی‌های هسته‌ ایی را که در داخل زمینه‌اش انجام شده، ثبت می‌کند و هنگام فراخوانی backward()، معکوس آنها را پخش می‌کند، که به همین دلیل تیم‌ها هندسه تفکیک‌پذیر، CFD و فیزیک سفارشی را در Warp می‌سازند، از جمله گردش کار CAE برای شبیه‌سازی و بهینه‌سازی طراحی. Warp همچنین از اجرای تابعی پشتیبانی می‌کند که در Warp 1.15 معرفی شده است: اتمیک‌های GPU به طور پیش‌فرض وابسته به زمان‌بند هستند، بنابراین راه‌اندازی‌های مکرر همان هسته می‌توانند کمی متفاوت باشند و حالت‌های تابعی انتخابی برخی از عملکرد را برای ترتیب قابل تکرار در شبیه‌سازی، اعتبارسنجی و آزمایش‌های رگرسیون معامله می‌کنند. اینها قابلیت‌های Warp هستند، نه تضمین‌های تفکیک‌پذیری یا تابعی برای یک رول‌اوت کامل MJWarp. برای جزئیات بیشتر به مستندات Warp در مورد تفکیک‌پذیری و اجرای تابعی مراجعه کنید.</p><p>Warp را امتحان کنید: pip install warp-lang (≥ 1.15 برای تابعی GPU)، سپس python -m warp.examples.browse یا یادداشت‌های آموزشی.</p><p>یک شبیه‌ساز روبات به طور مکرر محاسبه می‌کند که در مرحله بعد چه اتفاقی می‌افتد: با توجه به موقعیت‌های مفصلی فعلی، سرعت‌ها، کنترل‌ها و تماس‌ها، صحنه را به جلو به اندازه یک گام کوچک پیش می‌برد. در این مقاله، یک جهان به معنی یک نسخه مستقل از آن صحنه و وضعیت آن است. یک جهان ممکن است شامل بازوی SO-101 باشد که به سمت یک مکعب دست دراز می‌کند؛ جهان دیگر می‌تواند شامل همان بازو باشد که از یک حالت کمی متفاوت شروع می‌کند.</p><p>MuJoCo و MJWarp می‌توانند همان روبات و وظیفه سازگار را اجرا کنند، اما آنها کار را سازماندهی می‌کنند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
