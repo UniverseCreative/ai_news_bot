@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing Gemini 3.8 Live with Live Avatar</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Introducing Gemini 3.8 Live with Live Avatar</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-25 12:36</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Gemini 3.8 Live با Live Avatar حضور بصری آنی را به هوش مصنوعی مکالمه‌ای Gemini می‌آورد. با تلفیق توانایی‌های گفت‌وگوی زنده ما با ویدئو استریم سریع، Live Avatar یک تجربه گفت‌وگوی طبیعی و شهودی‌تر برای شرکت‌ها و کاربران آن‌ها فراهم می‌کند.</p><p>مهندس نرم‌افزار، به نمایندگی از تیم صوتی Gemini</p><p>با تکیه بر تحرکات ایجاد شده از راه‌اندازی Gemini 3.8 Live در هفته گذشته، امروز با خوشحالی Gemini 3.8 Live با Live Avatar را معرفی می‌کنیم — که حضور بصری تقریباً آنی را به مدل‌های گفت‌وگوی زنده بومی ما می‌آورد. با ترکیب تولید ویدئوی نزدیک به زمان واقعی با گفتار، ویژگی Live Avatar تجربه‌ای را ایجاد می‌کند که به شنیدن، دیدن و صحبت کردن با یک پرسونای بصری پویا می‌پردازد.</p><p>با هم‌خوانی دقیق لب‌ها، حرکات طبیعی و تبادل نرمال نوبت، Live Avatar به شرکت‌ها امکان می‌دهد تا خدمات مجازی خود را به صورت تعاملی‌تر گسترش دهند. چه در ارائه خدمات مشتری جذاب و چه در ارائه راهنماهای تعاملی، این ویژگی تبادلات دیجیتال را به تجربیات غنی‌تر و دسترسی‌پذیرتر تبدیل می‌کند.</p><p>از امروز، Gemini 3.8 Live با Live Avatar در Gemini Enterprise در دسترس است.</p><p>ببینید چگونه Gemini 3.8 Live با Live Avatar از طیف وسیعی از شخصیت‌ها پشتیبانی می‌کند، هر یک با ظاهری متمایز، صدایی خاص و حضور بیانی.</p><p>گفت‌وگو به طور ذاتی چندرسانه‌ای است: ما گوش می‌دهیم، نگاه می‌کنیم، صحبت می‌کنیم و از حرکات چهره برای برقراری ارتباط استفاده می‌کنیم. Live Avatar این قابلیت‌ها را به نمایندگان شرکتی ارائه می‌دهد. با پردازش هم‌زمان ورودی‌های بصری و صوتی، گفت‌وگوهای غنی را برای یک تجربه جامع‌تر ایجاد می‌کند.</p><p>ببینید چگونه Gemini 3.8 Live با Live Avatar آنچه را که می‌بیند و می‌شنود تقریباً در زمان واقعی درک می‌کند و با جلب توجه صوتی و ویدیویی پاسخ می‌دهد تا گفت‌وگویی طبیعی‌تر باشد.</p><p>فراتر از حضور بصری، این ویژگی تحت پشتیبانی استدلال پیشرفته Gemini قرار دارد. با فراخوانی ابزار به صورت غیرهمزمان، Live Avatar می‌تواند فراخوانی ابزارها را تحریک کرده و داده‌ها را در پس‌زمینه به‌دست آورد در حالی که گفت‌وگو به طور فعال ادامه دارد و وظایف پیچیده را مدیریت می‌کند و از جریان گفت‌وگو بدون وقفه اطمینان حاصل می‌کند.</p><p>ببینید چگونه Gemini 3.8 Live با Live Avatar وظایف پیچیده‌ای مانند پذیرش مهمان در یک هتل را انجام می‌دهد. در حالی که گفت‌وگو بدون وقفه ادامه دارد، ابزارها در پس‌زمینه فراخوانی می‌شوند.</p><p>حضور گفت‌وگویی باید طبیعی باشد و نباید به زبان‌ها محدود شود. ویژگی Live Avatar همگام‌سازی گفتار به گفتار چندزبانگی بومی را ارائه می‌دهد. این ویژگی به‌طور پویا همخوانی لب‌ها و حرکات را تطبیق می‌دهد و می‌تواند به راحتی بین ۹۷ زبان بدون کاهش کیفیت ویدئو یا ایجاد انحراف بصری انتقال یابد.</p><p>ببینید چگونه Gemini 3.8 Live Avatar در میانه گفت‌وگو بین زبان‌ها جابجا می‌شود، با همخوانی لب‌ها و حرکات که به‌طور یکپارچه بین ۹۷ زبان تطبیق می‌یابد.</p><p>سازمان‌ها اغلب به هویت‌های بصری متمایز نیاز دارند تا با برند خود همخوانی داشته باشند. علاوه بر یک کتابخانه از آواتارهای پیش‌فرض و متنوع، سازمان‌ها می‌توانند Live Avatarهای خود را سفارشی کنند. از یک تصویر مرجع با کیفیت بالا، توسعه‌دهندگان می‌توانند یک آواتار کاملاً متحرک و پاسخگو تولید کنند و در عین حال شباهت مرجع، سبک برند یا هویت شخصیت را حفظ کنند. ایجاد آواتار سفارشی در حال حاضر فقط از طریق فهرست تأسیساتی برای شرکت‌ها در دسترس است.</p><p>ما Live Avatar را با ایمنی‌های سختگیرانه‌ای ساخته‌ایم که به احترام هویت و شفافیت محتوای تولید شده توسط AI توجه دارد. تمامی خروجی‌های تولید شده توسط محصولات AI ما با SynthID علامت‌گذاری شده است. این علامت‌گذاری نامحسوس به‌طور مستقیم در خروجی صوتی و ویدیویی گنجانده شده و به شناسایی محتوای تولید شده توسط AI کمک می‌کند تا از کاهش اطلاعات نادرست و ارجاع نادرست جلوگیری شود. برای کشف امکانات جامع ما،</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

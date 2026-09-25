@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastino Releases GLiNER2.5-Decide: A 340M Open-Weight Decision Model That Runs on CPU</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Fastino Releases GLiNER2.5-Decide: A 340M Open-Weight Decision Model That Runs on CPU</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-25 12:36</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Fastino Labs نسخه GLiNER2.5-Decide، یک مدل تصمیم‌گیری با 340 میلیون پارامتر و وزن‌های باز را منتشر کرده است. این مدل متن و یک الگوی سوالات تایپ‌شده را به عنوان ورودی می‌گیرد و پاسخ‌های ساختارمندی را ارائه می‌دهد. هر پاسخ همراه با توزیع احتمال، نمره اطمینان و متاداده مربوط به قابلیت محدودیت ارائه می‌شود. این مدل به قضاوت‌های مکرر درون خطوط اجرایی عاملان هدف‌گذاری شده است: مسیریابی، تقسیم‌بندی، انتخاب ابزار و محدودیت‌ها.</p><p>آیا قابل استقرار است؟ بله، وزن‌ها تحت مجوز Apache 2.0 ارائه می‌شوند و با دستور pip install gliner2 نصب می‌شوند. این مدل‌ها بر روی CPU، GPU یا در محیط‌های بدون اتصال به شبکه عمل می‌کنند. تیم Fastino همچنین خدمات استنتاج و تنظیم دقیق را از طریق API GLiNER خود ارائه می‌دهد.</p><p>GLiNER2.5-Decide یک طبقه‌بند غیرتولیدی است. این مدل از یک انکودر DeBERTa-v3-large استفاده می‌کند و از gliner2-large-v1 تنظیم دقیق شده است. این مدل هیچ توکن تولیدی ایجاد نمی‌کند و نیازی به الگوی ورودی ندارد.</p><p>مجموعه برچسب‌ها در زمان فراخوانی منتقل می‌شوند. هر سوال در الگو پاسخ‌های مجاز خود را اعلام می‌کند. همچنین مشخص می‌کند که آیا یک پاسخ، چندین پاسخ یا یک مقدار منظم مورد انتظار است. الگوها می‌توانند دستورالعمل‌ها، مثال‌ها، توضیحات برچسب و قوانینی که پاسخ‌ها را در سؤالات مختلف مرتبط می‌کند، در بر داشته باشند.</p><p>خط لوله دارای 2 مرحله است. انکودر متن و الگو را به صورت همزمان خوانده و هر پاسخ مجاز را امتیازدهی می‌کند. یک دیکودر محدود شده سپس به جستجوی بالاترین امتیاز ممکن بر اساس قواعد اعلام شده می‌پردازد.</p><p>Fastino به وضوح محدوده عملکرد مدل را تعریف می‌کند. این مدل نمی‌تواند استدلال، توضیح یا به سؤالات باز پاسخ دهد. این یک متخصص برای تصمیمات عملیاتی است.</p><p>تیم Fastino ارزش این مدل را با یک مثال از محدودیت تشریح می‌کند. هنگامی که بصورت مستقل رمزگشایی شد، مدل تزریق ورودی را با نمره 0.82 شناسایی کرد. همچنین همان ورودی را با نمره 0.52 به عنوان امن علامت‌گذاری کرد. حمله شناسایی شد، اما دو خروجی با یکدیگر مغایرت داشتند.</p><p>رمزگشایی مشترک قانونی را اعمال می‌کند که هرگونه آسیب شناسایی شده مستلزم رأی ناپایدار است. سپس مدل خروجی safety=unsafe و harm_type=prompt_injection را همزمان برمی‌گرداند. کدهای پایین‌دستی می‌توانند از این نمرات برای مسدود کردن، مسیریابی یا تشدید استفاده کنند.</p><p>الگوها می‌توانند مضامین، استثنائات، محدودیت‌های کاردینالیتی و مرزهای مرتب را بیان کنند. همان انکودر همچنین می‌تواند موجودیت‌ها، روابط و سوابق ساختاری را باOffsets سطح کاراکتر در یک مرحله به جلو استخراج کند. پاسخ‌های طبقه‌بندی شده شواهدی از بازه‌های متنی باز نمی‌گردانند.</p><p>تیم Fastino مدل را در Fast Decisions، یک مجموعه تست داخلی که نگهداری شده است، ارزیابی کرد. این مجموعه شامل 5,100 مثال تستی از 17 مجموعه داده می‌باشد. وظایف شامل عملیات مشتری، مسیریابی دامنه (بانکی، بالینی، سفر، مزایا) و درک محتوای عمومی است. معیار تعیین دقت پیش‌بینی دقیق است: یک پیش‌بینی تنها در صورتی حساب می‌شود که مجموعه برچسب آن کاملاً با مرجع هم‌خوانی داشته باشد.</p><p>GLiNER2.5-Decide در 9 از 17 مجموعه داده پیشتاز بود. مسیریابی هدف، قوی‌ترین حوزه آن بود. این مدل در نیت پشتیبانی نمره 75.3% و در نیت بانکی نمره 64.3% به دست آورد. این نمرات به ترتیب 18.6 و 8.6 امتیاز از مدل‌های بعدی جلوتر هستند.</p><p>تیم Fastino نقطه عطف را از ابتدا تا انتها در دسته 1 با یک الگوی 2سر و 15برچسب ارزیابی کرد. در 64 توکن، تأخیر p50 به این صورت بود:</p><p>درخواست‌های کوتاه تحت تأثیر پیش‌پردازش ثابت و هزینه راه‌اندازی کرنل قرار دارند. این مسئله موجب می‌شود که تأخیر GPU‌ها در حدود 9 میلی‌ثانیه از یکدیگر فاصله داشته باشند. در 1,024 توکن، A100 به 52.6 میلی‌ثانیه پیشی می‌گیرد، در حالی که V100 نمره 75.6 میلی‌ثانیه و L4 نمره 131.4 میلی‌ثانیه را به دست آورد.</p><p>این فراخوانی چندسر از کارت مدل گرفته شده است:</p><p>سرهای تک‌برچسب یک رشته بازمی‌گردانند. سرهای چندبرچسب هر برچسب بالای acls_threshold را بازمی‌گردانند. برچسب‌ها می‌توانند توضیحات داشته باشند و مقیاس‌های مرتب</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/24/fastino-releases-gliner2-5-decide-a-340m-open-weight-decision-model-that-runs-on-cpu/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

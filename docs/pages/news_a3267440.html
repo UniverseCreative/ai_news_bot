@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accelerating vision-language models with LFM2.5-VL-DSpark</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Accelerating vision-language models with LFM2.5-VL-DSpark</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-25 12:36</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>امروز، ما یک مدل آزمایشی DSparkdraft را برای مدل زبان-بینایی خود (VLM) LFM2.5-VL-3B منتشر می‌کنیم. مشابه مدل‌های LFM2.5-DSpark drafter که به تازگی منتشر کرده‌ایم، این مدل یک مسیر رمزگشایی فرضی را اضافه می‌کند که یک افزایش حداقلی در میزان حافظه مصرفی را برای افزایش سرعت بیشتر در ازای تغییر در کیفیت خروجی، مبادله می‌کند.</p><p>درافت بینایی از همان معماری مدل‌های متن LFM2.5-DSpark استفاده می‌کند: این مدل حالت‌های پنهان مدل هدف را در یک مجموعه ثابت از لایه‌های tapped ضبط کرده و بر اساس آن‌ها یک بلوک از k توکن کاندید را تدوین می‌کند. پچ‌های تصویر و توکن‌های متن قبل از آن لایه‌ها به یک نمایش مشترک تبدیل می‌شوند، بنابراین درافتر روی وکتورهای حالت پنهان با ابعاد یکسان بدون توجه به نوع ورودی عمل می‌کند. بنابراین، الگوریتم استنتاج از مدل‌های متنی تغییر نمی‌کند.</p><p>ما از دستورالعمل DSpark با ترکیبی از داده‌های SFT زبان-بینایی پیروی می‌کنیم که به سمت بار کاری مورد انتظار مدل تعادل دارد. بر اساس آزمایش‌ها در 3، 4 و 5 لایه، مدل درافتی یک درافتر ساده فقط با توجه (attention-only) با 4 لایه و یک اندازه بلوک 9 است. ما 10 دوره آموزشی را بر روی ترکیب نهایی اجرا کردیم و پس از هر دوره پذیرش را اندازه‌گیری کردیم که با توکن‌های آموزشی اضافی بهبود یافت تا آنکه به بازدهی کاهنده رسیدیم. در زمان استنتاج، ما اندازه بلوک 8 یا 9 را بسته به سخت‌افزار توصیه می‌کنیم.</p><p>درافت نتیجه‌گیری حدود 280 میلیون پارامتر دارد و شمار پارامترهای مدل مستقر شده را تنها 8.9% افزایش می‌دهد.</p><p>مدل درافتی DSpark برای LFM2.5-VL-3B به همراه پشتیبانی روز اول برای llama.cpp، MLX-VLM و SGLang منتشر می‌شود.</p><p>ما هم بر روی استنتاج در دستگاه و هم بر روی GPU اندازه‌گیری می‌کنیم. هر دو پیکربندی از اندازه بلوک DSpark 8 استفاده می‌کنند و بر روی شش کار متنوع مبتنی بر بینایی از جمله VQA عمومی، VQA متنی، زیرنویس تصویر، VQA نمودار، استدلال پیچیده و مکالمه چند مرحله‌ای، بر اساس معیار MMSpec ارزیابی می‌شوند.</p><p>استنتاج در دستگاه: با MLX بر روی M5 Max، رمزگشایی به طرز قابل توجهی 2.30 تا 3.13 برابر سریع‌تر بسته به کار انجام می‌شود. تاخیر انتها به انتها بهبود 1.56 تا 2.62 برابری دارد. با llama.cpp بر روی M3 Ultra، رمزگشایی 1.57 تا 2.14 برابر و تاخیر انتها به انتها 1.30 تا 1.77 برابر بهبود می‌یابد.</p><p>استنتاج GPU: بر روی H100، همان درافتر 20.4 تا 2.66 برابر سریع‌تر رمزگشایی انجام می‌دهد، با بهبود‌های انتها به انتها از 1.64 تا 2.27 برابر.</p><p>در LLMها، پیش‌پرکردن بیشتر وابسته به پردازش است و هزینه آن با طول خواهش به صورت (زیر) خطی افزایش می‌یابد. VLMها به این امر افزوده می‌شوند زیرا تصویر ابتدا از طریق یک انکودر بینایی عبور کرده، سپس ساختار زبان صدها توکن بصری را به همراه خواهش متنی پردازش می‌کند. دستگاه‌های لبه‌ای با پردازش کمتری نسبت به GPUهای مرکز داده روبرو هستند، بنابراین پیش‌پرکردن سهم بیشتری از تاخیر انتها به انتها را به خود اختصاص می‌دهد، همانطور که زمان تا اولین توکن و اندازه‌گیری‌های رمزگشایی بر روی سیلیکون اپل و H100 نشان می‌دهند. (شبه‌پردازش‌های GPU در M5 این فاصله را کاهش می‌دهد).</p><p>رمزگشایی فرضی فقط رمزگشایی را تسریع می‌کند، نه انکودینگ بینایی یا پیش‌پرکردن. هنگامی که این مراحل قبلاً بخش عمده‌ای از زمان کل را به خود اختصاص می‌دهند، حتی یک تسریع بزرگ در رمزگشایی تنها یک بهبود مختصر در تاخیر انتها به انتها ارائه می‌دهد. این اصل قانون آمدال است، جایی که تسریع کلی توسط بخشی از بار کاری که تسریع نشده محدود می‌شود.</p><p>اجرای مدل‌های درافتی DSpark با SGLang نیازمند یک نسخه SGLang با پشتیبانی از DSpark برای اهداف LFM2 (PR #40651) است. هدف را با درافتر متصل راه‌اندازی کنید:</p><p>سپس نقطه پایانه سازگار با OpenAI را در آدرس http://localhost:30000/v1 استعلام کنید. اندازه بلوک از config.json درافتر خوانده می‌شود؛ خط پایه همان دستور بدون سه پرچم --speculative-* است.</p><p>اجرای آن‌ها با llama.cpp نیازمند نسخه مربوطه llama.cpp است (PR#29339).</p><p>اجرای آن‌ها با MLX-VLM نیازمند نسخه مربوطه است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
