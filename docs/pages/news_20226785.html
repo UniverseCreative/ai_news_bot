@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Research Open-Sources RRSI: AI Agents That Improve Their Own Harness Without Overfitting</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Google Research Open-Sources RRSI: AI Agents That Improve Their Own Harness Without Overfitting</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-29 13:49</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>تحقیقات هوش مصنوعی گوگل کلود، با همکاری دانشگاه UNC-Chapel Hill، استنفورد و دانشگاه واشنگتن در سنت لوئیس، RRSI (بهبود خودبازگشتی منظم) را منتشر کرده است. این سیستم به یک عامل LLM اجازه می‌دهد تا پرچم‌گذاری، ابزارها، حافظه، جریانات کنترلی و زیرعامل‌های خود را بازنویسی کند. وزن‌های مدل هرگز تغییر نمی‌کنند. RRSI حلقه بهبود خود را محدود می‌کند، به این ترتیب دستاوردها روی بنچمارک‌هایی که عامل هرگز بهینه نکرده است، حفظ می‌شوند.</p><p>قابل پیاده‌سازی؟ بله، به عنوان یک چارچوب تحقیقاتی. کد تحت مجوز Apache 2.0 است، به Python 3.10+ نیاز دارد و هر رشته مدل LiteLLM را می‌پذیرد. فرضیات پیش‌فرض، Claude Opus 4.8 را در Vertex AI در نظر می‌گیرد.</p><p>حلقه‌های تکاملی پرچم‌گذاری ویرایش‌های پیشنهادی را ارائه می‌دهند، آن‌ها را روی مجموعه تکاملی ثابت امتیازدهی کرده و برنده را حفظ می‌کنند. همان کارها در هر دور دوباره استفاده می‌شوند تا حلقه بتواند آن‌ها را به خاطر بسپارد. تحقیق RRSI سه حالت شکست را نام می‌برد: تناسب خاص بنچمارک، تعقیب نویز و انباشت پیچیدگی. هر یک فاصله بین امتیازهای مجموعه تکاملی و انتقال واقعی را افزایش می‌دهد.</p><p>RRSI هر مؤلفه پرچم‌گذاری را قابل ویرایش نگه می‌دارد. به جای آن، نحوه حرکت جستجو را منظم می‌کند.</p><p>تیم تحقیق این موارد را به عنوان تشبیه‌هایی به منظم‌کننده‌های کلاسیک چارچوب‌بندی می‌کند. بودجه ویرایش به L0، هرس به Lasso (L1) و قاعده هزینه به Ridge (L2) نگاشته می‌شود.</p><p>تمام 6 تقسیم محفوظ بهبود یافته‌اند. با استفاده از Gemini 3.5 Flash به عنوان سیاست، Terminal-Bench 2.1 از 64.6 به 78.7 افزایش پیدا کرده است. SWE-bench Verified نیز از 76.8 به 79.0 صعود کرده است.</p><p>همچنین پرچم‌گذاری سبک‌تر شده است. در نمونه کارگاه عاملی، RRSI به ازای هر آزمایش از 2.42 میلیون توکن سیاست استفاده می‌کند. تکامل بدون نظم از 3.80 میلیون توکن استفاده می‌کند. گزارش انتزاعی این را به عنوان 30٪ کمتر معرفی می‌کند؛ صفحه پروژه این را 36٪ اعلام می‌کند.</p><p>امتیازها از جدول 1 مقاله تحقیق RRSI استخراج شده‌اند. همه روش‌ها از همان پرچم‌گذاری اولیه، سیاست، تقسیم تکاملی و بودجه نامزد استفاده می‌کنند.</p><p>*طبق گزارش تیم تحقیق RRSI. میانگین OOD میانگین JobBench، GDPval و APEX-Agents است که از جدول 1 محاسبه شده است.</p><p>Meta-Harness در تقسیم تکاملی Harvey LAB پیشتاز است. RRSI با کوچک‌ترین افزایش تکاملی، اما تنها میانگین OOD که بیش از 1 امتیاز بالاتر از H0 است، شناخته می‌شود.</p><p>در هر دور، 2 نامزد در درخت‌های کاری git جداگانه پیش‌نویس می‌شوند، از آن‌ها غربالگری شده، هر دو ارزیابی می‌شوند و شاخه به برنده سریعاً پیش می‌رود. نمونه برنامه‌نویسی همچنین به Docker و harbor نیاز دارد. دامنه‌های جدید از طریق یک ماژول آداپتور واحد متصل می‌شوند.</p><p>مقاله، کدها و جزئیات فنی را بررسی کنید. تمامی اعتبارها به محققین این پروژه تعلق دارد. همچنین، لطفاً ما را در توییتر دنبال کنید و فراموش نکنید که به subreddit ML ما با بیش از 150k عضو بپیوندید و به خبرنامه ما مشترک شوید. صبر کنید! آیا شما در تلگرام هستید؟ حالا می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا نیاز دارید با ما برای ترویج مخزن GitHub یا صفحه Hugging Face یا انتشار محصول یا وبینار و غیره همکاری کنید؟ با ما تماس بگیرید.</p><p>Asif Razzaq مدیرعامل Marktechpost AI Media Inc. است. به عنوان یک کارآفرین و مهندس visionary، Asif متعهد به بهره‌برداری از پتانسیل هوش مصنوعی برای نیکوکاری است. جدیدترین تلاش او راه‌اندازی یک پلتفرم رسانه‌ای هوش مصنوعی، Marktechpost، است که به دلیل پوشش عمیق اخبار یادگیری ماشین و یادگیری عمیق خود که هم از نظر فنی صحیح و هم برای یک مخاطب وسیع قابل فهم است، متمایز می‌شود. این پلتفرم بیش از 2 میلیون بازدید ماهیانه دارد که نشان‌دهنده محبوبیت آن بین مخاطبان است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/29/google-research-open-sources-rrsi-ai-agents-that-improve-their-own-harness-without-overfitting/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

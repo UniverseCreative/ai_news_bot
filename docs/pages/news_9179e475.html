@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-29 13:48</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>استفاده از ابزارها توسط عوامل LLM دیگر به یک بخش مجاز retrieved محدود نمی‌شود. از طریق پروتکل زمینه مدل (MCP)، یک عامل می‌تواند ابزار جستجو را فراخوانی کند، سوابق ساختاری بیمار یا حساب را بررسی کند، از یک پایگاه داده پرس و جو کند و متادیتا را استخراج کند، سپس همه این موارد را به یک پاسخ واحد تبدیل کند. این مسئله، سؤال معمول مربوط به صحت را پیچیده‌تر از آنچه که به نظر می‌رسد می‌کند. اکثر سیستم‌های طراحی شده برای بررسی پاسخ‌های LLM، از RAGAS fidelity تا چک‌کننده‌های دقیق‌تری مانند MiniCheck، AlignScore و SummaC، می‌پرسند که آیا یک ادعا توسط شواهد موجود حمایت می‌شود وقتی که آن شواهد به هم جمع‌آوری شده‌اند. در شکل معمول خود، این سیستم‌ها به ما نمی‌گویند که خروجی کدام ابزار MCP از هر ادعا حمایت می‌کند، یا آیا آن منبع همان چیزی است که پاسخ به آن اشاره دارد.</p><p>مقاله جدید ما، ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents (می‌توانید آن را در Hugging Face یا در arXiv بخوانید)، به این نقص می‌پردازد. حالت خطای مورد نظر ما حالتی است که آن را تداخل منبع می‌نامیم: ادعایی که در جایی از شواهد درست است، اما به منبع نادرستی نسبت داده شده است. یک تأییدکننده بی‌توجه به منبع ممکن است آن را تأیید کند، زیرا واقعیت در این مجموعه وجود دارد. اما یک تأییدکننده آگاه به منبع نباید آن را تأیید کند.</p><p>تصور کنید که یک عامل پشتیبانی مشتری پاسخ می‌دهد: "طبق سوابق حساب، این طرح شامل یک دوره بازپرداخت 30 روزه است." ممکن است دوره بازپرداخت کاملاً واقعی باشد، اما در یک سند سیاست بیان شده باشد، نه در سوابق حسابی که پاسخ به آن اشاره دارد. اگر این دو را با هم در نظر بگیریم، ادعا به نظر می‌رسد که پشتیبانی شده است. اگر آنها را جدا نگه داریم، نسبت‌دهی اشتباه است و در یک محیط حساس به داده، نسبت‌دهی نادرست می‌تواند به اندازه یک واقعیت نادرست آسیب‌زننده باشد. الگوی مشابهی در یک عامل بالینی مشاهده می‌شود، جایی که جزئیات داروی خاص بیمار که از یک ابزار تاریخچه بیمار گرفته شده است، به محض اینکه پاسخ آن را به عنوان یک یافته از ادبیات پزشکی ارائه می‌کند، گمراه کننده می‌شود.</p><p>یک ادعا می‌تواند توسط یک منبع MCP تأیید شود در حالی که پاسخ آن را به منبع دیگری نسبت می‌دهد. ارزیابی بی‌توجه به منبع در شواهد گردآوری‌شده پشتیبانی را می‌بیند و آن را تأیید می‌کند؛ ProvenanceGuard به‌طور جداگانه بررسی می‌کند که آیا منبع پشتیبان با آنچه که پاسخ بیان یا اشاره می‌کند، مطابقت دارد یا خیر. منبع: شکل 1 مقاله.</p><p>به همین دلیل است که امتیازهای وفاداری، هرچقدر هم که مفید باشد، برای عوامل MCP کافی نیستند. یک پاسخ دارای مبدأ است، گاهی به‌طور صریح ("طبق سوابق حساب") و گاهی به‌طور ضمنی. ProvenanceGuard آن ارتباط بین ادعا و منبع را برای بررسی در دسترس نگه می‌دارد.</p><p>ProvenanceGuard یک لایه تأیید پس از تولید است که بر روی یک عامل MCP سیاه‌باكس قرار می‌گیرد. این لایه پس از تولید یک پاسخ توسط عامل اجرا می‌شود و هرگز شواهد را به یک زمینه ناشناس جمع‌آوری نمی‌کند. در عوض، هویت منبع را در تمام مراحل انتقال می‌دهد. این لایه روند MCP ضبط‌شده را می‌خواند، از جمله خروجی‌های ابزار و شناسه‌های منبع آنها، بدون اینکه نیاز به آموزش مجدد عامل داشته باشد. سپس پنج کار را به ترتیب انجام می‌دهد: پاسخ را به ادعاهای خاص تقسیم می‌کند، مرتبط‌ترین منبع را برای هر کدام پیدا می‌کند، بررسی می‌کند که آیا آن منبع واقعاً از آن حمایت می‌کند، منبع را با منبعی که پاسخ به آن نسبت می‌دهد یا به آن اشاره می‌کند مقایسه می‌کند، و در نهایت هم یک رأی منبع برای هر ادعا و هم تصمیم اجازه یا رد کلی در سطح پاسخ صادر می‌کند.</p><p>روند تأیید. هویت منبع در طول تجزیه، مسیریابی، امتیازدهی حمایت، بررسی نسبت‌دهی و اصلاح حفظ می‌شود، نه اینکه جمع‌آوری شود. پاسخ‌های مسدود شده می‌توانند از طریق تعمیر به سبک RARR عبور کرده و دوباره تأیید شوند. منبع: شکل 2 مقاله.</p><p>تعدادی از انتخاب‌های طراحی قابل ذکر است. برای آزمایش‌های مقاله ما، ما از مدل‌های محلی استفاده کردیم تا رد‌های ضبط‌شده...</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
