@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing GPT-6.1 Sol</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Introducing GPT-6.1 Sol</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-30 13:23</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>ما نسخه جدید GPT‑6.1 Sol را معرفی می‌کنیم، که ارتقاء‌ای بر GPT‑6 Sol است و تقریباً در حوزه برنامه‌نویسی، استفاده از کامپیوتر و کارهای حرفه‌ای به سطح هوش GPT‑6 Astra نزدیک می‌شود، در حالی که هزینه ورودی و خروجی توکن‌ها را به یک پنجم قیمت استاندارد Astra کاهش می‌دهد. هزینه ورودی کش شده تنها $0.10 برای هر میلیون توکن است که 95% کمتر از قیمت ورودی استاندارد و 50% کمتر از قیمت ورودی کش شده GPT‑6 Sol می‌باشد؛ این امر به توسعه‌دهندگان این امکان را می‌دهد که فضای بیشتری برای ساخت و اجرای عامل‌های توانمند داشته باشند که زمینه را در درخواست‌ها مجدداً استفاده کنند.</p><p>GPT‑6.1 Sol تعادل جدیدی بین قابلیت و هزینه برای کارهای روزمره مهم ارائه می‌دهد. این نسخه بهبودهای قابل توجهی نسبت به GPT‑6 Sol در انجام وظایف حرفه‌ای پیچیده، از نوشتن و اشکال‌زدایی کدها تا درک اسناد و اجرای گردش‌های کاری چند مرحله‌ای تجاری، فراهم می‌آورد. در چندین ارزیابی، عملکرد آن به طور قابل توجهی به نتیجه GPT‑6 Astra نزدیک می‌شود در حالی که هزینه آن به مراتب کمتر است.</p><p>در ارزیابی DeepSWE v1.1، که وظایف پیچیده مهندسی نرم‌افزار را در کدهای واقعی مورد سنجش قرار می‌دهد، GPT‑6.1 Sol در حدود یک پنجم هزینه GPT‑6 Astra عمل می‌کند، در حالی که بهترین امتیاز GPT‑6 Sol را با 6.4 درصد نقطه بیشتری بهبود بخشیده و با تلاش استدلال کمتری این موفقیت را کسب می‌کند.</p><p>در DeepSWE 1.1، عامل‌های هوش مصنوعی وظایف اصلی و بلندمدت مهندسی نرم‌افزار را حل می‌کنند.</p><p>در GDP.pdf، که دقت مدل‌ها در پاسخ به سوالات حرفه‌ای با استفاده از اسناد PDF پیچیده را ارزیابی می‌کند، شامل جداول، نمودارها، دیاگرام‌ها و جزئیات کوچک، GPT‑6.1 Sol امتیازی بالاتر از Opus 5.5 کسب می‌کند و هزینه کمتری نسبت به هر وظیفه در شرایط استدلال آزمایش شده دارد. این نسخه همچنین به عملکرد پیشرفته GPT‑6 Astra نزدیک می‌شود و هزینه‌ای در حدود یک پنجم نسبت به هر وظیفه دارد.</p><p>در GDP.pdf، مدل‌ها باید به سوالات واقعی درباره PDF‌های پیچیده‌ای که از گردش‌های کاری حرفه‌ای در حوزه‌های مالی، بهداشت و درمان، حقوقی و هفت حوزه حرفه‌ای دیگر استخراج شده‌اند، پاسخ دهند.</p><p>در AutomationBench، که ارزیابی می‌کند آیا عامل‌ها درست گردش‌های کاری چند مرحله‌ای تجاری را تکمیل می‌کنند یا خیر، GPT‑6.1 Sol با 2.2 درصد بالاتر از Opus 5.5 در تلاش استدلال متوسط، امتیاز می‌گیرد و هزینه‌ای تقریباً یک سوم دارد. این امتیاز همچنین 4.8 درصد بیشتر از GPT‑6 Sol در همان تنظیمات است.</p><p>در AutomationBench 1.0.6، عامل‌های هوش مصنوعی روی گردش‌های کاری از ابتدا تا انتها با استفاده از 47 ابزار در حوزه‌های فروش، بازاریابی، عملیات، پشتیبانی، مالی و منابع انسانی آزمایش می‌شوند. نقطه داده‌ای برای Claude Fable 5.1 هزینه واقعی آن را کمتر از آنچه که هست نشان می‌دهد، زیرا هزینه مبلغ‌های کمکی، که در حدود 40% وظایف اتفاق افتاد، در آن لحاظ نشده است.</p><p>GPT‑6.1 Sol همچنین پیشرفت‌های قابل توجهی را در وظایفی که نیاز به تعامل با برنامه‌های کامپیوتری دارند، رقم می‌زند. در مجموعه آفلاین OSWorld 2.0، که عامل‌ها را در گردش‌های کاری چالش‌برانگیز استفاده از کامپیوتر مورد ارزیابی قرار می‌دهد، GPT‑6.1 Sol با سبقت 7 درصدی نسبت به GPT‑6 Sol در حداکثر تلاش استدلال هزینه‌ای کمتر از نصف نسبت به آن دارد. این نسخه به 2.1 درصد از امتیاز Astra در حداکثر تلاش استدلال نزدیک می‌شود و هزینه‌ای در حدود یک هفتم نسبت به هر وظیفه دارد.</p><p>در OSWorld 2.0، عامل‌های هوش مصنوعی تلاش می‌کنند تا گردش‌های کاری استفاده از کامپیوتر طولانی‌مدت را که شامل وظایف روزمره و حرفه‌ای است، انجام دهند. ما پاداش جزئی مجموعه آفلاین از نسخه v2026.08.08 را گزارش می‌دهیم.</p><p>در Terminal-Bench Science 0.1، که گردش‌های کاری علمی شامل تحلیل داده، شبیه‌سازی و اثبات قضیه را مورد ارزیابی قرار می‌دهد، GPT‑6.1 Sol امتیاز GPT‑6 Sol را در حداکثر تلاش استدلال بیشتر از دو برابر می‌کند و هزینه‌ای کمتر از نصف نسبت به هر وظیفه دارد. در حداکثر تلاش، هزینه‌ متوسط GPT‑6.1 Sol برای هر وظیفه $5.47 است، در حالی که این هزینه برای Opus 5.5 برابر $23.21 و برای Astra برابر $23.80 است، و این ظرفیت علمی قابل توجه را با هزینه‌ای بیش از 75% کمتر نسبت به هر دو مدل ارائه می‌دهد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/introducing-gpt-6-1-sol" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

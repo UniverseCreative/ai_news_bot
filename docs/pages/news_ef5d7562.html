@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perplexity Introduces Photon: A Rust-Based Retrieval Engine That Cuts p99 Latency From 800 ms to 65 ms</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Perplexity Introduces Photon: A Rust-Based Retrieval Engine That Cuts p99 Latency From 800 ms to 65 ms</h1>
+            <div class="meta-info">
+                <span>📅 2026-09-30 13:23</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Perplexity از Photon رونمایی کرده است، یک موتور بازیابی و رتبه‌بندی که به‌طور داخلی و به زبان Rust نوشته شده است. این موتور به جای یک موتور متن‌باز که Perplexity برای جستجوی خودروهای هوش مصنوعی خود از آن استفاده کرده بود، طراحی شده است. Photon اکنون وظیفه بازیابی و رتبه‌بندی تمام ترافیک تولیدی را به عهده دارد. همچنین این موتور قدرت‌دهنده به حالت جدید Fast Search در Perplexity Search API است. PerplexityLatency یک تماس را 160 میلی‌ثانیه در p50 و 230 میلی‌ثانیه در p95 گزارش می‌کند.</p><p>آیا قابل استقرار است؟ بله، به‌عنوان یک API میزبانی شده. با تنظیم search_type: "fast" در درخواست POST /search می‌توانید 1 دلار به‌ازای هر 1,000 درخواست پرداخت کنید. خود Photon متن‌باز نیست، بنابراین نمی‌توان آن را به‌صورت خود میزبان استقرار داد.</p><p>موتور قدیمی با 3 محدودیت مواجه شد که با توسعه شاخص افزایش یافت:</p><p>تیم Perplexity به این نتیجه رسید که ساخت یک موتور از صفر برای آنها ساده‌تر و ارزان‌تر از نگهداری یک نسخه تغییر یافته بود.</p><p>یک بالانس‌کننده بار هر درخواست را به یک کارگزار Photon هدایت می‌کند. کارگزار درخواست‌ها را به یک گروه شارد پخش کرده و زمان‌های لغو را تحت نظر دارد. هر شارد وظیفه بازیابی، رتبه‌بندی اولیه و رتبه‌بندی مرحله دوم را به عهده دارد. سپس کارگزار نامزدها را ادغام کرده و فیلدهای کلیدی اسناد را استخراج می‌کند.</p><p>اکنون یک شاخص وب کامل در مدت چند ساعت ساخته می‌شود.</p><p>Fast Search، Photon را با رتبه‌بندی سبک‌تر برای کارهای نمایشی ترکیب می‌کند. Perplexity آن را در 6 benchmark آزمایش کرده است: WideSearch، BrowseComp، DSQA، FRAMES، SEAL-0، و SEAL-Hard. در میان 3,554 وظیفه، Fast موفق به کسب 64.3% با هزینه تخمینی مدل به‌اضافه جستجو 59.73 دلار شد. تنظیم پیش‌فرض 64.0% را با هزینه 187.60 دلار کسب کرد، بنابراین Fast تقریباً 68% ارزان‌تر بود.</p><p>این تبادل در کیفیت جستجوی وسیع‌تر نشان می‌دهد. در benchmark‌های داخلی با پایانه طولانی، ارتباط (DCG) از 2.45 به 2.21 کاهش یافت. دسترسی به پاسخ‌ها از 0.596 به 0.567 سقوط کرد که به معنای کاهش 2.9 درصدی است. Perplexity Fast را برای چرخش‌های روزمره نمایشی و پیش‌فرض را برای پرسش‌های دشوار و مبهم توصیه می‌کند.</p><p>در SDK پایتون 0.43.4 و 0.43.5، می‌توانید از extra_body={"search_type": "fast"} طبق مستندات استفاده کنید.</p><p>تمام ارقام تأخیر گزارش شده از سوی فروشنده تحت تنظیمات مختلف هستند، بنابراین مشابه یکدیگر نیستند.</p><p>برای جزئیات فنی و مستندات Fast Search به آن‌ها مراجعه کنید. تمام اعتبار به محقق این پروژه تعلق دارد. همچنین، خوشحال می‌شویم که شما را در Twitter دنبال کنیم و فراموش نکنید که به SubReddit ML با بیش از 150k عضو بپیوندید و به Newsletterm ما مشترک شوید. صبر کنید! آیا شما در تلگرام هستید؟ اکنون می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا نیاز دارید با ما در مورد ترویج گیت‌هاب Repo خود یا صفحه Hugging Face یا انتشار محصول یا وبینار و غیره همکاری کنید؟ با ما ارتباط برقرار کنید.</p><p>Asif Razzaq مدیرعامل Marktechpost AI Media Inc. است. به عنوان یک کارآفرین و مهندس مبتکر، Asif متعهد به بهره‌برداری از پتانسیل هوش مصنوعی برای خیر اجتماعی است. جدیدترین تلاش او راه‌اندازی یک پلتفرم رسانه‌ای هوش مصنوعی به نام Marktechpost است که به‌خاطر پوشش عمیق خود از اخبار یادگیری ماشین و یادگیری عمیق معروف است و به راحتی برای مخاطبان گسترده قابل درک است. این پلتفرم بیش از 2 میلیون بازدید ماهانه دارد که نشان‌دهنده محبوبیت آن در میان مخاطبان است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/09/30/perplexity-introduces-photon-a-rust-based-retrieval-engine-that-cuts-p99-latency-from-800-ms-to-65-ms/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
