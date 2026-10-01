@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disrupting a coordinated model-distillation campaign</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Disrupting a coordinated model-distillation campaign</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-01 14:16</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>ما به‌تازگی یک کمپین هماهنگ را شناسایی و مختل کردیم که به‌منظور استخراج استدلال‌های محافظت‌شده از مدل‌های ما طراحی شده بود، و فعالیت‌های اولیه مشاهده‌شده در اولین هفته‌ی ماه جولای رخ داد. این فعالیت با تقطیر خصمانه سازگار است: استفاده سیستماتیک و غیرمجاز از خروجی‌ها یا استدلال‌های یک مدل برای کمک به آموزش، تکثیر یا بهبود یک مدل دیگر. استدلال‌های محافظت‌شده، سوابق داخلی مدل برای پردازش یک وظیفه هستند؛ استخراج آن‌ها می‌تواند اطلاعاتی را که از پاسخ نهایی نگه‌داری شده، فاش کرده و به دیگران در تکثیر قابلیت‌های مدل کمک کند.</p><p>اپراتورهای مذکور به رمزگذاری ما نفوذ نکرده، پایگاه داده‌ای را به خطر نینداخته و به‌طور مستقیم به مکالمات ذخیره‌شده‌ی کاربران دسترسی پیدا نکردند. بلکه، آن‌ها تعاملات مدل را به‌گونه‌ای دستکاری کردند که استدلال‌های محافظت‌شده بتواند به فرم‌هایی که برای درخواست‌دهنده قابل مشاهده بود، به‌صورت هماهنگ و مقیاس‌دار تولید شود که شرایط خدمات ما را نقض می‌کرد. این دستکاری یک آسیب‌پذیری منحصر به مدل‌های OpenAI نیست و ما اطلاعاتی درباره‌ی آن را با شرکای صنعتی از طریق Forum مدل مرزی به اشتراک گذاشتیم تا دفاع‌های جمعی در برابر تقطیر خصمانه تقویت شود.</p><p>قبل از انتشار، ما دامنه و تأثیر بالقوه‌ی این موضوع را بررسی کرده، مداخلات خود را به کار گرفتیم و نظراتی از محققان و شرکای صنعتی دریافت کردیم تا اطمینان حاصل کنیم که حفاظت‌هایی در برابر این نوع حمله در جای خود وجود دارد. فعالیت‌های میدانی و تحقیقی بیشتری در حال ادامه است. ما معتقدیم که به اشتراک‌گذاری آنچه که اکنون آموخته‌ایم، به اکوسیستم گسترده‌تر در تقویت دفاع‌های خود کمک خواهد کرد.</p><p>ما مشاهده کردیم که اپراتورها سعی در استخراج استدلال‌های محافظت‌شده به روش‌های نوین، از جمله کپی کردن استدلال‌های رمزگذاری‌شده از یک مکالمه و درخواست از مدل در یک مکالمه‌ی دیگر برای رمزگشایی و رونویسی محتوای استدلال پنهان داشتند.</p><p>محققان امنیت مستقل نیز آسیب‌پذیری‌های مرتبط با تقطیر و فشرده‌سازی مکالمه بین مدل‌ها را از طریق افشاگری مسئولانه به ما اطلاع دادند. ما یافته‌های آن‌ها را بررسی کرده و تأیید کردیم که مسیرهای حمله‌ای که شناسایی کردند، واقعی بودند. کار آن‌ها به ما کمک کرد تا کلاس حمله‌ی وسیع‌تری را درک کنیم و سرعت مداخلات را افزایش دهیم.</p><p>فعالیت‌ها از اول جولای آغاز شد و در ابتدا در حجم پایین بود تا اینکه در ۲۴ و ۲۵ جولای با افزایش حجم ۱۶,۰۰۰ درخواست با استفاده از یک الگوی استخراج مرتبط از بیش از ۴,۰۰۰ کاربر، اوج گرفت. تحقیقات بیشتر فعالیت‌های الگو-محور مرتبط را در یک خوشه از بیش از ۱۵,۰۰۰ کاربر شناسایی کرد که ما تا ۲۸ جولای به‌طور کامل آن را مختل کردیم.</p><p>این فعالیت با گذشت زمان تکامل یافت و تأکید کرد که تقطیر خصمانه چالش امنیتی وسیع‌تری است که به دفاع‌های لایه‌ای و تطبیق‌پذیر نیاز دارد.</p><p>مشخص نیست که آیا همه‌ی اپراتورهایی که در طول دوره‌ی زمانی مربوطه مشاهده کردیم، از یک بازیگر واحد ناشی شده‌اند یا خیر. با این حال، ما هسته‌ی اصلی این فعالیت را به افرادی مرتبط با Moonshot AI، توسعه‌دهنده‌ی Kimi نسبت می‌دهیم.</p><p>تقطیر خصمانه موجب خطرات ایمنی و امنیت ملی می‌شود. استدلال‌های استخراج‌شده ممکن است برای آموزش یک مدل دیگر بدون حفظ تضمین‌های اعمال‌شده بر خروجی‌های کاربر-مواجهه مدل اصلی استفاده شود. در مقیاس بزرگ، تقطیر همچنین می‌تواند انتقال قابلیت‌های پیشرفته را بدون نیاز به همان سرمایه‌گذاری در ایمنی تسریع بخشد. این نگرانی‌ها زمانی تشدید می‌شود که مدل‌ها در حوزه‌های دارای استفاده دوگانه قابلیت‌های بیشتری پیدا کنند.</p><p>این خطر منحصر به OpenAI نیست. همان‌طور که در بالا اشاره شد، تکنیک‌های مشابه ممکن است بر سایر سیستم‌های پیشرفته هوش مصنوعی تأثیر بگذارد و این به یک چالش امنیتی مشترک تبدیل می‌شود که نیاز به هماهنگی در سراسر صنعت دارد.</p><p>ما این تقطیر خصمانه‌ی اخیر را کاهش دادیم.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

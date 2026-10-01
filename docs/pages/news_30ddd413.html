@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-01 14:16</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>سرعت انتشار مدل‌های متنی به گفتار متن باز (TTS) خارق‌العاده بوده است. در Hugging Face Hub (تا تاریخ 30 سپتامبر 2026) بیش از 8 هزار مدل TTS موجود است 🚀</p><p>با این حال، ارزیابی به این سرعت نرسیده است: ارزیابی همچنان fragmented و بدون استاندارد است. استاندارد طلایی نمرات ترجیحی انسانی مانند MOS یا MUSHRA است (بیشتر در مورد متریک‌ها). به این منظور، چندین leaderboard مبتنی بر عرصه به عنوان نقاط مرجع مفید برای جامعه تثبیت شده‌اند:</p><p>این عرصه‌ها مدل‌ها را با ارائه خروجی‌های TTS از دو مدل به کاربران مقایسه می‌کنند و از آن‌ها می‌خواهند یکی را بر دیگری انتخاب کنند. پس از جمع‌آوری تعداد کافی رای، نمره Elo برای رده‌بندی مدل‌ها محاسبه می‌شود، که معمولاً با مدل Bradley–Terry انجام می‌شود (نگاه کنید به روش‌شناسی Voice Arena).</p><p>در حالی که ترجیح انسانی تعیین‌کننده نهایی است، عرصه‌ها نمی‌توانند به سرعت انتشار TTS پاسخگو باشند. این ممکن است تا حدی توضیح دهد که چرا مدل‌های متن باز در لیست‌های رده‌بندی مبتنی بر عرصه کم‌نمایش هستند: تا تاریخ 30 سپتامبر 2026، تنها 16 از 92 مدل موجود در Artificial Analysis به صورت open-weights هستند، با تمایل مشابه در Voice Arena. این احتمالاً منعکس‌کننده عوامل عملی است: افزودن یک مدل API به‌جز داشتن کلید API نیاز به کمتر از آن دارد، در حالی که یک مدل متن باز باید توسط اپراتور عرصه میزبانی و سرویس‌دهی شود، و ارائه‌دهندگان تجاری معمولاً بیشتر مایلند که برای دریافت موقعیت جستجو کنند تا نویسندگان متن باز. </p><p>محدودیت دیگری که در ارزیابی مبتنی بر عرصه وجود دارد، سازگاری رای‌دهندگان است: هیچ عرصه‌ای نمی‌تواند تضمین کند که همان رای‌دهندگان با همان معیارهای "بهتر" بتوانند مدل‌ها را به طور مداوم در طول زمان ارزیابی کنند. حتی ترجیحات یک فرد واحد در طول زمان تغییر می‌کند ("یک مرد نمی‌تواند به یک بار در همان رودخانه دو بار قدم بگذارد" به‌طور مشهور توسط هرaclitus گفته شده است).</p><p>به این منظور، ما Open TTS Leaderboard را ایجاد کرده‌ایم که از متریک‌های عینی برای ارزیابی مدل‌ها در جنبه‌های مکمل عملکرد استفاده می‌کند:</p><p>با تکیه بر متریک‌های عینی، زمان ارزیابی یک مدل از چند هفته (برای جمع‌آوری رای‌ها) به چند ساعت کاهش می‌یابد ⚡</p><p>مهم است که Open TTS Leaderboard جایگزین رده‌بندی ترجیحات انسانی نمی‌شود. WER مبتنی بر ASR یک نمایندگی برای فهم‌پذیری ارائه می‌دهد، در حالی که برآورد مشابهت گوینده، حفظ هویت صدا را ارزیابی می‌کند. هیچ‌یک به طور مستقیم طبیعی بودن، بیانگری یا ترجیح شنونده را اندازه‌گیری نمی‌کند. با این حال، آن‌ها حتی می‌توانند به لیست‌های رده‌بندی مبتنی بر رای‌گیری اطلاع‌رسانی کنند که کدام مدل‌ها باید در ارزیابی‌های خود گنجانده شوند.</p><p>هدف ما از این رده‌بندی این است که جامعه آن را شکل دهد؛ ما می‌خواهیم نظرات شما را بشنویم تا ارزیابی‌ها مرتبط و عمیق باقی بمانند. چند بخش آینده نمای کلی از ویژگی‌های اصلی Open TTS Leaderboard ارائه می‌دهد.</p><p>از نمای پیش‌فرض رده‌بندی، مدل‌ها با توجه به WER متوسط کلی در بخش‌های انگلیسی Seed TTS Eval (مقاله) و CV3 Eval (zero shot) (مقاله) رده‌بندی می‌شوند.</p><p>مدل‌های hexgrad/Kokoro-82M، Supertone/supertonic-3 و fishaudio/s2-pro در زمینه WER انگلیسی وقتی که بر روی این دو بخش میانگین گرفته شوند، برتر هستند، در حالی که نمودارهای Pareto مدل‌هایی را که تعادل خوبی بین WER، استنتاج دسته‌ای (RTFx) و اندازه برقرار کرده‌اند، به تصویر می‌کشند.</p><p>عملکرد انگلیسی به طور حتم به سایر زبان‌ها ترجمه نمی‌شود. چندین زبان می‌توانند برای رده‌بندی مدل‌ها بر اساس عملکرد چندزبانه فعال شوند. Seed TTS Eval فقط áudio برای زبان‌های انگلیسی و چینی دارد، بنابراین سایر زبان‌ها به سادگی نمره در CV3 Eval (zero shot) هستند. توجه داشته باشید که چینی، ژاپنی و کره‌ای زبان‌های مبتنی بر کاراکتر هستند و بنابراین نرخ خطای کاراکتر (CER) گزارش می‌شود و "متوسط WER" در زبان‌ها یک میانگین کلی بین زبان‌هاست.</p><p>مدل‌های k2-fsa/OmniVoice، fishaudio/s2-pro و FunAudioLLM/Fun-CosyVoice3-0.5B-2512 مدل‌های چندزبانه قوی هستند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/open-tts-leaderboard" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
