@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSynthData: Generating Training Data for Enterprise Agents</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>AutoSynthData: Generating Training Data for Enterprise Agents</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-02 13:38</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>شرکت‌ها به عوامل مؤثری نیاز دارند که در محیط‌های خود به خوبی عمل کنند. فعالیت‌هایی که از این عوامل خواسته می‌شود تحت تأثیر سیستم‌هایی است که استفاده می‌کنند، قوانینی که دنبال می‌کنند و وضعیت داده‌هایشان. یک مدل ممکن است به طور کلی قابلیت‌های گسترده‌ای داشته باشد و در عین حال در یک محیط خاص با چالش‌هایی مواجه شود: روند کاری که نامناسب مدیریت می‌کند، ترکیب ابزارهایی که به درستی مورد استفاده قرار نمی‌دهد، یا محدودیتی که نتوانسته به آن احترام بگذارد. این موارد از جمله ضعف‌هایی هستند که یک شرکت باید بهبود بخشد.</p><p>مشکل در تبدیل این ضعف‌ها به داده‌های آموزشی نهفته است. یک شکست فردی اطلاعاتی به ما می‌دهد، اما آموزش یک مدل نیاز به انجام بسیاری از وظایف جدید دارد که همان قابلیت را در شرایط مختلف به چالش می‌کشد. این وظایف باید همچنین قابل انجام در محیط باشند، شبیه به کاری باشند که کسی واقعاً درخواست می‌کند و راهی معتبر برای بررسی موفقیت عامل وجود داشته باشد.</p><p>در ServiceNow CoreAI، ما AutoSynthData را توسعه داده‌ایم تا این نواقص قابلیت‌ها را به داده‌های آموزشی تبدیل کند. این برنامه از شکست‌های مدل هدف و موفقیت‌های یک معلم قوی‌تر برای تعیین اینکه مدل باید چه چیزی را در مرحله بعد یاد بگیرد استفاده می‌کند، و سپس وظایف جدیدی را که این قابلیت‌ها را به چالش می‌کشد، تولید و اعتبارسنجی می‌کند. با بهبود مدل، برنامه آموزشی به سمت مواردی تغییر می‌کند که همچنان برای آن دشوار است. ما این خطی‌مشی را با EnterpriseOps Gym (Malay et al., 2026) و استفاده از مجموعه داده‌های منتشر شده نشان می‌دهیم. ما با توصیف محیطی که عامل در آن عمل می‌کند و اینکه چه چیزی یک وظیفه را برای آموزش مفید می‌سازد، آغاز می‌کنیم.</p><p>یک محیط عاملی، دنیایی را که یک عامل در آن عمل می‌کند تعریف می‌کند: وضعیتی که می‌تواند مشاهده و تغییر دهد، ابزارها و API‌هایی که می‌تواند فراخوانی کند و انتقالات وضعیتی که توسط اقداماتش ایجاد می‌شود.</p><p>یک وظیفه در این محیط به وجود می‌آید. ما از انتزاع زیر استفاده می‌کنیم:</p><p>مشخصات سیستم محدودیت‌هایی را که عامل در آن عمل می‌کند تعریف می‌کند، از جمله دستورالعمل‌های سیستم، سیاست‌های محیطی و در صورت نیاز، راه‌اندازی خاص وظیفه مانند وضعیت دیتابیس با بذر یا مجموعه‌ای از مقالات دانش.</p><p>این مشخصات باید با ابزارها، وضعیت و اقدامات پشتیبانی شده توسط محیط سازگار باشد. دستورالعمل‌های آن باید واضح باشد و از محدودیت‌های خودسرانه‌ای که صرفاً برای ایجاد دشواری معرفی شده‌اند پرهیز کند.</p><p>دعوت کاربر مشخص می‌کند که کاربر چه چیزی را می‌خواهد عامل به دست آورد و هرگونه محدودیت در سطح کاربر را نیز در بر می‌گیرد. یک وظیفه تولید شده باید سه ویژگی را برآورده کند.</p><p>قابلیت انجام. باید حداقل یک مسیر در محیط کنونی وجود داشته باشد که دعوت کاربر را برآورده کرده و در عین حال به مشخصات سیستم احترام بگذارد. این موارد وظایفی که به ابزارهای در دسترس نیستند، دانش غیرقابل دسترسی، انتقالات وضعیتی غیرممکن یا اقداماتی که توسط سیاست ممنوع شده‌اند را رد می‌کند.</p><p>واقع‌گرایی. دعوت کاربر باید شبیه به چیزی باشد که کاربر به طور معقولی در محیط هدف درخواست کند. فضای رفتارهای قابل اجرای معمولاً بسیار بزرگتر از فضای روندهای کاری واقع‌گرایانه است.</p><p>دشواری. برای آموزش، وظیفه باید یک ضعف از عامل فعلی را نمایان کند. وظایفی که قبلاً به صورت مطمئن حل شده‌اند، سیگنال آموزشی جدید کمی ارائه می‌دهند. بنابراین منطقه مفید، وظایفی است که قابل انجام و واقع‌گرایانه هستند، اما هنوز به طور مداوم حل نشده‌اند.</p><p>بررسی‌کننده تعیین می‌کند که آیا مسیر حاصل به‌خوبی وظیفه را تکمیل می‌کند یا خیر. باید سه ویژگی را برآورده کند.</p><p>انسجام. باید با دعوت کاربر، مشخصات سیستم و وضعیت خاص محیط وظیفه توافق داشته باشد.</p><p>صحت. باید مسیرهایی را رد کند که نتوانند وظیفه را برآورده کنند یا محدودیت‌های مربوطه را نقض کنند.</p><p>کامل بودن. باید راه‌حل‌های معتبر را بپذیرد و به جای کدگذاری یک مسیر مرجع خاص، قابل قبول باشد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/ServiceNow-AI/autosynthdata" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
