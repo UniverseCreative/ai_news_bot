@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A model guide for the GPT-6 family</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>A model guide for the GPT-6 family</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-03 12:16</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>نکات عملی برای دستیابی به بهترین نتایج از مدل‌های GPT-6 در حین مدیریت زمان و هزینه</p><p>GPT-6 پیشرفته‌ترین مجموعه مدل‌های ما تا به امروز است و به شما انتخاب مدل‌هایی برای انواع مختلف کارها را ارائه می‌دهد.</p><p>چه در حال تبدیل یک ایده به یک پروتوتایپ کارا باشید، چه در حال ساخت و آزمایش یک ویژگی، یا چه در حال سازماندهی گردش‌کارهای چند مرحله‌ای در میان مخازن کد، پایگاه‌های داده و APIهای خارجی، این راهنما توضیح می‌دهد که چگونه یک مدل GPT-6 را انتخاب کنید، به آن دستورالعمل‌های موثر بدهید، کارهای طولانی‌مدت را مدیریت کنید و برای تولید آماده شوید.</p><p>به‌طور مؤثر در تولید عمل کنید. از کش کردن و فشرده‌سازی برای مدیریت زمینه و هزینه استفاده کنید. موفقیت کار و تأخیر را اندازه‌گیری کرده و برای نظارت و کنترل‌های داده برنامه‌ریزی کنید.</p><p>مدل را با بار کاری خود تطبیق دهید. با انتخاب مدل، تلاش استدلال و سرعتی که با وظیفه مطابقت دارد، قابلیت، هزینه و تأخیر را متعادل کنید.</p><p>پیشنهادات و مهارت‌های خود را تنظیم کنید. پیشنهادات، مهارت‌ها و دستورالعمل‌های مخزن را در مورد آنچه که مدل باید ارائه دهد، چه کارهایی را به‌طور مستقل می‌تواند انجام دهد و چه چیزی به‌عنوان انجام شده حساب می‌شود، یکسان نگه‌دارید.</p><p>کارهای طولانی مدت را در مسیر نگه‌دارید. از هدایت، ابزارهای ناهمزمان و تفویض وظایف برای مدیریت به‌روزرسانی‌ها و کارهای مستقل استفاده کنید. مرزهای روشنی برای زمان‌هایی که مدل باید درخواست ورودی کند، مشخص کنید.</p><p>قبل از پیاده‌سازی، چندین چک و بهترین شیوه وجود دارد که می‌خواهید در نظر بگیرید.</p><p>کارایی را در نظر داشته باشید. زمینه‌ای را که کار به آن نیاز ندارد حذف کنید در حالی که شواهد لازم را حفظ می‌کنید. جایی که برنامه شما این امکان را می‌دهد، کارهای مستقل را با هم انجام دهید تا یک مرحله کند باعث معطل شدن کارهای غیر مرتبط نشود.</p><p>از طریق کش کردن پیشنهادات برای کارهای تکراری، زمینه مشترک را دوباره استفاده کنید. توکن‌های ورودی کش شده بسته به مدل، تا 95 درصد کمتر از توکن‌های ورودی غیر کش شده هزینه دارند. قبل از تغییر جزئیات کار، دستورالعمل‌ها و مواد مرجع پایدار را قرار دهید و تعاریف ابزارها را یکسان نگه‌ دارید. داشبورد کش و راهنمای تشخیصی به شما کمک می‌کند تا ببینید کجا استفاده مجدد دچار مشکل می‌شود. هنگام برآورد هزینه یک گردش کار کامل، نوشتن کش و هر نرخ طولانی‌مدت زمینه را شامل کنید.</p><p>برای مکالمات طولانی‌تر، فشرده‌سازی اندازه زمینه را کاهش می‌دهد در حالی که وضعیت لازم برای ادامه را حفظ می‌کند.</p><p>تصمیم بگیرید که چگونه رفتار را نظارت خواهید کرد و کنترل‌های داده‌ای را برای برنامه خود مرور کنید.</p><p>قبل از پیاده‌سازی تست کنید: کارهای نماینده را اجرا کنید و موفقیت کار، تأخیر و هزینه هر کار موفق را اندازه‌گیری کنید. لیست چک پیاده‌سازی API ما را بررسی کنید.</p><p>انتخاب مدل و سطح استدلال را به‌عنوان یک معامله هوش/قیمت تصور کنید.</p><p>GPT-6 Astra برای سخت‌ترین کارهای استدلالی که به حداکثر هوش نیاز دارد.</p><p>GPT-6.1 Sol برای برنامه‌نویسی پیچیده، تحقیق و استفاده از کامپیوتر.</p><p>GPT-6 Luna برای کارهای متمرکز در مقیاس و کارهای روزمره تکراری با هدف روشن، مانند استخراج فیلدهای فاکتور، طبقه‌بندی درخواست‌ها یا تولید خلاصه‌های ساختاری.</p><p>هنگام ارزیابی بهترین مدل برای کار، قیمت‌گذاری را برای هر مدل مقایسه کنید.</p><p>سطح استدلال: در API، میزان تلاشی که مدل برای انجام کار صرف می‌کند را انتخاب کنید.</p><p>کم: کارهای روزمره، مانند استخراج حقایق یا ایجاد ویرایش‌های کوچک.</p><p>متوسط: کارهایی که نیاز به قضاوت دارند، مانند برنامه‌ریزی یک ویژگی یا مقایسه گزینه‌ها.</p><p>زیاد: اشکال‌زدایی دشوار، تحلیل‌های عمیق‌تر.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/practical-guide-building-gpt-6" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
