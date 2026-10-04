@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Research Moves Federated Learning Into TEEs: Gboard Now Trains With Externally Verifiable Differential Privacy</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Google Research Moves Federated Learning Into TEEs: Gboard Now Trains With Externally Verifiable Differential Privacy</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-04 13:04</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>گوگل ریسرچ برای اولین بار از یک سیستم یادگیری فدرال نسل جدید (Federated Learning) مبتنی بر محیط‌های اجرایی مطمئن (Trusted Execution Environments) رونمایی کرده است. تیم تحقیقاتی ادعا می‌کند برای اولین بار ضمانت‌های حریم خصوصی تفاضلی مرکزی (Differential Privacy) قابل تأیید از خارج برای یادگیری فدرال ارائه داده است.</p><p>گوگل یادگیری فدرال را در سال 2017 معرفی کرد. این فناوری در پیش‌بینی کلمات بعدی و پیشنهادات تایپ هوشمند در Gboard، پیشنهادات پاسخ در Google Messages و انتخاب متن هوشمند در اندروید به کار می‌رود.</p><p>سیستم‌های قبلی یک فاصله اعتماد داشتند. دستگاه‌ها داده‌ها را برای تجمیع فوری بارگذاری می‌کردند، اما دیگران نمی‌توانستند تأیید کنند که این داده‌ها هرگز ثبت یا بررسی نشده‌اند. تجمیع امن (Secure Aggregation) حفاظت رمزنگاری را اضافه کرد. با این حال، این سیستم با الگوریتم‌های پیشرفته DP مرکزی مانند DP-FTRL تجزیه ماتریس سازگار نبود. همچنین، گوگل باید به درستی نویز DP را اعمال می‌کرد.</p><p>طراحی جدید محاسبات گرادیان کلاینت را به سرور منتقل می‌کند. سپس این منطق سرور به گونه‌ای تصدیق‌پذیر می‌شود که اپراتور دیگر نیازی به اعتماد ندارد.</p><p>این سیستم بر پایه کارهای قبلی گوگل در زمینه آنالیزهای فدرال محرمانه قرار دارد. این سیستم چهار مؤلفه اصلی را هماهنگ می‌کند:</p><p>سیاست‌های دسترسی در Rekor، لاگ شفافیت عمومی Sigstore منتشر می‌شوند. بازرسان خارجی می‌توانند هر بار کاری که یک دستگاه می‌توانست ارسال کند را ردیابی کنند. نرم‌افزارهای KMS و پردازش داده‌ها از کد منبع باز به‌صورت تولیدپذیر قابل ساخت هستند.</p><p>سیاست‌ها به‌طور مستقیم برنامه آموزشی Python را توصیف می‌کنند. برای حفظ معماری‌های مدل‌های اختصاصی، TEEs از بارگذاری منطق سریال‌شده در زمان اجرا پشتیبانی می‌کنند. تمام منطق مرتبط با حریم خصوصی باید به‌صورت ثابت در برنامه تأیید شده باقی بماند. اپراتورهای بار کاری تنها متریک‌ها و وزن‌های مدل DP را مشاهده می‌کنند. داده‌های رمزنگاری شده تنها برای مدت زمان محدودی پس از بارگذاری قابل رمزگشایی هستند.</p><p>Gboard از این سیستم برای راه‌اندازی مدل‌های پیش‌بینی کلمات بعدی به زبان‌های انگلیسی و ژاپنی با ضمانت‌های حریم خصوصی قویتر و دقت بهبود یافته استفاده کرد. دو انتخاب طراحی این امر را هدایت می‌کند:</p><p>توضیح دهنده تعاملی بر اساس پست و مقاله گوگل ریسرچ در 2 اکتبر 2026 (arXiv:2609.31494).</p><p>انتخاب بار کاری سرور که از KMS درخواست کلیدهای رمزگشایی می‌کند. تنها کدهای لیست شده در سیاست دسترسی منتشر شده، این کلیدها را دریافت می‌کنند.</p><p>منابع: بلاگ گوگل ریسرچ، مخزن محاسبات فدرال محرمانه، مستندات NVIDIA FLARE، راهنمای تصدیق FLARE، یادداشت‌های انتشار Flower 1.8، مخزن pfl-research. تأیید شده در 4 اکتبر 2026.</p><p>به مقاله، جزئیات فنی و مخزن GitHub مراجعه کنید. تمامی اعتبار به محققان این پروژه تعلق دارد. همچنین، خوشحال می‌شویم که شما را در توییتر دنبال کنیم و فراموش نکنید به زیرمجموعه ML ما با بیش از 150 هزار عضو بپیوندید و به خبرنامه ما مشترک شوید. منتظر بمانید! آیا شما در تلگرام هستید؟ حالا می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا نیاز به همکاری با ما برای تبلیغ مخزن GitHub شما یا صفحه Hugging Face یا انتشار محصول یا وبینار دارید؟ با ما ارتباط برقرار کنید.</p><p>میخائل ساتر یک حرفه‌ای داده‌کاوی است که دارای مدرک کارشناسی ارشد در داده‌کاوی از دانشگاه پادووا می‌باشد. با یک پایه مستحکم در تحلیل آماری، یادگیری ماشین و مهندسی داده، میخائل در تبدیل مجموعه‌های داده پیچیده به بینش‌های عملی مهارت دارد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/04/google-research-moves-federated-learning-into-tees-gboard-now-trains-with-externally-verifiable-differential-privacy/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

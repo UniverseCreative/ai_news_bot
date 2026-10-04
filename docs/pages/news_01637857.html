@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Agent Said It Was Done. The Database Disagreed.</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>The Agent Said It Was Done. The Database Disagreed.</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-04 13:04</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Microsoft ThinkingBox، عامل‌های هوش مصنوعی را بر اساس سوابقی که از خود به جای می‌گذارند، نه جملاتی که تولید می‌کنند، ارزیابی می‌کند و سپس می‌پرسد آیا می‌توانند این کار را بیست بار به طور مکرر انجام دهند. اکنون این قابلیت از طریق Hugging Face در دسترس است.</p><p>شکل 1: ThinkingBox یک عامل را در برابر جلسات ابزار MCP ایزوله اجرا می‌کند و سپس وضعیت نهایی ترمینال و آثار جانبی که باقی می‌گذارد را ارزیابی می‌کند. از مقاله ThinkingBox ما.</p><p>یک مشتری نامه می‌نویسد. دستگاه آشپزخانه 745 دلاری او به مدت پانزده روز پس از تاریخ تخمین زده شده تحویل، در یک مرکز توزیع در نشویل در وضع "استثنایی" مانده است.</p><p>عامل هوش مصنوعی کار دقیقی انجام می‌دهد. نه تماس ابزار: سفارش را استخراج می‌کند، ردیابی را بررسی می‌کند، پروفایل مشتری او را می‌بیند، دو بار به سیاست بازپرداخت جستجو می‌کند، تأیید می‌کند که هیچ بلیطی وجود ندارد، یک بلیط باز می‌کند، زمان‌بندی را مستند می‌کند و سیاست را به درستی می‌خواند؛ بخش حساب او به‌طور واقعی برای جبران خسارت تأخیر واجد شرایط نیست.</p><p>سپس بلیط را به عنوان حل‌شده می‌بندد و پاسخ می‌دهد: "از آنجایی که سوال شما حل شده است، آیا چیزی هست که بتوانم به شما کمک کنم؟"</p><p>دو چیز اشتباه است. استثنای حمل‌کننده هنوز باز است، بنابراین وضعیت نهایی مورد نیاز در حالت تعلیق قرار دارد و منتظر حل است. و مشتری هرگز به پاسخ واقعی برای آنچه که واقعاً پرسیده بود، دست نیافت.</p><p>یک ارزیاب هوش مصنوعی که تماس‌های ابزار را بررسی می‌کند، نه تماس درست تشکیل شده را می‌بیند. ارزیابی که بررسی می‌کند آیا عامل به پایگاه داده نوشته یا نه، این را نیز می‌بیند. پایگاه داده است که با آن اختلاف دارد.</p><p>این فاصله چیزی است که ThinkingBox اندازه‌گیری می‌کند. در میان 507 جریان کاری تجاری دارای وضعیت، هر کدام 20 بار در برابر مدل‌های مختلف LLM اجرا می‌شود و عوامل را بر اساس وضعیت نهایی ترمینال و آثار جانبی ارزیابی می‌کند. این پست درباره آنچه که پیدا کردیم، هزینه‌های ثبات و چگونگی اجرای معیارها به صورت خودتان از طریق OpenEnv می‌باشد.</p><p>شما می‌توانید این را خودتان اجرا کنید: مثال بالا از یک وظیفه benchmark sandbox_external_retail_group1.py:test_case_ST003_006 اقتباس شده است و بررسی اجرایی که ناموفق است یک فیلد واحد است: وضعیت بلیط حل شده در حالی که وضعیت نهایی مورد نیاز معلق است. ردپای کامل در پیوست D.4، مورد 3 مقاله ما موجود است.</p><p>می‌خواهید قبل از خواندن نتایج آن را امتحان کنید؟ به بخش "خودتان اجرا کنید" بگذرید.</p><p>پاسخ‌های نهایی و تماس‌های معتبر ابزار تنها نمایه‌هایی هستند. یک عامل می‌تواند درست به نظر برسد در حالی که مقدار اشتباه را باقی می‌گذارد، رکورد نادرست را تغییر می‌دهد، یا اثر جانبی اضافی ایجاد می‌کند. فقط سوابقی که به جای می‌گذارد، سؤال را حل می‌کند.</p><p>این فاصله قابل توجه است. در یک تحلیل مجموعه رایج که شامل 121,680 آزمایش معتبر در 12 مدل LLM می‌باشد، 79,853 تلاش بررسی‌های اجرایی را ناموفق گذرانده‌اند. از آن شکست‌ها، 67.24% همچنان به‌طور منظم خاتمه یافتند، ابزاری که وضعیت را تغییر می‌دهد، فراخوانی کردند و هیچ خطای نهایی ابزاری گزارش نکردند. با این حال، بررسی‌های اجرایی مقادیر فیلد اشتباه را در 77.61% از آنها، اثرات اضافی غیرقابل انتظار را در 43.30% و اثرات مورد نیاز گم‌شده را در 25.36% یافته است. آن یافته‌های بررسی وضعیت با یکدیگر همپوشانی دارند.</p><p>یک مسیر یک ادعا است. حالت پایگاه داده مدرک آن است. تکرار آزمون اعتماد است.</p><p>یک عاملی که یک بار بازپرداخت را به درستی پردازش می‌کند و در چهار بار بعدی آن را به اشتباه انجام می‌دهد، یک عامل بازپرداخت قابل اعتماد نیست. بنابراین هر وظیفه 20 بار مستقل اجرا می‌شود، هر کدام از یک پایگاه داده تمیز مشابه، و ما سه چیز متفاوت را گزارش می‌دهیم:</p><p>جدول 1: سه عددی که ما گزارش می‌دهیم و سؤالی که هر یک به آن پاسخ می‌دهد.</p><p>ما در این پست وبلاگ از 20/20 مشاهده شده به عنوان شمارش دقیق تعداد 507 وظیفه‌ای که 20 از 20 را گذرانده‌اند، استفاده می‌کنیم. بدون تخمین‌گر، بدون هموارسازی.</p><p>شروع با نمای آشنا. جدول زیر pass@1، برآورد امتیاز تلاش واحد را به تفکیک حوزه گزارش می‌دهد. این عددی است که بیشتر جدول‌های رهبری منتشر می‌کنند و به تنهایی مانند یک رتبه‌بندی توانایی عادی خوانده می‌شود.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
