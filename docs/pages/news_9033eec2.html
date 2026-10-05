@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yandex Introduces Sona: A Single Generative Recommender That Replaces Entire Recommendation Cascade</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Yandex Introduces Sona: A Single Generative Recommender That Replaces Entire Recommendation Cascade</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-05 15:37</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>بیشتر مروِدهای تولید، حالت آبشاری دارند. تولیدکنندگان کاندیدا به یک پیش‌رتبه‌دهنده داده می‌شوند که سپس به یک رتبه‌دهنده سنگین که بر اساس صدها ویژگی مهندسی‌شده ساخته شده است، تغذیه می‌شود. گزارش فنی Sona شرکت Yandex طراحی متفاوتی را توصیف می‌کند. Sona یک مدل هوش مصنوعی تولیدکننده است که تولید کاندیدا و رتبه‌بندی را در یک سیستم واحد گرد هم می‌آورد و مراحل مختلف معمولی استفاده شده در خطوط توصیه‌ پیشنهادات را جایگزین می‌کند. Yandex این مدل را در یک آزمایش زنده در مدت هفت روز بر روی اسپیکرهای هوشمند خود آزمایش کرد. در یک آزمایش آنلاین A/B، این مدل جایگزین بیش از 15 تولیدکننده کاندیدا، مرحله پیش‌رتبه‌بندی و مرحله رتبه‌بندی با یک ترانسفورمر خدمت‌رسانی شده است.</p><p>آبشارها یک تصمیم را در مدل‌های جداگانه آموزش‌دیده تقسیم می‌کنند. هر مرحله هدف خاص خود را بهینه‌سازی می‌کند و رتبه‌دهنده تنها آنچه را که مراحل بالادستی اجازه می‌دهند، می‌بیند. سازه قبلی Yandex در سطح Yandex Music صدها ویژگی را شامل می‌شد که شامل سیگنال‌هایی از Argus، ترانسفورمر توصیه‌گر قبلی Yandex می‌شد. Sona تولید کاندیدا و رتبه‌بندی را در اطراف یک نمایش مشترک از کاربران قرار می‌دهد. کدگذار تاریخچه شنونده را در هر درخواست یک بار می‌خواند. یک دیکودر کاندیداها را تولید می‌کند. یک ماژول رتبه‌بندی آن‌ها را بر اساس همان وضعیت‌های کدگذار نمره‌گذاری می‌کند. هیچ‌یک از اجزا از ویژگی‌های دست‌ساخته استفاده نمی‌کند. ورودی‌ها شامل فیلدهای رویداد ثبت‌شده (شناسه تراک، شناسه هنرمند، مدت زمان، لایک‌ها، زمان پخش، پرچم‌های سطح) و شناسه‌های معنایی یادگرفته‌شده هستند.</p><p>در اسپیکرهای هوشمند Yandex، پخش می‌تواند بدون اینکه کاربر ابتدا یک هنرمند، ژانر یا حالت را انتخاب کند، آغاز شود. تیم تحقیقاتی این حالت را به عنوان یک تنظیم خالص توصیه توصیف می‌کند.</p><p>با پیروی از فرمول‌بندی شناسه‌های معنایی Rajput و همکاران، هر تراک به یک مجموعه از 3 کد گسسته تبدیل می‌شود. یک LLM چندرسانه‌ای منجمد، طیف مل-اسپکتروگراف 90 ثانیه اول را همراه با عنوان، هنرمندان و برچسب‌ها می‌خواند. این مدل تنها در حالت پرکردن پیش‌فرض اجرا می‌شود. سپس یک ترانسفورمر با 4 لایه اصلاح، آن ویژگی‌ها را با رفتار شنیداری هم‌راستا می‌کند، از روش InfoNCE بر روی جفت‌های تراک همکاری استفاده می‌کند. K-means باقی‌مانده نتیجه را به 3 کتاب‌خانه کد 32,000 ورودی هر کدام کدگذاری می‌کند. این کار عملکرد یک خط پایه صوتی CLMR را شکست: مقدار Recall@1000 از 0.8111 به 0.8524 افزایش یافت.</p><p>Sona به 8,192 رویداد گذشته توجه می‌کند. توجه کامل بر روی این طول هزینه‌بر است، بنابراین کدگذار به طور نابرابر عمق را صرف می‌کند. 2,048 رویداد اخیر به یک استک خودتوجهی 7 لایه دسترسی دارند. رویدادهای قدیمی‌تر تنها از طریق توجه متقابل و یک لایه تاریخچه کامل عبور می‌کنند. مقاله گزارش می‌دهد که این روش کیفیت بیشتر توجه کامل را در حدود نصف هزینه استنتاج حفظ می‌کند.</p><p>یک دیکودر 2 لایه مجموعه‌های شناسه معنایی را از طریق جستجو بافت محدود با عرض 1,024 تولید می‌کند. یک درخت فهرست‌گذاری جستجوهای نامعتبر را مسدود می‌کند. هر مجموعه به هر تراکی که آن را به اشتراک می‌گذارد گسترش می‌یابد. ماژول رتبه‌بندی که شامل چهار لایه توجه متقابل است، این تراک‌ها را بر اساس حافظه مشترک کدگذار نمره‌گذاری می‌کند.</p><p>ماژول رتبه‌بندی از یک رتبه‌دهنده معلم منجمد یاد می‌گیرد. معلم یک ترانسفورمر با 0.6 میلیارد پارامتر است که همچنین بدون ویژگی‌های دست‌ساخته شده است. این مدل بر اساس یک سال رویدادهای درگیری در دو مرحله آموزش داده می‌شود: پیش‌آموزش پیش‌بینی آیتم بعدی، و سپس تنظیم دقیق رتبه‌بندی با چند سر. حذف پیش‌آموزش دقت جفت وزن‌دار را از 0.6215 به 0.6153 کاهش داد.</p><p>تیم روش تقطیر خود را Rollout Distillation می‌نامد. در طول آموزش، دیکودر فعلی کاندیداهای پرتو را تولید می‌کند. معلم آن‌ها را نمره‌گذاری می‌کند، به همراه برداشت‌های ثبت شده. ماژول رتبه‌بندی بر اساس آن نمره‌ها با خطای مطلق میانگین رگرسیون انجام می‌دهد. ضرر مشترک برابر است</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/05/yandex-introduces-sona-a-single-generative-recommender-that-replaces-entire-recommendation-cascade/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI launches visual ads that appear alongside image generation results</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>OpenAI launches visual ads that appear alongside image generation results</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-05 15:36</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>ChatGPT در حال دریافت تبلیغات بیشتری است. به‌ویژه، OpenAI در حال اضافه کردن تبلیغات بصری نمایشی به مجموعه تبلیغاتی خود است تا تبلیغات در کنار تصاویری که کاربران از ChatGPT درخواست می‌کنند ظاهر شوند. علاوه بر این، شرکت در حال گسترش ابزارهای اندازه‌گیری تبلیغات و شراکت‌های خود، و توسعه راه‌های جدید برای تعیین مناسب بودن برند است.</p><p>تبلیغات جدید قرار است اواخر این ماه تنها در ایالات متحده ظاهر شوند و شامل محصولات و خدمات از گروه اولیه‌ای از تبلیغ‌کنندگان باشد. به‌علاوه، تبلیغات به‌وضوح برچسب‌گذاری خواهند شد و بر پاسخ‌هایی که ChatGPT ارائه می‌دهد تأثیر نخواهند داشت، حسب اعلام شرکت.</p><p>این اقدام پس از راه‌اندازی Muse متا، یک اپلیکیشن هوش مصنوعی عامل‌محور که برای همه به‌صورت رایگان در دسترس است و رقیب در حال رشد چت‌بات‌های هوش مصنوعی پیشرو، مانند ChatGPT، می‌باشد، صورت می‌گیرد.</p><p>OpenAI در اوایل سال جاری تبلیغات را برای حمایت از سطوح اشتراک رایگان و کم‌هزینه خود راه‌اندازی کرد و در آگوست آنها را به هند گسترش داد.</p><p>اکنون، برنامه این است که تبلیغ‌کنندگان آنلاین را جلب کند که می‌خواهند با استفاده از تصاویر بصری بیشتر برای جلب توجه مشتریان بالقوه خود داستان‌هایشان را بگویند. در نهایت، این تبلیغات به آنها اجازه خواهند داد تا به ۱.۲ میلیارد کاربر هفتگی ChatGPT هدف‌گذاری کنند، زمانی که به‌طور جهانی منتشر شوند.</p><p>با این حال، ادغام چنین تبلیغاتی ممکن است تجربه کاربری را مختل کند. اما شاید بخشی از هدف همین است، زیرا این تبلیغات می‌توانند کاربران عادی را به پرداخت هزینه اشتراک برای جلوگیری از مشاهده آنها وادار کنند.</p><p>به‌علاوه‌ی تبلیغات نمایشی، OpenAI اعلام کرد که در حال گسترش ابزارهای اندازه‌گیری و اکوسیستم شرکای خود است که اکنون شامل راه‌حل‌های انتساب کلیک، AppsFlyer، Triple Whale، Adjust، DV Rockerbox، Northbeam، Branch، Singular، Kochava، Airbridge و Tenjin، و همچنین شرکای اندازه‌گیری پیشرفته و کامل‌فانل، Fospha، Measured و INCRMNTAL می‌باشد.</p><p>OpenAI همچنین با Haus، Measured و WorkMagic همکاری کرده تا به تبلیغ‌کنندگان کمک کند تا آزمایش‌های "مبتنی بر جغرافیا" در مورد تبلیغات را انجام دهند.</p><p>این شرکت اعلام کرد که در حال توسعه پایلوت‌های ارزیابی مناسب بودن برند با کمک DoubleVerify (DV) و Integral Ad Science (IAS) است که به تبلیغ‌کنندگان کمک خواهد کرد تا محیط تبلیغات ChatGPT را بهتر درک کنند.</p><p>ترکیب این اقدامات نشان‌دهنده‌ تلاش OpenAI برای ایجاد ChatGPT به عنوان یک کسب‌وکار پشتیبانی‌شده از تبلیغات برای افرادی است که از طرح‌های رایگان و کم‌هزینه استفاده می‌کنند.</p><p>زمانی که از طریق لینک‌های موجود در مقالات ما خرید کنید، ممکن است کمیسیون کوچکی کسب کنیم. این امر بر استقلال تحریریه ما تأثیری نخواهد داشت.</p><p>۵۰٪ تخفیف برای یک پاس دوم تجربه Disrupt به‌منظور به اشتراک‌گذاری طراحی شده است. پاس خود را تهیه کرده و یک همکار، شریک یا همتای خود را با ۵۰٪ تخفیف بیاورید. از طریق برقراری ارتباط، ایجاد تشدید و کشف دستاوردهای بعدی در اکوسیستم استارتاپ بیشتر پیش روید.</p><p>قاضی فدرال Flock را 'نظارت جمعی بی‌هدف' می‌خواند</p><p>آمازون به واکنش‌های منفی در مورد مراکز داده پاسخ می‌دهد و می‌گوید دیگر از NDAها استفاده نمی‌کند</p><p>گوگل فکر می‌کند Starship اسپیس‌اکس باید ۱,۸۰۰ بار پرتاب شود تا مراکز داده فضایی شروع به کار کنند</p><p>اولین نیروگاه زمین‌گرمایی پیشرفته جهان تنها در ۲۳ ماه به پایان رسید</p><p>گوگل محصول Gemini 4 Argon را منتشر کرده که آن را قدرتمندترین مدل خود تا کنون می‌نامد</p><p>پنتاگون از ایلان ماسک و پالمر لاکی می‌خواهد تا به تصمیم‌گیری در مورد اقدامات بعدی نظامی کمک کنند</p><p>OpenAI Dots، آواتار عامل‌محور شاداب خود را راه‌اندازی می‌کند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
