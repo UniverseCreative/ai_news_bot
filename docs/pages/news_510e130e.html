@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta AI Open-Sources Rebalancer: A C++ Assignment Solver That Runs About 40 Million Placement Problems a Day</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Meta AI Open-Sources Rebalancer: A C++ Assignment Solver That Runs About 40 Million Placement Problems a Day</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-07 14:17</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Meta کد منبع Rebalancer، یک کتابخانه C++ با یک رابط Python برای حل مسائل تخصیص را به صورت عمومی منتشر کرده است. این کتابخانه مشخص می‌کند که کدام اشیاء در کدام سطل‌ها قرار بگیرند با توجه به محدودیت‌ها و اهداف. بر اساس پست مهندسی در Meta، Rebalancer برای بیش از 9 سال تخصیص منابع را در سراسر Meta مدیریت کرده است. این نسخه تحت مجوز Apache 2.0 منتشر شده و شامل مستندات، یک بسته PyPI و یک رابط کاربری برای عیب‌یابی به نام Rebalancer Explorer است.</p><p>آیا قابل استقرار است؟ بله. دستور pip install rebalancer نسخه 1.0.4 را برای Python 3.12+ نصب می‌کند، با چرخ‌های پیش ساخته برای Linux x86-64 و macOS 14+ ARM64. همچنین بسته‌های .deb، .rpm و Homebrew نیز وجود دارد. PyPI هنوز این پروژه را به عنوان Alpha طبقه‌بندی می‌کند.</p><p>مسائل تخصیص در سراسر ساختار Meta نمایان می‌شوند. رک‌ها به دیتاسنترها می‌روند، سرورها به خدمات، وظایف به سرورها و ترافیک کاربران به دیتاسنترها منتقل می‌شود. Meta دو مانع را نام می‌برد: قابلیت استفاده و مقیاس‌پذیری. مهندسان تلاش می‌کنند تا سیاست‌ها را به فرمول‌های دقیق تبدیل کنند، و بسیاری از مسائل NP-hard و برای حل‌کننده‌های تجاری بسیار بزرگ هستند.</p><p>پاسخ Rebalancer این است که نحوه مشخص کردن یک مشکل را از نحوه حل آن جدا کند. طراحی این سیستم به طور مفصل در مقاله OSDI 2024 با عنوان "بهینه‌سازی تخصیص منابع در دیتاسنترهای هایپر مقیاس" بیان شده است.</p><p>زبان مشخصات دارای 3 لایه است:</p><p>مثال Meta وظایف را به عنوان اشیاء، سرورها را به عنوان سطل‌ها و رک‌ها را به عنوان دامنه مدل می‌کند. A CapacitySpec ظرفیت CPU و ذخیره‌سازی را در هر سرور تعیین می‌کند. A GroupCountSpec یک نوع شغل را در هر رک نگه می‌دارد. A BalanceSpec استفاده هر سرور را در هر دو بعد متعادل می‌کند.</p><p>Rebalancer مشخصات را به یک گراف بیان‌گر چرخه‌دار هدایت‌شده تبدیل می‌کند. گره‌های برگ مقادیر استفاده را نگه می‌دارند؛ و گره‌های تجمع و تبدیل بالای آن‌ها قرار دارند. کاربران یک تخصیص اولیه و یک شرط توقف ارائه می‌دهند. محدودیت‌هایی که تخصیص اولیه قبلاً نقض کرده است به اهداف با اولویت بالا تبدیل می‌شود.</p><p>حل‌کننده بهینه: گراف به یک برنامه مختلط عدد صحیح برای FICO Xpress، Gurobi یا HiGHS تبدیل می‌شود. تجمع متغیرها و شکست تقارن مدل‌ها را کوچک می‌کند. بدترین حالت اندازه مدل هنوز O اشیاء × سطل‌ها است. بزرگ‌ترین مسائل Meta بسیار بزرگ‌تر از آن است که هر حل‌کننده MIP بتواند به آن‌ها رسیدگی کند.</p><p>جستجوی محلی: این حل‌کننده به طور مستقیم بر روی گراف بیان‌گر کار می‌کند. این حل‌کننده حرکات اشیاء به سطل‌های دیگر را بررسی می‌کند، با همسایگی بدترین حالت O اشیاء + سطل‌ها. سپس بهترین کاندیدایی را که هیچ محدودیتی را نقض نمی‌کند، انتخاب می‌کند. ارزیابی به صورت موازی انجام می‌شود و به میلیون‌ها ارزیابی در ثانیه می‌رسد و فضای جستجو کاهش می‌یابد.</p><p>Meta از جستجوی محلی برای تقریباً تمام مسائل بزرگ و MIP برای مسائل کوچک تا میان‌سایز استفاده می‌کند و معمولاً نخست به وسیله MIP پروتوتایپ می‌کند.</p><p>مدل‌سازان در Meta بیشتر وقت خود را صرف اشکال‌زنی رفتار حل‌کننده می‌کنند. Rebalancer Explorer یک رابط کاربری وب Dockerized است که برای این منظور ساخته شده است. این رابط کاربری محدودیت‌های Binding، تأثیرات آرام‌سازی و دلایل نشستن یک شیء در یک سطل را نمایش می‌دهد.</p><p>OR-Tools شامل کلاس‌های بیشتری از مسائل است و Timefold به برنامه‌ریزی و مسیریابی JVM می‌پردازد. برتری Rebalancer داشتن یک مشخصات تخصیص است که هم بر روی جستجوی محلی و هم MIP اجرا می‌شود.</p><p>مقاله، مخزن GitHub و جزئیات فنی را بررسی کنید. تمام اعتبار به محققان این پروژه برسد. همچنین، احساس آزادی کنید که ما را در Twitter دنبال کنید و فراموش نکنید که به SubReddit ML با بیش از 150 هزار عضو بپیوندید و به خبرنامه ما مشترک شوید. صبر کنید! آیا در تلگرام هستید؟ اکنون می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>[اسپانسر] وب یکی از بزرگ‌ترین API‌هایی است که اکثر عوامل از آن غافل هستند. پایگاه‌های داده، تقویم‌ها و مخازن دارای API هستند. وب باز عمدتاً این‌گونه نیست. سرور TinyFish MCP به هر مشتری MCP چهار ابزار ارائه می‌دهد: TinySearch، TinyFetch (صفحات کامل به صورت مارک‌داون، شامل JavaScript)، TinyBrowser برای ورود‌ به‌ سیستم و فرم‌ها، و TinyAgent برای کارهای چند مرحله‌ای. جستجو و Fetch رایگان است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/06/meta-ai-open-sources-rebalancer-a-c-assignment-solver-that-runs-about-40-million-placement-problems-a-day/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Jump Trading is scaling quant research with ChatGPT</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>How Jump Trading is scaling quant research with ChatGPT</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-07 14:15</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Jump Trading از GPT‑6 Astra برای مواجهه با مشکلات تحقیقاتی طولانی و مبهم‌تر استفاده می‌کند.</p><p>به عنوان یک شرکت تجارت کمی، Jump Trading مدل‌های پیش‌بینی‌کننده‌ای ایجاد می‌کند که از داده‌های بازار، اخبار و رویدادها و مجموعه‌ای از منابع داده‌های جایگزین برای انجام بهترین پیش‌بینی‌ها در مورد قیمت دارایی‌ها استفاده می‌کند. از آنجایی که بازارها پیچیده، پُرت noise و به‌طور مداوم در حال تغییر هستند، به زحمت می‌توان دقیقاً پیش‌بینی کرد که چه اتفاقی خواهد افتاد. اما به گفته لوکاس بیکر، رئیس تحقیق و توسعه LLM در Jump، پیش‌بینی حتی کمی بهتر از یک پرتاب سکه در مقیاس کافی است که منجر به یک استراتژی موفق شود.</p><p>بیکر رهبری تحقیقات و توسعه‌های عاملی را بر عهده دارد و تمرکز او بر ساختن عامل‌ها، تسهیل‌ها و زیرساخت‌هایی است که به پژوهشگران کمی اجازه می‌دهد ایده‌های خود را با دقت و عمق بیشتری بررسی کنند. افزودن GPT‑6 Astra به طور قابل توجهی مقیاس و پیچیدگی جریان‌های کاری که می‌توانند به عامل‌ها واگذار شوند را گسترش داده است، از کدنویسی روزمره تا مطالعات کمی پیشرفته برای تأیید فرضیات جدید.</p><p>در طول سال گذشته، هوش مصنوعی از یک ابزار مفید که برای نوشتن قطعه‌های کد یک‌بار مصرف یا پیدا کردن باگ‌های کوچک مورد استفاده قرار می‌گرفت، به یک سیستم توانمند و چندمنظوره تبدیل شده است که می‌تواند به تنهایی کل پایگاه‌های کد و خدمات را توسعه دهد. اکنون، بیکر و تیمش متوجه شده‌اند که هوش مصنوعی زمانی بهترین عملکرد را دارد که بیشتر مانند یک همکار با آن رفتار شود. پژوهشگران می‌توانند یک مشکل کلیدی، یک محیط کاری و راهی برای ارزیابی کیفیت و اهمیت نتایج را تعریف کنند و سپس به صورت بلادرنگ یکی یا چند عامل را درباره جایی که باید تحلیل را متمرکز کنند یا کدام کار را بعد انجام دهند، راهنمایی کنند.</p><p>بیکر می‌گوید که با GPT‑6 Astra، عامل‌ها اکنون قادرند نه تنها تغییرات معنادار و عملی را پیدا کنند، بلکه این پیروزی‌ها را در یک فرآیند بهبود تدریجی ادغام و انباشته کنند. در طول یک وظیفه طولانی‌مدت، سیستم می‌تواند یافته‌های خود را تجزیه و تحلیل کند، آن‌ها را با معیارهای توافق شده در یک پیشنهاد اولیه ارزیابی کند و به طور فعال تلاش‌های خود را بازتخصیص دهد به جای اینکه نیاز به یک شخص برای تحلیل هر دور از تغییرات باشد. او می‌گوید: "شما می‌توانید چیزی را تعریف کنید که نیاز دارد به مدت چند روز اجرا شود—باید از چندین منبع داده استخراج کند، باید آن تصمیمات جزئی را درباره اینکه چه چیزی مهم است و چه چیزی نیست، اتخاذ کند و همه چیز را به هم مرتبط کند—تا تحلیلی جامع که واقعاً الان کار می‌کند، ایجاد کند."</p><p>Jump Trading در تمام افق‌های زمانی و کلاس‌های دارایی فعالیت می‌کند. هر مرحله از فرآیند پیچیده است و در صنعتی با نظارت شدید مانند مالی، اشتباهات می‌توانند عواقب مالی و انطباقی داشته باشند. بیکر می‌گوید که مهم است از خطراتی که از سپردن کار به هوش مصنوعی ناشی می‌شود، آگاه باشید، اما همچنین هوش عامل می‌تواند به بهبود کیفیت، امنیت و نظارت نیز کمک کند، نه فقط اضافه کردن ویژگی‌ها. طراحی قوی سیستم و مرزها، محدودیت‌های واضح، زیرساختی که سکونت و مشاهده‌پذیری را ترویج می‌کند و بررسی انسانی تغییرات به تیم Jump Trading کمک می‌کند اطمینان حاصل کند که جریان‌های کاری مجهز به هوش مصنوعی آماده چنین مقیاسی در یک محیط تحت نظارت هستند.</p><p>"اگر شما محیطی امن داشته باشید که عامل یا سیستم آزاد باشد تا هر خروجی که لازم دارد تولید کند، اما همچنین در انتهای آن یک فرآیند بررسی انسانی وجود داشته باشد که در آن تأیید حیاتی با پذیرش انسانی انجام می‌شود، این چیزی است که به ما اعتماد می‌دهد"، او می‌گوید. برای مثال، اگر یک عامل یک سیگنال معاملاتی تولید کند، این سیگنال به همان روشی که هر خروجی دیگری بررسی می‌شود، بررسی و ارزیابی می‌شود: به عنوان یک سیگنال، معمولاً اطلاعاتی اما احتمالاً اشتباه، و با هر سیگنال دیگری در یک محیط اجرایی که به دقت بررسی و کنترل شده است، یکپارچه می‌شود.</p><p>بیکر می‌گوید که او فکر می‌کند که ما در مسیر...</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/jump-trading" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

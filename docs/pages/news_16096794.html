@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-07 14:16</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>المپیاد بین‌المللی انفورماتیک (IOI) و المپیاد ریاضی بین‌المللی (IMO) مهارت‌های متفاوتی را آزمایش می‌کنند. IOI نیازمند الگوریتم‌ها و کدی است که تحت محدودیت‌های زمانی و ارسال سخت‌گیرانه، تست‌های مخفی را عبور کند. IMO خواستار اثبات‌های دقیق به زبان طبیعی است. موفقیت در هر یک از این مسابقات دشوار است و موفقیت در هر دو به موضوعی وسیع‌تر اشاره دارد.</p><p>نتایج اخیر ما نشان می‌دهد که Nemotron یک بنیاد قوی و تطبیق‌پذیر برای ساخت مدل‌های تخصصی در سطح جهانی است. شروع از Nemotron 3، تیم‌های ما از تکنیک‌های جابجایی نظارت‌شده (SFT)، یادگیری تقویتی (RL) و استدلال مبتنی بر بازخورد برای ایجاد سیستم‌هایی استفاده کردند که به سطح مدال طلا در هر دو IMO 2026 و IOI 2026 رسیدند.</p><p>نتیجه IOI از یک اجرای زنده و آینده‌نگر به‌دست آمد که تحت همان محدودیت‌های زمانی، دسترسی به اینترنت و ارسال مشابه شرکت‌کنندگان انسانی انجام شد. این یک معیار غیررسمی و بدون نظارت بود و در رتبه‌بندی رسمی IOI گنجانده نشد. اثبات‌های ارسال‌شده سیستم IMO توسط ناظرین رسمی IMO مورد ارزیابی قرار گرفتند.</p><p>"آسان برای جابجایی" باید به معنای فراتر از قابلیت آموزش یک نقطه چک باشد. باید به این معنی باشد که یک مدل بنیادین توانمند می‌تواند به یک حوزه چالش‌برانگیز با یک دستورالعمل واضح و قابل استفاده دوباره تطبیق یابد.</p><p>در طول این دو پروژه، آن دستورالعمل چهار بخش اصلی داشت:</p><p>اجرای آموزش و استدلال قابل توجه بود، اما رویکرد underlying آشنا و قابل بازتولید است. ما نیازی به ساخت یک مدل بنیادین جدید برای هر چالش نداشتیم. ما Nemotron را برای این وظیفه تخصصی کردیم.</p><p>برای برنامه‌نویسی رقابتی، ما 22,000 مسئله را گردآوری کردیم و ردپای استدلال مصنوعی را برای آموزش دو متخصص تولید کردیم. Nemotron-3-Nano-CC، با 30 میلیارد پارامتر کل و 3 میلیارد پارامتر فعال، هر دو SFT و RL را دریافت کرد. Nemotron-3-Ultra-CC، با 550 میلیارد پارامتر کل و 55 میلیارد پارامتر فعال، فقط SFT را دریافت کرد.</p><p>پیشرفت در IOI 2025 ارزش تخصصی‌سازی را به راحتی قابل مشاهده می‌سازد. Nano از 130 امتیاز قبل از آموزش‌های پس‌از آن به 280 پس از SFT و 291 پس از RL افزایش یافت. با GenCorrect، استراتژی تکراری تولید-ارزیابی-بهبود ما، به 468 امتیاز رسید و از آستانه طلایی 438.3 عبور کرد. Ultra-CC با همان استراتژی زمان آزمون به 502 امتیاز دست یافت.</p><p>این آزمایش‌ها همچنین نشان دادند که تطبیق نیازی ندارد در هر مقیاس به یک شکل باشد. SFT بیشتر بهبود Nano را به ارمغان آورد، در حالی که RL بهبود کوچکی اما مداوم افزوده است. برای مدل قوی‌تر Ultra، یک دوره SFT کافی بود تا مدل Nano کاملاً آموزش‌دیده را در IOI، ICPC و LiveCodeBench Pro قوی‌تر از آن کند. این یافته باعث شکل‌گیری سیستم Ultra-CC مخصوص رقابت شد که در IOI 2026 استفاده شد و 535.4 از 600 امتیاز کسب کرد.</p><p>پروژه IMO نیز همان ایده را به ریاضیات المپیاد اعمال کرد. شروع از Nemotron 3 Ultra، ما یک متخصص را با SFT و دیگری را با RL آموزش دادیم.</p><p>محتوای SFT شامل 414,890 مثال فیلترشده از نظر کیفیت در 15,818 مسئله اثبات منحصر به فرد بود. این فقط به آموزش پاسخ‌های نهایی نمی‌پرداخت. داده‌ها شامل تولید، تصحیح، تأیید و تأیید مجدد اثبات بود، بنابراین مدل آموخت که چگونه استدلال‌ها را بسازد، خلأها را شناسایی کند، به انتقادات پاسخ دهد و قضاوت کند که آیا یک اثبات کامل است. مدل RL بر روی 9,597 مسئله اثباتی که نزدیک به مرز قابلیت مدل بود، آموزش دیده بود.</p><p>هر دو نقطه چک آموزش‌دیده عملکرد بهتری نسبت به مدل در دسترس عمومی در آزمایش‌های توسعه داشتند. نقطه چک SFT در اولین دور جستجوی سریع‌ترین بود، در حالی که نقطه چک RL بهترین نتیجه کلی را در یک نقطه چک واحد کسب کرد. نقاط قوت آنها مکمل یکدیگر بودند، بنابراین سیستم نهایی از هر دو متخصص به همراه مدل عمومی استفاده کرد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
