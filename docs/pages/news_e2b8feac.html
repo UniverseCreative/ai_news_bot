@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The model that didn't exist, so you made it yourself</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>The model that didn't exist, so you made it yourself</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-09 14:11</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>هفته گذشته، من نسخه کوچکی از theprompt rewriter که همراه با Qwen-Image 2.1 عرضه می‌شود، خواستم. نسخه رسمی آن یک مدل 9B است که به حدود 20 گیگابایت حافظه نیاز دارد و قبل از نوشتن یک پاراگراف کامل، برای هزاران توکن فکر می‌کند. در Hub، فقط نسخه‌های فشرده‌ای از همان مدل 9B را پیدا کردم. بنابراین آنچه که می‌خواستم را برای ML Intern توصیف کردم و روز بعد نسخه 0.8B که روی CPU اجرا می‌شود را داشتم. این نسخه 99.7% مواقع خروجی معتبری تولید می‌کند و حدود یک‌چهارم توکن‌های معلم را استفاده می‌کند. هزینه محاسبات برای کل پروژه، شامل برچسب‌گذاری مدل 9B روی 8,797 درخواست نمونه، به 16 دلار آمریکا رسید.</p><p>در طول چند روز آینده، به همین شکل پنج مدل دیگر نیز درست کردم. هر یک از آن‌ها با یک پیام در HuggingChat با ML-intern فعال شروع شد و هر کدام به عنوان یک مدل عمومی در Hub با ارزیابی‌اش در کارت مدل به پایان رسید. ML-intern کار را برنامه‌ریزی می‌کند، قبل از صرف هر بودجه‌ای از من درخواست بودجه می‌کند، یک تست کوچک را قبل از انجام کار واقعی اجرا می‌کند، سپس آموزش می‌دهد، ارزیابی می‌کند و روی سخت‌افزار Hugging Face منتشر می‌کند.</p><p>اولین پیام جایی است که من تلاش خود را صرف می‌کنم. اولین prompt من برای مدل citrus که در زیر به اشتراک گذاشته شده است، حدود 450 کلمه بود. با ورود به پروژه ششمم، این تعداد به نزدیک 2,000 کلمه رسید، زیرا هر پروژه چیزی را به من آموخت که در پروژه بعدی می‌خواستم. تمام هفت prompt در GitHub در آدرس yvrjsharma/ml-intern-prompts وجود دارد، دقیقاً به همان صورتی که آن‌ها را نوشتم.</p><p>یک prompt با ایده‌ای در یک خط و دلیل خواسته شروع می‌شود. سپس قطعات دقیق را نام‌گذاری می‌کند: دیتاست، مدل پایه، و اسکریپت آموزش. هر چیزی که من قبلاً چک کرده‌ام، تحت یک عنوان که به واقع «حقایق تأیید شده، دوباره برداشت نکنید» نوشته شده است، قرار می‌گیرد تا عامل هزینه خود را صرف کار کند به جای اینکه دوباره آنچه را که می‌دانم کشف کند. برای دوربین-angle LoRA، آن بخش نشان می‌دهد که کدام مربی به تازگی پشتیبانی از تصویر شفاف را اضافه کرده و کدام مشکلات GitHub باز، مربی پشتیبان را پرخطر کرده است.</p><p>دو خط در prompt حیاتی است. اولی درخواست یک خط پایه قبل از هر آموزشی است. به عنوان مثال، prompt citrus می‌گوید: «همچنین امتیاز zero-shot مدل پایه را در همان معیار قبل از آموزش گزارش کنید تا ببینیم چه بهبودی حاصل شده است.» بدون آن، شما یک مدل آموزش دیده دریافت می‌کنید و هیچ ایده‌ای ندارید که آیا بهتر از آن چیزی است که با آن شروع کردید. دومی یک تست ابتدایی با یک بررسی پیوست شده است. برای LoRAهای تصویر، من درخواست 50 مرحله آموزش کردم و سپس بررسی کردم که آیا وزن‌های ذخیره شده واقعاً تغییر کرده‌اند، قبل از اینکه هزینه کامل را پرداخت کنم.</p><p>در پایان prompt، من خروجی‌های مورد انتظار را مشخص می‌کنم و هزینه را محدود می‌کنم. من تعریف می‌کنم که چه چیزی در کارت مدل قرار می‌گیرد و دستورالعملی مانند: «کل هزینه را به 12 دلار محدود کن و قبل از عبور از آن از من بپرس.» از آنجا که ML-intern هر وظیفه را با بودجه صفر دلاری شروع می‌کند و قبل از اجرای کارهای پولی به مجوز نیاز دارد، این محدودیت هزینه به طور جدی اعمال می‌شود. وقتی بودجه‌ای را حذف کنید، عامل بسته به اندازه پروژه، چندین مسیر پیشنهاد می‌دهد و از شما می‌پرسد کدام یک را ترجیح می‌دهید.</p><p>شما لازم نیست در تلاش اول خود همه آن‌ها را داشته باشید. به عنوان مثال، من در خلاصه citrus خود بخش verified-facts را نداشتم و ML Intern هنوز مدلی تولید کرد که دقت مدل Qwen3.5-2B را بیش از سه برابر کرد. اجازه دهید من شما را با 6 چیزی که در تنها چند روز با ML-Intern ساخته‌ام آشنا کنم.</p><p>یک مدل بینایی عمومی می‌تواند یک برگ مرکبات زرد شده را توصیف کند. با این حال، گفتن اینکه آیا این یک مشکل کنه است یا کمبود منیزیم، و remedies های زیستی و غیرزیستی برای درمان گیاه بسیار دشوار است. با استفاده از Claude، من یک دیتاست آموزشی را که از سه منبع به میزبانی سازمان Project-AgML در Hub ترکیب شده است، جمع‌آوری کردم. مدل citrus-disease-vlm-instruct تولید شده.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/building-with-ml-intern" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
