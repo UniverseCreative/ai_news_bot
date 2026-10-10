@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impactful scheduling for GPU clusters</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Impactful scheduling for GPU clusters</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-10 13:19</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>ساخت یک زمان‌بند خوشه‌ای برای اولویت‌دهی به تحقیقاتی با تاثیر بالا در حالی که اشغال کامل حفظ می‌شود</p><p>در تیم زیرساخت هوش مصنوعی در Ai2، مسئول تأمین ظرفیت محاسباتی GPU مؤسسه هستیم که به طور خاص بر روی بارهای کاری بزرگ، توزیع‌شده تمرکز دارد. ما به این کار به عنوان هرم چهار معیاری که بر روی یکدیگر بنا می‌شوند، می‌نگریم.</p><p>بنیان این هرم، دسترسی است: اینکه سخت‌افزار چقدر سالم و آماده برای کار است. بالای این معیار، اشغال قرار دارد: کسری از زمان موجود که به یک بار کاری خاص اختصاص داده شده است. بعد از آن، تاثیر قرار دارد: اینکه بارهای کاری با ارزش‌تر چه قدر از منابع بهره‌مند می‌شوند. قله هرم، بهره‌وری است: کسری از ظرفیت GPU که در طول عمر یک بار کاری استفاده شده است.</p><p>این مطلب درباره بهبود تاثیر تصمیمات زمان‌بندیمان است. اخیراً یک زمان‌بند مبتنی بر اولویت را با سیستمی که شامل بودجه‌های زمانی GPU، تخصیص منصفانه‌ سلسله‌مراتب و قرارداد برش زمانی است، جایگزین کردیم. در نتیجه، بحث درباره اینکه هر پروژه تحقیقاتی چه مقدار زمان GPU سزاوار است، از یک کار عملی مورد به مورد به یک فرآیند بودجه‌بندی اداری شفاف منتقل شد.</p><p>در Ai2، ما هزاران GPU از نوع NVIDIA H100، B200 و B300 را در خوشه‌هایی با اندازه‌های متفاوت از 88 تا 1024 GPU مدیریت می‌کنیم. این خوشه‌ها برای آموزش توزیع‌شده مقیاس بزرگ مدل‌های هوش مصنوعی ساخته شده‌اند و به یک گروه حدود 150 محقق داخلی خدمت می‌کنند که کارشان شامل مجموعه متنوعی از حوزه‌های هوش مصنوعی است، از جمله تمام جریان مدل‌های آموزش LLM و VLM، شبیه‌سازی یادگیری تقویتی رباتیک (RL) و پس‌آموزش برای موارد استفاده علمی عاملیت.</p><p>مانند بسیاری از آزمایشگاه‌ها، ما درخواست زمان GPU داریم که به مراتب از عرضه بیشتر است. بر اساس بارهای کاری ارسال‌شده، در هر لحظه‌ از زمان، درخواست‌های outstanding برای 2 تا 3 برابر بیشتر از GPU های موجود داریم. یکی از راه‌های فکر کردن به این موضوع این است که هر ساعت GPU موجود در خوشه ما، 2 تا 3 بار کاری تحقیقاتی مختلف برای آن رقابت می‌کنند.</p><p>به طور تاریخی، ما از یک زمان‌بند مبتنی بر اولویت استفاده می‌کردیم و اجازه می‌دادیم بارهای کاری از پیشامدناپذیری خودداری کنند. هر تیم محدودیتی در تعداد GPU های همزمان داشت که می‌توانستند توسط بارهای کاری که از پیشامدناپذیری مصون بودند، استفاده شوند. بارهای کاری پیشامدپذیر می‌توانستند آن محدودیت را بر روی GPU های بیکاره پشت سر بگذارند. این استراتژی باعث تولید پاتولوژی‌های قابل پیش‌بینی شد. به عنوان مثال، ما مواردی از "اشغال" GPU را مشاهده کردیم که در آن کاربران بارهای کاری بدون عمل را در زمانی که نیاز ایجاد می‌شد، پارک می‌کردند. این اتفاق به دلیل آن بود که پژوهشگران متوجه شدند نمی‌توانند بارهای کاری عیب‌یابی را با تاخیر کافی کم راه‌اندازی کنند تا مشکلات را در زمان واقعی حل کنند. همچنین، ما شاهد تورم اولویت بودیم، جایی که در نهایت 100٪ از بارهای کاری زمان‌بندی شده دارای اولویت بالایی بودند. این به این معنی بود که سطوح اولویت پایین‌تر به طور کامل از زمان GPU حذف شده بودند. از آنجا که پیشامدناپذیری اختیاری بود، ما همچنین متوجه شدیم که مهندسان در خط پشتیبانی ما بخش عمده‌ای از زمان واکنش به بلیط‌های خود را صرف مذاکره برای خاموش کردن سازمان‌یافته بارهای کاری ناپیشامدپذیر می‌کنند که بر روی میزبان‌های دارای مشکلات نگهداری شناخته‌شده اجرا می‌شوند.</p><p>زمانی که این مشکلات ظاهر شدند، ما به کندی ریشه‌های آنها را شناسایی کردیم. تلاش‌های اولیه ما برای اطمینان از اینکه مهم‌ترین کارها زمان GPU دریافت کنند، متمرکز بر کنترل دقیق‌تر چگونگی تعیین اولویت‌ها بود و در نهایت، دور زدن زمان‌بند مبتنی بر اولویت با اختصاص صریح انحصار GPU به پروژه‌های مهم بود. هر چند در ابتدا متوجه آن نشدیم، ما یک آزمایشگاه کامل برای مشاهده "تراژدی مشترک‌ها" ساخته بودیم. افراد بر سر یک منبع مشترک کمیاب رقابت می‌کردند و با جستجوی حداکثر کردن نتایج فردی، به یک نتایج جهانی غیر بهینه دست می‌یافتند.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/allenai/impactful-scheduling" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
