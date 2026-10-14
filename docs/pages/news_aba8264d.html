@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run fast, private agents on-device with LFM2.5-24B-A2B</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Run fast, private agents on-device with LFM2.5-24B-A2B</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-14 12:41</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>LFM2.5-24B-A2B یک مدل استدلال 24B-پارامتره است که فقط 2B پارامتر فعال دارد و برای ساخت نمایندگان سریع و خصوصی بر روی دستگاه طراحی شده است. این مدل قبل از پاسخ‌دهی، فکر می‌کند، ابزارها را فراخوانی می‌کند و وظایف چند مرحله‌ای را در داخل ابزارهای محبوب نمایندگی انجام می‌دهد. از آنجا که تنها 2B پارامتر برای هر توکن فعال است، هر توکن استدلال هزینه کمی دارد و به همین دلیل می‌توانید نمایندگان را به طور مداوم بر روی سخت‌افزار خود اجرا کنید.</p><p>LFM2.5-24B-A2B بر اساس LFM2-24B-A2B ساخته شده و معماری آن را حفظ می‌کند: 40 لایه، 64 متخصص در هر بلوک MoE با مسیریابی top-4 و همین ترکیب هیبریدی از کانولوشن‌های کوتاه گیت‌دار و GQA. پنجره زمینه از 32K به 131K توکن افزایش می‌یابد و یک گسترش توکن‌ساز در محل دیکشنری را از 65K به 128K توکن دو برابر می‌کند تا توکن‌سازی غیرلاتین بهتری ارائه دهد. بر خلاف مدل پیشین خود، این مدل فقط برای استدلال طراحی شده است و زنجیره‌ای صریح از افکار را قبل از ارائه پاسخ نهایی خود تولید می‌کند.</p><p>آموزش پیشین از حدود 17T به حدود 33T توکن افزایش یافته است. آموزش میانی سپس 2T توکن را در زمینه 32K اضافه می‌کند که بیشتر به سمت استدلال، ریاضیات، کدنویسی، پیروی از دستورالعمل‌ها و متن چندزبانه جهت‌گیری شده است و 300B توکن را در زمینه 131K اضافه می‌کند که به سمت داده‌های بلندمدت وزن‌دهی شده است. فراخوانی ابزارها و مسیرهای چند نوبتی در طول هر دو فاز مشاهده می‌شود. آموزش پسینی مدل پایه را در پنج مرحله به یک نماینده تبدیل می‌کند:</p><p>ما LFM2.5-24B-A2B را در برابر Qwen3.6-35B-A3B، Gemma-4-26B-A4B-it و Nemotron-3.5-Lightning در 16 معیار مختلف ارزیابی کردیم که استفاده از ابزارها و جریان‌های کاری نمایندگی، دانش، پیروی از دستورالعمل‌ها، ریاضیات و کدنویسی را شامل می‌شود. این مدل کوچک‌ترین مدل در گروه است، اما با MoEهایی که حدود 50% پارامترهای کل و فعال بیشتری دارند، رقابت می‌کند.</p><p>*همه مدل‌ها با vLLM ارزیابی شده و از پارامترهای تولید توصیه شده هر معیار استفاده شده است.</p><p>برای برنامه شما، نقاط قوت LFM2.5-24B-A2B در استفاده از ابزارها و پیروی از دستورالعمل‌ها است. LFM2.5-24B-A2B در پنج مورد از هشت معیار استفاده از ابزار و نمایندگی رقابت می‌کند و در معیار AutomationBench بیش از سه برابر مدل بعدی امتیاز می‌گیرد. همچنین در سه معیار پیروی از دستورالعمل نیز پیشرو است. مدل‌های بزرگ‌تر در معیارهای مبتنی بر دانش مانند GPQA Diamond، HLE و AA-Omniscience و همچنین در معیارهای کدنویسی علی مانند SWE-Bench Verified (OpenCode) و SciCode برتری دارند، بنابراین LFM2.5-24B-A2B را با بازیابی یا جستجوی وب برای بارهای کاری مبتنی بر دانش ترکیب کنید.</p><p>این نتایج LFM2.5-24B-A2B را به یک پایه قوی برای نمایندگانی تبدیل می‌کند که نیاز به استدلال، فراخوانی ابزار و اجرای قابل اعتماد بر روی دستگاه شما دارند.</p><p>LFM2.5-24B-A2B با پشتیبانی از روز اول در تمامی اکوسیستم‌های استنتاج، از جمله llama.cpp، MLX، vLLM، SGLang و ONNX عرضه می‌شود.</p><p>استنتاج لبه. LFM2.5-24B-A2B سریع‌ترین مدل در مقایسه با MoEهای دیگر است و بر روی یک M5 Max با سرعت 184 توکن بر ثانیه و بر روی یک Ryzen AI Max+ 395 با سرعت 114 توکن بر ثانیه کدگذاری می‌کند. این سرعت تا 1.7 برابر سریع‌تر از مدل بعدی است و کمترین حافظه را مصرف می‌کند.</p><p>استنتاج GPU. LFM2.5-24B-A2B سریع‌ترین مدل در کلاس اندازه خود است و در شرایط هم‌زمانی بالا بیش از 21K توکن خروجی در ثانیه را در یک B300 می‌رسد.</p><p>به LFM2.5-24B-A2B دسترسی پیدا کنید زمانی که به نمایندگانی نیاز دارید که استدلال کنند، ابزارها را فراخوانی کنند و به طور قابل اعتماد بر روی دستگاه شما اجرا شوند.</p><p>آخرین نسخه transformers (مناسب با transformers>=5.0.0) را نصب کنید:</p><p>LFM2.5-24B-A2B را به‌صورت محلی در پشت هر بک‌اند سازگار با OpenAI سرو کنید و سپس نمایندگی خود را به سمت آن هدایت کنید. به عنوان مثال، با Hermes Agent:</p><p>پورت به بک‌اندی که استفاده می‌کنید بستگی دارد: llama.cpp و MLX از 8080، vLLM از 8000، SGLang از</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
