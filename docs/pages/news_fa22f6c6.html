@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeSafe AI Releases Jev 1.14 With Images, Box Type and 262k Context</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>TypeSafe AI Releases Jev 1.14 With Images, Box Type and 262k Context</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-15 12:30</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>TypeSafe AI نسخه جدید مدل تصمیم‌گیری System One به نام Jev 1.14 را منتشر کرد. این نسخه هم‌اکنون تحت نام مستعار jev-preview در دسترس است. در این نسخه ۳ ویژگی آزمایشی به نام‌های «منطقه خطر» اضافه شده است: تصاویر، نوع جعبه و زمینه طولانی‌تر. برای توسعه‌دهندگان، Jev 1.14 مدل تصمیم‌گیری نوع‌بندی‌شده را به وظایف بینایی مانند بازرسی و مکان‌یابی سوق می‌دهد. TypeSafe یادآوری می‌کند که هیچ‌یک از این ۳ ویژگی هنوز برای تولید آماده نیستند.</p><p>Jev یک مدل System One از TypeSafe AI است که تصمیمات نوع‌بندی‌شده به جای متن تولید شده بازمی‌گرداند. شما حالت را به همراه سوالات نوع‌بندی شده خود ارسال می‌کنید: انتخاب، امتیاز یا Noul. Jev به هر کدام با یک مقدار نوع‌بندی‌شده، احتمال‌ها و یک نمره اعتماد پاسخ می‌دهد. TypeSafe آن را با یادگیری تقویتی برای تصمیمات کالیبره (RLCD) آموزش می‌دهد.</p><p>نسخه جدید، jev-1.14.0، به گفته پست انتشار، به تقریباً همه چیز بهبودهای کوچک و ظریفی می‌آورد. TypeSafe انتظار دارد که بزرگترین پیشرفت در پشتیبانی چندزبانه باشد.</p><p>تصاویر قابل ترکیب هستند. هر تصویر یک بار در یک نقشه دارایی سطح بالا تحت یک رشته مرجع فهرست می‌شود. سپس شما می‌توانید آن مرجع را در هر نقطه‌ای از حالت، دستورالعمل‌ها یا معیارها قرار دهید. API هر مرجع را با تصویر قبل از خواندن آن توسط مدل تعویض می‌کند.</p><p>TypeSafe اعلام می‌کند که jev-1.13.0 همیشه چندمدلی بوده است. براساس مستندات تصاویر، هر دو Jev 1.13 و Jev 1.14 اکنون تصاویر را می‌پذیرند. هر درخواست به هدر TypeSafe-Danger-Zone-Images: true نیاز دارد.</p><p>TypeSafe هشدار می‌دهد که همه مدل‌ها، از جمله Jev، عملکرد بهتری روی متن خالص نسبت به تصاویر دارند. آنها توصیه می‌کنند که ساده‌ترین سوالات ممکن را مطرح کنید.</p><p>جعبه (Box) یک نوع سوال جدید است که به ازای هر سوال یک جعبه محدودکننده بازمی‌گرداند. پاسخ حاشیه‌های بالا، پایین، چپ و راست را به صورت کسری از ۰ تا ۱ ارائه می‌دهد و همچنین یک نمره اعتماد بازمی‌گرداند. جعبه به jev-1.14.0 یا jev-preview و همچنین هدر تصاویر نیاز دارد.</p><p>جعبه همیشه یک جعبه باز می‌گرداند. یک سوال درباره یک شیء غایب هنوز ۴ حاشیه را باز می‌گرداند. TypeSafe پیشنهاد می‌کند که آن را با یک سوال Noul ترکیب کنید که بررسی کند آیا هدف وجود دارد یا خیر.</p><p>TypeSafe همچنین یک آزمایش کوچک روی ۳۶ تصویر نقاشی به اشتراک گذاشت که هر یک بخشی از هدف را قطع کرده بودند. ۴ سوال Noul به ازای هر حاشیه ۳۰ برش را شناسایی کرد. یک سوال «آیا همه آن در داخل است» ۲۶ برش را شناسایی کرد. ترسیم جعبه به‌عنوان یک حاشیه و پرسیدن درباره‌اش ۲۰ برش را شناسایی کرد.</p><p>به‌طور پیش‌فرض، هر دو مدل ۶۴ هزار توکن به ازای هر درخواست و ۳۲ هزار به ازای هر سوال نگه‌داری می‌کنند. ارسال TypeSafe-Danger-Zone-Long-Context: true هر دو حد را به ۲۶۲ هزار توکن افزایش می‌دهد، براساس مستندات مدل‌ها. TypeSafe اعلام می‌کند که Jev همیشه از زمینه طولانی‌تر به‌طور داخلی پشتیبانی کرده است. آنها به‌طور عمدی زمینه را محدود کردند زیرا Jev، مانند همه مدل‌ها، در ورودی‌های طولانی کمتر قابل اعتماد است. تیم توسعه همچنان توصیه می‌کند که زمینه‌های کوتاه مورد استفاده قرار گیرد.</p><p>TypeSafe نمودارهای هوش داخلی را در پست انتشار منتشر کرد. آنها تنها Jev را در مقایسه با مدل‌های با وزن باز تشخیص می‌دهند. پست شامل جدول امتیاز عددی نیست. TypeSafe می‌گوید که اندازه‌گیری به احتمال زیاد نسبت به مدل‌های خود جانب‌دار است. آنها به توسعه‌دهندگان توصیه می‌کنند که به ارزیابی‌های خود رجوع کنند.</p><p>قیمت‌ها بدون تغییر باقی‌مانده است به مبلغ ۴۲ دلار به ازای هر میلیارد توکن ورودی، یا ۰.۰۴۲ دلار به ازای هر میلیون. توکن‌های خروجی به‌صورت رایگان هستند، طبق مستندات مدل‌ها.</p><p>برنامه‌ریزی راه‌اندازی از پست انتشار:</p><p>به پست انتشار، مستندات مدل‌ها، مستندات تصاویر و مستندات جعبه مراجعه کنید. تمام اعتبار به محقق این پروژه تعلق دارد. همچنین، احساس آزاد کنید که ما را در توییتر دنبال کنید و فراموش نکنید که به زیرمجموعه ML با بیش از ۱۵۰ هزار عضو ملحق شوید و به خبرنامه ما اشتراک بگذارید. صبر کنید! آیا شما در تلگرام هستید؟ حالا می‌توانید همچنین به ما در تلگرام بپیوندید.</p><p>Asif Razzaq مدیرعامل Marktechpost AI Media Inc. است. به‌عنوان یک کارآفرین و مه</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/14/typesafe-ai-jev-1-14-images-box-long-context/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

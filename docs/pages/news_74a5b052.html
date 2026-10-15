@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma announces new features to define how agents work on its platform</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Figma announces new features to define how agents work on its platform</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-15 12:29</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>پلتفرم طراحی Figma در رویداد نخست Config خود در هند، از ویرایشگری جدید مبتنی بر Markdown رونمایی کرد که به تعریف طراحی یک شرکت، وارد کردن کتابخانه‌های طراحی و کد و ادغام با سیستم مدیریت محتواهای بدون سر Payload کمک می‌کند. از طریق برخی از این ویژگی‌ها، این شرکت هدف دارد تا تعریفی برای عوامل خود و سایر طرف‌های ثالث ارائه دهد تا در حین ایجاد با هوش مصنوعی، بهتر از قوانین طراحی یک برند پیروی کنند.</p><p>این شرکت از ویژگی جدیدی به نام Figma Specs رونمایی کرد که یک ویرایشگر Markdown است و به کاربران اجازه می‌دهد زبان طراحی خود را به سادگی تعریف کنند. این سند می‌تواند به عنوان مرجع برای تیم‌ها و عوامل در حین طراحی در Figma عمل کند. Specs می‌تواند به عنوان یک فایل مستقل در Figma وجود داشته باشد یا درون بوم هم‌زیستی کند. علاوه بر اینکه به عنوان یک ویرایشگر متن عمل می‌کند، کاربران می‌توانند به عناصر دیگر Figma، مانند عناصر موجود در بوم و همچنین دیاگرام‌های FigJam، لایه‌های کد و طراحی‌ها ارجاع دهند.</p><p>علاوه بر این، تیم‌ها می‌توانند اطلاعات بیشتری در مورد طراحی، از جمله کتابخانه‌های طراحی، کتابخانه‌های کد و راهنماهایی برای مدیریت زمینه سیستم طراحی وارد کنند. عوامل همچنین می‌توانند به این سیستم متمرکز ارجاع دهند تا به قوانین پایبند باشند.</p><p>در هفته گذشته، این شرکت عامل خود در بوم را برای یک پایگاه کاربری وسیع‌تر در دسترس قرار داد. با این حال، با توجه به طبیعت غیرقابل پیش‌بینی هوش مصنوعی، این شرکت ابزارهایی را برای هدایت آن به سمت نتایج قابل پیش‌بینی‌تر ارائه می‌کند.</p><p>Figma همچنین ویژگی لایه‌های کد خود را معرفی کرد که کدنویسی را به طراحی‌ها در بوم اضافه می‌کند تا پروتوتایپ‌های تعاملی‌تری ایجاد شود. این شرکت این ویژگی را در نسخه بتای خصوصی در ماه ژوئن معرفی کرده بود. در رویداد این هفته در هند، این شرکت این قابلیت را در نسخه بتای عمومی در اختیار کاربران بیشتری قرار می‌دهد تا آن را آزمایش کنند. کاربران همچنین می‌توانند از عامل بخواهند که طراحی را به کد تبدیل کند یا بخشی از کد را برای اصلاح یک پروتوتایپ تغییر دهد.</p><p>لوردانا کریسان، مدیر طراحی این شرکت به TechCrunch گفت: "ما Figma را مکانی می‌دانیم که تیم‌های نرم‌افزاری برای تصمیم‌گیری در مورد آنچه می‌سازند و ارسال می‌کنند، به آن مراجعه می‌کنند. بنابراین برای این منظور، فکر می‌کنم یکی از نکات کلیدی برای درک آنچه هوش مصنوعی تغییر داده و چه چیزهایی را در دسترس قرار داده، توانایی ساخت است." او افزود: "امروز 17 برابر بیشتر خطوط کد نسبت به گذشته تولید می‌شود. اما وقتی به انتشارها نگاه می‌کنیم، تنها 1.3 برابر بیشتر منتشر می‌شود. بسیاری از آن کدها لزوماً برای ارسال ساخته نشده‌اند، بلکه واقعاً برای کشف اینکه محصول چیست ساخته شده‌اند. آن‌ها برای طراحی ساخته شده‌اند."</p><p>این شرکت همچنین اعلام کرد که از بیش از 20 ابزار جدید با MCP خود، از جمله Open Code، Dia، Grok Bot و استارتاپ AI هندی Sarvam پشتیبانی می‌کند.</p><p>سال گذشته، Figma سیستم مدیریت محتوای بدون سر Open Source Payload را خریداری کرد. اکنون این شرکت آن را با محصول Figma Make خود برای ایجاد وب‌سایت‌های پویا و مدیریت محتوا به صورت مستقیم ادغام می‌کند. این شرکت اعلام کرد که دانلودهای Payload در 12 ماه گذشته شش برابر افزایش یافته است.</p><p>این شرکت اوایل سال گذشته نخستین دفتر خود را در هند بازگشایی کرد که شامل عملکردهای فروش، شراکت، ورود به بازار و پشتیبانی محصول می‌شود. Figma اعلام کرد که این کشور بزرگ‌ترین بازار آن از نظر کاربران خارج از ایالات متحده است. این شرکت خاطرنشان کرد که این پلتفرم با 40 درصد از 100 شرکت برتر هند که در بورس بمبئی ثبت شده‌اند، همکاری می‌کند.</p><p>هنگامی که از طریق لینک‌های موجود در مقالات ما خرید می‌کنید، ممکن است کمیسیون کوچکی کسب کنیم. این امر تأثیری بر استقلال تحریریه ما ندارد.</p><p>ایوان به پوشش تحولات فناوری مصرفی جهانی در TechCrunch می‌پردازد. او در هند مستقر است و قبلاً با نشریاتی از جمله Huffington Post و The Next Web همکاری کرده است.</p><p>شما می‌توانید با ایوان از طریق ایمیل [email protected] یا پیام رمزگذاری شده در Signal به آدرس ivan.42 تماس بگیرید یا ارتباط خود را تأیید کنید.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

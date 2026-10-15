@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-15 12:30</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>🤗مدل‌ها| 📄مقاله| 📓دفترچه‌های آموزشی| 🌎نمایش</p><p>ما HiRO-ACEv2 را معرفی می‌کنیم که جدیدترین به‌روزرسانی سیستم شبیه‌ساز آب‌وهوای با خروجی با دقت بالا (HiRO-ACE) است. HiROv2 می‌تواند رویدادهای نادر باران، باد و فشار را با دقت بالا بازتولید کند، در حالی که سیستم کامل می‌تواند داده‌های آب و هوای جهانی با دقت ۳ کیلومتر را با هزینه‌ای تقریباً معادل ۱/۳۰۰ هزینه X-SHiELD، یک مدل جوی جهانی با دقت بالا که طوفان‌ها و سایر پدیده‌های جوی در مقیاس کوچک را به‌طور صریح شبیه‌سازی می‌کند، تولید کند.</p><p>HiRO-ACE که اوایل سال ۲۰۲۶ معرفی شد، دارای دو بخش است: ACE، یک مدل هوش مصنوعی که با دقت ۱۰۰ کیلومتر کار می‌کند، و HiRO، مدلی که خروجی‌های خشن را به جزئیات دقیق ۳ کیلومتر تبدیل می‌کند. بزرگترین تغییر در HiRO-ACEv2 مدل جدید کاهش مقیاس HiROv2 است که اکنون می‌تواند ۱) چندین میدان با دقت بالا را به طور همزمان پیش‌بینی کند به جای فقط بارش، بنابراین می‌تواند دامنه وسیع‌تری از آب‌وهوای شدید را捕 کند، و ۲) مهارت بهبود یافته‌ای در پیش‌بینی رویدادهای افراطی دارد.</p><p>تمرکز اصلی ما در HiRO-ACEv2 شبیه‌سازی رویدادهای شدید به‌صورت مناسب بود. تغییرات در نحوه آموزش HiROv2 توانایی آن را در بازتولید شدیدترین مقادیر باران، باد و فشار بهبود بخشید. وقتی داده‌های خشن X-SHiELD به آن داده می‌شود، آمار شبیه‌سازی با دقت بالا را با دقت ۳٪ مطابقت می‌دهد، حتی برای رویدادهایی که بسیار نادر هستند و تنها یک‌بار در یک میلیون نقطه داده رخ می‌دهند. این مدل همچنین انرژی کل سامانه‌های طوفانی مناطق گرمسیری را به‌طور دقیق تخمین می‌زند، از جمله طوفان‌هایی که هرگز در طول آموزش به آن‌ها برخورد نکرد، و طوفان‌های هریکن با چشم‌ها و نوارهای بارانی واقعی ایجاد می‌کند، هرچند بادها و فشار دور چشم هنوز هم اندکی غیرمتوازن‌تر از X-SHiELD هستند. به‌علاوه، HiROv2 به‌طور واقع‌بینانه بادهای قوی‌ای را که از دامنه‌های کوهستانی پایین می‌آیند، تولید می‌کند.</p><p>ما همچنین نسخه به‌روزرسانی‌شده‌ای از ACE را برای این سیستم آموزش داده‌ایم. در طول یک شبیه‌سازی ۱۰ ساله، طوفان‌های هریکن، الگوهای میانگین آب و هوایی، و توزیع کلی بارش، باد و فشار آن به‌خوبی با X-SHiELD هم‌راستا است. این به ما می‌گوید که شبیه‌سازی‌های خشن ACE پایه‌ای محکم برای تولید داده‌های آب‌وهوایی با دقت بالا در بلندمدت هستند.</p><p>با ترکیب HiROv2 و ACE، یک سال کامل داده‌های جهانی با دقت ۳ کیلومتر تولید کردیم. آمار آن نزدیک به آمار X-SHiELD است، حتی اگر HiRO از شبیه‌سازی‌ای که ACE به‌صورت مستقل اجرا کرد، استفاده می‌کرد و نه از داده‌های واقعی X-SHiELD. در طول یک دوره ۱۰ ساله، انرژی طوفان‌های هریکن HiRO-ACEv2 قابل مقایسه با X-SHiELD در همان دوره است و عکس‌های حاصل از آن شبیه به دیگر رویدادهای شدید در X-SHiELD را نشان می‌دهد.</p><p>یک نمونه از یک طوفان هریکن قوی در اقیانوس اطلس شمالی که در طول شبیه‌سازی ۱۰ ساله HiRO-ACEv2 تولید شده است.</p><p>به‌طور کلی، HiRO-ACEv2 به محققان راهی انعطاف‌پذیر و کم‌هزینه برای تولید نسخه‌های متعدد داده‌های بارش، باد و فشار با دقت بالا برای رویدادهای شدید در طول ۱۰ سال یا بیشتر ارائه می‌دهد. تولید داده‌های جهانی با دقت بالا با استفاده از این سیستم تقریباً ۳۰۰ برابر کمتر از اجرای X-SHiELD هزینه دارد. اگر فقط یک منطقه خاص نیاز باشد، این صرفه‌جویی می‌تواند بیش از صد برابر بیشتر باشد، بسته به اندازه منطقه. ما همچنین در حال کار بر روی نسخه‌ای ساده‌شده از HiROv2 هستیم که می‌تواند آن را بیش از ده برابر سریع‌تر کند.</p><p>هنوز کارهای آینده‌ای در پیش داریم: زیرا HiRO از X-SHiELD آموخته است، تنها با نسخه‌ی ACE که به‌گونه‌ای تنظیم شده است که با X-SHiELD همخوانی داشته باشد، عمل می‌کند. این بدان معناست که هنوز نمی‌تواند داده‌های با دقت بالا برای سایر اقلیم‌ها، مانند آینده‌ای گرم‌تر یا سوابق تاریخی در داده‌های مانند ERA5 تولید کند. در مرحله بعد، برنامه داریم که روی مجموعه‌های داده جدید X-SHiELD آموزش ببینیم، از جمله یکی از شبیه‌سازی جهانی که ۴ درجه سان</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/allenai/hiro-acev2" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
