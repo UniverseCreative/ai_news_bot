@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-16 12:08</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>داده‌های اسکریپت بومی برای ۲۲ زبان، داده‌های رومن‌شده برای دوازده زبان و یک خط لوله قابل استفاده مجدد با شتابدهنده GPU برای ترجمه، ارزیابی کیفیت و تعمیر.</p><p>نویسندگان: AI4Bharat — محمد صافی اور رحمان خان، میتش خاپرا، آنوپ کونچوکوتان. NVIDIA — نیکت آگاروال، راویراج جوشی، آنوشا کامات، مارکوس کلیگل، یِو مایر، سریهارشا نیورتی، کیران پراوین، اوتکارش وایدیا.</p><p>ما با کمال هیجان از معرفی Nemotron-pretraining-Indic-v1 با تقریباً ۲.۸ تریلیون توکن در ۲۲ زبان هندی خبر می‌دهیم که به زودی همراه با خط لوله تولید داده‌های رنگ باز و شتاب داده شده توسط GPU که برای ایجاد آن استفاده شده است، منتشر خواهد شد. این ۲۲ زبان در قانون اساسی هند ذکر شده است: زبان‌های نخستین برای ۹۷٪ از هندی‌ها یا نزدیک به ۱.۲ میلیارد شهروند در سرشماری ۲۰۱۱. این نسخه که توسط NVIDIA با همکاری IIT Madras، برترین موسسه مهندسی هند، و آزمایشگاه AI4Bharat آن توسعه یافته، یک منبع قابل توجه جدید برای پیش‌آموزش مدل‌سازان در زبان‌های هندی به ارمغان می‌آورد. این خط لوله به طور کامل فرآیند تولید را شامل می‌شود، از جمله درخواست‌ها، گردش کار LLM و بررسی‌های کیفیت، تا توسعه‌دهندگان بتوانند آن را به مواد اولیه خود تطبیق دهند و داده‌های بیشتری برای نیازهای خود تولید کنند.</p><p>AI4Bharat، آزمایشگاه تحقیقاتی زبان هندی IIT Madras، مجموعه‌ها و مدل‌های متن‌باز برای زبان‌های هندی می‌سازد. منابع آن، مانند Sangraha، یک مجموعه آموزشی باز برای ۲۲ زبان هندی، به ایجاد پایه‌ای برای تحقیقات مدل‌های زبان هندی کمک کرده است. انتشار متن‌باز مشترک ما نمایانگر گسترش قابل توجهی از داده‌های آموزشی مصنوعی هندی باز است که در دسترس جامعه خواهد بود. این داده‌ها ترکیبی گسترده از مواد مرجعی به زبان انگلیسی، شامل ریاضیات، کد و محتویات سوال و جواب، را به زبان‌های هندی منتقل می‌کند و مواد آموزشی بیشتری برای ساخت مدل‌هایی که می‌توانند مفاهیم فنی را توضیح دهند، مشکلات را حل کنند و به سؤالات در این زبان‌ها پاسخ دهند، فراهم می‌آورد. هر رکورد به یک سند مرجع نگاشته شده برمی‌گردد و هر خروجی با ورودی آن بررسی می‌شود تا متن مصنوعی در اطلاعات واقعی باقی بماند.</p><p>میچ خاپرا، که ریاست AI4Bharat را بر عهده دارد و در لیست ۱۰۰ شخصیت تأثیرگذار TIME در سال ۲۰۲۵ قرار گرفته است، مشکل اصلی را مشخص کرده است: فناوری زبان‌های هندی از زبان انگلیسی عقب مانده است زیرا "ما داده‌های کافی برای زبان‌های هندی نداریم." ما به این خواسته پاسخ می‌دهیم با تولید داده‌های بیشتر و همچنین یک دستورالعمل باز برای تولید بیشتر.</p><p>این مجموعه همچنین نحوه نوشتن مردم را مد نظر قرار می‌دهد. این داده‌ها شامل اطلاعات اسکریپت بومی برای تمام ۲۲ زبان و متن رومن‌شده برای دوازده زبان است که شامل ۳۴ ترکیب زبان-اسکریپت می‌شود. گردش‌های کار ما شامل ترجمه در سطح مستندات، ارزیابی کیفیت و تعمیر هدفمند است که بررسی‌هایی برای حفظ محتوا مانند معادلات، جداول و کد انجام می‌دهد. این داده‌ها به متن‌های تألیف شده به طور طبیعی در زبان‌های هندی مکمل است که برای دانش محلی و زمینه فرهنگی ضروری باقی می‌مانند.</p><p>ما دستورالعمل‌های تولید باز را با جامعه به اشتراک می‌گذاریم تا نه تنها بتوانند داده‌ها را بازتولید کنند بلکه این کار را پیش ببرند. تیم‌ها می‌توانند از این مجموعه به شکل مستقیم استفاده کنند، درخواست‌ها و بررسی‌های کیفیت را تطبیق دهند، یا مدارک اولیه خود را به گردش کار اضافه کنند. با باز کردن هم داده و هم فرآیند، هدف ما این است که تولید داده‌های هندی به مقیاس بزرگ را بیشتر در دسترس قرار دهیم و امکان مشارکت بیشتر توسعه‌دهندگان را در ساخت مدل‌های قوی‌تر در زبان‌های هندی فراهم سازیم.</p><p>ادامه پیش‌آموزش برای Nemotron 3.5 Super VL شامل ۱۰ میلیارد توکن هندی است که از یک زیرمجموعه دوازده زبانی این مجموعه و متن هندی طبیعی استخراج شده است. گزارش فنی ما در مورد مدل شامل تمام جزئیات خواهد بود. ما برنامه داریم بر اساس این مجموعه در مدل‌های آینده Nemotron توسعه دهیم.</p><p>شکل ۱. این مجموعه شامل ۲۶۰۱.۰ میلیارد توکن اسکریپت بومی و ۲۲۴.۶ میلیارد توکن رومن‌شده است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/nvidia/scaling-indic-pretraining" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

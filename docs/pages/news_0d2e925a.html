@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bringing GPT-Rosalind to academic research labs</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Bringing GPT-Rosalind to academic research labs</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-16 12:08</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>معرفی طرح آکادمیک Rosalind، که به آزمایشگاه‌های واجد شرایط دسترسی حمایت‌شده به GPT‑Rosalind و ابزارهای کشف علوم زیستی را ارائه می‌دهد.</p><p>ما طرح آکادمیک Rosalind را معرفی می‌کنیم تا به بیشتری از دانشمندان دانشگاهی امکان دسترسی به GPT‑Rosalind⁠، مدل اختصاصی علوم زیستی ما، را که استدلال مرز را با Rosalind workbench⁠ (در یک پنجره جدید باز می‌شود) ترکیب می‌کند و امکان ارکستراسیون ابزارهای تخصصی در شیمی دارویی، ژنومیک، کمک‌های آزمایشگاهی و دیگر کاربردهای علمی را فراهم می‌کند، بدهیم. آزمایشگاه‌های واجد شرایط می‌توانند تا ۳۰ صندلی Business Standard را به مدت حداکثر ۱۲ ماه به‌صورت رایگان دریافت کنند، با دسترسی به GPT‑Rosalind که به تأیید دسترسی معتبر بستگی دارد.</p><p>تحقیقات دانشگاهی دانش را ایجاد می‌کند که زمینه‌ساز پیشرفت‌های علمی می‌شود. کاری که با یک سئوال بنیادی درباره بیولوژی آغاز می‌شود، می‌تواند در نهایت نحوه تشخیص بیماری، توسعه داروها یا تولید غذا را دگرگون کند. اما این پیشرفت‌ها به این بستگی دارد که دانشمندان منابع کافی برای کاوش ایده‌ها، آزمایش آن‌ها و به اشتراک‌گذاری آموخته‌های خود را داشته باشند.</p><p>سرعت‌بخشیدن به کشف‌های علمی، در مرکز مأموریت OpenAI برای اطمینان از اینکه هوش مصنوعی عمومی به نفع تمامی بشریت است، قرار دارد. با این طرح، ما در حال سرمایه‌گذاری در دانشمندان انجام‌دهنده این کار بنیادی هستیم - کمک به آزمایشگاه‌های بیشتر برای ترکیب تخصص و قضاوت خود با ابزارهای هوش مصنوعی طراحی‌شده برای تحقیقات علوم زیستی.</p><p>بسیاری از پیشرفت‌هایی که امروز به آن‌ها متکی هستیم، نتیجه سال‌ها تحقیق بنیادی هستند.</p><p>پروژه ژنوم انسانی به راه‌اندازی ژنومیک مدرن کمک کرد و پزشکی، تشخیص و بیوتکنولوژی را متحول ساخت.</p><p>کارهای مبتنی بر کنجکاوی بر سیستم‌های ایمنی باکتریایی به CRISPR-Cas9 منجر شد که ویرایش ژنوم را متحول کرد و اکنون در حال پیشبرد تحقیقات در زمینه سرطان، بیماری‌های ارثی، کشاورزی و بیوتکنولوژی است. چند دهه تحقیق دانشگاهی درباره mRNA نیز زمینه‌ساز واکسن‌های COVID-19 و نسل جدیدی از واکسن‌ها و درمان‌ها شد.</p><p>تحقیقات دانشگاهی همیشه زمینه‌ساز پیشرفت‌ها در پزشکی و بیوتکنولوژی بوده است. با کمک به بیشتری از دانشمندان برای ترکیب تخصص علمی و قضاوت خود با استدلال تخصصی پیشرفته GPT‑Rosalind، امیدواریم از کشف‌هایی حمایت کنیم که منافع آن‌ها فراتر از آزمایشگاه باشد.</p><p>OpenAI متعهد است که به پژوهشگران دانشگاهی در پیگیری آرزوهای علمی خود کمک کند. آزمایشگاه‌های دانشگاهی معتبری در حال حاضر در حال بررسی این هستند که چگونه GPT‑Rosalind می‌تواند از کارهایی که از طراحی پروتئین تا درک تخریب عصبی را دربر می‌گیرد، حمایت کند. این مثال‌ها نشان می‌دهند که پژوهشگران چگونه از این مدل در روندهای علمی خود استفاده می‌کنند.</p><p>با طرح جدید آکادمیک Rosalind، پژوهشگران دانشگاهی می‌توانند GPT‑Rosalind و Rosalind Workbench را با انعطاف بیشتری به آزمایشگاه‌های خود بیاورند و از هوش مدل پیشرفته برای تحقیقات علمی بهره‌برداری کنند.</p><p>تا ۳۰ صندلی Business Standard با هزینه $0 به ازای هر کاربر در هر ماه به مدت حداکثر ۱۲ ماه.</p><p>دسترسی به تمامی مدل‌های پیشرفته OpenAI که به‌طور تجاری در دسترس هستند، با رعایت محدودیت‌های استفاده از طرح.</p><p>دسترسی به GPT‑Rosalind پس از تأیید دسترسی معتبر.</p><p>داده‌های تحقیقاتی به اشتراک‌گذاشته‌شده از طریق طرح آکادمیک Rosalind به‌طور پیش‌فرض برای آموزش مدل‌های ما استفاده نمی‌شوند.</p><p>GPT‑Rosalind مدل تخصصی علوم زیستی است که برای حمایت از استدلال عمیق‌تر در مسایل بیولوژیکی پیچیده طراحی شده است. از طریق دسترسی معتبر، پژوهشگران تأییدشده می‌توانند از آن برای بررسی سئوالات حساس علمی در چارچوب‌های تعریف‌شده برای تحقیقات مشروع استفاده کنند.</p><p>طراحی داروهای کاندید، پروتئین‌های درمانی، پپتیدها و آنزیم‌ها و بهینه‌سازی تعاملات مولکولی آن‌ها، انتخاب‌پذیری، پایداری و تناسب برای توسعه.</p><p>شناسایی امضای مولکولی بیماری و توسعه مایع و...</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/introducing-the-rosalind-academic-plan" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
