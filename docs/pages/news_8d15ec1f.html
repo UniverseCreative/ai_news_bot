@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA Open Sources Run:ai Under Apache 2.0 for Kubernetes GPU Orchestration</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>NVIDIA Open Sources Run:ai Under Apache 2.0 for Kubernetes GPU Orchestration</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-19 14:24</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>NVIDIA نسخه کامل پلتفرم NVIDIA Run:ai را به عنوان نرم‌افزار متن‌باز منتشر کرده است. کدهای منبع تحت مجوز Apache 2.0 در GitHub منتشر شده‌اند. نسخه متن‌باز NVIDIA Run:ai مدیریت زمان‌بندی GPU تولید، سهمیه‌ها و بار کاری را در دستان توسعه‌دهندگان قرار می‌دهد. این نسخه، Run:ai را به بخشی از پلتفرم NVIDIA DSX AI Factory تبدیل می‌کند. تیم‌های پلتفرم حالا می‌توانند بسته را بدون اشتراک پرداختی بازبینی، فورک و میزبان خود قرار دهند.</p><p>NVIDIA Run:ai یک پلتفرم سازمان‌دهی بار کاری AI و GPU برای Kubernetes از NVIDIA است. این پلتفرم بارهای کاری توسعه، آموزش و استنتاج را در خوشه‌های GPU مشترک زمان‌بندی می‌کند. این نرم‌افزار بر روی Kubernetes اجرا می‌شود و آن را جایگزین نمی‌کند.</p><p>سطح کنترل مدیریت ارسال بار کاری، مدیریت منابع و نظارت را بر عهده دارد. خدمات خوشه در هر خوشه Kubernetes اجرا می‌شوند و زمان‌بندی آگاه از GPU را اضافه می‌کنند. کاربران می‌توانند از طریق UI وب، CLI، REST API و یک سرور MCP برای دستیاران AI به آن دسترسی پیدا کنند.</p><p>NVIDIA انتشار را به ۴ مؤلفه تقسیم کرده است که تیم‌ها می‌توانند به صورت مستقل از آن‌ها استفاده کنند:</p><p>راهنمای توسعه محلی بر روی یک اسکریپت، local-dev.sh، استوار است. این اسکریپت حدود ۵۰ سرویس Go را از منبع درون کانتینرها می‌سازد. سپس یک خوشه Kind متشکل از ۵ نود را با نسخه Kubernetes v1.32.5 ایجاد می‌کند. یک اپراتور GPU جعلی شبیه‌سازی ۸ GPU Tesla-A10 را انجام می‌دهد، بنابراین هیچ سخت‌افزار GPU واقعی نیاز نیست.</p><p>پرچم --gpu-operator به GPUهای واقعی NVIDIA سوئیچ می‌شود. این حالت به Linux، Docker و NVIDIA Container Toolkit نیاز دارد. شتاب‌دهنده‌های AMD و Intel پشتیبانی نمی‌شوند.</p><p>تیم‌های توسعه می‌توانند از منبع یا از چارت Helm محصول NGC Community Product، نصب کنند. این نسخه نیازی به اشتراک پرداختی ندارد اما پشتیبانی سازمانی NVIDIA را شامل نمی‌شود.</p><p>تیم‌ها همچنین می‌توانند از طریق ۸ شریک اکوسیستم DSX به آن دسترسی پیدا کنند. این شرکاء شامل Crusoe، Mirantis، Nebius، OpenNebula Systems، Rafay، Saturn Cloud، Spectro Cloud و vCluster هستند. نسخه‌های تجاری پشتیبانی‌شده از طریق NVIDIA AI Enterprise، NVIDIA Mission Control و برخی بازارهای ابری ادامه خواهند داشت.</p><p>دو پروژه مرتبط، بسته را کامل می‌کنند. Model Streamer وزن‌های مدل را به طور مستقیم به حافظه GPU منتقل می‌کند. vLLM و SGLang آن را با --load-format runai_streamer فعال می‌کنند.</p><p>معیار منتشرشده از Microsoft با استفاده از ۸ VM NVIDIA H100 انجام شد. این معیار نشان داد که زمان بارگذاری ۳ تا ۶ برابر سریع‌تر از بارگذار پیش‌فرض است. سرعت انتقال در مسیر پیش‌فرض حدود ۴۰ Gbps بود در حالی که در حالت استفاده از این نسخه، به ۸۰ Gbps رسید.</p><p>Grove بارهای استنتاج چندجزئی را سازمان‌دهی می‌کند. این پروژه مؤلفه‌هایی مانند prefill و decode را به عنوان واحدهای «همه یا هیچ» آغاز می‌کند.</p><p>تفاوت کلیدی در دامنه است. Volcano، Kueue و YuniKorn بر زمان‌بندی یا صف‌بندی تمرکز دارند. Run:ai یک پلتفرم مدیریت کامل را بر روی زمان‌بند خود ارائه می‌دهد.</p><p>به مخزن GitHub، راهنمای توسعه محلی و وبلاگ فنی NVIDIA مراجعه کنید. تمام اعتبار به پژوهشگر این پروژه تعلق می‌گیرد. همچنین، می‌توانید ما را در Twitter دنبال کنید و عضوی از ۱۵۰k+ ML SubReddit ما باشید و به خبرنامه ما مشترک شوید. صبر کنید! آیا شما در تلگرام هستید؟ حالا می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>Asif Razzaq مدیرعامل شرکت Marktechpost AI Media Inc. است. به عنوان یک کارآفرین و مهندس آینده‌نگر، Asif به دنبال بهره‌برداری از پتانسیل هوش مصنوعی برای نفع اجتماعی است. آخرین تلاش او راه‌اندازی یک پلتفرم خبری هوش مصنوعی به نام Marktechpost است که به خاطر پوشش عمیق خود در زمینه اخبار یادگیری ماشین و یادگیری عمیق، که هم از لحاظ فنی معتبر و هم برای طیف وسیعی از مخاطبان قابل درک است، متمایز می‌شود. این پلتفرم بیش از ۲ میلیون بازدید ماهانه را به خود اختصاص داده است که نشان‌دهنده محبوبیت آن در میان مخاطبان است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
