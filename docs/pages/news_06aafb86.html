@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp can now call on your behalf to check wait times at a restaurant</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Yelp can now call on your behalf to check wait times at a restaurant</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-20 12:34</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>در چند هفته گذشته، دستیاران شخصی مانند Instinct، Fo و Muse این امکان را برای کاربران فراهم کرده‌اند که با کسب‌وکارها تماس بگیرند تا از خدمات مشتری و رزرو وقت استفاده کنند. با پیروی از این روند، Yelp به قابلیت جدیدی در اپلیکیشن خود افزود که به کاربران اجازه می‌دهد تا از یک نماینده صوتی بخواهند به یک رستوران تماس بگیرد و زمان انتظار را بررسی کند.</p><p>این ویژگی جدید، Check for Me، در صفحات رستوران‌ها در اپلیکیشن نمایش داده می‌شود، جایی که کاربران می‌توانند اندازه گروه و شماره تلفن خود را وارد کنند. سپس نماینده هوش مصنوعی به نمایندگی از کاربر تماس می‌گیرد تا زمان‌های انتظار را بررسی کند و نتیجه را به صورت پیامکی برای کاربر ارسال می‌کند تا تصمیم بگیرد که آیا می‌خواهد به آن رستوران خاص برود یا خیر.</p><p>سال گذشته، Yelp راه‌حل صوتی خود را برای رستوران‌ها و ارائه‌دهندگان خدمات رونمایی کرد. با این ویژگی جدید، این پلتفرم کشف، جنبه مصرف‌کننده معادله را محقق می‌کند، هرچند که امکان دارد نماینده کاربر با نماینده رستوران صحبت کند و ارتباط نماینده به نماینده ممکن است مکالمه را مختل کند.</p><p>این شرکت همچنین در حال به‌روزرسانی دستیار هوش مصنوعی Yelp است که به کاربران کمک می‌کند رستوران‌ها و خدمات را کشف کنند. با ادغام جدید OpenTable، کاربران می‌توانند به راحتی رستوران‌ها را بدون خروج از اپلیکیشن رزرو کنند.</p><p>Yelp به دستیار خود شخصی‌سازی بهتری اضافه می‌کند و آن را قادر می‌سازد که ترجیحات شما را که ممکن است در چت‌های قبلی ذکر کرده‌اید، به خاطر بسپارد. علاوه بر این، شما می‌توانید تاریخچه چت‌های خود را از ۳۰ روز گذشته در اپلیکیشن مشاهده کنید که تاریخچه کامل آن به زودی در دسترس خواهد بود.</p><p>کاربران می‌توانند از چت‌بات بخواهند یادآوری‌های سفارشی تنظیم کند، مانند ارسال پیشنهاداتی برای فعالیت‌های آخر هفته هر جمعه. این شرکت همچنین به کاربران این امکان را می‌دهد که فهرست‌های خود را بسازند، که با دو فهرست «Been Here» و «Want to Go» آغاز می‌شود. شما می‌توانید فهرست‌های خود را بر اساس موقعیت، دسته‌بندی و نوع غذا فیلتر کرده، reorder کنید، یادداشت‌هایی به اقلام اضافه کنید و آنها را با دیگران به اشتراک بگذارید.</p><p>در ماه آینده، این شرکت شروع به نمایش پیشنهادات شخصی‌سازی شده هفتگی بر اساس اقلام و رتبه‌بندی‌های ذخیره شده شما خواهد کرد. Yelp همچنین در حال کار بر روی تبدیل مجموعه‌ها به فهرست‌ها و ارائه نمای جدیدی برای تب فهرست‌ها است که در اواخر سال جاری روانه بازار خواهد شد، همراه با نمای نقشه.</p><p>برای جمع‌بندی تمام این تغییرات، Yelp به فکر ارتقاء خدمات مشتری و فرآیندهای کاری از طریق هوش مصنوعی بوده است. در به‌روزرسانی جدید، این شرکت محصول جدیدی به نام Smart Lead Reply را معرفی می‌کند که می‌تواند به مشتریان پاسخ دهد و با آنها ارتباط برقرار کند تا یک lead را تعیین کند. صاحبان کسب‌وکار که هزینه این خدمات ۳۰ دلار در ماه است، می‌توانند مشخص کنند که یک نماینده چگونه باید با مشتری مکالمه کند. دیگر شرکت‌هایی مانند Meta نیز به کسب‌وکارهای کوچک با پیشنهادات هوش مصنوعی برای مدیریت پرسش‌های مشتریان ورودی توجه کرده‌اند.</p><p>زمانی که از طریق لینک‌های موجود در مقالات ما خرید می‌کنید، ممکن است کمیسیون کمی کسب کنیم. این امر بر استقلال تحريری ما تأثیری نمی‌گذارد.</p><p>ایوان به پوشش تحولات فناوری مصرف‌کننده در سطح جهانی در TechCrunch می‌پردازد. او در هند مستقر بوده و سابقه کار در نشریاتی از جمله Huffington Post و The Next Web را دارد.</p><p>شما می‌توانید از طریق ایمیل [email protected] یا از طریق پیام رمزگذاری شده در ivan.42 در Signal با ایوان تماس بگیرید یا ارتباط وی را تایید کنید.</p><p>یک بلیط بخرید و یک بلیط دیگر رایگان بگیرید؛ با آوردن هم‌بنیان‌گذار یا شریک خود به Bootcamp موسسان نهایی TechCrunch در سال، زمین بیشتری را پوشش دهید. قبل از پایان قرارداد BOGO خرید کنید.</p><p>مردم از هوش مصنوعی استفاده می‌کنند تا تلویزیون‌های هوشمند خود را دوباره احمق کنند.</p><p>همه در حال تماشای مستند الیزابت هولمز با عنوان «شما می‌توانید همه چیز را ببینید» هستند.</p><p>Anthropic می‌گوید نیروهای کار آن‌ها کمتر جوان شده و زمان بیشتری را در جلسات صرف می‌کنند.</p><p>Replit OpenAI را به‌عنوان گزینه پیش‌فرض خود برگزید و نه Anthropic، به گفته مدیرعامل.</p><p>مارک والبرگ می‌خواهد به جمع استارتاپ‌های طول عمر با یک مفهوم باشگاه ورزشی مقرون‌به‌صرفه بپیوندد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://techcrunch.com/2026/10/20/yelp-can-now-call-on-your-behalf-to-check-wait-times-at-a-restaurant/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
