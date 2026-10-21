@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Design with RFD4-Proteina and Hugging Face Spaces</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Protein Design with RFD4-Proteina and Hugging Face Spaces</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-21 12:46</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>طراحی پروتئین با تعیین یک هدف آغاز می‌شود: هدفی برای پیوند، مولکولی برای شناسایی یا آرایش اتم‌هایی که باید حفظ شوند. تبدیل آن هدف به یک طراحی معمولاً به معنی تقسیم روند کار به مدل‌هایی است که هر یک یک حالت یا یک مرحله را مدیریت می‌کنند و سپس قطعات را مجدداً سر هم می‌کنند. در هر انتقال اطلاعات از دست می‌رود.</p><p>RFD4-Proteina یک مدل باز BioNeMo برای طراحی برنامه‌ریزی‌شده پروتئین است که به‌صورت مشترک توسط NVIDIA و مؤسسه طراحی پروتئین دانشگاه واشنگتن توسعه یافته است. این مدل تولید توالی پروتئین و ساختار تمام اتمی را در یک مدل ادغام می‌کند و انتقال‌ها بین مدل‌های طراحی ساختار اصلی، توالی و ساختار تمام اتمی را کاهش می‌دهد. این مدل می‌تواند پروتئین‌ها را در زمینه‌های مولکولی تولید کند که شامل پروتئین‌های دیگر، مولکول‌های کوچک، اسیدهای نوکلئیک، گلیکان‌ها، یون‌های فلزی و اسیدهای آمینه تغییر یافته (به عنوان مثال، یک باز با فسفریله شده بر روی پروتئین هدف) باشد.</p><p>RFD4-Proteina یک مدل تطابق جریان را با یک خودرمزگذار ترکیب می‌کند. خودرمزگذار هر اسید آمینه استاندارد یا تغییر یافته، شکر، نوکلئوتید DNA یا RNA را به عنوان یک مختصات اتم لنگر (برای اسیدهای آمینه، کربن آلفا) و یک بردار نهفته یادگرفته برای کدگذاری هویت شیمیایی و هندسه محلی آن نشان می‌دهد. مدل جریان مختصات لنگر و بردارهای نهفته را به صورت همزمان تولید می‌کند و رمزگشا آن‌ها را به ساختارهای 3 بعدی تمام اتمی و توالی‌ها گسترش می‌دهد. این به مدل اجازه می‌دهد تا توالی‌ها و ساختارها را به صورت همزمان در اطراف یک محدودیت ارائه شده تولید کند: هدفی که یک پیوند باید با آن تعامل داشته باشد، یا موتیف کاتالیستی که یک پروتئین باید شامل شود.</p><p>شما می‌توانید این مدل را قبل از نصب هر چیزی در مرورگر خود اجرا کنید، در یکی از دو فضای Hugging Face: فضای مخصوص RFD4-Proteina که بر روی GPUهای اختصاصی اجرا می‌شود و فضای ZeroGPU که بر روی ظرفیت مشترک اجرا می‌شود. با یک مثال ارائه شده آغاز کنید، هدف و طراحی‌های تولید شده را بررسی کنید و ورودی و خروجی را برای کارهای بعدی ذخیره کنید.</p><p>از 21 اکتبر تا 4 نوامبر 2026، NVIDIA دسترسی رایگان به فضای مخصوص RFD4-Proteina را که بر روی GPUهای NVIDIA RTX PRO 6000 اجرا می‌شود، حمایت می‌کند. این مدل را برای مشکلات طراحی خود، از جمله مسابقه طراحی پروتئین که توسط شرکت‌های Anthropic و Adaptyv حمایت می‌شود، آزمایش کنید.</p><p>RFD4-Proteina را امتحان کنید • مدل RFD4-Proteina را کاوش کنید</p><p>شکل 1. بررسی ورودی طراحی حاشیه‌نویسی‌شده</p><p>مثال PD-L1 داخلی هدف و حاشیه‌نویسی‌های طراحی آن را قبل از تولید نشان می‌دهد. بخش پیونددهنده قابل گسترش بخشی از مشخصات ورودی است.</p><p>فضای مخصوص RFD4-Proteina را باز کنید و یک مثال ارائه شده را انتخاب کنید. هر دو فضا از AtomWorks Studio، یک بیننده مبتنی بر مرورگر و ویرایشگر حاشیه‌نویسی برای ورودی‌های مولکولی که همچنین به صورت مستقل اجرا می‌شود، استفاده می‌کنند.</p><p>هر طراحی از یک زمینه طراحی آغاز می‌شود: در حداقل، ساختار پروتئین (هدف) که می‌خواهید پیونددهنده‌ها را بر اساس آن طراحی کنید، منطقه‌ای که پیونددهنده باید در آن مستقر شود و باقیمانده یا اتم‌های خاصی که می‌خواهید فرایند طراحی به آن‌ها توجه کند. این نقاط تعامل به نام نقاط داغ شناخته می‌شوند و بر روی خود اتم‌های هدف علامت‌گذاری می‌شوند.</p><p>با تعریف زمینه، یک طراحی واحد با استفاده از تنظیمات پیش‌فرض مثال تولید کنید. طراحی در زمان اتمام تولید در بیننده تعاملی ظاهر می‌شود. پروتئین طراحی‌شده و هدف ارائه‌شده را پیدا کرده و بررسی کنید که آیا پروتئین طراحی‌شده با نقاط داغ علامت‌گذاری‌شده هدف تماس دارد یا خیر.</p><p>شما همچنین می‌توانید طراحی‌های تولید شده، هدف حاشیه‌نویسی‌شده و ترکیب‌های آن‌ها را در فرمت فایل CIF دانلود کنید. این به شما اجازه می‌دهد تا این طراحی اولیه را با اجرای بعدی مقایسه کنید.</p><p>به شماره دانه‌ای که استفاده شده توجه کنید. این به شما یک پایه برای مقایسه‌های زیر می‌دهد.</p><p>شکل 2. هدف PD-L1 و پیونددهنده تولید شده</p><p>هدف عبارت است از</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/nvidia/rfd4-proteina-protein-design" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
