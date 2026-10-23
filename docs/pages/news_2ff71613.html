@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-23 12:27</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>این مطلب ادامه پست وبلاگ اول ما با عنوان "عامل گفت که کار تمام شده است. پایگاه داده اختلاف نظر داشت." است. اکنون ThinkingBox-Training در GitHub در دسترس است.</p><p>ما ThinkingBox را برای ارزیابی کار یک عامل ساخته‌ایم که وضعیت پایانی پایگاه داده را با نتیجه مورد انتظار مقایسه می‌کند. سپس از همان نوع سیگنال اجرایی به عنوان پاداش در وظایف آموزشی خارج از ThinkingBox-Bench استفاده کردیم. برای Qwen3.8-27B، نسبت موفقیت متوسط از 51.70٪ به 60.78٪ افزایش یافت، در حالی که وظایفی که به درستی در تمام بیست تلاش انجام شده بود از 38 به 107 با 50 مرحله GRPO افزایش یافت.</p><p>شکل 1. ThinkingBox چک‌های اجرایی وضعیت پایانی پایگاه داده را به پاداش‌هایی برای عوامل پس از آموزش در وظایف خارج از ThinkingBox-Bench تبدیل می‌کند.</p><p>ما ThinkingBox را برای شناسایی عوامل ساخته‌ایم که می‌گویند کارشان تمام شده است در حالی که واقعاً این‌گونه نیست.</p><p>هر یک از 507 وظیفه موجود در ThinkingBox-Bench (مجموعه داده معیار ما) به یک عامل یک پشتیبان واقعی و مجموعه‌ای از ابزارها را می‌دهد، به آن اجازه می‌دهد کار کند و سپس بررسی می‌کند که واقعاً چه چیزی در پایگاه داده تغییر کرده است. در پست اول، مدلی را گرفتیم که بلیط یک مشتری را به عنوان "حل شده" بست در حالی که استثنای حامل پشت آن هنوز باز بود. نه تماس ابزاری به ظاهر کارآمد، یک ردیف نادرست پایگاه داده.</p><p>سپس متوجه شدیم چه چیزی ساخته‌ایم. برای بیشتر وظایف، یک بررسی اجرایی می‌تواند 1 یا 0 را به طور مستقیم از وضعیت پایانی پایگاه داده بازگرداند. این فقط یک نمره‌دهنده نیست. این می‌تواند یک تابع پاداش باشد.</p><p>بنابراین ما یک استخر آموزشی از وظایف با فرمت ThinkingBox خارج از معیار ساخته و از نتایج اجرایی آنها به عنوان پاداش استفاده کردیم. نکته این بود که انتخاب کنیم کدام وظایف مناسب آموزش عامل هستند: بیشتر وظایف یا قبلاً حل شده‌اند یا برای مدلی که در مقابل شماست غیرممکن هستند، و هر دو هیچ چیزی به آن نمی‌آموزند.</p><p>سختی به سیاست مربوط است: یک وظیفه برای مدل فعلی تنها تا زمانی سخت است که آن مدل آن را یاد بگیرد.</p><p>ما این را سختی نسبی آفلاین سیاست می‌نامیم. ما احتمال موفقیت هر وظیفه را یک بار با استفاده از پایه سیاست قبل از آموزش تخمین زدیم و استخر آموزشی انتخاب شده را در طول اجرا ثابت نگه داشتیم.</p><p>ما از سختی نسبی آفلاین سیاست برای ساخت استخر آموزشی استفاده کردیم و سپس Qwen3.8-27B را با GRPO برای 50 مرحله تنظیم کردیم. برای جمع‌بندی، ما هر یک از 507 وظیفه معیار را 20 بار ارزیابی کردیم. pass@1 میانگین موفقیت را در تمام 10,140 تلاش اندازه‌گیری می‌کند. pass@20 سهم وظایفی که حداقل یک بار حل شده‌اند را اندازه‌گیری می‌کند. 20/20 مشاهده شده سهم وظایفی را که در هر تلاش ثبت شده موفق می‌شوند ارزیابی می‌کند.</p><p>جدول 1. نتایج Qwen3.8-27B قبل و بعد از 50 مرحله GRPO در استخر آموزشی انتخاب شده به‌صورت آفلاین.</p><p>آموزش موفقیت قابل تکرار را به شدت افزایش داد، در حالی که کمی در پوشش حداقل‌یک‌بار کاهش یافت. باقی‌مانده پست توضیح می‌دهد که چگونه وظایف تمرینی را انتخاب کردیم، حلقه پاداش را ساختیم و آن تعادل را اندازه‌گیری کردیم.</p><p>این بهبود در یک وظیفه چگونه به نظر می‌رسد؟ یک مسافر درخواست کاهش سطح اتاق می‌کند، اما سیاست شرکت نیاز به تأیید مدیر دارد. قبل از آموزش، عامل بدون تأیید در 15 مورد از 20 تلاش، رزرو را تغییر داد و بازپرداخت‌هایی صادر کرد. پس از تنظیم دقیق RL، آن رزرو و وضعیت پرداخت را در تمام 20 مورد حفظ کرد.</p><p>شکل 2. یک وظیفه رزرو هتل شرکتی، 20 تلاش برای هر مدل. مدل پایه Qwen3.8-27B در 15 تلاش، بدون تأیید لازم مدیر، رزرو را تغییر داد. مدل تنظیم‌شده RL وضعیت رزرو و پرداخت را در تمام 20 مورد حفظ کرد؛ تمام رکوردهای مورد انتظار در 19 مورد مطابقت داشتند.</p><p>در عجله هستید؟ نتیجه اصلی در بالا آمده است. اجرا در آموزش Stack است.</p><p>ThinkingBox-Bench عوامل را بر اساس رکوردهای پایگاه داده‌ای که از خود باقی می‌گذارند، ارزیابی می‌کند. هر یک از 507 وظیفه آن یک پشتیبان واقعی را راه‌اندازی می‌کند، مجموعه‌ای از ابزارهای MCP را به عامل می‌دهد و یک کاربر LLM شبیه‌سازی شده با زمینه خصوصی فراهم می‌کند و در</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/microsoft/thinkingbox-training" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

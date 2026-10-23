@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyFish Breaks Down Agentic Search Architecture for Production AI Agents</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>TinyFish Breaks Down Agentic Search Architecture for Production AI Agents</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-23 12:28</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>یک عامل جستجوی AnAI می‌تواند در یک دموی تست کار کند اما تحت بارهای کاری واقعی با مشکلاتی مواجه شود؛ مانند زمانی که بازیابی شواهد ناقص را باز می‌گرداند، تلاش‌های مجدد عمل‌های ناموفق را تکرار می‌کنند یا اجرای آن از لحاظ زمان و هزینه فراتر می‌رود. TinyFish، که زیرساخت وب برای عامل‌های هوش مصنوعی فراهم می‌کند، دو راهنمای فنی منتشر کرده است که به این چالش‌ها می‌پردازد. اولی معماری جستجوی عامل‌های تولیدی را تعریف می‌کند، در حالی که دومی درس‌هایی از ساخت یک سیستم عمیق تحقیقاتی را به اشتراک می‌گذارد. این دو با هم بررسی می‌کنند که چگونه یک عامل جستجوی خودران می‌تواند بازیابی را برنامه‌ریزی کند، شواهد را ارزیابی کند، با شکست‌ها برخورد کند و مرز میان استدلال مدل و اجرای قطعی را مدیریت کند.</p><p>TinyFish معماری جستجوی عاملی و درس‌های کلیدی مهندسی را از ساخت سیستم‌های عمیق تحقیقاتی معرفی کرد. این سیستم بر پایه چهار مؤلفه وب (TinySearch، TinyFetch، TinyBrowser و TinyAgent) بنا شده و از طریق یک حلقه کنترل هفت مرحله‌ای حول مدل پایه عمل می‌کند. در OpenBenchmarks، TinyFish نرخ کامل شدن 79.0% را در وظایف برنامه‌نویسی به دست آورد و همچنین پایین‌ترین میانگین هزینه وظیفه ($0.050) و ردپای توکن را ارائه داد، که اهمیت کنترل‌های سخت‌افزاری، تلاش‌های مجدد خاص شکست و استدلال یکپارچه را بر اساس برنامه‌ریزهای مستقل نشان می‌دهد.</p><p>معماری جستجوی عاملی به عامل هوش مصنوعی این امکان را می‌دهد که بازیابی را برنامه‌ریزی کند، به منابع دسترسی پیدا کند، شواهد را ارزیابی کند و رویکرد خود را به‌محض در دسترس قرار گرفتن اطلاعات جدید تطبیق دهد. این مدل استدلال ارائه می‌دهد، در حالی که برنامه کاربردی پیرامونی وضعیت، اجرای ابزار، مدیریت شواهد، سیاست‌های زمان اجرا و اعتبارسنجی خروجی را مدیریت می‌کند. در مجموع، این مؤلفه‌ها به یک عامل اجازه می‌دهند تا با نتایج ناقص، شکست‌های قابل بازیابی و تغییرات در نیازهای اطلاعاتی برخورد کند.</p><p>معماری TinyFish از مفاهیم بنیادی یک پیش‌چاپ معماری در فوریه 2026 الهام گرفته شده است که استدلال را از اجرا از طریق رابط‌های ابزار نوع‌بندی شده جدا می‌کند. این مقاله چارچوب‌های اساسی سیستم را برقرار می‌کند، از جمله ردیابی دقیق به همراه محدودیت‌های سخت در تعداد توکن‌ها، زمان اجرا، هزینه کلی و فراخوانی ابزارها.</p><p>TinyFish یک اجرا را به 7 مرحله تقسیم می‌کند:</p><p>مرحله 2 به یک شکست شناخته شده پرداخته و آن را مسئله «گم‌شده در بازیابی» می‌نامد. ChainRAG (ACL 2025) این مشکل را می‌نامد که در آن موجودیت‌های کلیدی در طی تجزیه سوالات چندپرشی ناپدید می‌شوند. مرحله 6 به Search-R1 استناد می‌کند که نشان می‌دهد چگونه مدل‌ها می‌توانند در طول استدلال، پرسش‌های جستجوی اضافی تولید کنند زمانی که بازیابی‌های قبلی ناکافی باشد. در میان 7 مجموعه داده QA، جستجوی چند نوبتی یاد گرفته شده با 41% بهتر از مبنای RAG (Qwen2.5-7B) و 20% (Qwen2.5-3B) عمل کرد.</p><p>مسیر‌یابی باید بر اساس شکاف اطلاعاتی باشد، نه یک نردبان ثابت.</p><p>تشکیل پله‌ای همیشه راه‌حل نیست. نتایج ضعیف به یک پرسش بهتر نیاز دارند. منابع متناقض نیاز به شواهد قوی‌تری دارند. ابزار سنگین‌تر هیچ یک از آن‌ها را исправ نمی‌کند.</p><p>تلاش‌های مجدد باید بر اساس نوع شکست باشد و در محدوده‌های تعریف‌شده باقی بماند. خطاهای موقتی ممکن است توجیه‌کننده تکرار درخواست باشند، در حالی که شواهد ناقص یا متضاد نیاز به رویکرد متفاوتی دارند. تلاش‌های مجدد مرورگر نیز باید به اقدامات قبلا انجام شده توجه داشته باشند تا از عواقب ناخواسته جلوگیری شود، مانند ارسال همان فرم دو مرتبه.</p><p>عامل تحقیقاتی عمیق جستجو می‌کند، مرور می‌کند و گزارش‌های جامع و مستند تولید می‌کند. بیشتر چالش‌های مهندسی حول مدیریت زمینه، ارکستراسیون سیستم و طراحی محصول متمرکز بوده است.</p><p>نسخه‌های اولیه از یک برنامه‌ریز مستقل استفاده می‌کرد که هر بار به‌صورت تازه کار می‌کرد. تنها وضعیت ساختار یافته به آن وارد می‌شد. در رسالات پیگیری مانند «فقط بر روی ریسک‌های قیمت‌گذاری در آسیای جنوب شرقی تمرکز کنید»، عامل دوباره به تحقیق بازاری کلی بازمی‌گشت. TinyFish سپس برنامه‌ریزی را به حلقه استدلال یکپارچه ارکستراتور منتقل کرد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/23/tinyfish-agentic-search-architecture-deep-research/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
