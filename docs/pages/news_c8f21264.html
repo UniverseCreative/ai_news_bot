@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitPivot: Developing research ideas through dynamic contextualization within the literature landscape</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>LitPivot: Developing research ideas through dynamic contextualization within the literature landscape</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-24 11:53</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>مواجهه با یک مقاله جدید می‌تواند مسیر یک ایده پژوهشی را تغییر دهد. پژوهشگر ممکن است متوجه شود که شخصی قبلاً به سهم پیشنهادی او پرداخته است یا مشکلی حل‌نشده در مقاله بیابد که الهام‌بخش یک جهت جدید از تحقیق باشد.</p><p>ما این فرآیند را چرخش ناشی از ادبیات می‌نامیم: تغییر در جهت پژوهش که به دنبال خواندن آثار پیشین صورت می‌گیرد. این فرآیند دو فعالیت را به هم متصل می‌کند که پژوهشگران اغلب مجبورند به‌طور جداگانه مدیریت کنند: توسعه یک ایده و تصمیم‌گیری درباره اینکه کدام ادبیات باید معیار قرار گیرد.</p><p>با همکاری پژوهشگران در دانشگاه پنسیلوانیا، ما سیستم LitPivot را توسعه دادیم که به پژوهشگران در هدایت این چرخش‌ها کمک می‌کند. با استفاده از مقالاتی که از طریق Asta Paper Finder بازیابی شده‌اند، LitPivot ادبیات را حول بخشی از یک پیشنهاد که در حال ویرایش است، سازماندهی می‌کند، نقدهایی را بر اساس نقل‌قول‌هایی از مطالعات منتخب ارائه می‌دهد و اصلاحاتی را پیشنهاد می‌کند که پژوهشگران می‌توانند پذیرفته، ویرایش کرده یا رد کنند. LitPivot قرار است برای ایده‌پردازی در مراحل اولیه پژوهش مورد استفاده قرار گیرد، اما این ایده ممکن است به وظایف نوشتاری طولانی‌تر (مانند نگارش بخش مقدمه یک مقاله) نیز گسترش یابد.</p><p>در یک مطالعه با 17 پژوهشگر، کارشناسان حوزه ایده‌های پژوهشی توسعه‌یافته با LitPivot را از نظر پیوند بهتر با ادبیات نسبت به ایده‌های توسعه‌یافته با ویرایشگر متنی و ابزار چت هوش مصنوعی ارزیابی کردند. شرکت‌کنندگان همچنین ایده‌های پژوهشی اصلاح‌شده خود را به‌عنوان جدیدتر و مفیدتر درک کردند و گزارش دادند که درک قوی‌تری از ادبیات محاط دارند.</p><p>LitPivot در کنفرانس UIST 2026 در دیترویت ارائه خواهد شد. مقاله را اینجا بخوانید.</p><p>ایده‌های پژوهشی از طریق درگیر شدن با ادبیات تکامل می‌یابند. در تحلیل یادداشت‌های جلسات چهار پروژه پژوهشی تکمیل‌شده در حوزه علوم کامپیوتر، ما 21 چرخش ناشی از ادبیات را در هر چهار پروژه شناسایی کردیم. این چرخش‌ها به دو نوع تقسیم می‌شوند: تفکیک یک ایده از کارهای موجود به‌منظور تعیین جدید بودن ایده و هم‌راستا کردن یک ایده با کارهای موجود برای بنا کردن بر آن. این پروژه خود نیز قبل از اینکه به سهم‌های آن برسیم، از دو چرخش عبور کرد.</p><p>این تغییرات می‌توانند دشوار باشند. در یک مطالعه اولیه، پنج پژوهشگر با استفاده از یک ویرایشگر متنی و ابزارهای جستجوی استاندارد، پیشنهاداتی توسعه دادند. آن‌ها در توسعه ایده‌های خود در حالی که آن‌ها را به‌طور انتقادی در برابر ادبیات ارزیابی می‌کردند، با مشکلاتی مواجه شدند. وقتی یک مقاله چالش‌هایی برای جدید بودن ایده مطرح کرد، آن‌ها خواستار پیشنهادات مشخصی برای نحوه ویرایش آن بودند، با حمایت از کارهای پیشین. این یافته‌ها ارزیابی‌های LitPivot را شکل دادند که نقدهای پشتیبانی‌شده از ادبیات را با پیشنهادات خاص برای ویرایش بخش انتخاب‌شده یک ایده ترکیب می‌کنند.</p><p>در LitPivot، یک پژوهشگر با نوشتن یک پیشنهاد کوتاه در یک ویرایشگر و فعال کردن آنچه ما «هایلایتینگ فاسه» می‌نامیم، شروع می‌کند، که یک ایده بیان‌شده را به بخش‌های مختلف تقسیم می‌کند (مانند یک مشکل، سهم پیشنهادی و برنامه ارزیابی). برای بررسی یک فاسه پیشنهادی، پژوهشگر بر روی آن بخش در پیش‌نویس کلیک می‌کند. یک پنل مجاور مقالات مرتبط را بر اساس فاسه انتخاب‌شده گروه‌بندی می‌کند (برای مثال، گروه‌بندی مقالات به‌صورت روش‌های ارزیابی که در صورت انتخاب فاسه ارزیابی استفاده می‌شوند) و گروه‌های مرتبط‌ترین را هایلایت می‌کند. پژوهشگر مقالات را انتخاب کرده، درخواست ارزیابی می‌کند و یک ویرایش پیشنهادی را به همراه نقل‌قول‌های پشتیبان بررسی می‌کند. ادبیات سپس بر اساس ارتباط با فاسه ویرایش‌شده دوباره رده‌بندی می‌شود.</p><p>به‌ویژه، LitPivot یک ایده پژوهشی را به مشکل، سهم پیشنهادی و برنامه ارزیابی آن تقسیم می‌کند. هر فاسه دارای مجموعه‌ای خاص و رده‌بندی ارتباطی از ادبیات مرتبط است. LitPivot مقالات بازیابی‌شده را در اطراف فاسه که در حال ویرایش است، گروه‌بندی می‌کند و به پژوهشگر اجازه می‌دهد که انتخاب کند کدام‌یک از آن‌ها را سیستم باید استفاده کند تا...</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/allenai/litpivot" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
