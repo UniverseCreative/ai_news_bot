@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Open-Sources Agensh: A Multi-Agent Harness for 1,024 Agents</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Microsoft Open-Sources Agensh: A Multi-Agent Harness for 1,024 Agents</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-25 12:22</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Microsoft Research Agensh را به عنوان یک چارچوب غیرمتمرکز برای تیم‌های بزرگ برنامه‌نویسی متن باز کرده است. چارچوب چندعامله Agensh به حذف هماهنگ‌کننده مرکزی می‌پردازد که اکثر چارچوب‌های عامل به آن وابسته هستند. هر عامل وظیفه فرعی خود را انتخاب می‌کند، یافته‌ها را به اشتراک می‌گذارد و کد را به یک مخزن مشترک Git ادغام می‌کند. در ProgramBench، تیم این تنظیم را از ۱ عامل به ۱,۰۲۴ عامل گسترش داد.</p><p>Agensh یک چارچوب چندعاملی از Microsoft Research است که بسیاری از عوامل LLM را بدون یک عامل اصلی هماهنگ می‌کند.</p><p>مسئله هدف، سقف هماهنگ‌کننده است. در طراحی‌های هماهنگ‌کننده-کارگر، یک عامل اصلی برنامه‌ریزی، تخصیص و ادغام تمام کارها را انجام می‌دهد. مقاله پژوهشی به تیم‌های عامل Claude Code، زیرعوامل Codex، ناوگان Copilot و Kimi Agent Swarm به عنوان مثال‌هایی اشاره می‌کند. Agensh اجازه می‌دهد کارگران خود آن هماهنگی را انجام دهند.</p><p>هر کارگر یک حلقه ۵ مرحله‌ای یکسان را به‌صورت هم‌زمان و ناهم‌زمان اجرا می‌کند:</p><p>سه سرویس کارگران را متصل می‌کند. Gitea فضای کار مشترک را با شاخه‌ها، درخواست‌های ادغام و تعارضات ادغام میزبانی می‌کند. Mattermost یک کانال تیمی به علاوه پیام‌های مستقیم برای برخوردهای فوری را ارائه می‌دهد. یک تابلو زمینه مشترک، که از DeLM اقتباس شده، یادداشت‌های تایپ‌ شده را ذخیره می‌کند: OBSERVED، FACT، FAIL، CLAIM و PATCH_SUMMARY.</p><p>این حلقه در پرامپت زندگی می‌کند، نه در کد زمان اجرا. هر کارگر همان پرامپت را به جز شناسه خود دریافت می‌کند. Agensh بر روی یک چارچوب یک‌عامله نشسته است. آزمایش‌ها از GitHub Copilot CLI استفاده کردند. مقاله پژوهشی بیان می‌کند که آداپتورهای نازک می‌توانند سایر چارچوب‌ها را متصل کنند، مانند Claude Code.</p><p>تیم Microsoft سخت‌ترین وظایف ProgramBench را آزمایش کرد: FFmpeg، gromacs، pandoc، PHP-src و ctags. عوامل هر برنامه را از رفتار مشاهده شده آن بازسازی می‌کنند. آنها به‌صورت آفلاین کار می‌کنند و در عرض ۶ ساعت انجام می‌دهند. مخزن‌های مرجع از ۲,۷۶۷ فایل (pandoc) تا ۲۶,۲۶۶ فایل (PHP-src) متغیر است.</p><p>با GPT-5.6-sol در تلاش بالا برای استدلال، میانگین نرخ قبولی نهایی به شکل زیر تغییر کرد:</p><p>این یک افزایش ۹.۴۷ امتیازی، حدود ۴۹٪ نسبت به قبل است. تنها در مورد pandoc، امتیازها به ترتیب ۳۳.۸۹٪ (۱)، ۴۱.۷۵٪ (۸)، ۴۳.۱۱٪ (۳۲)، ۵۰.۹۴٪ (۱۲۸) و ۵۵.۰۶٪ (۱,۰۲۴) بود.</p><p>سرعت نیز بهبود یافته است: در pandoc، ۱۲۸ عامل در چک‌پوینت ۳۰ دقیقه‌ای ۳۰٪ قبولی داشتند. عوامل ۳۲ و ۸ به ترتیب به ۶۰ و ۹۰ دقیقه نیاز داشتند.</p><p>README یک مدل جدیدتر را اضافه می‌کند. با GPT-6.1-sol، pandoc از ۵۶.۱۹٪ (۱ عامل) به ۷۹.۵۹٪ (۳۲ عامل) افزایش یافته است. این یک افزایش ۴۱.۶۴٪ نسبی است. این ارقام GPT-6.1-sol در مقاله v1 ذکر نشده‌اند.</p><p>تیم پژوهشی مسیر کارگران را در هر مقیاس ردیابی کرد:</p><p>هیچ یک از این نقش‌ها به‌طور سخت‌کد شده نبود.</p><p>انتشار شامل یک تیم Docker Compose تک‌گانه و یک پایه‌ خطی عامل می‌باشد. هر دو از نشست‌های بومی Copilot ACP استفاده می‌کنند. شما به Linux با Docker Engine، Compose v2، systemd، cgroup v2 و Python 3.11+ نیاز دارید. تنظیمات پیش‌فرض شامل ۸ کارگر، ۶ ساعت برای هر وظیفه و gpt-5.6-sol با تلاش بالا می‌باشد. همچنین به ProgramBench (نسخه v1.2.5 تأیید شده) و توکن API مدل نیاز دارید. مراحل کامل در راهنمای بازتولید موجود است.</p><p>برای جزئیات بیشتر، به Paper، GitHub Repo و Project Page مراجعه کنید. همچنین، خوشحال می‌شویم که شما را در Twitter دنبال کنیم و فراموش نکنید که به 150k+ ML SubReddit ما ملحق شوید و به خبرنامه‌مان اشتراک بگذارید. صبر کنید! آیا شما در تلگرام هستید؟ اکنون می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا نیاز دارید که با ما برای ترویج GitHub Repo خود یا صفحه Hugging Face یا انتشار محصول یا وبینار و غیره همکاری کنید؟ با ما تماس بگیرید.</p><p>Asif Razzaq مدیرعامل Marktechpost AI Media Inc. است. Asif به عنوان یک کارآفرین و مهندس vision، متعهد به استفاده از پتانسیل هوش مصنوعی برای بهبود اجتماعی می</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/24/microsoft-agensh-multi-agent-harness-1024-agents/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
