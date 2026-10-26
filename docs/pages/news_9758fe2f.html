@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsinghua AI Open-Sources AKV, a Cache Engineering Server for LLM Agents on SGLang</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Tsinghua AI Open-Sources AKV, a Cache Engineering Server for LLM Agents on SGLang</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-26 13:57</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>دانشگاه Tsinghua و محققان دانشگاه CUHK سیستم سرویس‌دهی AKV را برای مهندسی کش KV در عامل‌های LLM متن‌باز کردند. به جای خلاصه‌سازی تاریخچه قدیمی، عامل‌ها ورودی‌های انتخاب‌شده کش KV را حذف کرده و بقیه را دوباره مورد استفاده قرار می‌دهند. در ۳ مدل و ۴ بنچمارک عامل، هزینه متوسط ۲۷.۷ درصد کاهش یافته است. امتیاز متوسط وظیفه ۱.۷ امتیاز افزایش یافته است. کد تحت مجوز Apache-2.0 است و بر اساس SGLang ساخته شده است.</p><p>AKV یک سیستم سرویس‌دهی متعلق به Tsinghua است که به عامل‌های LLM اجازه می‌دهد کش KV خود را حذف کرده و دوباره موقعیت‌یابی کنند.</p><p>مهندسی بافت تاریخچه متن را اصلاح یا خلاصه می‌کند. ویرایش آن پیشوند هر حالت KV بعدی را نامعتبر می‌سازد. لذا پسوند نگه‌داشته‌شده باید دوباره پر شود. بنابراین، بخش‌های نگهداری شده به‌طور جدی و دیر خلاصه می‌شوند که می‌تواند جزئیات مربوط به دورهای میانه را از دست بدهد.</p><p>مهندسی کش مسیر متنی را بدون تغییر رها می‌کند. این فرآیند فقط تغییر می‌دهد که کدام ورودی‌های KV برای توجه قابل مشاهده باقی بمانند. ورودی‌های نگهداری‌شده بدون نیاز به محاسبات مجدد دوباره مورد استفاده قرار می‌گیرند. آن‌ها هنوز هم می‌توانند اطلاعاتی از پیام‌های حذف‌شده حمل کنند. در تحلیل هزینه مقاله تحقیقاتی، خواندن‌های کش KV 82.4 درصد از کل هزینه API را تشکیل می‌دهد.</p><p>AKV سه عملیات کش را تعریف می‌کند. Append به‌روز رسانی استاندارد برای توکن‌های جدید است. Drop ورودی‌های انتخابی را از توجه آینده حذف می‌کند بدون اینکه موقعیت‌ها تغییر یابند. Repos کلیدهای نگهداری‌شده را به موقعیت‌های ۰ تا r-1 با استفاده از چرخش RoPE بازنویسی می‌کند. مقادیر تغییر نمی‌کنند، بنابراین هیچ وضعیت پنهانی مجدداً محاسبه نمی‌شود. در آزمایش‌ها، افزودن Repos نرخ قبولی GPT-OSS-120B در بنچمارک BrowseComp-Plus را از ۵۵ درصد به ۶۲ درصد افزایش داد.</p><p>قسمت سخت این فرایند، سرویس‌دهی است. توکن‌های یکسان می‌توانند در زیر تاریخچه عملیات مختلف وضعیت‌های کش متفاوتی تولید کنند. تطابق پیشوند ساده می‌تواند وضعیت‌های غلط را دوباره مورد استفاده قرار دهد. AKV درخت رادیکس SGLang را با نودهای حذف و موقعیت‌یابی گسترش می‌دهد. این سیستم KV های حذف‌شده را فقط زمانی آزاد می‌کند که هیچ درخواست فعالی به آن نیاز نداشته باشد. توجه رشته‌ای-بسته وضعیت‌های حذف‌شده را در یک پاس پیش‌پر کردن بازمی‌گرداند.</p><p>رابط کاربری بدون حالت و سازگار با OpenAI است. مشتریان تاریخچه کامل پیام و دو فیلد اختیاری ارسال می‌کنند. drop_message یک ایندکس پیام محرک را به پیام‌های حذف‌شده نقشه‌برداری می‌کند. reposition ایندکس‌هایی را فهرست می‌کند که پس از آن موقعیت‌ها فشرده می‌شوند.</p><p>ACachePolicy این فیلدها را از یک محرک، یک انتخاب‌گر و یک قاعده موقعیت‌یابی می‌سازد. سیاست‌های داخلی مبتنی بر نوبت، مبتنی بر توکن یا مبتنی بر مدل هستند. ACacheTool به مدل اجازه می‌دهد که خود drop_context را صدا بزند.</p><p>سیاست اصلی یک حذف چرخشی پاسخ ابزار است که آخرین ۱۲ پاسخ ابزار را حفظ می‌کند. استاندارد در ۹۶K توکن (۱۹۲K برای MiroThinker) خلاصه می‌شود. مهندسی متن در ۴۸K خلاصه می‌شود. بنچمارک‌ها شامل BrowseComp-Plus، GAIA-Text، SWE-bench Verified و xbench-DeepSearch-2510 هستند.</p><p>نرخ قبولی متوسط (%) و هزینه (سانت آمریکایی به ازای هر وظیفه) در ۴ بنچمارک. منبع: جدول ۱ مقاله.</p><p>AKV همچنین هزینه را ۲۱.۹ درصد در مقایسه با مهندسی متن کاهش می‌دهد. اختلاف دقت در اجراهای طولانی قابل مشاهده است. در بنچمارک BrowseComp-Plus در ۹۶K توکن و بالاتر، GPT-OSS-120B با AKV نمره ۳۷ درصد کسب کرده است. استاندارد ۲۴ درصد و مهندسی متن ۳۲ درصد کسب کرده‌اند، طبق صفحه پروژه.</p><p>هزینه‌ها برآوردهای معادل API از نرخ‌های منتشر شده هستند. توکن‌های موقعیت‌یابی شده با نرخ کلید کش شارژ می‌شوند، که انتخابی عمدی و محافظه‌کارانه است.</p><p>آزمون‌های سرویس‌دهی، GPT-OSS-120B را بر روی ۸۰ وظیفه SWE-bench Verified با زمینه طولانی اجرا کردند. در هر تنظیم اوج روش‌ها، AKV میزان خروجی ۱.۱۸ برابر و ورودی ۱.۵۳ برابر ارائه می‌دهد. زمان تأخیر درخواست P95، ۱.۵۱ برابر سریع‌تر است.</p><p>در هم‌زمانی ۱۶، زمان تأخیر P95 استاندارد به ۲۲۹.۹۰ ثانیه می‌رسد در حالی که</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
