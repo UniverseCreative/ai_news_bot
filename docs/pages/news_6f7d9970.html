@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vLLM Semantic Router Releases d3-ultra: A 27B Open Multimodal Decision Model</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>vLLM Semantic Router Releases d3-ultra: A 27B Open Multimodal Decision Model</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-27 13:01</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>تیم vLLM Semantic Router نسخه d3-ultra را به عنوان یک مدل تصمیم‌گیری چندحسی 27 میلیاردی تحت مجوز Apache-2.0 منتشر کرده است. مدل تصمیم‌گیری d3-ultra متنی تولید نمی‌کند. این مدل ورودی را یک بار خوانده و برای هر پاسخ به هر سوال یک احتمال بازمی‌گرداند. برای توسعه‌دهندگان، این به معنای مسیریابی، طبقه‌بندی، پایه‌گذاری تصویری و بررسی ویدیو از یک تماس با وزن باز است.</p><p>d3-ultra یک مدل تصمیم‌گیری System One از vLLM Semantic Router است که به سوالات تایپ شده با احتمالات پاسخ می‌دهد. این مدل جدیدترین عضو خانواده Decision 3.0 است که دامنه‌ای از 0.6 میلیارد تا 27 میلیارد را شامل می‌شود.</p><p>شما یک وضعیت (متن یا JSON، به همراه تصاویر یا ویدیوها) و مجموعه‌ای از سوالات را ارسال می‌کنید. هر سوال یک نوع دارد:</p><p>تصاویر می‌توانند در داخل سوالات و گزینه‌ها نیز قرار بگیرند. یک آزمون می‌تواند یک عکس را نشان دهد و سپس 4 تصویر حکاکی شده به عنوان پاسخ ارائه دهد.</p><p>ایده اصلی این است که وضعیت یک بار خوانده می‌شود. مدل ورودی را یک بار برای هر درخواست می‌خواند و به هر سوال از آن خواندن واحد پاسخ می‌دهد.</p><p>تنظیمات نشان می‌دهد که یک زیرساخت معماری Qwen3.5 با 64 لایه دارد. 48 لایه توجه خطی و 16 لایه توجه کامل هستند. این کارت نام چک‌پوینت پایه خود را ذکر نکرده است. دستورالعمل‌های vLLM می‌گوید که d3 خواهر d3-ultra از Qwen3.8-27B آموزش دیده است.</p><p>پاسخ‌های باکس همیشه دقیقا 1 باکس با یک سطح اطمینان بازمی‌گردانند. اطمینان نزدیک به 0 به این معناست که هدف در تصویر وجود ندارد. سوالات بیشتر از 131,072 توکن با خطای max_length_exceeded مواجه می‌شوند و هیچ چیزی به صورت بی‌صدا حذق نمی‌شود.</p><p>تیم تحقیقاتی d3-ultra را با GLiDE V1.2، d1-ultra، d3-turbo، d3 و Jev 1.14 در 2 آزمون داخلی مقایسه می‌کند.</p><p>SR-Text دارای 10,411 درخواست متنی با 73,495 سوال است. بیشتر این سوالات مهارت‌هایی را از 34 معیار عمومی با موارد جدید بازسازی می‌کنند. 4,896 سوال دیگر از 43 خانواده کار جدید، مانند بررسی SQL و مسیریابی بلیت، می‌آید. امتیازها به طور تصحیح‌شده محاسبه می‌شوند: 0 شانس است و 100 کامل.</p><p>d3-ultra در هر زمینه به جز هنر و سلیقه انسانی برتری دارد. در این زمینه، d1-ultra با امتیاز 90.8 در برابر 89.6 قرار می‌گیرد که در حاشیه خطا است.</p><p>SR-Box شامل 5,678 سوال باکس در 4,984 تصویر در 10 دامنه است. یک باکس در صورت داشتن IoU 0.5 یا بالاتر به عنوان درست شمرده می‌شود. d3-ultra در 10 دامنه 58.2% و در 9 دامنه 54.6% امتیاز می‌گیرد. d3-turbo به ترتیب 60.0% و 59.6% را کسب می‌کند. Jev 1.14 نیز امتیاز 45.7% و 46.9% را کسب می‌کند. تیم می‌گوید که d3-turbo در تصاویر طبیعی قوی‌تر باقی می‌ماند، در حالی که d3-ultra در نمودارها پیشتاز است.</p><p>زمان تاخیر: در 1 AMD Instinct MI325X با AutoModel، 1 سوال درباره یک عکس 304 میلی‌ثانیه زمان می‌برد. 255 سوال 2.16 ثانیه زمان می‌برد، که حدود 7.3 میلی‌ثانیه برای هر سوال اضافی است.</p><p>مدل کارت، مخزن GitHub، مجموعه Decision 3.0 و فضای Hugging Face را بررسی کنید. همچنین، احساس راحتی کنید که ما را در Twitter دنبال کنید و فراموش نکنید که به زیرردیت ML ما با بیش از 150k عضو بپیوندید و به خبرنامه ما مشترک شوید. صبر کنید! آیا شما در تلگرام هستید؟ حالا می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا به دنبال همکاری با ما برای ترویج مخزن GitHub یا صفحه Hugging Face یا انتشار محصول یا سمینار و غیره هستید؟ با ما ارتباط برقرار کنید.</p><p>Asif Razzaq مدیر عامل Marktechpost AI Media Inc. است. به عنوان یک کارآفرین و مهندس آینده‌نگر، Asif متعهد است که از پتانسیل هوش مصنوعی برای نیکی اجتماعی بهره‌برداری کند. تلاش اخیر او راه‌اندازی یک پلتفرم رسانه‌ای هوش مصنوعی به نام Marktechpost است که برای پوشش عمیق اخبار یادگیری ماشین و یادگیری عمیق شناخته می‌شود که هم از نظر فنی معتبر و هم به راحتی قابل درک برای یک مخاطب وسیع است. این پلتفرم دارای بیش از 2 میلیون بازدید ماهانه است که نشان‌دهنده محبوبیت آن در میان مخاطبان است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/26/vllm-semantic-router-d3-ultra-27b-multimodal-decision-model/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

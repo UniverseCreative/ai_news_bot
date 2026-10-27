@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greptile takes bug detection beyond code review with GPT-6 Astra</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Greptile takes bug detection beyond code review with GPT-6 Astra</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-27 13:01</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>چگونه Greptile از GPT‑6 Astra برای آزمایش جریان‌های کار کاربران، Daybreak برای تقویت امنیت و Codex برای کاهش کار اضافی استفاده می‌کند.</p><p>Greptile⁠(opens in a new window) ربات‌های هوش مصنوعی‌ای ایجاد می‌کند که تغییرات کد را با در نظر گرفتن کامل زمینه کد پایه بررسی و آزمایش می‌کنند. "ما در حوزه کاهش اشکالات و قابل اعتمادتر کردن نرم‌افزارهای دنیا فعالیت می‌کنیم" می‌گوید داکش گپتا، یکی از بنیان‌گذاران و مدیرعامل شرکت.</p><p>برای داکش، این ماموریت نیاز به آزمایش رفتار یک برنامه و خواندن کد آن دارد و استفاده کامپیوتری از GPT‑6 Astra به Greptile این امکان را می‌دهد که آزمایش را به صورت خودکار در مقیاس انجام دهد.</p><p>اعتبارسنجی یک درخواست کشش (pull request) شامل بررسی این است که آیا کد به‌طور منطقی صحیح است، کاری که توسعه‌دهنده قصد انجام آن را داشت را انجام می‌دهد، امن است و باعث آسیب به عملکرد موجود نمی‌شود. برای برخی از این آزمایش‌ها، شما باید در واقع برنامه را اجرا کنید زیرا خواندن کد به‌تنهایی ممکن است مشکل را نمایان نکند.</p><p>داکش مثالی از دکمه‌ای می‌آورد که هنگام مشاهده یک وب‌سایت در یک iPhone ناپدید می‌شود. با استفاده از GPT‑6 Astra، Greptile می‌تواند یک سرور توسعه برای یک درخواست کشش راه‌اندازی کند، اندازه مرورگر را به اندازه نمای iPhone تغییر دهد و حرکات کاربر را در داخل برنامه شبیه‌سازی کند. درک بصری مدل به آن اجازه می‌دهد تا صفحه را بررسی کند و دکمه پنهان را شناسایی نماید.</p><p>"آزمایش تمام تغییرات شما توسط یک شرکت QA به‌طور غیرعملی کند است با توجه به سرعتی که ما می‌توانیم با این مدل‌ها کد را منتشر کنیم" می‌گوید او. با استفاده از GPT‑6 Astra، Greptile می‌تواند این نوع آزمایش برنامه را در مقیاس خودکار کند.</p><p>داکش می‌گوید که مدل‌های قدرتمندتر همچنین کار را برای مهاجمان آسان‌تر می‌کند تا به برنامه‌ها آسیب برسانند و شرکت‌ها را در معرض خطر قرار می‌دهد، حتی شرکت‌هایی که قبلاً هدف‌های معمولی نبوده‌اند.</p><p>"ما می‌خواهیم حتی برای یک استارتاپ، امنیت سیستم‌هایشان را بسیار آسان کنیم" می‌گوید داکش. "با Daybreak، ما می‌توانیم این کار را به‌گونه‌ای بسیار ایمن انجام دهیم و می‌توانیم اطمینان حاصل کنیم که مشتریان ما دارای مکانیزم‌های دفاعی پیشرفته‌تری نسبت به مکانیزم‌های تهاجمی دشمنان هستند."</p><p>داده‌پایه (Knowledge Base) Greptile کد پایه یک شرکت را فهرست‌بندی کرده و مستنداتی از چگونگی کار آن در قالبی که مردم و ربات‌ها بتوانند بخوانند، فراهم می‌کند. این شرکت آن مستندات را از طریق یک سرور پروتکل زمینه مدل (MCP) در اختیار Codex قرار می‌دهد.</p><p>این امکان را به Codex می‌دهد تا کدی بنویسد که از الگوهای موجود مشتری پیروی کند و به گفته داکش، هزاران مشتری Codex را به داده‌پایه Greptile متصل کرده‌اند.</p><p>برای اندازه‌گیری تأثیر، تیم پیگیری می‌کند که چند بار کد تولیدشده توسط هوش مصنوعی به حالت قبلی برمی‌گردد. "وقتی ما به ربات‌ها زمینه می‌دهیم، بازگشت‌های کمتری رخ می‌دهد و مشتریان زمان و منابع کمتری مصرف می‌کنند" می‌گوید داکش. مشتریان می‌توانند این صرفه‌جویی‌ها را به کارهای جدید اختصاص دهند به‌جای اینکه روی تغییرات مشابه وقت صرف کنند.</p><p>Greptile همچنین از Codex برای ساخت نرم‌افزار و ربات‌های خود استفاده می‌کند. "ما کاربران بسیار بزرگی از Codex هستیم" می‌گوید داکش. "ما مقدار زیادی از آن را در هر یک از عملکردها به‌خصوص در مهندسی استفاده می‌کنیم."</p><p>برای Greptile، داکش توضیح می‌دهد که تنها مسدودکننده واقعی این است که تیم چقدر سریع می‌تواند ایده‌ها را به نرم‌افزار کارایی تبدیل کند. او می‌گوید که هوش مدل در حال حاضر برای بسیاری از وظایف کافی است، بنابراین Ultrafast را به‌عنوان راهی برای تسریع توسعه می‌بیند.</p><p>هدف بلندمدت او این است که تغییر و انتشار نرم‌افزارهای حیاتی سازمانی به اندازه انتشار یک پروژه جانبی آسان شود، با کمک OpenAI برای کمک به Greptile در ایجاد اعتبارسنجی مورد نیاز.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/greptile-code-review-codex-astra" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
