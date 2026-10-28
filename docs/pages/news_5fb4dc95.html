@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymathic AI and Princeton Researchers Release FlashMap, a Flow Map Drafter for 6.14x Faster LLM Decoding</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Polymathic AI and Princeton Researchers Release FlashMap, a Flow Map Drafter for 6.14x Faster LLM Decoding</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-28 13:52</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>پژوهشگران از Polymathic AI، دانشگاه پرینستون، USC ISI، NYU و مؤسسه Flatiron FlashMap را منتشر کردند. FlashMap با جایگزینی نویسنده انتشار گسسته با یک نقشه جریان پیوسته، رمزگشایی فرضی را انجام می‌دهد. این سیستم یک بلوک 16 توکنی را در یک عبور پیش‌رو ترسیم می‌کند. توکن‌های موجود در آن بلوک با یکدیگر سازگار باقی می‌مانند. تیم تحقیقاتی گزارش می‌دهد که در Qwen3-8B سرعت بدون افت تا 6.14 برابر در مقایسه با GSM8K افزایش یافته است. وزن‌های نویسنده برای Qwen3-8B و Qwen3-4B در Hugging Face موجود است و از پلاگین‌های vLLM و SGLang استفاده می‌کند.</p><p>FlashMap یک نویسنده رمزگشایی فرضی است که نویز گاوسی را به یک بلوک توکن در یک مرحله نگاشت می‌کند. یک نویسنده کوچک K توکن را پیشنهاد می‌دهد. مدل هدف سپس همه K را در یک عبور موازی بررسی کرده و بلندترین پیشوند مطابقتی را نگه می‌دارد. خروجی دقیقاً همان چیزی است که مدل هدف تولید می‌کرد.</p><p>سرعت به دو چیز بستگی دارد: تعداد توکن‌های ترسیم شده که پذیرفته می‌شوند و چقدر به‌صرفه ترسیم شده‌اند. EAGLE-3 به‌صورت خودبازگشتی ترسیم می‌کند، بنابراین هزینه با طول بلوک افزایش می‌یابد. DFlash کل بلوک را در یک عبور با انتشار بلوکی ترسیم می‌کند.</p><p>DFlash هر اسلات در بلوک را به‌طور مستقل پیش‌بینی می‌کند. تیم تحقیقاتی این را تقریب فاکتوریزه شده می‌نامد. تصور کنید که یک ادامه به‌عنوان “new york” یا “san diego” با احتمال‌های مساوی است. یک نویسنده مستقل نیمی از زمان “new diego” یا “san york” را پیشنهاد می‌دهد. مدل هدف این پیشنهادات را در اسلات 2 رد می‌کند.</p><p>FlashMap بر اساس مدل‌های زبان نقشه جریانی بنا شده است. هر نمونه نویز به یک بلوک کامل نگاشت می‌شود. نویز حالت برای هر اسلات را به‌طور مشترک انتخاب می‌کند.</p><p>نویسنده یک ترنسفورمر انتشار 6 بلوکی (DiT) است که بعد تعبیه 2048 و 16 سر توجه دارد. این نویسنده حالت‌های پنهان را از لایه‌های هدف 1، 9، 17، 25 و 33 می‌خواند. ماتریس تعبیه و سر LM از هدف کپی شده و ثابت باقی می‌مانند.</p><p>هر دو نویسنده بر روی 500K نمونه از Open-PerfectBlend آموزش دیده‌اند. مجموع محاسبات در تمام مدل‌ها و آبلیشن‌ها حدود 4600 ساعت GPU بر روی H200ها بوده است.</p><p>تیم تحقیقاتی EAGLE-3 و DFlash را بر روی همان داده‌ها و تنظیمات دوباره آموزش دیده است. آزمون‌ها 9 معیار را در زمینه‌های ریاضی، کدنویسی و چت با دماهای 0 و 1 پوشش می‌دهند.</p><p>آزمون جابه‌جایی بررسی می‌کند که آیا نویسندگان از ساختار واقعی بین توکنی استفاده می‌کنند یا خیر. در 2 مرحله، FlashMap بیشتر از افزایش ساختار مشترک یک معلم 16 مرحله‌ای را بازیابی می‌کند. در 1 مرحله، تنها بخشی کوچک را حفظ می‌کند. ترسیم 4 نمونه نویز به‌عنوان یک درخت به‌طور متوسط سرعت را 11% افزایش می‌دهد.</p><p>افزایش‌های متوسط توسط Marktechpost از شکل 1(c) مقاله FlashMap محاسبه شده است. ردیف‌های مطابقت یافته از مبنای دوباره آموزش دیده شده نویسندگان استفاده می‌کنند.</p><p>بسته flashmap تنها به torch و transformers >=4.56 نیاز دارد. آن را با دستور uv pip install flashmap نصب کنید. فراخوانی aspec_generate نویسنده و هدف را با هم بر روی یک GPU اجرا می‌کند.</p><p>برای خدمات‌دهی، صفحه پروژه دو مسیر را ارائه می‌دهد:</p><p>مقدار num_steps=2 را تنظیم کنید تا مقداری از سرعت را در ازای پذیرش بالاتر فدای کنید. برای نمونه‌گیری بالای دمای 0، vLLM به "draft_sample_method": "probabilistic" نیاز دارد.</p><p>به مقاله، صفحه پروژه، مخزن GitHub و وزن‌های مدل مراجعه کنید. همچنین، خوشحال می‌شویم که شما را در Twitter دنبال کنیم و فراموش نکنید به SubReddit ML با بیش از 150k عضو بپیوندید و به خبرنامه ما مشترک شوید. صبر کنید! آیا شما در تلگرام هستید؟ اکنون می‌توانید به ما در تلگرام نیز بپیوندید.</p><p>آیا نیاز به همکاری با ما برای تبلیغ مخزن GitHub یا صفحه Hugging Face یا انتشار محصول یا وبینار دارید؟ با ما ارتباط برقرار کنید.</p><p>Asif Razzaq مدیر عامل Marktechpost AI Media Inc. است. به‌عنوان یک کارآفرین و مهندس vision، Asif متعهد به دگرگونی پتانسیل هوش مصنوعی برای خیر اجتماعی است. آخرین تلاش او راه‌اندازی یک پلتفرم رسانه‌ای هوش مصنوعی به نام Marktechpost است که به خاطر پوشش عمیق اخبار یادگیری ماشین و یادگیری عمیق که هم</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/28/flashmap-flow-map-speculative-decoding/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

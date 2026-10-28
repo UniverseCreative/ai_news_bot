@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build specialized multimodal models with LFM3</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Build specialized multimodal models with LFM3</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-28 13:52</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>LFM3 نسل جدید مدل‌های پایه مایع (LFMs) ماست که برای شروع هوش تخصصی طراحی شده است. این مدل‌ها متن، بینایی، صوت، مدل‌های جامع و تصمیم‌گیری را بر روی یک زیرساخت مشترک جمع‌آوری می‌کنند که همگی در محدوده پارامتر ۲B قرار دارند. این به این معناست که می‌توانید مدل متناسب با حالت خود را انتخاب کرده، آن را بر روی داده‌های خود با استفاده از یک GPU بهینه‌سازی کنید و در جایی که اپلیکیشن شما اجرا می‌شود، پیاده‌سازی کنید.</p><p>LFM3 چهار تغییر اصلی نسبت به خانواده قبلی LFM2 به ارمغان می‌آورد:</p><p>LFM2 نشان داد که یک ترکیب از کانولوشن‌های کوتاه و توجه می‌تواند به سرعت بر روی دستگاه اجرا شود بدون اینکه کیفیت را قربانی کند. برای LFM3، ما از جستجوی معماری سخت‌افزاری در حلقه برای بازطراحی آن معماری برای موارد استفاده مدیریتی استفاده کردیم که به قابلیت بیشتر در ازای هر پارامتر و استنتاج سریع در زمینه‌های طولانی احتیاج دارند. این جستجو اکنون شامل ۱۴ ترکیب دستگاه و زیرساخت از گوشی‌ها و Raspberry Pi 5 تا لپ‌تاپ‌ها، CPUs و GPUs ابری و Qualcomm Hexagon NPU است.</p><p>LFM3-1.7B-Base دارای ۲۴ لایه و چهار تغییر اصلی است:</p><p>این تغییرات در زمینه‌های طولانی خود را نشان می‌دهند. به ازای هر پارامتر، LFM3-1.7B در مقایسه با LFM2-1.2B در دعوت‌های کوتاه در دستگاه‌های لبه برابر است و با ۸K توکن در زمینه، تقریباً ۲۵% سریع‌تر است. LFM3-1.7B-Base بر روی ۲۲T توکن با همان واژگان ۱۲۸K به عنوان LFM2.5-8B-A1B پیش‌آموزش دیده است. ۳.۵T توکن نهایی، مرحله میانی آموزشی بر روی داده‌های انتخابی با سهم بیشتری از نشانه‌های مدیریتی و خواص ابزاری است که همچنین پنجره زمینه را به ۲۵۶K توکن گسترش می‌دهد.</p><p>هر مدل LFM3 از LFM3-1.7B-Base منشعب می‌شود. به جای اجرای یک مدل عمومی بزرگ، شما مدل متناسب با ورودی‌های خود را انتخاب کرده، آن را سفارشی کرده و بر روی دستگاه اجرا می‌کنید.</p><p>مدل‌های بینایی و صوتی همچنین دو رمزگذار جدید داخلی دریافت می‌کنند:</p><p>هر مدل در transformers اجرا می‌شود. بخش‌های زیر از کارت‌های مدل آورده شده است که همچنین سایر موتورهای استنتاجی که هر مدل پشتیبانی می‌کند را لیست می‌کند.</p><p>LFM3-1.7B را برای زمانی که به عوامل محلی، فراخوانی ابزار، خروجی‌های ساختار یافته یا پایه‌ای برای بهینه‌سازی خاص دامنه نیاز دارید، انتخاب کنید. این مدل به گونه‌ای پس‌آموزش داده شده است که در داشبوردهای مدیریتی مانند Hermes Agent، Pi و OpenClaw اجرا شود. این مدل با ۳۵% پارامتر کمتر نسبت به پیشینی خود یعنی LFM2.5-2.6B عملکرد بهتری دارد و بیشترین پیشرفت‌ها در وظایف مدیریتی مشهود است: در WebArena-Verified، امتیاز ۳۸.۴۲ را در برابر ۳.۰۲ بدست می‌آورد و حتی در وظایف طولانی در مرورگرها و اپلیکیشن‌های تجاری از Qwen3.5-9B پیشی می‌گیرد. می‌توانید جزئیات بیشتری را در کارت مدل LFM3-1.7B پیدا کنید.</p><p>برای اجرای LFM3-1.7B، آخرین نسخه transformers را نصب کنید:</p><p>برای راه‌اندازی عامل محلی، به راهنمای Agent Harnesses مراجعه کنید.</p><p>LFM3-VL-2B را انتخاب کنید زمانی که به درک بصری روی دستگاه نیاز دارید. این اولین مدل بینایی LFM است که ویدیو را به عنوان ورودی می‌گیرد؛ این مدل به صورت مرحله به مرحله استدلال می‌کند قبل از اینکه پاسخ دهد و اشیا را شناسایی کرده و در مورد چگونگی قرارگیری آنها استدلال می‌کند، که پایه‌ای قوی برای رباتیک است. در مقایسه با LFM2.5-VL-3B، این مدل پارامترهای کمتری دارد (۱.۹B در برابر ۳.۱B) با این حال میانگین امتیازها در ۶۲ شاخص بینایی را از ۵۷.۶ به ۷۱.۴ افزایش می‌دهد، که هم‌سطح با مدل Gemma 4 12B، مدلی به مراتب بزرگتر از شش برابر است. شما می‌توانید اطلاعات بیشتری را در کارت مدل LFM3-VL-2B پیدا کنید.</p><p>برای اجرای LFM3-VL-2B، transformers>=5.21.0 را با وابستگی‌های مربوط به بینایی نصب کنید:</p><p>به کارت مدل LFM3-VL-2B برای فراخوانی ابزار، جستجوی ابزار و استنتاج بر روی دستگاه با llama.cpp مراجعه کنید.</p><p>LFM3-Audio-2B را زمانی که به چت صوتی، تشخیص گفتار، سنتز گفتار یا ترجمه به ۱۸ زبان بر روی لپ‌تاپ یا دستگاه لبه نیاز دارید، انتخاب کنید. این مدل متن یا صوت را به عنوان ورودی می‌گیرد و با متن، گفت</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/LiquidAI/lfm3" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
