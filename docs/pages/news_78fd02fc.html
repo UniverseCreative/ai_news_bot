@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infini-AI-Lab Releases Hermit, an Open-Source Harness Adapter Framework for AI Agents</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Infini-AI-Lab Releases Hermit, an Open-Source Harness Adapter Framework for AI Agents</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-29 13:58</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Infini-AI-Lab، Hermit را به عنوان یک فریم‌ورک آداپتور منبع باز برای عاملیت‌های هوش مصنوعی منتشر کرده است. Hermit یک فریم‌ورک از Infini-AI-Lab است که یک ‘آداپتور هارنس’ خارجی را آموزش می‌دهد، در حالی که مدل و هارنس عامل ثابت باقی می‌مانند. اولین نسخه، v0.1.0، در تاریخ 25 اکتبر 2026 منتشر شد. Haizhong Zheng، پژوهشگر پسادکتری CMU، در تاریخ 27 اکتبر این مطلب را در X اعلام کرد. برای توسعه‌دهندگان، پیشنهاد بسیار ساده است: آداپت کردن عامل‌های Codex یا Claude Code به وظایف جدید بدون نیاز به بهینه‌سازی یا ایجاد یک هارنس جدید.</p><p>یک آداپتور هارنس یک هارنس خارجی قابل آموزش است. این آداپتور مانند یک افزونه عمل می‌کند که پشتیبانی از آموزش به صورت داخلی دارد. یک آداپتور مدل، مانند LoRA، یک مدل را سازگار می‌کند. به جای آن، یک آداپتور هارنس یک عامل موجود را سازگار می‌کند.</p><p>این آداپتور می‌تواند شامل دستورالعمل‌ها، مهارت‌ها، حافظه، ابزارها، کد executable و منطق هماهنگی عامل باشد. حتی می‌تواند یک مخزن کامل باشد. مشخصات آن مشخص می‌کند که کدام قسمت‌ها قابل یادگیری هستند و چگونه به‌روزرسانی‌ها بررسی می‌شوند. مدل پایه و هارنس هرگز تغییر نمی‌کند.</p><p>تیم سه دلیل برای این طراحی ارائه می‌دهد. بسیاری از هارنس‌ها منبع‌باز نیستند. ویرایش هارنس‌های منبع باز ممکن است تعاملات دقیقاً تنظیم شده اجزا را خراب کند. و یک آداپتور یادگرفته شده می‌تواند بین مدل‌ها و هارنس‌های سازگار جابجا شود.</p><p>Hermit از یک حلقه آموزشی به سبک RL استفاده می‌کند. یک Trainer یک دسته از وظایف را از طریق عامل فعال با آداپتور فعلی اجرا می‌کند. یک قاضی خروجی‌ها را ارزیابی می‌کند. یک Evolver مسیرها و بازخوردها را می‌خواند و سپس یک آداپتور جدید را پیشنهاد می‌کند. Trainer آن را با الگو بررسی می‌کند و به عنوان نسخه بعدی تأیید می‌کند.</p><p>هر نسخه آداپتور در یک درخت git وجود دارد. شما می‌توانید هر نسخه را بررسی کرده، به عقب برگردانید یا ارسال کنید. برنامه‌های Learner می‌توانند در حالت sandbox اجرا شوند، که نیاز به Linux با bubblewrap دارد.</p><p>امروز پنج روش تکامل در دسترس است: GEPA، SkillOpt، مدل MetaWorld (MWM)، Harness² و Continual Harness. ACE و ReHarness به زودی در دسترس خواهند بود. شما همچنین می‌توانید Evolver خود را بنویسید.</p><p>تمامی تلاش‌ها از GLM 5.3 Flash به عنوان مدل فعال استفاده می‌کنند. اعداد از مثال‌های README‌های مخزن آمده و به صورت خودگزارش شده هستند.</p><p>OfficeQA (recipe) از 172 سوال آزمونی درباره بولتن‌های خزانه‌داری ایالات متحده پرسش می‌کند و بر اساس تطابق دقیق امتیاز می‌گیرد:</p><p>GEPA و SkillOpt روی 50 سوال آموزش می‌بینند و در حالت ثابت آزمایش می‌شوند. Continual Harness و Harness² در عوض، هنگام پخش مجموعه آزمون یک بار یاد می‌گیرند. تیم گزارشی مبنی بر افزایش 7.6 امتیازی برای Harness² نسبت به اجرای مرجع آن ارائه می‌دهد، با یک بازه 95% از +1.7 تا +13.4.</p><p>CL-Bench (database, poker) محیط‌های دارای وضعیت را از مقاله Continual Learning Bench آزمایش می‌کند. در کاوش پایگاه داده، MWM به دقت 0.795 دست می‌یابد. امتیاز پایه در زمینه درون‌متنی 0.580 است. در پوکر قابل سوءاستفاده، MWM به ازای هر دست 3.08 بیگ بلایند می‌برد، در حالی که این مقدار برای یادگیری درون‌متنی 2.51 است.</p><p>ServeLearnBench (recipe) از 624 درخواست پشتیبانی خرده‌فروشی تحت یک سیاست مخفی و متغیر پخش می‌کند. MWM در آزمون‌های سیاست مخفی امتیاز 45.3 به دست می‌آورد. بهترین روش یادگیری در لیست امتیاز، CH، امتیاز 28.7 را کسب کرده است. یک اوراکل که سیاست را دارد، امتیاز 89.2 را می‌گیرد. </p><p>برای نصب از PyPI با دستور pip install hermit-harness استفاده کنید، یا مخزن را برای دیدن مثال‌ها کلون کنید. CLI شامل چک، آموزش، ارزیابی، استقرار و تبدیل است. مدل‌ها به عنوان <backend>/<model id> ارجاع داده می‌شوند. بک‌اندهای پشتیبانی شده شامل Fireworks، OpenAI، Anthropic، DeepSeek، vLLM، SGLang و Ollama هستند.</p><p>hermit deploy یک فضای کاری برای Codex، Claude Code یا Pi می‌نویسد. herit convert یک آداپتور آموزش دیده را به عنوان یک افزونه بومی برای Codex، Claude Code، Pi یا Hermes صادر می‌کند. یک آداپتور همکاری Lean تکمیل شده پنج عامل Codex را برای اثبات یک تئوری هماهنگ می‌کند.</p><p>به مخزن GitHub، صفحه پروژه و مست</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/10/29/infini-ai-lab-hermit-harness-adapter-framework/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
