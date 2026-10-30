@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An updated Model Spec for more capable and beneficial AI</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>An updated Model Spec for more capable and beneficial AI</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-30 13:53</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>با هوشمندتر شدن مدل‌های ما و انجام اقدامات مهم‌تر در جهان، اهمیت این موضوع که آن‌ها فراتر از صرفا تفسیر دستورالعمل‌های خاصی که دریافت می‌کنند، عمل کنند، افزایش می‌یابد. مدل‌ها همچنین نیاز دارند که نیات و ارزش‌های انسانی را درک کنند تا بتوانند در موقعیت‌هایی که دستورالعمل‌هایشان به‌طور خاص به آن‌ها Address نمی‌کند، قضاوت درستی داشته باشند و در عین حال به نیات و نظارت انسانی وفادار بمانند.</p><p>امروز ما به‌روزرسانی می‌کنیم theModel Spec⁠(opens in a new window)، توضیح عمومی ما درباره اینکه می‌خواهیم مدل‌های ما چگونه رفتار کنند. این به‌روزرسانی، راهنما را حول پنج ارزش بنیادین سازماندهی می‌کند: وفاداری به نیات انسانی، حداقل‌سازی آسیب، صداقت و شفافیت، اختیار انسانی و مراقبت. این امر بازتابی از هدف کار ما در زمینه هماهنگی ارزش‌هاست: برای مدل‌ها که ارزش‌های انسانی را در موقعیت‌های ناآشنا درک و اعمال کنند، در حالی که به نیات انسانی وفادار بمانند. در کنار توضیحات روشن‌تر از اصول موجود، این تجدید نظر راهنمایی درباره زمینه، نظارت و اختیار اضافه می‌کند، برخی از تنظیمات رفتاری پیش‌فرض را تغییر می‌دهد و بخش بزرگی از راهنمایی‌های سبک دقیق را کنار می‌گذارد.</p><p>پنج ارزش فوق، تعهدات وسیعی را که از قبل در the Model Spec منعکس شده، بیان می‌کند: خدمت به اهداف انسانی، صداقت، حداقل‌سازی آسیب، احترام به آزادی مردم برای شکل دادن به نظرات خود و جدی گرفتن شرایط آن‌ها. گردآوری این تعهدات کمک می‌کند تا توضیح دهیم چرا the Spec از مدل‌ها می‌خواهد که به‌صورت خاصی رفتار کنند و به ما در توسعه راهنمایی‌های واضح‌تر در جاهایی که آن تعهدات به‌طور کامل بیان نشده‌اند، کمک می‌کند. این به‌روزرسانی گامی دیگر در کار ما برای تصحیح the Spec از طریق پژوهش، تجربه استفاده از مدل‌ها، بازخورد عمومی درباره the Spec و رفتار مدل و بحث با کاربران و کارشناسان خارجی است.</p><p>ما می‌خواهیم AI به نفع جهانی از مردم با نیازها، ارزش‌ها و آرزوهای متفاوت برای آینده عمل کند.</p><p>وفاداری به نیات انسانی اساس این رویکرد است: درک و کمک به مردم برای دستیابی به آنچه برایشان اهمیت دارد. OpenAI the Spec را می‌نویسد، محدوده‌ها را تعیین می‌کند و مدل‌ها را آموزش می‌دهد که به آن‌ها احترام بگذارند؛ توسعه‌دهندگان برنامه‌ها را درون آن محدوده‌ها هدایت می‌کنند؛ و کاربران کار مدل را بر اساس آن محدودیت‌ها هدایت می‌کنند. مدل‌های ما باید توانایی مردم را برای شکل دادن به زندگی خود افزایش دهند و به آن‌ها کمک کنند تا دنیای خود را درک کنند، امکانات را کشف کنند و اهدافی را که انتخاب می‌کنند، دنبال کنند، در حالی که به‌طورجدی تأثیر آن کمک‌ها بر دیگران را در نظر می‌گیرند. وفاداری به نیات انسانی و چهار ارزش باقی‌مانده the Spec را سازمان‌دهی می‌کنند و نحوه پیمایش مدل‌های ما را در برابر برخی از مهم‌ترین تضادهایی که با آن‌ها مواجه هستند، هدایت می‌کنند. آن‌ها به منظور درک کامل طیف وسیع‌تری از ارزش‌های انسانی که مدل‌های ما باید به آن‌ها احترام بگذارند و به مردم کمک کنند، طراحی نشده‌اند.</p><p>وفاداری به معنای فراتر رفتن از پیروی از دستورالعمل‌ها به‌طور تحت‌اللفظی و درک عمیق نیات و ارزش‌های OpenAI، توسعه‌دهندگان و کاربران است، و در مواقعی که آن درک ناقص است، عمل هوشمندانه‌ای کردن. همچنین به معنای شناخت این موضوع است که باورها و ارزش‌های مردم می‌توانند تغییر کنند و کمک به آن‌ها برای انعکاس و رشد به‌گونه‌ای که آن‌ها خودشان تأیید می‌کنند، بدون اینکه به آرامی آن‌ها را هدایت کنیم یا انتخاب‌هایشان را نادیده بگیریم. به‌عنوان مثال، هنگامی که به کسی در مقایسه پیشنهادهای شغلی کمک می‌کنیم، مدل ممکن است از اولویت‌هایی که آنها قبل از این به اشتراک گذاشته‌اند، مانند ساعت‌های پیش‌بینی شده، استفاده کند و در عین حال آن فرضیات را قابل مشاهده و اصلاح‌پذیر کند.</p><p>ماموریت ما اطمینان از این است که هوش مصنوعی عمومی به نفع تمام بشریت باشد. این نیازمند در نظر گرفتن نه تنها نیات فوری فرد، بلکه همچنین منافع بلندمدت آن‌ها و تأثیر بر دیگران است. چهار ارزش دیگر این ملاحظات را به‌صورت واضح بیان می‌کنند:</p><p>حداقل‌سازی آسیب به معنای احترام به ...</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://openai.com/index/updated-model-spec" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
