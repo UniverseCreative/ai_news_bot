@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nemotron-halloween</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>nemotron-halloween</h1>
+            <div class="meta-info">
+                <span>📅 2026-10-31 13:23</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>خلاصه: MonsterHouse یکProjection تعاملی است که برای هالووین طراحی کرده‌ام. این سیستم به رایحه‌دارها گوش می‌دهد، با صدای یک کشتی دزدان دریایی خشمگین پاسخ می‌دهد و زمانی که بازدیدکنندگان به آداب خود یادآوری می‌کنند، نرم‌تر می‌شود. این پروژه بر پایه NVIDIA Nemotron Voice Agent با استفاده از NVIDIANemotron ASR، Nemotron 3.5 Bolt E4B 4GB، Magpie TTS Zeroshot و Audio2Face-3D ساخته شده و بر روی یک workstation واحد اجرا می‌شود.</p><p>من می‌خواستم بچه‌هایی که برای هالووین به خانه‌ام می‌آیند، به شیوه‌ای سرگرم‌کننده و منحصر به فرد تعامل کنند. این خانه قرار بود مسئول توزیع شکلات‌ها باشد، اما بیشتر خشمگین از ترسناک. به نوعی، راه‌حل من این بود که درب گاراژ را به یک دهان تبدیل کنم و به او یاد بدهم که شکایت کند.</p><p>این شد MonsterHouse: یک ساختمان پیر و خشمگین با داستان‌های دزدان دریایی، لبخندی آتشین و ضعفی مشکوک نسبت به "لطفاً." NVIDIA Nemotron Voice Agent پایه‌گذار مکالمات است. Nemotron Speech وظیفه گوش دادن را بر عهده دارد، Bolt E4B مغز این سیستم است، NVIDIA Magpie TTS Zeroshot صدای زنده را فراهم می‌کند و NVIDIA Audio2Face-3D دهان چوبی را به صحبت در می‌آورد.</p><p>دهان در ابتدا آمد. من تصور می‌کردم که تخته‌های درب چوبی گاراژ به لب‌های دندانه‌دار تقسیم می‌شوند، با شعله‌های سوزان جهنم که هر بار که او دهان نفرین شده‌اش را باز می‌کند، مسیر را روشن می‌کنند. او باید باستانی، بیانی و کمی از وجود بازدیدکنندگان احساس نخوشایندی می‌کرد.</p><p>چند حالت احساسی از یک خانه که حرف‌های زیادی برای گفتن دارد.</p><p>ایجاد یک رینگ انیمیشن سفارشی یکی از بخش‌های کارساخت بود که زمان‌بر و دشوار به حساب می‌آمد. بعد از اینکه آن را تحت فشار قرار دادم، توانستم اشکال بیان چهره را صادر کنم که Audio2Face-3D بتواند بعداً آنها را انیمیشن کند. شخصیت SkelMesh در Autodesk Maya ساخته شد و سپس به Unreal Engine صادر گردید، جایی که آتش مجازی و افکت‌ها پشت در اضافه شد. بدون چشمان، ابروها و پلک زدن، او یک هیولای به‌طور شگفت‌آوری اقتصادی است.</p><p>در حالی که تمام مزاحمت‌های ساخت شخصیت در حال انجام بود، NVIDIA Nemotron Voice Agent را ساخت. آنچه که قرار بود بخش دشوار ساخت باشد، اکنون به طرز عجیبی سرگرم‌کننده، تدریجی و آسان شد. من پایه‌ای برای گوش دادن، گفتگو و گفتار به سادگی در اختیار داشتم. خانه قبلاً دهان داشت. حالا او بالاخره می‌توانست موضوعی برای شکایت پیدا کند.</p><p>خانه به گذشته‌ای به اندازه شخصیتش عصبانی نیاز داشت، بنابراین داستانی را طراحی کردم که این خانه از چوب‌های یک کشتی دزدان دریایی غرق شده ساخته شده و از گذشته طوفانی‌اش عذاب می‌کشد. این شکایات دریایی اکنون دلیل داشتند. این کشتی بود، که به عنوان یک ملک بازآفرینی شده و از این بابت چندان راضی نیست.</p><p>عملکرد نیاز به یک راهنما داشت، مسیری برای پیروی از سلام تا خداحافظی و ارائه شیرینی در طول مسیر. ابتدا، خانه بازدیدکنندگان را با عبارات مانند "من مشغول غرغر کردن هستم، بروید مزاحم همسایه‌ها شوید!" رد می‌کرد. اما پافشاری او را نهایتا تسلیم می‌کرد. یک "لطفاً" می‌توانست فوراً از دل او عبور کند و "متشکرم" وداعی گرم را به ارمغان می‌آورد. یک بار که بازدیدکننده او را به دست می‌آورد، می‌خواستم او در این خوشبختی باقی بماند. هیچ کس نمی‌خواهد با همان درب گاراژ دو بار مذاکره کند.</p><p>اینجا است که Voice Agent واقعاً درخشان می‌شود. می‌توانید هر LLM که می‌خواهید انتخاب کنید. چون می‌خواستم سیستم به دور از شبکه و کاملاً خودکفا باشد، یک بودجه حافظه و پردازش داشتم.</p><p>شخصیت نیاز به چیزی بیشتر از یک پیام که بگوید "خشمگین باش" داشت. او باید دنبال یک جریان اصلی گفتگو باشد، به آنچه بازدیدکنندگان واقعاً می‌گفتند پاسخ دهد، وضعیت ملاقات را پیگیری کند و برای بقیه فرآیند کافی پردازش را باقی بگذارد.</p><p>پس از آزمایش بیش از دوازده مدل، به Bolt E4B رسیدم تا گفتگوی زنده را تأمین کند. این یک مدل زبان کوچک و متن باز است که به طور خاص برای عامل‌های محلی مکالمه و شخصیت‌های تعاملی ساخته شده است.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/nvidia/nemotron-halloween" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
