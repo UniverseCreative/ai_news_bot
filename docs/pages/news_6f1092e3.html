@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA Releases Auto Ontology: An Open Semantic Layer That Grounds AI Agent SQL</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>NVIDIA Releases Auto Ontology: An Open Semantic Layer That Grounds AI Agent SQL</h1>
+            <div class="meta-info">
+                <span>📅 2026-11-02 16:52</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>NVIDIA کتابخانه‌ای به نام Auto Ontology را تحت مجوز Apache 2.0 منتشر کرده است. NVIDIA Auto Ontology یک چارچوب لایه معنایی است که لایه‌ای از زمینه را از متاداده‌های سازمانی می‌سازد. عوامل (Agents) از این لایه برای نوشتن SQL بر اساس تعاریف تجاری معتبر استفاده می‌کنند. این Repository مسئله را به‌روشنی بیان می‌کند: پاسخ سریع به درآمد در صورتی که شماره نادرست باشد، ارزشی ندارد.</p><p>این لایه زمینه‌ای بین یک عامل و انبار داده‌ها قرار دارد. این لایه به عامل می‌گوید که داده‌ها کجا قرار دارند و هر فیلد چه معنی‌ای دارد. همچنین تعیین می‌کند که آیا باید از یک فیلد استفاده کرد، چگونه از آن استفاده شود و منبع آن کجا است.</p><p>صفحه توسعه‌دهندگان NVIDIA خروجی را به عنوان یک انتزاع اولیه چارچوب‌بندی می‌کند. کارشناسان تجاری هنوز آن را آزمایش، تصحیح و تأیید می‌کنند.</p><p>این پشته دارای ۴ سرویس اصلی است. یک رابط کاربری وب با استفاده از Next.js 16 و احراز هویت روی پورت ۳۰۰۰ مدیریت می‌شود. یک backend مبتنی بر FastAPI با LangChain چت، NL-to-SQL و API‌های کاتالوگ را روی پورت ۳۰۰۱ اجرا می‌کند. یک کارگر ورود داده‌ها (ingestion worker) نگاشت‌ها را روی پورت ۳۰۰۲ می‌نویسد. پایگاه داده Postgres با pgvector کاتالوگ، انتزاع و وکتورها را ذخیره می‌کند.</p><p>پایگاه‌های داده منبع می‌توانند Databricks، Postgres، Snowflake یا DuckDB باشند. مدل‌ها از طریق "سه‌گانه‌های" محیطی شامل Endpoint، Key و مدل تنظیم می‌شوند. نقش‌های جداگانه‌ای برای نتیجه‌گیری، عدم نتیجه‌گیری، نگاشت و رتبه‌بندی مجدد وجود دارد. هر Endpoint سازگار با OpenAI کار می‌کند.</p><p>اسناد سرور MCP به شرح ۹ ابزار فقط خواندنی می‌پردازد. ابزار ask_question پاسخ، SQL و ردیف‌ها را به عنوان فیلدهای جداگانه باز می‌گرداند. نتایج حداکثر به ۱۰۰ ردیف محدود می‌شود. ابزار check_readiness تأیید می‌کند که لایه معنایی کامپایل‌شده و یک اتصال پایگاه داده زنده وجود دارد.</p><p>هیچ ابزاری برای مرور طرحواره‌های خام وجود ندارد. NVIDIA به‌طور عمد انتخاب کرده است که عوامل از طریق لایه معنایی به داده‌ها دسترسی پیدا کنند. مشخصات OpenAPI زیرساخت ۸۷ عملیات را منتشر می‌کند. ورود به سیستم از طریق OAuth انجام می‌شود و هر تماس شامل مجوزهای کاربر ورود کرده است.</p><p>NVIDIA یک هارنس جداگانه به نام auto-ontology-eval ارائه می‌دهد. این هارنس دو بازو درNeMo Gym اجرا می‌کند: یک کنترل فقط طرحواره LLM و یک عامل مبتنی بر انتزاع. نمره‌دهی بر اساس تطابق اجرای قطعی است و قاضی LLM وجود ندارد.</p><p>مجموعه داده‌های تجمیع‌شده شامل BIRDDev (۱,۵۳۴ سوال، ۱۱ پایگاه داده) و Mini-Dev (۵۰۰ سوال) است. FDABench-Lite به ۱۶۹ سوال اضافه می‌کند و BEAVER به یک نمونه ۱۰۰ سوالی پیش‌فرض می‌رسد.</p><p>مخزن هارنس دو محدودیت اضافه می‌کند. نمونه‌های اختیاری few-shot و لنگرهای مقداری فقط به بازوی انتزاع می‌روند. دلتای اندازه‌گیری‌شده با آن‌ها، آن ورودی‌ها را در بر می‌گیرد و نه فقط حقیقت‌گذاری. پیکربندی آزمایش‌شده آن نیز هر دو بازو را از طریق مدل Claude در دروازه استنتاج NVIDIA هدایت می‌کند.</p><p>راه‌اندازی محلی با دستور docker compose up -d --build پس از پر کردن .env انجام می‌شود. کاربران Kubernetes یک چارت Helm و یک راهنمای DEPLOYMENT.md دریافت می‌کنند. تیم NVIDIA همچنین backend را به عنوان یک کانتینر NGC منتشر می‌کند. یک کلید API از NVIDIA با آدرس build.nvidia.com مدل‌های پیش‌فرض را پوشش می‌دهد.</p><p>به مخزن GitHub، هارنس eval و اسناد MCP سر بزنید. همچنین، از شما دعوت می‌کنیم ما را در Twitter دنبال کنید و فراموش نکنید به SubReddit ML با بیش از ۱۵۰k عضو بپیوندید و به خبرنامه ما مشترک شوید. صبر کنید! آیا شما در Telegram هستید؟ اکنون می‌توانید به ما در Telegram بپیوندید.</p><p>آیا نیاز به همکاری با ما برای تبلیغ مخزن GitHub، صفحه Hugging Face، انتشار محصول یا وبینار دارید؟ با ما در ارتباط باشید.</p><p>Asif Razzaq مدیرعامل Marktechpost AI Media Inc. است. به عنوان یک کارآفرین و مهندس آینده‌نگر، Asif متعهد است که از پتانسیل هوش مصنوعی برای نیک‌وکاری بهره ببرد. جدیدترین تلاش او راه‌اندازی یک پلتفرم رسانه‌ای هوش مصنوعی به نام Marktechpost است که در آن پوشش عمیق‌تری از اخبار یادگیری ماشین و یادگیری عمیق به همراه دارد که از نظر فنی مطمئن و به راحتی قابل درک برای مخاطبان گسترده است. این پلتفرم دارای بیش از</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
