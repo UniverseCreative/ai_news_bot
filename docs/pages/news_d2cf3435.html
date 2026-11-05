@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aina’s smart ring has a screen, a joystick and a mic so you can talk to AI agents</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>Aina’s smart ring has a screen, a joystick and a mic so you can talk to AI agents</h1>
+            <div class="meta-info">
+                <span>📅 2026-11-05 15:12</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>استارتاپ سخت‌افزاری Aina امروز یک حلقه هوشمند معرفی کرد که دارای صفحه‌نمایش، جوی‌استیک و میکروفن است، تا شما بتوانید با نمایندگان خود صحبت کنید و یادداشت‌برداری کنید. این حلقه ۳۹۹ دلاری دارای یک اسپیکر نیز هست تا بتوانید از آن برای دریافت تماس‌ها استفاده کنید.</p><p>این استارتاپ که در ماه جولای ۵.۵ میلیون دلار جذب سرمایه کرده است، این حلقه را به‌عنوان کنترل‌کننده‌ای برای برنامه‌های هوش مصنوعی و غیرهوش مصنوعی معرفی می‌کند.</p><p>این شرکت پیش‌تر دستگاه Mirage را ساخته بود، که یک کنترل‌کننده سه‌دکمه‌ای بود و به شما اجازه می‌داد براساس برنامه‌ی روی صفحه‌نمایش مک خود، دکمه‌هایی را فراخوانی کنید. به عنوان مثال، اگر در حال برقراری تماس در Google Meet بودید، می‌توانستید دکمه‌ها را به روشن/خاموش کردن دوربین، قطع/وصل میکروفن یا ترک جلسه اختصاص دهید.</p><p>Aina تجربه‌های به‌دست‌آمده از آن دستگاه را در طراحی حلقه جدید خود که به سادگی "AI ring" نامیده شده، به کار گرفته است. با استفاده از میکروفن آن، می‌توانید یادداشت بردارید، به نمایندگان خود پیام ارسال کنید، یادآور تنظیم کنید و یادداشت‌ها را از طریق Wispr Flow یا موتور دیکته‌ی خود استارتاپ روی مک خود بیان کنید.</p><p>در حال حاضر، حلقه‌های هوشمند دیگری در بازار وجود دارند که کارهای مشابهی انجام می‌دهند، مانند Pebble Index 01، Sandbar Stream، Oasis، و Natura، که احتمالاً به همین دلیل Aina کنترل‌ها و قابلیت‌های بیشتری را به حلقه خود اضافه کرده تا متمایز شود. حلقه‌ی این شرکت دارای اسپیکر است تا شما بتوانید تماس‌ها را دریافت کنید و همچنین دارای صفحه‌نمایش است که به شما این امکان را می‌دهد که نوتیفیکیشن‌های تلفن یا برنامه‌هایی که کنترل می‌کنید را مشاهده کنید.</p><p>برای ناوبری، یک جوی‌استیک وجود دارد و همچنین از حرکات دست پشتیبانی می‌کند، به‌طوری که می‌تواند اقدامات مختلفی را براساس آنچه در صفحه‌نمایش مک یا تلفن شما است، انجام دهد. این حلقه همچنین به شما امکان کنترل موسیقی یا حتی دستگاه‌های هوشمند خانگی مانند Apple TV را می‌دهد.</p><p>من این حلقه را به مدت چند روز مورد استفاده قرار دادم و احساس کردم که مانند یک ساعت هوشمند در قالب حلقه با کنترل‌های بیشتر است. می‌توانم نوتیفیکیشن‌ها را دریافت کرده و به آن‌ها پاسخ دهم. جلسات من را نشان می‌دهد و اگر بخواهم تاکسی بگیرم، می‌توانم Uber را تماس بزنم.</p><p>استفاده از ریموت Apple TV به‌طور مستقیم آسان‌تر است، اما حلقه Aina در چند باری که نتوانستم ریموت را پیدا کنم، مفید بود. البته بسیاری از نرم‌افزارها و قابلیت‌ها هنوز در حال توسعه‌اند، بنابراین مشخص نیست که چنین حلقه‌ای در استفاده‌ی روزمره من چه جایگاهی خواهد داشت، اما به‌وضوح به افرادی که در احاطه‌ی دستگاه‌های دیجیتال و برنامه‌های هوش مصنوعی هستند، هدف‌گذاری شده است.</p><p>"Aina برای تعاملی با نمایندگان فعال، به یک رابط بهتر نیاز داریم و این دقیقاً همان چیزی است که در طراحی Aina در نظر داشتیم"، Apoorv Shankar، بنیان‌گذار Aina، در گفت‌وگویی با TechCrunch گفت.</p><p>شرکت‌ها در تلاشند تا با تولید سخت‌افزارهای تخصصی، به برنامه‌نویسان و علاقه‌مندان به هوش مصنوعی خدمت‌رسانی کنند که بتوانند از نمایندگان مختلف بهره‌برداری کنند. این شامل کیبورد تجربی OpenAI و Rabbit است که تلاش می‌کند خود را به‌عنوان یک کنترل‌کننده معرفی کند. امید است با چنین سخت‌افزاری، تعداد کافی از افراد دارای چندین نماینده باشند تا در کامپیوترهای خاصی سرمایه‌گذاری کنند که به آن‌ها کمک کند.</p><p>حلقه Aina از روز پنج‌شنبه با قیمت زودهنگام ۳۹۹ دلار برای پیش‌خرید در دسترس خواهد بود و این شرکت برنامه‌ریزی کرده است تا ارسال دستگاه را در ژانویه ۲۰۲۷ آغاز کند. پس از پایان دوره زودهنگام، قیمت حلقه به ۴۹۹ دلار افزایش خواهد یافت.</p><p>با خرید از طریق لینک‌های موجود در مقالات ما، ممکن است کمیسیون کوچکی کسب کنیم. این موضوع بر استقلال تحریریه ما تأثیری ندارد.</p><p>ایوان به پوشش توسعه‌های فناوری مصرفی جهانی در TechCrunch می‌پردازد. او از هند کار می‌کند و پیش از این در نشریاتی مانند Huffington Post و The Next Web مشغول به کار بوده است.</p><p>شما می‌توانید با ایوان از طریق ایمیل [email protected] یا از طریق پیام رمزگذاری‌شده به شماره ivan.42 در Signal ارتباط برقرار کنید.</p><p>با خرید یک اشتراک، دومی را رایگان بگیرید و با آوردن هم‌بنیان‌گذار یا شریک خود، مساحت بیشتری را در بزرگ‌ترین بوت‌کمپ بنیان‌گذاران TechCrunch پوشش دهید.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>

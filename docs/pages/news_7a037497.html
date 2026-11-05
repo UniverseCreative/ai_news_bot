@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af; /* آبی تیره رسمی */
+            --bg-color: #f3f4f6;      /* خاکستری بسیار روشن */
+            --surface-color: #ffffff;
+            --text-main: #111827;     /* تقریباً مشکی */
+            --text-muted: #6b7280;    /* خاکستری متن */
+            --border-color: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border-radius: 8px; /* گوشه‌های کمی گرد برای جدیت بیشتر */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            padding: 32px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--primary-color); /* رنگ مناسب برای عنوان */
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 2.2; /* فاصله خطوط عالی برای خوانایی */
+            margin-bottom: 24px;
+            text-align: justify; /* تراز کردن متن از دو طرف */
+            text-justify: inter-word;
+            color: var(--text-main);
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #f9fafb;
+            padding: 24px 40px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; background-color: var(--surface-color); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header, .content, .footer { padding: 24px; }
+            .header h1 { font-size: 1.3rem; }
+            .content p { font-size: 1rem; line-height: 2; }
+            .meta-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="category-badge">هوش مصنوعی و فناوری</span>
+            <h1>A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.</h1>
+            <div class="meta-info">
+                <span>📅 2026-11-05 15:13</span>
+                <span>⏱️ زمان مطالعه: حدود ۲ دقیقه</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>دو هفته پیش، ما Phonon را معرفی کردیم، مدل کوچک تبدیل متن به گفتار که بر روی دستگاه خود شما اجرا می‌شود. این مدل به سرور و شبکه نیاز ندارد و آنچه شما تایپ می‌کنید نزد شما باقی می‌ماند.</p><p>ما تا به حال از استقبال صورت گرفته بسیار خوشحال بوده‌ایم. بنابراین، در اینجا داستان راه‌اندازی را برای شما به‌اشتراک می‌گذاریم: دلایل ساخت Phonon، قابلیت‌های آن، دموهایی که همراه با آن ارائه شد و نحوه عملکرد آن در جدول رده‌بندی Open TTS هَگینگ فیس.</p><p>بیشتر هوش صوتی (Voice AI) در فضای ابری قرار دارد: هر جمله به یک سرور سفر می‌کند و برمی‌گردد. در عوض، Phonon بر روی دستگاه شما اجرا می‌شود. متن شما در آنجا باقی می‌ماند و صدا بدون نیاز به شبکه عمل می‌کند. ما همچنین وزن‌های این مدل را منتشر کرده‌ایم. Phonon 31m تحت مجوز Apache 2.0 قرار دارد، بنابراین می‌توانید آن را به صورت رایگان حتی در محصولات تجاری استفاده کنید. مدل‌های دیگر تحت مجوز CC BY-NC قرار دارند، بنابراین برای پروژه‌های غیر تجاری رایگان هستند. اگر شما در حال ساخت چیزی تجاری با آن‌ها هستید، قیمت‌گذاری بر اساس تعداد کاربران شما است، نه بر اساس میزان گفتاری که تولید می‌کنید.</p><p>به دست آوردن صدای خوب برای اجرا بر روی یک دستگاه کوچک همواره دشوار بوده است. می‌توانستید مدل را کوچک کنید، اما در این صورت صدای خوبی نداشت. یا می‌توانستید صدای خوبی تولید کنید، اما در این صورت اندازه آن مناسب نمی‌شد. ما به هر دو مورد پرداخته‌ایم.</p><p>ما در ماه آوریل، Phonon را معرفی کرده و شش ماه بعدی را به ساخت آن با شرکا و کاربران اولیه اختصاص دادیم. بازخورد آن‌ها به ما در شکل‌دهی این نسخه کمک کرد. مدل‌ها کوچک‌تر شدند و ما زبان‌های بیشتری را اضافه کردیم و از طریق کلونینگ صدا و طراحی صدا، پشتیبانی از صداهای سفارشی را فراهم کردیم.</p><p>Phonon بر اساس نسل Pocket TTS ایجاد شده و به همین دلیل از تکنیک‌های تطبیق جریان برای تولید صدا استفاده می‌کند که به‌طور قابل توجهی با تکنیک‌های مدل‌سازی استفاده شده در دیگر سیستم‌های TTS متفاوت است. این امر به ما اجازه داد تا این سطح از کیفیت را به مدل کوچک بیاوریم، اما چالش‌های جدیدی را در حین آموزش مدل‌ها ایجاد کرد. آموزش در ابتدا از نظر عددی ناپایدار بود و نیاز به چندین ترفند داشت تا نتایج با کیفیتی در همه پنج زبان تولید کند.</p><p>Phonon در دو اندازه، حدود 65 MB و 75 MB عرضه می‌شود. این دو مدل در مجموع به زبان‌های انگلیسی، فرانسوی، آلمانی، اسپانیایی و پرتغالی صحبت می‌کنند. بیش از 100 صدای داخلی موجود است و شما می‌توانید صدای خود را در Gradium Studio ایجاد کنید. Phonon همچنین به مسائل مهمی که اکثر سیستم‌های TTS دیگر معمولاً در آن‌ها دچار مشکل می‌شوند، مانند شماره‌های تلفن، تاریخ‌ها و کدها، رسیدگی می‌کند.</p><p>این مدل در گوشی‌های هوشمند، لپ‌تاپ‌ها، رایانه‌های تک‌برد و در یک برگه مرورگر اجرا می‌شود، بنابراین می‌توانید هم‌اکنون آن را بشنوید. Phonon 31m به زبان انگلیسی صحبت می‌کند و تحت مجوز Apache 2.0 قرار دارد، بنابراین می‌توانید به راحتی بر روی آن ساخت کنید، حتی برای محصولات تجاری. Phonon 40m تحت مجوز غیر تجاری به تمامی پنج زبان می‌پردازد.</p><p>راه‌اندازی این مدل با دموهایی از دوستان و تیم خود ما همراه بود. بر روی یک Apple Watch با Wi-Fi خاموش، Phonon به شما مرحله به مرحله تهیه قهوه را آموزش می‌دهد. بر روی یک iPhone بدون سیگنال، تعداد تکرارهای شما را می‌شمارد و به شما انگیزه می‌دهد. رباتی به نام Lamp از Autonomous کلاه جداساز بر سر دارد و به شیوه‌ای خاص صحبت می‌کند. در یک مرورگر، یک دونده دایناسور آفلاین تبدیل به یک برنامه رادیویی می‌شود که توسط Rex مجری آن است. همچنین یک بازی علمی-تخیلی وجود دارد که صدای آن بر روی دستگاه خود بازیکن پخش می‌شود و Proust صفحه به صفحه به صورت بلند خوانده می‌شود.</p><p>تیم Hugging Face یکپارچه‌سازی Transformers را ایجاد کرد، بنابراین توسعه‌دهندگان می‌توانستند از Phonon در Transformers از روز اول استفاده کنند.</p><p>توسعه‌دهندگان همچنین شروع به ساخت بر روی آن کرده‌اند. یک تبدیل ExecuTorch Phonon را بر روی GPU بازدیدکننده در مرورگر اجرا می‌کند، Micdrop آن را به برنامه‌های Node.js می‌آورد و Spaces بر پایه smallest-s2s بر روی آن ساخت می‌کنند.</p><p>Phonon در دو هفته اول بیش از 200,000 بار دانلود شده است و همچنان در Hugging Face در حال ترند است.</p><p>جدول رده‌بندی Open TTS پروژه‌ای بسیار جدید از Hugging Face است و ما از آن خوشحال هستیم. با بیش از 9,000 مدل TTS در Hugging Face Hub، این جدول به توسعه‌دهندگان یک مکان واحد برای مقایسه می‌دهد.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="https://huggingface.co/blog/phonon-tts" target="_blank" class="btn btn-primary">🔗 مشاهده منبع اصلی خبر</a>
+            <a href="https://t.me/KafaTechNews" class="btn btn-secondary">📱 بازگشت به کانال تلگرام</a>
+            <div class="footer-text">
+                تهیه و تنظیم توسط ربات خبررسان هوش مصنوعی
+            </div>
+        </div>
+    </div>
+</body>
+</html>
